@@ -2,15 +2,56 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>AI Solutions Creative Agency | Soluciones Digitales Premium</title>
+    
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Soluciones digitales con enfoque directo. Diseño web, contenido de redes y formaciones personalizadas.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="keywords" content="diseño web, redes sociales, formación digital, contenido vertical, agencia creativa, Barcelona">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="AI Solutions Creative Agency">
+    <meta name="language" content="Spanish">
+    <link rel="canonical" href="https://aisolutionsagency.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aisolutionsagency.com/">
+    <meta property="og:title" content="AI Solutions Creative Agency | Soluciones Digitales Premium">
+    <meta property="og:description" content="Soluciones digitales con enfoque directo. Diseño web, contenido de redes y formaciones personalizadas.">
+    <meta property="og:image" content="https://aisolutionsagency.com/logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aisolutionsagency.com/">
+    <meta property="twitter:title" content="AI Solutions Creative Agency | Soluciones Digitales Premium">
+    <meta property="twitter:description" content="Soluciones digitales con enfoque directo. Diseño web, contenido de redes y formaciones personalizadas.">
+    <meta property="twitter:image" content="https://aisolutionsagency.com/logo.png">
+    
+    <!-- Preconexiones críticas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://streamable.com" crossorigin>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" 
+          rel="stylesheet" media="print" onload="this.media='all'">
+    
     <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    
+    <!-- Preload recursos críticos -->
+    <link rel="preload" as="image" href="logo.png" type="image/png">
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         /* Variables y reset */
         :root {
@@ -41,6 +82,7 @@
         html {
             scroll-behavior: smooth;
             overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
         }
         
         body {
@@ -50,6 +92,11 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
         /* Fondo con puntos de luz naranjas - MEJORADO CON MÁS PUNTOS PEQUEÑOS */
@@ -107,8 +154,6 @@
             0%, 100% { opacity: 0.3; }
             50% { opacity: 0.8; }
         }
-        
-        /* Crear puntos de luz adicionales con JavaScript después */
         
         /* Capa oscura adicional */
         body::after {
@@ -206,11 +251,15 @@
             overflow: hidden;
             z-index: 1;
             letter-spacing: 0.5px;
+            min-height: 44px;
+            min-width: 44px;
         }
         
-        .btn:hover {
+        .btn:hover,
+        .btn:focus {
             transform: translateY(-5px);
             box-shadow: var(--shadow-gold);
+            outline: 2px solid var(--gold);
         }
         
         .btn-header {
@@ -313,7 +362,7 @@
         }
         
         .logo-img {
-            height: 70px; /* Aumentado de 48px a 70px */
+            height: 70px;
             width: auto;
             transition: var(--transition);
             filter: drop-shadow(0 4px 10px rgba(255, 215, 0, 0.3));
@@ -332,7 +381,7 @@
         }
         
         .logo-main {
-            font-size: 2.2rem; /* Aumentado de 1.8rem a 2.2rem */
+            font-size: 2.2rem;
             font-weight: 800;
             background: var(--gradient-gold);
             -webkit-background-clip: text;
@@ -343,7 +392,7 @@
         }
         
         .logo-subtitle {
-            font-size: 1rem; /* Aumentado de 0.8rem a 1rem */
+            font-size: 1rem;
             color: var(--gold-light);
             font-weight: 600;
             letter-spacing: 1px;
@@ -390,6 +439,11 @@
             font-size: 1.6rem;
             color: var(--gold);
             cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+            min-height: 44px;
+            min-width: 44px;
         }
         
         /* Hero Section */
@@ -399,7 +453,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            padding-top: 150px; /* Aumentado para acomodar logo más grande */
+            padding-top: 150px;
         }
         
         .hero-content {
@@ -573,9 +627,13 @@
             cursor: pointer;
             transition: var(--transition);
             color: #aaa;
+            min-height: 44px;
+            min-width: 44px;
         }
         
-        .tab-btn.active, .tab-btn:hover {
+        .tab-btn.active, 
+        .tab-btn:hover,
+        .tab-btn:focus {
             background: var(--gradient-gold);
             color: var(--dark);
             border-color: transparent;
@@ -591,7 +649,7 @@
             display: block;
         }
         
-        /* Web Design Content - 6 imágenes (3 originales + 3 nuevas) */
+        /* Web Design Content - 6 imágenes */
         .web-design-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -639,6 +697,7 @@
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
+            loading: lazy;
         }
         
         .web-project:hover .project-img img {
@@ -731,7 +790,7 @@
             gap: 10px;
         }
         
-        /* Redes Sociales - 6 imágenes completas (3 originales + 2 nuevas + 1 extra) */
+        /* Redes Sociales - 6 imágenes completas */
         .social-content {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -781,13 +840,14 @@
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
+            loading: lazy;
         }
         
         .social-project:hover .social-img img {
             transform: scale(1.05);
         }
         
-        /* Equipo de Producción Audiovisual - MODIFICADO */
+        /* Equipo de Producción Audiovisual */
         .team-production {
             background: rgba(255, 140, 0, 0.08);
             border-radius: var(--border-radius);
@@ -845,7 +905,7 @@
             margin-bottom: 8px;
         }
         
-        /* Sección de Formaciones de Contenido Vertical - NUEVA */
+        /* Sección de Formaciones de Contenido Vertical */
         .vertical-formations {
             background: rgba(255, 215, 0, 0.05);
             border-radius: var(--border-radius);
@@ -950,6 +1010,7 @@
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
+            loading: lazy;
         }
         
         .formation-img:hover img {
@@ -989,7 +1050,7 @@
             font-size: 1.8rem;
             margin-bottom: 20px;
             display: flex;
-                align-items: center;
+            align-items: center;
             gap: 12px;
         }
         
@@ -1044,7 +1105,7 @@
         
         .reel-window {
             background: rgba(255, 255, 255, 0.03);
-            border-radius: 20px; /* Bordes redondeados tipo Instagram */
+            border-radius: 20px;
             overflow: hidden;
             border: 1px solid rgba(255, 215, 0, 0.1);
             transition: var(--transition);
@@ -1061,7 +1122,7 @@
         .reel-container {
             position: relative;
             width: 100%;
-            height: 600px; /* Altura fija para formato Reel */
+            height: 600px;
             overflow: hidden;
             background: #000;
         }
@@ -1281,9 +1342,12 @@
             text-align: center;
             cursor: pointer;
             transition: var(--transition);
+            min-height: 44px;
+            min-width: 44px;
         }
         
-        .service-option:hover {
+        .service-option:hover,
+        .service-option:focus {
             border-color: var(--gold);
             transform: translateY(-5px);
         }
@@ -1320,9 +1384,12 @@
             text-align: center;
             cursor: pointer;
             transition: var(--transition);
+            min-height: 44px;
+            min-width: 44px;
         }
         
-        .web-option:hover {
+        .web-option:hover,
+        .web-option:focus {
             border-color: var(--gold);
         }
         
@@ -1387,9 +1454,11 @@
             transition: var(--transition);
             margin-top: 30px;
             position: relative;
+            min-height: 44px;
         }
         
-        .submit-btn:hover {
+        .submit-btn:hover,
+        .submit-btn:focus {
             transform: translateY(-5px);
             box-shadow: var(--shadow-gold);
         }
@@ -1473,7 +1542,7 @@
         }
         
         .footer-logo-img {
-            height: 80px; /* Aumentado de 60px a 80px */
+            height: 80px;
             width: auto;
             margin-bottom: 15px;
             filter: drop-shadow(0 4px 10px rgba(255, 215, 0, 0.3));
@@ -1485,7 +1554,7 @@
         }
         
         .footer-logo-main {
-            font-size: 2.2rem; /* Aumentado de 1.8rem a 2.2rem */
+            font-size: 2.2rem;
             font-weight: 800;
             background: var(--gradient-gold);
             -webkit-background-clip: text;
@@ -1496,7 +1565,7 @@
         }
         
         .footer-logo-subtitle {
-            font-size: 1rem; /* Aumentado de 0.9rem a 1rem */
+            font-size: 1rem;
             color: var(--gold-light);
             font-weight: 600;
             letter-spacing: 1px;
@@ -1526,9 +1595,12 @@
             color: #aaa;
             transition: var(--transition);
             border: 1px solid rgba(255, 215, 0, 0.05);
+            min-height: 44px;
+            min-width: 44px;
         }
         
-        .social-icon:hover {
+        .social-icon:hover,
+        .social-icon:focus {
             background: var(--gradient-gold);
             color: var(--dark);
             transform: translateY(-5px);
@@ -1633,11 +1705,11 @@
             }
             
             .logo-img {
-                height: 60px; /* Ajustado para tablet */
+                height: 60px;
             }
             
             .logo-main {
-                font-size: 1.8rem; /* Ajustado para tablet */
+                font-size: 1.8rem;
             }
         }
         
@@ -1649,7 +1721,7 @@
             .nav-links {
                 display: none;
                 position: fixed;
-                top: 80px; /* Aumentado para logo más grande */
+                top: 80px;
                 left: 0;
                 width: 100%;
                 background: rgba(26, 26, 26, 0.98);
@@ -1738,6 +1810,7 @@
         }
         
         @media (max-width: 768px) {
+            /* Mejoras específicas para móvil */
             .hero {
                 padding-top: 150px;
             }
@@ -1762,8 +1835,9 @@
                 height: 200px;
             }
             
-            .reel-container {
-                height: 400px;
+            .reel-container, .video-container {
+                height: 70vh;
+                max-height: 600px;
             }
             
             .top-banner p {
@@ -1827,6 +1901,24 @@
             .footer-logo-main {
                 font-size: 1.6rem;
             }
+            
+            /* Mejorar toque en móvil */
+            .btn, .tab-btn, .service-option, .web-option {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            /* Inputs optimizados para móvil */
+            input, select, textarea {
+                font-size: 16px;
+            }
+            
+            /* Touch-friendly navigation */
+            .nav-links a {
+                padding: 12px 0;
+                display: block;
+                font-size: 1.1rem;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1855,12 +1947,12 @@
             }
             
             header {
-                top: 60px; /* Ajuste para móvil */
+                top: 60px;
                 padding: 15px 0;
             }
             
             .hero {
-                padding-top: 140px; /* Ajuste para móvil */
+                padding-top: 140px;
             }
             
             .booking-panel {
@@ -1907,7 +1999,7 @@
             
             .logo-subtitle {
                 font-size: 0.8rem;
-                display: block; /* Mantener visible en móviles */
+                display: block;
             }
             
             .footer-logo-img {
@@ -1936,64 +2028,100 @@
                 font-size: 0.75rem;
             }
         }
+        
+        /* Mejoras de accesibilidad */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Mejoras de performance */
+        img[loading="lazy"] {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        img[loading="lazy"].loaded {
+            opacity: 1;
+        }
+        
+        /* Optimización para Core Web Vitals */
+        .hero-video, .reel-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Evitar layout shifts */
+        .project-img, .social-img, .formation-img {
+            aspect-ratio: 16/9;
+            height: auto;
+        }
     </style>
 </head>
 <body>
     <!-- Banner Superior -->
-    <div class="top-banner">
+    <div class="top-banner" role="region" aria-label="Oferta especial">
         <p>
-            <i class="fas fa-bolt"></i>
+            <i class="fas fa-bolt" aria-hidden="true"></i>
             Proyectos con enfoque directo • Sin burocracias • Resultados naturales
-            <i class="fas fa-bolt"></i>
+            <i class="fas fa-bolt" aria-hidden="true"></i>
         </p>
     </div>
 
     <!-- Header -->
     <header id="header">
         <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">
+            <nav class="navbar" aria-label="Navegación principal">
+                <a href="#" class="logo" aria-label="AI Solutions Creative Agency - Inicio">
                     <div class="logo-container">
-                        <!-- Logo PNG dinámico - MÁS GRANDE -->
-                        <img src="logo.png" alt="AI Solutions Creative Agency Logo" class="logo-img" id="dynamicLogo">
+                        <!-- Logo PNG dinámico -->
+                        <img src="logo.png" alt="AI Solutions Creative Agency Logo" class="logo-img" id="dynamicLogo" width="70" height="70">
                         <div class="logo-text">
                             <div class="logo-main">AI Solutions</div>
                             <div class="logo-subtitle">Creative Agency</div>
                         </div>
                     </div>
                 </a>
-                <ul class="nav-links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#valores">Valores</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                    <li>
-                        <a href="#booking" class="btn btn-header">
-                            <i class="fas fa-calendar-alt"></i> Agendar Cita
+                <ul class="nav-links" role="menubar">
+                    <li role="none"><a href="#inicio" role="menuitem">Inicio</a></li>
+                    <li role="none"><a href="#servicios" role="menuitem">Servicios</a></li>
+                    <li role="none"><a href="#valores" role="menuitem">Valores</a></li>
+                    <li role="none"><a href="#contacto" role="menuitem">Contacto</a></li>
+                    <li role="none">
+                        <a href="#booking" class="btn btn-header" role="menuitem">
+                            <i class="fas fa-calendar-alt" aria-hidden="true"></i> Agendar Cita
                         </a>
                     </li>
                 </ul>
-                <div class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </div>
+                <button class="mobile-menu-btn" aria-label="Menú móvil" aria-expanded="false" aria-controls="nav-links">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="inicio">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
         <div class="container">
             <div class="hero-content">
-                <h1>Soluciones Digitales <span>con Flujo Natural</span></h1>
+                <h1 id="hero-title">Soluciones Digitales <span>con Flujo Natural</span></h1>
                 <p>En <span class="highlight">AI Solutions Creative Agency</span> desarrollamos con rapidez y confianza. Webs personalizadas, contenido visual auténtico y una fluidez que conecta directamente con tu audiencia.</p>
                 
                 <!-- Nota de negocio añadida -->
                 <div class="business-note">
-                    <h3><i class="fas fa-lightbulb"></i> ¿Tienes un negocio?</h3>
+                    <h3><i class="fas fa-lightbulb" aria-hidden="true"></i> ¿Tienes un negocio?</h3>
                     <p>¿Quieres modernizar tu imagen, mejorar visibilidad y atraer más clientes? <strong>Nosotros te ayudamos.</strong> Creamos soluciones digitales que realmente funcionan, sin complicaciones y con resultados medibles.</p>
                 </div>
                 
-                <!-- Botones del Hero (solo uno para Agendar Cita) -->
+                <!-- Botones del Hero -->
                 <div class="hero-btns">
                     <a href="#servicios" class="btn">Ver Servicios</a>
                     <a href="#booking" class="btn">Agendar Cita</a>
@@ -2004,18 +2132,19 @@
             <div class="hero-video-gallery">
                 <div class="video-showcase">
                     <div class="video-showcase-header">
-                        <h3><i class="fas fa-play-circle"></i> Nuestro Trabajo</h3>
+                        <h3><i class="fas fa-play-circle" aria-hidden="true"></i> Nuestro Trabajo</h3>
                     </div>
                     <div class="video-container">
                         <!-- Video 1 de Streamable -->
                         <iframe 
                             class="hero-video streamable-iframe"
                             src="https://streamable.com/e/gak7bs?autoplay=1&loop=1&muted=1&controls=0"
-                            title="AI Solutions Creative Agency"
+                            title="AI Solutions Creative Agency - Demostración de trabajo"
                             frameborder="0"
                             allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen
-                            style="pointer-events: none;">
+                            loading="lazy"
+                            aria-label="Video demostrativo de nuestros servicios">
                         </iframe>
                     </div>
                 </div>
@@ -2024,137 +2153,137 @@
     </section>
 
     <!-- Services Section -->
-    <section class="section services" id="servicios">
+    <section class="section services" id="servicios" aria-labelledby="services-title">
         <div class="container">
             <div class="section-title">
-                <h2>Servicios Directos</h2>
+                <h2 id="services-title">Servicios Directos</h2>
                 <p>Soluciones digitales con enfoque en ejecución efectiva</p>
             </div>
             
-            <div class="service-tabs">
-                <div class="tab-btn active" data-tab="web">Diseño Digital</div>
-                <div class="tab-btn" data-tab="social">Contenido de Redes</div>
-                <div class="tab-btn" data-tab="formations">Formaciones</div>
+            <div class="service-tabs" role="tablist" aria-label="Selección de servicios">
+                <button class="tab-btn active" data-tab="web" role="tab" aria-selected="true" aria-controls="web-tab">Diseño Digital</button>
+                <button class="tab-btn" data-tab="social" role="tab" aria-selected="false" aria-controls="social-tab">Contenido de Redes</button>
+                <button class="tab-btn" data-tab="formations" role="tab" aria-selected="false" aria-controls="formations-tab">Formaciones</button>
             </div>
             
-            <!-- Web Design Tab - 6 imágenes (3 originales + 3 nuevas) -->
-            <div id="web-tab" class="tab-content active">
+            <!-- Web Design Tab - 6 imágenes -->
+            <div id="web-tab" class="tab-content active" role="tabpanel" aria-labelledby="web-tab">
                 <div class="web-design-content">
                     <!-- Proyecto 1 Original -->
-                    <div class="web-project">
+                    <article class="web-project">
                         <div class="project-img">
                             <div class="project-badge">Ejemplo</div>
-                            <img src="images/web1.webp" alt="Proyecto Web Bordavella">
+                            <img src="images/web1.webp" alt="Proyecto Web Bordavella - Landing page" loading="lazy" width="350" height="220">
                         </div>
                         <div class="project-info">
                             <h3>Landing Pages</h3>
                             <p>Desarrollo directo y efectivo, enfocado en conversiones naturales. Ejemplo real: Bordavella.</p>
-                            <a href="https://www.bordavella.com/" target="_blank" class="project-link">
-                                Ver sitio <i class="fas fa-arrow-right"></i>
+                            <a href="https://www.bordavella.com/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Ver sitio <i class="fas fa-arrow-right" aria-hidden="true"></i>
                             </a>
                         </div>
-                    </div>
+                    </article>
                     
                     <!-- Proyecto 2 Original -->
-                    <div class="web-project">
+                    <article class="web-project">
                         <div class="project-img">
-                            <img src="images/web2.webp" alt="Proyecto Web Personalizado">
+                            <img src="images/web2.webp" alt="Proyecto Web Personalizado - Diseño a medida" loading="lazy" width="350" height="220">
                         </div>
                         <div class="project-info">
                             <h3>Webs Personalizadas</h3>
                             <p>Desarrollo desde cero, adaptado a la esencia única de cada negocio.</p>
                         </div>
-                    </div>
+                    </article>
                     
                     <!-- Proyecto 3 Original -->
-                    <div class="web-project">
+                    <article class="web-project">
                         <div class="project-img">
-                            <img src="images/web3.webp" alt="Proyecto Web Responsive">
+                            <img src="images/web3.webp" alt="Proyecto Web Responsive - Adaptable a móviles" loading="lazy" width="350" height="220">
                         </div>
                         <div class="project-info">
                             <h3>Diseño Responsive</h3>
                             <p>Experiencia fluida en todos los dispositivos, con navegación intuitiva.</p>
                         </div>
-                    </div>
+                    </article>
                     
                     <!-- Nueva imagen 4 -->
-                    <div class="web-project">
+                    <article class="web-project">
                         <div class="project-img">
-                            <img src="images/web4.webp" alt="Diseño E-commerce">
+                            <img src="images/web4.webp" alt="Diseño E-commerce - Tienda online" loading="lazy" width="350" height="220">
                         </div>
                         <div class="project-info">
                             <h3>E-commerce</h3>
                             <p>Tiendas online optimizadas para conversión y experiencia de usuario.</p>
                         </div>
-                    </div>
+                    </article>
                     
                     <!-- Nueva imagen 5 -->
-                    <div class="web-project">
+                    <article class="web-project">
                         <div class="project-img">
-                            <img src="images/web5.webp" alt="Diseño Corporativo">
+                            <img src="images/web5.webp" alt="Diseño Corporativo - Web empresarial" loading="lazy" width="350" height="220">
                         </div>
                         <div class="project-info">
                             <h3>Webs Corporativas</h3>
                             <p>Presencia digital profesional para empresas y organizaciones.</p>
                         </div>
-                    </div>
+                    </article>
                     
                     <!-- Nueva imagen 6 -->
-                    <div class="web-project">
+                    <article class="web-project">
                         <div class="project-img">
-                            <img src="images/web6.webp" alt="Portafolio Digital">
+                            <img src="images/web6.webp" alt="Portafolio Digital - Presentación de trabajos" loading="lazy" width="350" height="220">
                         </div>
                         <div class="project-info">
                             <h3>Portafolios Digitales</h3>
                             <p>Presentación destacada de trabajos y proyectos personales.</p>
                         </div>
-                    </div>
+                    </article>
                 </div>
                 
                 <!-- Importancia SEO y Web Optimizada -->
                 <div class="seo-importance">
-                    <h3><i class="fas fa-chart-line"></i> Importancia de un buen SEO y Web Optimizada</h3>
+                    <h3><i class="fas fa-chart-line" aria-hidden="true"></i> Importancia de un buen SEO y Web Optimizada</h3>
                     <p>Una web no es solo un escaparate bonito. Es tu herramienta de negocio más potente. <strong>La optimización SEO y el rendimiento web</strong> son críticos para tu éxito online.</p>
                     
                     <div class="seo-benefits">
                         <div class="seo-benefit">
-                            <h4><i class="fas fa-search"></i> Visibilidad en Google</h4>
+                            <h4><i class="fas fa-search" aria-hidden="true"></i> Visibilidad en Google</h4>
                             <p>Aparecer en los primeros resultados atrae el 75% del tráfico. Sin SEO, tu web es invisible.</p>
                         </div>
                         
                         <div class="seo-benefit">
-                            <h4><i class="fas fa-bolt"></i> Velocidad de Carga</h4>
+                            <h4><i class="fas fa-bolt" aria-hidden="true"></i> Velocidad de Carga</h4>
                             <p>Una web lenta pierde el 40% de visitantes. Optimizamos cada elemento para máxima velocidad.</p>
                         </div>
                         
                         <div class="seo-benefit">
-                            <h4><i class="fas fa-mobile-alt"></i> Experiencia Móvil</h4>
+                            <h4><i class="fas fa-mobile-alt" aria-hidden="true"></i> Experiencia Móvil</h4>
                             <p>El 60% del tráfico es móvil. Diseñamos webs que funcionan perfectamente en todos los dispositivos.</p>
                         </div>
                         
                         <div class="seo-benefit">
-                            <h4><i class="fas fa-shopping-cart"></i> Conversiones</h4>
+                            <h4><i class="fas fa-shopping-cart" aria-hidden="true"></i> Conversiones</h4>
                             <p>Una web optimizada convierte visitantes en clientes. Cada elemento está diseñado para guiar hacia la acción.</p>
                         </div>
                     </div>
                     
                     <p style="margin-top: 25px; color: var(--gold); font-weight: 600;">
-                        <i class="fas fa-star"></i> No construimos páginas web, construimos <strong>máquinas de conversión</strong> optimizadas para resultados.
+                        <i class="fas fa-star" aria-hidden="true"></i> No construimos páginas web, construimos <strong>máquinas de conversión</strong> optimizadas para resultados.
                     </p>
                 </div>
             </div>
             
             <!-- Social Content Tab -->
-            <div id="social-tab" class="tab-content">
-                <!-- Sección Equipo de Producción Audiovisual - MODIFICADA -->
+            <div id="social-tab" class="tab-content" role="tabpanel" aria-labelledby="social-tab" hidden>
+                <!-- Sección Equipo de Producción Audiovisual -->
                 <div class="team-production">
-                    <h3><i class="fas fa-video"></i> Equipo de Producción Audiovisual</h3>
+                    <h3><i class="fas fa-video" aria-hidden="true"></i> Equipo de Producción Audiovisual</h3>
                     <p><strong>Experiencia en sector:</strong> Hemos trabajado con todo tipo de empresas, desde marcas internacionales hasta particulares. Nuestro equipo de servicios de producción audiovisual cuenta con amplia experiencia en:</p>
                     
                     <div class="experience-grid">
                         <div class="experience-item">
                             <div class="experience-icon">
-                                <i class="fas fa-briefcase"></i>
+                                <i class="fas fa-briefcase" aria-hidden="true"></i>
                             </div>
                             <h4>Negocios & Empresas</h4>
                             <p>Contenido corporativo, branding visual y storytelling empresarial</p>
@@ -2162,7 +2291,7 @@
                         
                         <div class="experience-item">
                             <div class="experience-icon">
-                                <i class="fas fa-car"></i>
+                                <i class="fas fa-car" aria-hidden="true"></i>
                             </div>
                             <h4>Mundo Motor</h4>
                             <p>Coches, motos, eventos automovilísticos y contenido de alto impacto</p>
@@ -2170,7 +2299,7 @@
                         
                         <div class="experience-item">
                             <div class="experience-icon">
-                                <i class="fas fa-hashtag"></i>
+                                <i class="fas fa-hashtag" aria-hidden="true"></i>
                             </div>
                             <h4>Redes Sociales</h4>
                             <p>Contenido viral, reels, stories y estrategias para engagement</p>
@@ -2178,7 +2307,7 @@
                         
                         <div class="experience-item">
                             <div class="experience-icon">
-                                <i class="fas fa-calendar-alt"></i>
+                                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
                             </div>
                             <h4>Eventos</h4>
                             <p>Cobertura completa, aftermovies y contenido para promoción</p>
@@ -2186,211 +2315,217 @@
                     </div>
                     
                     <p style="margin-top: 20px; color: #ddd; font-size: 1.1rem;">
-                        <i class="fas fa-check-circle" style="color: var(--orange);"></i> Esta experiencia nos permite <strong>capturar la esencia única</strong> de cada proyecto y comunicarla de manera efectiva.
+                        <i class="fas fa-check-circle" style="color: var(--orange);" aria-hidden="true"></i> Esta experiencia nos permite <strong>capturar la esencia única</strong> de cada proyecto y comunicarla de manera efectiva.
                     </p>
                 </div>
                 
-                <!-- 6 Imágenes de Redes Completas (3 originales + 2 nuevas + 1 extra) -->
+                <!-- 6 Imágenes de Redes Completas -->
                 <div class="social-content">
-                    <div class="social-project">
+                    <figure class="social-project">
                         <div class="social-img">
-                            <img src="images/redes1.webp" alt="Contenido Redes 1">
+                            <img src="images/redes1.webp" alt="Contenido Redes Sociales 1 - Ejemplo de diseño" loading="lazy" width="400" height="300">
                         </div>
-                    </div>
+                    </figure>
                     
-                    <div class="social-project">
+                    <figure class="social-project">
                         <div class="social-img">
-                            <img src="images/redes2.webp" alt="Contenido Redes 2">
+                            <img src="images/redes2.webp" alt="Contenido Redes Sociales 2 - Ejemplo creativo" loading="lazy" width="400" height="300">
                         </div>
-                    </div>
+                    </figure>
                     
-                    <div class="social-project">
+                    <figure class="social-project">
                         <div class="social-img">
-                            <img src="images/redes3.webp" alt="Contenido Redes 3">
+                            <img src="images/redes3.webp" alt="Contenido Redes Sociales 3 - Proyecto viral" loading="lazy" width="400" height="300">
                         </div>
-                    </div>
+                    </figure>
                     
                     <!-- Nueva imagen 4 -->
-                    <div class="social-project">
+                    <figure class="social-project">
                         <div class="social-img">
-                            <img src="images/redes4.webp" alt="Contenido Redes 4">
+                            <img src="images/redes4.webp" alt="Contenido Redes Sociales 4 - Estrategia visual" loading="lazy" width="400" height="300">
                         </div>
-                    </div>
+                    </figure>
                     
                     <!-- Nueva imagen 5 -->
-                    <div class="social-project">
+                    <figure class="social-project">
                         <div class="social-img">
-                            <img src="images/redes5.webp" alt="Contenido Redes 5">
+                            <img src="images/redes5.webp" alt="Contenido Redes Sociales 5 - Campaña marketing" loading="lazy" width="400" height="300">
                         </div>
-                    </div>
+                    </figure>
                     
-                    <!-- Nueva imagen 6 (extra solicitada) -->
-                    <div class="social-project">
+                    <!-- Nueva imagen 6 -->
+                    <figure class="social-project">
                         <div class="social-img">
-                            <img src="images/redes6.webp" alt="Contenido Redes 6">
+                            <img src="images/redes6.webp" alt="Contenido Redes Sociales 6 - Branding digital" loading="lazy" width="400" height="300">
                         </div>
-                    </div>
+                    </figure>
                 </div>
                 
                 <!-- Importancia de trabajar con expertos -->
                 <div class="experts-importance">
-                    <h3><i class="fas fa-users"></i> Importancia de trabajar con expertos del sector</h3>
+                    <h3><i class="fas fa-users" aria-hidden="true"></i> Importancia de trabajar con expertos del sector</h3>
                     <p>En contenido de redes sociales, <strong>la experiencia y el conocimiento específico</strong> marcan la diferencia entre contenido que pasa desapercibido y contenido que genera impacto real.</p>
                     
                     <div class="expert-benefits">
                         <div class="expert-benefit">
-                            <h4><i class="fas fa-handshake"></i> Trato Cercano</h4>
+                            <h4><i class="fas fa-handshake" aria-hidden="true"></i> Trato Cercano</h4>
                             <p>Comunicación directa, sin intermediarios. Te escuchamos y comprendemos tus necesidades específicas.</p>
                         </div>
                         
                         <div class="expert-benefit">
-                            <h4><i class="fas fa-bolt"></i> Enfoque Dinámico</h4>
+                            <h4><i class="fas fa-bolt" aria-hidden="true"></i> Enfoque Dinámico</h4>
                             <p>Nos adaptamos a las tendencias y cambiamos estrategias rápidamente. Las redes sociales evolucionan y nosotros también.</p>
                         </div>
                         
                         <div class="expert-benefit">
-                            <h4><i class="fas fa-tools"></i> Herramientas Profesionales</h4>
+                            <h4><i class="fas fa-tools" aria-hidden="true"></i> Herramientas Profesionales</h4>
                             <p>Equipo de alta gama, software especializado y técnicas avanzadas de producción y edición.</p>
                         </div>
                     </div>
                     
                     <p style="margin-top: 25px; color: var(--gold); font-weight: 600;">
-                        <i class="fas fa-quote-right"></i> "No solo creamos contenido, <strong>creamos conexiones</strong> que generan comunidad y fidelizan clientes."
+                        <i class="fas fa-quote-right" aria-hidden="true"></i> "No solo creamos contenido, <strong>creamos conexiones</strong> que generan comunidad y fidelizan clientes."
                     </p>
                 </div>
                 
                 <!-- Videos en bucle - Ventanas tamaño Reel (6 videos) -->
                 <div class="instagram-videos">
-                    <h3 style="text-align: center; font-size: 2.2rem; margin-bottom: 30px; color: var(--gold);">Contenido en Movimiento</h3>
+                    <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 30px; color: var(--gold);">Contenido en Movimiento</h2>
                     <p style="text-align: center; max-width: 700px; margin: 0 auto 40px; color: #bbb; font-size: 1.1rem;">
                         Videos creados con fluidez natural por nuestro equipo especializado. Reproducción en bucle automático.
                     </p>
                     
                     <div class="videos-grid">
                         <!-- Reel 1 - Video 2 de Streamable -->
-                        <div class="reel-window">
+                        <article class="reel-window">
                             <div class="reel-container">
                                 <iframe 
                                     class="reel-video streamable-iframe"
                                     src="https://streamable.com/e/3rojmi?autoplay=1&loop=1&muted=1&controls=0"
-                                    title="Reel 1 - AI Solutions"
+                                    title="Reel 1 - Producción audiovisual AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
-                                    style="pointer-events: none;">
+                                    loading="lazy"
+                                    aria-label="Video 1 - Demostración de producción audiovisual">
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
-                                        <i class="fab fa-instagram"></i> Video en bucle
+                                        <i class="fab fa-instagram" aria-hidden="true"></i> Video en bucle
                                     </span>
                                 </div>
                             </div>
-                        </div>
+                        </article>
                         
                         <!-- Reel 2 - Video 3 de Streamable -->
-                        <div class="reel-window">
+                        <article class="reel-window">
                             <div class="reel-container">
                                 <iframe 
                                     class="reel-video streamable-iframe"
                                     src="https://streamable.com/e/o5g10y?autoplay=1&loop=1&muted=1&controls=0"
-                                    title="Reel 2 - AI Solutions"
+                                    title="Reel 2 - Edición profesional AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
-                                    style="pointer-events: none;">
+                                    loading="lazy"
+                                    aria-label="Video 2 - Ejemplo de edición profesional">
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
-                                        <i class="fab fa-instagram"></i> Video en bucle
+                                        <i class="fab fa-instagram" aria-hidden="true"></i> Video en bucle
                                     </span>
                                 </div>
                             </div>
-                        </div>
+                        </article>
                         
                         <!-- Reel 3 - Video 4 de Streamable -->
-                        <div class="reel-window">
+                        <article class="reel-window">
                             <div class="reel-container">
                                 <iframe 
                                     class="reel-video streamable-iframe"
                                     src="https://streamable.com/e/qps79q?autoplay=1&loop=1&muted=1&controls=0"
-                                    title="Reel 3 - AI Solutions"
+                                    title="Reel 3 - Contenido creativo AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
-                                    style="pointer-events: none;">
+                                    loading="lazy"
+                                    aria-label="Video 3 - Contenido creativo para redes">
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
-                                        <i class="fab fa-instagram"></i> Video en bucle
+                                        <i class="fab fa-instagram" aria-hidden="true"></i> Video en bucle
                                     </span>
                                 </div>
                             </div>
-                        </div>
+                        </article>
                         
                         <!-- Reel 4 - Video 5 de Streamable -->
-                        <div class="reel-window">
+                        <article class="reel-window">
                             <div class="reel-container">
                                 <iframe 
                                     class="reel-video streamable-iframe"
                                     src="https://streamable.com/e/tnktqu?autoplay=1&loop=1&muted=1&controls=0"
-                                    title="Reel 4 - AI Solutions"
+                                    title="Reel 4 - Animación y efectos AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
-                                    style="pointer-events: none;">
+                                    loading="lazy"
+                                    aria-label="Video 4 - Animación y efectos visuales">
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
-                                        <i class="fab fa-instagram"></i> Video en bucle
+                                        <i class="fab fa-instagram" aria-hidden="true"></i> Video en bucle
                                     </span>
                                 </div>
                             </div>
-                        </div>
+                        </article>
                         
                         <!-- Reel 5 - Video 6 de Streamable -->
-                        <div class="reel-window">
+                        <article class="reel-window">
                             <div class="reel-container">
                                 <iframe 
                                     class="reel-video streamable-iframe"
                                     src="https://streamable.com/e/7wj49f?autoplay=1&loop=1&muted=1&controls=0"
-                                    title="Reel 5 - AI Solutions"
+                                    title="Reel 5 - Producción móvil AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
-                                    style="pointer-events: none;">
+                                    loading="lazy"
+                                    aria-label="Video 5 - Producción con dispositivos móviles">
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
-                                        <i class="fab fa-instagram"></i> Video en bucle
+                                        <i class="fab fa-instagram" aria-hidden="true"></i> Video en bucle
                                     </span>
                                 </div>
                             </div>
-                        </div>
+                        </article>
                         
                         <!-- Reel 6 - Video 7 de Streamable -->
-                        <div class="reel-window">
+                        <article class="reel-window">
                             <div class="reel-container">
                                 <iframe 
                                     class="reel-video streamable-iframe"
                                     src="https://streamable.com/e/30718x?autoplay=1&loop=1&muted=1&controls=0"
-                                    title="Reel 6 - AI Solutions"
+                                    title="Reel 6 - Marketing visual AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
-                                    style="pointer-events: none;">
+                                    loading="lazy"
+                                    aria-label="Video 6 - Marketing visual para redes">
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
-                                        <i class="fab fa-instagram"></i> Video en bucle
+                                        <i class="fab fa-instagram" aria-hidden="true"></i> Video en bucle
                                     </span>
                                 </div>
                             </div>
-                        </div>
+                        </article>
                     </div>
                     
                     <div style="text-align: center; margin-top: 40px;">
                         <p style="color: #bbb; font-size: 1rem; max-width: 600px; margin: 0 auto;">
-                            <i class="fas fa-info-circle" style="color: var(--gold); margin-right: 10px;"></i>
+                            <i class="fas fa-info-circle" style="color: var(--gold); margin-right: 10px;" aria-hidden="true"></i>
                             Los videos se reproducen automáticamente en bucle, sin controles y sin sonido.
                         </p>
                     </div>
@@ -2398,14 +2533,14 @@
             </div>
             
             <!-- Nueva sección de Formaciones de Contenido Vertical -->
-            <div id="formations-tab" class="tab-content">
+            <div id="formations-tab" class="tab-content" role="tabpanel" aria-labelledby="formations-tab" hidden>
                 <div class="vertical-formations">
-                    <h3><i class="fas fa-graduation-cap"></i> Formaciones de Contenido Vertical</h3>
+                    <h2><i class="fas fa-graduation-cap" aria-hidden="true"></i> Formaciones de Contenido Vertical</h2>
                     <p>Formamos y ayudamos a empresas y particulares a crear y gestionar su propio contenido vertical para tener presencia en redes sociales de manera efectiva y profesional.</p>
                     
                     <div class="formation-content">
                         <div class="formation-text">
-                            <h4>¿Por qué necesitas saber crear contenido vertical?</h4>
+                            <h3>¿Por qué necesitas saber crear contenido vertical?</h3>
                             <p>El contenido vertical domina las redes sociales actuales. Instagram Reels, TikTok, YouTube Shorts... Todas las plataformas priorizan este formato. Te enseñamos a dominarlo.</p>
                             
                             <ul>
@@ -2418,32 +2553,32 @@
                         </div>
                         
                         <div class="formation-images">
-                            <div class="formation-img">
-                                <img src="images/form1.webp" alt="Formación en contenido vertical 1">
-                                <div class="formation-img-label">Técnicas de grabación</div>
-                            </div>
-                            <div class="formation-img">
-                                <img src="images/form2.webp" alt="Formación en contenido vertical 2">
-                                <div class="formation-img-label">Edición profesional</div>
-                            </div>
-                            <div class="formation-img">
-                                <img src="images/form3.webp" alt="Formación en contenido vertical 3">
-                                <div class="formation-img-label">Estrategias de redes</div>
-                            </div>
+                            <figure class="formation-img">
+                                <img src="images/form1.webp" alt="Formación en contenido vertical 1 - Técnicas de grabación" loading="lazy" width="300" height="250">
+                                <figcaption class="formation-img-label">Técnicas de grabación</figcaption>
+                            </figure>
+                            <figure class="formation-img">
+                                <img src="images/form2.webp" alt="Formación en contenido vertical 2 - Edición profesional" loading="lazy" width="300" height="250">
+                                <figcaption class="formation-img-label">Edición profesional</figcaption>
+                            </figure>
+                            <figure class="formation-img">
+                                <img src="images/form3.webp" alt="Formación en contenido vertical 3 - Estrategias de redes" loading="lazy" width="300" height="250">
+                                <figcaption class="formation-img-label">Estrategias de redes</figcaption>
+                            </figure>
                         </div>
                     </div>
                     
                     <div class="formation-cta">
                         <p style="margin-bottom: 20px; color: #ddd; font-size: 1.1rem;">
-                            <i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i>
+                            <i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;" aria-hidden="true"></i>
                             <strong>Para empresas:</strong> Formación a equipos de marketing y comunicación
                         </p>
                         <p style="margin-bottom: 30px; color: #ddd; font-size: 1.1rem;">
-                            <i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i>
+                            <i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;" aria-hidden="true"></i>
                             <strong>Para particulares:</strong> Cursos personalizados para emprendedores y creadores
                         </p>
                         <a href="#booking" class="btn" style="max-width: 300px; margin: 0 auto;">
-                            <i class="fas fa-graduation-cap"></i> Solicitar información de formaciones
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i> Solicitar información de formaciones
                         </a>
                     </div>
                 </div>
@@ -2452,11 +2587,11 @@
     </section>
 
     <!-- Booking Panel -->
-    <section class="section" id="booking">
+    <section class="section" id="booking" aria-labelledby="booking-title">
         <div class="container">
             <div class="booking-panel">
                 <div class="booking-title">
-                    <h2>Agendar Cita Directa</h2>
+                    <h2 id="booking-title">Agendar Cita Directa</h2>
                     <p>Sin explicaciones, solo selecciona lo que necesitas y envía tus datos. Nos contactaremos contigo en menos de 24 horas.</p>
                 </div>
                 
@@ -2468,53 +2603,53 @@
                             <h3>¿Qué servicio necesitas?</h3>
                         </div>
                         
-                        <div class="service-options">
-                            <div class="service-option" data-service="web" onclick="selectService('web')">
+                        <div class="service-options" role="group" aria-labelledby="service-selection">
+                            <button class="service-option" data-service="web" onclick="selectService('web')" type="button" role="radio" aria-checked="false">
                                 <div class="option-icon">
-                                    <i class="fas fa-desktop"></i>
+                                    <i class="fas fa-desktop" aria-hidden="true"></i>
                                 </div>
                                 <h4>Diseño Web</h4>
                                 <p style="color: #bbb; font-size: 0.9rem; margin-top: 10px;">Landing pages, webs personalizadas</p>
-                            </div>
+                            </button>
                             
-                            <div class="service-option" data-service="content" onclick="selectService('content')">
+                            <button class="service-option" data-service="content" onclick="selectService('content')" type="button" role="radio" aria-checked="false">
                                 <div class="option-icon">
-                                    <i class="fas fa-video"></i>
+                                    <i class="fas fa-video" aria-hidden="true"></i>
                                 </div>
                                 <h4>Contenido Redes</h4>
                                 <p style="color: #bbb; font-size: 0.9rem; margin-top: 10px;">Fotos y videos para Instagram, TikTok</p>
-                            </div>
+                            </button>
                             
-                            <div class="service-option" data-service="formations" onclick="selectService('formations')">
+                            <button class="service-option" data-service="formations" onclick="selectService('formations')" type="button" role="radio" aria-checked="false">
                                 <div class="option-icon">
-                                    <i class="fas fa-graduation-cap"></i>
+                                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                                 </div>
                                 <h4>Formaciones</h4>
                                 <p style="color: #bbb; font-size: 0.9rem; margin-top: 10px;">Formación en contenido vertical</p>
-                            </div>
+                            </button>
                             
-                            <div class="service-option" data-service="both" onclick="selectService('both')">
+                            <button class="service-option" data-service="both" onclick="selectService('both')" type="button" role="radio" aria-checked="false">
                                 <div class="option-icon">
-                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
                                 </div>
                                 <h4>Combinado</h4>
                                 <p style="color: #bbb; font-size: 0.9rem; margin-top: 10px;">Varios servicios combinados</p>
-                            </div>
+                            </button>
                         </div>
                         
                         <!-- Opciones específicas para diseño web -->
-                        <div id="webOptions" class="web-options" style="display: none;">
-                            <div class="web-option" data-option="landing" onclick="selectWebOption('landing')">
+                        <div id="webOptions" class="web-options" style="display: none;" role="group" aria-labelledby="web-options-title">
+                            <div class="web-option" data-option="landing" onclick="selectWebOption('landing')" role="radio" aria-checked="false">
                                 <h4>Landing Page</h4>
                                 <p style="color: #bbb; font-size: 0.85rem; margin-top: 5px;">Una página de conversión</p>
                             </div>
                             
-                            <div class="web-option" data-option="basic" onclick="selectWebOption('basic')">
+                            <div class="web-option" data-option="basic" onclick="selectWebOption('basic')" role="radio" aria-checked="false">
                                 <h4>Web Básica</h4>
                                 <p style="color: #bbb; font-size: 0.85rem; margin-top: 5px;">Hasta 5 páginas</p>
                             </div>
                             
-                            <div class="web-option" data-option="custom" onclick="selectWebOption('custom')">
+                            <div class="web-option" data-option="custom" onclick="selectWebOption('custom')" role="radio" aria-checked="false">
                                 <h4>100% Personalizada</h4>
                                 <p style="color: #bbb; font-size: 0.85rem; margin-top: 5px;">Desarrollo a medida</p>
                             </div>
@@ -2528,28 +2663,28 @@
                             <h3>Tus datos de contacto</h3>
                         </div>
                         
-                        <form id="bookingForm">
+                        <form id="bookingForm" aria-label="Formulario de solicitud de cita">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="name">Nombre completo *</label>
-                                    <input type="text" id="name" name="name" required>
+                                    <input type="text" id="name" name="name" required aria-required="true" autocomplete="name">
                                 </div>
                                 
                                 <div class="form-group">
                                     <label for="company">Empresa / Cargo</label>
-                                    <input type="text" id="company" name="company" placeholder="Ej: Director de Marketing">
+                                    <input type="text" id="company" name="company" placeholder="Ej: Director de Marketing" autocomplete="organization">
                                 </div>
                             </div>
                             
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="email">Correo electrónico *</label>
-                                    <input type="email" id="email" name="email" required>
+                                    <input type="email" id="email" name="email" required aria-required="true" autocomplete="email" inputmode="email">
                                 </div>
                                 
                                 <div class="form-group">
                                     <label for="phone">WhatsApp *</label>
-                                    <input type="tel" id="phone" name="phone" required placeholder="Ej: +34 600 000 000">
+                                    <input type="tel" id="phone" name="phone" required aria-required="true" placeholder="Ej: +34 600 000 000" autocomplete="tel" inputmode="tel">
                                 </div>
                             </div>
                             
@@ -2562,19 +2697,19 @@
                             <input type="hidden" id="selectedWebOption" name="webOption">
                             
                             <!-- Mensajes de éxito/error -->
-                            <div id="successMessage" class="message success-message" style="display: none;">
-                                <i class="fas fa-check-circle"></i> ¡Cita enviada con éxito! Te contactaremos en menos de 24 horas.
+                            <div id="successMessage" class="message success-message" style="display: none;" role="alert" aria-live="polite">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i> ¡Cita enviada con éxito! Te contactaremos en menos de 24 horas.
                             </div>
                             
-                            <div id="errorMessage" class="message error-message" style="display: none;">
-                                <i class="fas fa-exclamation-circle"></i> Hubo un error al enviar la cita. Por favor, intenta nuevamente.
+                            <div id="errorMessage" class="message error-message" style="display: none;" role="alert" aria-live="assertive">
+                                <i class="fas fa-exclamation-circle" aria-hidden="true"></i> Hubo un error al enviar la cita. Por favor, intenta nuevamente.
                             </div>
                             
                             <button type="submit" class="submit-btn" id="submitBtn">
                                 <span class="btn-text">
-                                    <i class="fas fa-paper-plane"></i> Enviar solicitud de cita
+                                    <i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar solicitud de cita
                                 </span>
-                                <span class="spinner"></span>
+                                <span class="spinner" aria-hidden="true"></span>
                             </button>
                         </form>
                     </div>
@@ -2584,46 +2719,46 @@
     </section>
 
     <!-- Values Section -->
-    <section class="section values" id="valores">
+    <section class="section values" id="valores" aria-labelledby="values-title">
         <div class="container">
             <div class="section-title">
-                <h2>Nuestra Forma de Trabajar</h2>
+                <h2 id="values-title">Nuestra Forma de Trabajar</h2>
                 <p>Enfocados en la ejecución natural</p>
             </div>
             
             <div class="values-grid">
-                <div class="value-item">
+                <article class="value-item">
                     <div class="value-icon">
-                        <i class="fas fa-bolt"></i>
+                        <i class="fas fa-bolt" aria-hidden="true"></i>
                     </div>
                     <h3>Rapidez</h3>
                     <p>Ejecución ágil sin burocracias. Nos movemos al ritmo que tu negocio necesita.</p>
-                </div>
+                </article>
                 
-                <div class="value-item">
+                <article class="value-item">
                     <div class="value-icon">
-                        <i class="fas fa-handshake"></i>
+                        <i class="fas fa-handshake" aria-hidden="true"></i>
                     </div>
                     <h3>Confianza</h3>
                     <p>Transparencia en cada paso. Sabes exactamente qué estamos haciendo y por qué.</p>
-                </div>
+                </article>
                 
-                <div class="value-item">
+                <article class="value-item">
                     <div class="value-icon">
-                        <i class="fas fa-water"></i>
+                        <i class="fas fa-water" aria-hidden="true"></i>
                     </div>
                     <h3>Fluidez</h3>
                     <p>Procesos naturales que se adaptan, sin fricciones ni complicaciones innecesarias.</p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="section cta">
+    <section class="section cta" aria-labelledby="cta-title">
         <div class="container">
             <div class="cta-content">
-                <h2>Comenzar es Simple</h2>
+                <h2 id="cta-title">Comenzar es Simple</h2>
                 <p>Una conversación, un entendimiento claro, y comenzamos a crear. Sin promesas vacías, solo trabajo directo.</p>
                 <a href="#booking" class="btn">Agendar Cita Ahora</a>
             </div>
@@ -2636,7 +2771,7 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="footer-logo">
-                        <img src="logo.png" alt="AI Solutions Creative Agency Logo" class="footer-logo-img">
+                        <img src="logo.png" alt="AI Solutions Creative Agency Logo" class="footer-logo-img" width="80" height="80">
                         <div class="footer-logo-text">
                             <div class="footer-logo-main">AI Solutions</div>
                             <div class="footer-logo-subtitle">Creative Agency</div>
@@ -2644,14 +2779,14 @@
                     </div>
                     <p>Soluciones digitales con enfoque directo. Rapidez, confianza y fluidez en cada proyecto.</p>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/aisc.creative?igsh=bmo2em12cnpnYmN0" target="_blank" class="social-icon">
-                            <i class="fab fa-instagram"></i>
+                        <a href="https://www.instagram.com/aisc.creative?igsh=bmo2em12cnpnYmN0" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-whatsapp"></i>
+                        <a href="#" class="social-icon" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="social-icon">
-                            <i class="fas fa-envelope"></i>
+                        <a href="mailto:contacto@aisolutionsagency.com" class="social-icon" aria-label="Email">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -2659,18 +2794,18 @@
                 <div class="footer-links">
                     <h3>Navegar</h3>
                     <ul>
-                        <li><a href="#inicio"><i class="fas fa-chevron-right"></i> Inicio</a></li>
-                        <li><a href="#servicios"><i class="fas fa-chevron-right"></i> Servicios</a></li>
-                        <li><a href="#valores"><i class="fas fa-chevron-right"></i> Valores</a></li>
-                        <li><a href="#formations-tab"><i class="fas fa-chevron-right"></i> Formaciones</a></li>
+                        <li><a href="#inicio"><i class="fas fa-chevron-right" aria-hidden="true"></i> Inicio</a></li>
+                        <li><a href="#servicios"><i class="fas fa-chevron-right" aria-hidden="true"></i> Servicios</a></li>
+                        <li><a href="#valores"><i class="fas fa-chevron-right" aria-hidden="true"></i> Valores</a></li>
+                        <li><a href="#formations-tab"><i class="fas fa-chevron-right" aria-hidden="true"></i> Formaciones</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-contact">
                     <h3>Contacto Directo</h3>
-                    <p><i class="fas fa-envelope"></i> contacto@aisolutionsagency.com</p>
-                    <p><i class="fas fa-phone"></i> +34 123 456 789</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Barcelona, España</p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> contacto@aisolutionsagency.com</p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> +34 123 456 789</p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Barcelona, España</p>
                 </div>
             </div>
             
@@ -2681,10 +2816,9 @@
     </footer>
 
     <script>
-        // === EMAILJS CONFIGURACIÓN COMPLETA CON TUS CREDENCIALES ===
+        // === EMAILJS CONFIGURACIÓN ===
         (function() {
-            // Tus credenciales REALES de EmailJS
-            emailjs.init("0H9DFECmcQ3hFgBXQ"); // Public Key CORRECTO
+            emailjs.init("0H9DFECmcQ3hFgBXQ");
             
             // Verificar inicialización
             console.log("✅ EmailJS inicializado correctamente");
@@ -2694,30 +2828,85 @@
         })();
 
         // Mobile Menu Toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('active');
         });
         
         // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                document.querySelector('.nav-links').classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                navLinks.classList.remove('active');
             });
         });
         
-        // Tab functionality
-        document.querySelectorAll('.tab-btn').forEach(button => {
+        // Tab functionality con accesibilidad
+        document.querySelectorAll('.tab-btn').forEach((button, index) => {
             button.addEventListener('click', () => {
                 // Remove active class from all buttons and tabs
-                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-selected', 'false');
+                    btn.setAttribute('tabindex', '-1');
+                });
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.classList.remove('active');
+                    tab.setAttribute('hidden', 'true');
+                });
                 
                 // Add active class to clicked button
                 button.classList.add('active');
+                button.setAttribute('aria-selected', 'true');
+                button.removeAttribute('tabindex');
                 
                 // Show corresponding tab
                 const tabId = button.getAttribute('data-tab');
-                document.getElementById(`${tabId}-tab`).classList.add('active');
+                const targetTab = document.getElementById(`${tabId}-tab`);
+                targetTab.classList.add('active');
+                targetTab.removeAttribute('hidden');
+                
+                // Focus on the first element in the tab
+                setTimeout(() => {
+                    const firstFocusable = targetTab.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                    if (firstFocusable) firstFocusable.focus();
+                }, 100);
+            });
+            
+            // Keyboard navigation for tabs
+            button.addEventListener('keydown', (e) => {
+                const tabs = Array.from(document.querySelectorAll('.tab-btn'));
+                const currentIndex = tabs.indexOf(button);
+                
+                if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    const nextIndex = (currentIndex + 1) % tabs.length;
+                    tabs[nextIndex].click();
+                    tabs[nextIndex].focus();
+                }
+                
+                if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    const prevIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+                    tabs[prevIndex].click();
+                    tabs[prevIndex].focus();
+                }
+                
+                if (e.key === 'Home') {
+                    e.preventDefault();
+                    tabs[0].click();
+                    tabs[0].focus();
+                }
+                
+                if (e.key === 'End') {
+                    e.preventDefault();
+                    tabs[tabs.length - 1].click();
+                    tabs[tabs.length - 1].focus();
+                }
             });
         });
         
@@ -2745,45 +2934,71 @@
                         top: targetElement.offsetTop - 100,
                         behavior: 'smooth'
                     });
+                    
+                    // Update focus for accessibility
+                    if(targetId !== '#inicio') {
+                        targetElement.setAttribute('tabindex', '-1');
+                        targetElement.focus();
+                        setTimeout(() => targetElement.removeAttribute('tabindex'), 1000);
+                    }
                 }
             });
         });
         
-        // Crear puntos de luz adicionales con JavaScript
-        function createTwinklingStars() {
-            const starContainer = document.createElement('div');
-            starContainer.style.position = 'fixed';
-            starContainer.style.top = '0';
-            starContainer.style.left = '0';
-            starContainer.style.width = '100%';
-            starContainer.style.height = '100%';
-            starContainer.style.pointerEvents = 'none';
-            starContainer.style.zIndex = '-1';
-            document.body.appendChild(starContainer);
+        // Lazy loading para imágenes
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
             
-            // Crear múltiples puntos pequeños
-            for (let i = 0; i < 50; i++) {
-                const star = document.createElement('div');
-                const size = Math.random() * 3 + 1; // Entre 1px y 4px
-                const x = Math.random() * 100;
-                const y = Math.random() * 100;
-                const opacity = Math.random() * 0.3 + 0.1;
-                const animationDelay = Math.random() * 5;
-                const animationDuration = Math.random() * 3 + 2;
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.classList.add('loaded');
+                            observer.unobserve(img);
+                        }
+                    });
+                });
                 
-                star.style.position = 'absolute';
-                star.style.width = `${size}px`;
-                star.style.height = `${size}px`;
-                star.style.borderRadius = '50%';
-                star.style.backgroundColor = `rgba(255, 165, 0, ${opacity})`;
-                star.style.boxShadow = `0 0 ${size * 2}px rgba(255, 165, 0, ${opacity * 0.8})`;
-                star.style.left = `${x}%`;
-                star.style.top = `${y}%`;
-                star.style.animation = `twinkle ${animationDuration}s infinite ${animationDelay}s`;
-                
-                starContainer.appendChild(star);
+                lazyImages.forEach(img => imageObserver.observe(img));
+            } else {
+                // Fallback para navegadores antiguos
+                lazyImages.forEach(img => img.classList.add('loaded'));
             }
-        }
+            
+            // Preconexión a dominios críticos
+            const preconnectLinks = [
+                'https://fonts.googleapis.com',
+                'https://fonts.gstatic.com',
+                'https://cdnjs.cloudflare.com',
+                'https://cdn.jsdelivr.net',
+                'https://streamable.com'
+            ];
+            
+            preconnectLinks.forEach(domain => {
+                const link = document.createElement('link');
+                link.rel = 'preconnect';
+                link.href = domain;
+                link.crossOrigin = 'anonymous';
+                document.head.appendChild(link);
+            });
+            
+            // Preload imágenes críticas
+            const criticalImages = [
+                'logo.png',
+                'images/form1.webp',
+                'images/web1.webp'
+            ];
+            
+            criticalImages.forEach(url => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = url;
+                if (url.endsWith('.webp')) link.type = 'image/webp';
+                document.head.appendChild(link);
+            });
+        });
         
         // === BOOKING PANEL FUNCTIONS ===
         let selectedService = '';
@@ -2795,22 +3010,29 @@
             // Remove selected class from all service options
             document.querySelectorAll('.service-option').forEach(option => {
                 option.classList.remove('selected');
+                option.setAttribute('aria-checked', 'false');
             });
             
             // Add selected class to clicked option
-            document.querySelector(`.service-option[data-service="${service}"]`).classList.add('selected');
+            const selectedOption = document.querySelector(`.service-option[data-service="${service}"]`);
+            selectedOption.classList.add('selected');
+            selectedOption.setAttribute('aria-checked', 'true');
+            selectedOption.focus();
             
             // Show/hide web options
             const webOptions = document.getElementById('webOptions');
             if (service === 'web' || service === 'both') {
                 webOptions.style.display = 'grid';
+                webOptions.setAttribute('aria-hidden', 'false');
                 // Clear previous web option selection
                 selectedWebOption = '';
                 document.querySelectorAll('.web-option').forEach(option => {
                     option.classList.remove('selected');
+                    option.setAttribute('aria-checked', 'false');
                 });
             } else {
                 webOptions.style.display = 'none';
+                webOptions.setAttribute('aria-hidden', 'true');
                 selectedWebOption = '';
             }
             
@@ -2824,16 +3046,20 @@
             // Remove selected class from all web options
             document.querySelectorAll('.web-option').forEach(webOption => {
                 webOption.classList.remove('selected');
+                webOption.setAttribute('aria-checked', 'false');
             });
             
             // Add selected class to clicked option
-            document.querySelector(`.web-option[data-option="${option}"]`).classList.add('selected');
+            const selectedWebOptionEl = document.querySelector(`.web-option[data-option="${option}"]`);
+            selectedWebOptionEl.classList.add('selected');
+            selectedWebOptionEl.setAttribute('aria-checked', 'true');
+            selectedWebOptionEl.focus();
             
             // Update hidden input
             document.getElementById('selectedWebOption').value = option;
         }
         
-        // === BOOKING FORM SUBMISSION - CORREGIDO ===
+        // === BOOKING FORM SUBMISSION ===
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -2842,12 +3068,14 @@
             // Validate service selection
             if (!selectedService) {
                 alert('Por favor, selecciona un servicio.');
+                document.querySelector('.service-option').focus();
                 return;
             }
             
             // Validate web option if needed
             if ((selectedService === 'web' || selectedService === 'both') && !selectedWebOption) {
                 alert('Por favor, selecciona un tipo de diseño web.');
+                document.querySelector('.web-option').focus();
                 return;
             }
             
@@ -2855,6 +3083,7 @@
             const submitBtn = document.getElementById('submitBtn');
             submitBtn.disabled = true;
             submitBtn.classList.add('loading');
+            submitBtn.setAttribute('aria-busy', 'true');
             
             // Hide any previous messages
             document.getElementById('successMessage').style.display = 'none';
@@ -2908,19 +3137,20 @@
             };
             
             console.log("📧 Parámetros para EmailJS:", templateParams);
-            console.log("🔄 Enviando email a través de EmailJS...");
             
-            // === CORRECCIÓN PRINCIPAL: Envío con parámetros correctos ===
+            // Envío del email
             emailjs.send(
-                'service_oko11dg',    // Tu Service ID
-                'template_8p714we',   // Tu Template ID
-                templateParams        // Datos para la plantilla
+                'service_oko11dg',
+                'template_8p714we',
+                templateParams
             )
             .then(function(response) {
                 console.log('✅ ¡ÉXITO! Email enviado:', response.status, response.text);
                 
                 // Show success message
-                document.getElementById('successMessage').style.display = 'block';
+                const successMsg = document.getElementById('successMessage');
+                successMsg.style.display = 'block';
+                successMsg.focus();
                 
                 // Reset form
                 document.getElementById('bookingForm').reset();
@@ -2928,52 +3158,41 @@
                 selectedWebOption = '';
                 document.querySelectorAll('.service-option').forEach(option => {
                     option.classList.remove('selected');
+                    option.setAttribute('aria-checked', 'false');
                 });
                 document.querySelectorAll('.web-option').forEach(option => {
                     option.classList.remove('selected');
+                    option.setAttribute('aria-checked', 'false');
                 });
                 document.getElementById('webOptions').style.display = 'none';
                 document.getElementById('selectedService').value = '';
                 document.getElementById('selectedWebOption').value = '';
                 
-                // Scroll to success message
-                document.getElementById('successMessage').scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
-                
-                // Mostrar mensaje en consola para depuración
-                console.log("🎉 Formulario procesado correctamente");
-                
             }, function(error) {
                 console.error('❌ ERROR al enviar email:', error);
                 
-                // Mostrar mensaje de error detallado
+                // Mostrar mensaje de error
                 let errorMsg = 'Hubo un error al enviar la cita. ';
                 
                 if (error.text) {
                     errorMsg += 'Detalles: ' + error.text;
-                    console.error('Detalles del error:', error.text);
                 }
                 
                 if (error.status === 0) {
                     errorMsg = 'Error de conexión. Verifica tu conexión a internet.';
                 }
                 
-                document.getElementById('errorMessage').innerHTML = 
-                    '<i class="fas fa-exclamation-circle"></i> ' + errorMsg;
-                document.getElementById('errorMessage').style.display = 'block';
-                
-                document.getElementById('errorMessage').scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
+                const errorElement = document.getElementById('errorMessage');
+                errorElement.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + errorMsg;
+                errorElement.style.display = 'block';
+                errorElement.focus();
                 
             })
             .finally(function() {
                 // Reset button state
                 submitBtn.disabled = false;
                 submitBtn.classList.remove('loading');
+                submitBtn.setAttribute('aria-busy', 'false');
                 console.log("🔄 Botón de envío restablecido");
             });
         });
@@ -3007,74 +3226,79 @@
             }
         });
         
-        // Preload images for better performance
-        document.addEventListener('DOMContentLoaded', function() {
-            const assets = [
-                'logo.png',
-                'images/form1.webp',
-                'images/form2.webp',
-                'images/form3.webp',
-                'images/web1.webp',
-                'images/web2.webp',
-                'images/web3.webp',
-                'images/web4.webp',
-                'images/web5.webp',
-                'images/web6.webp',
-                'images/redes1.webp',
-                'images/redes2.webp',
-                'images/redes3.webp',
-                'images/redes4.webp',
-                'images/redes5.webp',
-                'images/redes6.webp'
-            ];
+        // Crear puntos de luz adicionales con JavaScript
+        function createTwinklingStars() {
+            const starContainer = document.createElement('div');
+            starContainer.style.position = 'fixed';
+            starContainer.style.top = '0';
+            starContainer.style.left = '0';
+            starContainer.style.width = '100%';
+            starContainer.style.height = '100%';
+            starContainer.style.pointerEvents = 'none';
+            starContainer.style.zIndex = '-1';
+            document.body.appendChild(starContainer);
             
-            assets.forEach(url => {
-                const link = document.createElement('link');
-                if (url.endsWith('.webp')) {
-                    link.rel = 'preload';
-                    link.as = 'image';
-                    link.href = url;
-                    link.type = 'image/webp';
-                } else if (url.endsWith('.png')) {
-                    link.rel = 'preload';
-                    link.as = 'image';
-                    link.href = url;
-                    link.type = 'image/png';
-                }
-                document.head.appendChild(link);
+            // Crear múltiples puntos pequeños
+            for (let i = 0; i < 30; i++) {
+                const star = document.createElement('div');
+                const size = Math.random() * 3 + 1;
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                const opacity = Math.random() * 0.3 + 0.1;
+                const animationDelay = Math.random() * 5;
+                const animationDuration = Math.random() * 3 + 2;
+                
+                star.style.position = 'absolute';
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.borderRadius = '50%';
+                star.style.backgroundColor = `rgba(255, 165, 0, ${opacity})`;
+                star.style.boxShadow = `0 0 ${size * 2}px rgba(255, 165, 0, ${opacity * 0.8})`;
+                star.style.left = `${x}%`;
+                star.style.top = `${y}%`;
+                star.style.animation = `twinkle ${animationDuration}s infinite ${animationDelay}s`;
+                
+                starContainer.appendChild(star);
+            }
+        }
+        
+        // Efecto de brillo dinámico para el logo
+        const logo = document.getElementById('dynamicLogo');
+        if (logo) {
+            logo.addEventListener('mouseenter', function() {
+                this.style.filter = 'drop-shadow(0 8px 20px rgba(255, 215, 0, 0.5))';
             });
             
-            // Crear puntos de luz adicionales con JavaScript
+            logo.addEventListener('mouseleave', function() {
+                this.style.filter = 'drop-shadow(0 4px 10px rgba(255, 215, 0, 0.3))';
+            });
+            
+            logo.addEventListener('focus', function() {
+                this.style.filter = 'drop-shadow(0 8px 20px rgba(255, 215, 0, 0.5))';
+            });
+            
+            logo.addEventListener('blur', function() {
+                this.style.filter = 'drop-shadow(0 4px 10px rgba(255, 215, 0, 0.3))';
+            });
+        }
+        
+        // Inicialización cuando el DOM está listo
+        document.addEventListener('DOMContentLoaded', function() {
             createTwinklingStars();
             
-            // Efecto de brillo dinámico para el logo
-            const logo = document.getElementById('dynamicLogo');
-            if (logo) {
-                logo.addEventListener('mouseenter', function() {
-                    this.style.filter = 'drop-shadow(0 8px 20px rgba(255, 215, 0, 0.5))';
-                });
-                
-                logo.addEventListener('mouseleave', function() {
-                    this.style.filter = 'drop-shadow(0 4px 10px rgba(255, 215, 0, 0.3))';
-                });
-            }
-            
-            // Forzar actualización de videos para asegurar reproducción en bucle
+            // Forzar actualización de videos
             setTimeout(() => {
                 const videos = document.querySelectorAll('.streamable-iframe, .hero-video');
                 videos.forEach(video => {
-                    // Simplemente iniciar la reproducción si no está ya reproduciéndose
                     if (video.src) {
-                        // Intentar forzar la reproducción
                         const currentSrc = video.src;
-                        video.src = currentSrc; // Esto fuerza la actualización
+                        video.src = currentSrc;
                     }
                 });
             }, 1000);
         });
         
         // === FUNCIÓN DE PRUEBA PARA EMAILJS ===
-        // Puedes llamar a esta función desde la consola para probar
         window.testEmailJS = function() {
             console.log("🧪 Probando EmailJS...");
             
