@@ -52,7 +52,7 @@
             position: relative;
         }
         
-        /* Fondo con puntos de luz naranjas - MEJORADO CON MÁS PUNTOS PEQUEÑOS */
+        /* Fondo con puntos de luz naranjas */
         body::before {
             content: '';
             position: fixed;
@@ -61,32 +61,17 @@
             width: 100%;
             height: 100%;
             background: 
-                /* Puntos de luz pequeños que se desvanecen como el espacio */
                 radial-gradient(circle at 15% 20%, rgba(255, 140, 0, 0.15) 0%, transparent 10%),
                 radial-gradient(circle at 85% 35%, rgba(255, 140, 0, 0.12) 0%, transparent 8%),
                 radial-gradient(circle at 25% 65%, rgba(255, 215, 0, 0.1) 0%, transparent 7%),
                 radial-gradient(circle at 75% 15%, rgba(255, 140, 0, 0.08) 0%, transparent 12%),
                 radial-gradient(circle at 90% 85%, rgba(255, 140, 0, 0.14) 0%, transparent 9%),
-                radial-gradient(circle at 10% 95%, rgba(255, 215, 0, 0.06) 0%, transparent 6%),
-                radial-gradient(circle at 35% 45%, rgba(255, 140, 0, 0.09) 0%, transparent 11%),
-                radial-gradient(circle at 65% 55%, rgba(255, 140, 0, 0.16) 0%, transparent 8%),
-                /* Puntos adicionales pequeños */
-                radial-gradient(circle at 5% 10%, rgba(255, 165, 0, 0.07) 0%, transparent 4%),
-                radial-gradient(circle at 95% 25%, rgba(255, 140, 0, 0.05) 0%, transparent 3%),
-                radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.04) 0%, transparent 5%),
-                radial-gradient(circle at 80% 70%, rgba(255, 140, 0, 0.06) 0%, transparent 4%),
-                radial-gradient(circle at 40% 30%, rgba(255, 165, 0, 0.08) 0%, transparent 6%),
-                radial-gradient(circle at 60% 90%, rgba(255, 140, 0, 0.05) 0%, transparent 5%),
-                radial-gradient(circle at 30% 10%, rgba(255, 215, 0, 0.03) 0%, transparent 3%),
-                radial-gradient(circle at 70% 40%, rgba(255, 140, 0, 0.07) 0%, transparent 7%),
-                radial-gradient(circle at 45% 75%, rgba(255, 165, 0, 0.05) 0%, transparent 4%),
-                radial-gradient(circle at 55% 20%, rgba(255, 140, 0, 0.06) 0%, transparent 5%);
+                radial-gradient(circle at 10% 95%, rgba(255, 215, 0, 0.06) 0%, transparent 6%);
             z-index: -2;
             pointer-events: none;
             animation: pulseBackground 20s infinite alternate;
         }
         
-        /* Animación de pulso para el fondo */
         @keyframes pulseBackground {
             0% {
                 opacity: 0.4;
@@ -102,15 +87,11 @@
             }
         }
         
-        /* Efecto de brillo intermitente para algunos puntos */
         @keyframes twinkle {
             0%, 100% { opacity: 0.3; }
             50% { opacity: 0.8; }
         }
         
-        /* Crear puntos de luz adicionales con JavaScript después */
-        
-        /* Capa oscura adicional */
         body::after {
             content: '';
             position: fixed;
@@ -228,7 +209,7 @@
             }
         }
         
-        /* Banner Superior de Oferta */
+        /* Banner Superior */
         .top-banner {
             background: var(--gradient-gold);
             color: var(--dark);
@@ -274,7 +255,7 @@
         /* Header */
         header {
             position: fixed;
-            top: 52px; /* Ajustado para el banner superior */
+            top: 52px;
             left: 0;
             width: 100%;
             padding: 18px 0;
@@ -297,7 +278,6 @@
             align-items: center;
         }
         
-        /* Logo Moderno - MÁS GRANDE */
         .logo {
             display: flex;
             align-items: center;
@@ -313,7 +293,7 @@
         }
         
         .logo-img {
-            height: 70px; /* Aumentado de 48px a 70px */
+            height: 70px;
             width: auto;
             transition: var(--transition);
             filter: drop-shadow(0 4px 10px rgba(255, 215, 0, 0.3));
@@ -332,7 +312,7 @@
         }
         
         .logo-main {
-            font-size: 2.2rem; /* Aumentado de 1.8rem a 2.2rem */
+            font-size: 2.2rem;
             font-weight: 800;
             background: var(--gradient-gold);
             -webkit-background-clip: text;
@@ -343,7 +323,7 @@
         }
         
         .logo-subtitle {
-            font-size: 1rem; /* Aumentado de 0.8rem a 1rem */
+            font-size: 1rem;
             color: var(--gold-light);
             font-weight: 600;
             letter-spacing: 1px;
@@ -392,20 +372,21 @@
             cursor: pointer;
         }
         
-        /* Hero Section - MODIFICADO PARA HORIZONTAL */
+        /* Hero Section - MEJORADO */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
-            padding-top: 150px; /* Aumentado para acomodar logo más grande */
+            padding-top: 150px;
         }
         
         .hero-content {
             max-width: 900px;
             position: relative;
             z-index: 2;
+            width: 100%;
         }
         
         .hero h1 {
@@ -438,7 +419,6 @@
             animation: fadeInUp 1s ease-out 0.4s both;
         }
         
-        /* Nota de negocio */
         .business-note {
             background: rgba(255, 140, 0, 0.1);
             border-left: 4px solid var(--orange);
@@ -465,7 +445,6 @@
             margin: 0;
         }
         
-        /* Animaciones */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -477,7 +456,7 @@
             }
         }
         
-        /* Hero Video Gallery - MODIFICADO PARA DISPOSICIÓN HORIZONTAL */
+        /* Hero Video Gallery */
         .hero-video-gallery {
             position: absolute;
             right: 5%;
@@ -486,18 +465,6 @@
             width: 35%;
             max-width: 500px;
             z-index: 1;
-        }
-        
-        @media (max-width: 1200px) {
-            .hero-video-gallery {
-                position: relative;
-                right: auto;
-                top: auto;
-                transform: none;
-                width: 100%;
-                max-width: 600px;
-                margin: 40px auto 0;
-            }
         }
         
         .video-showcase {
@@ -591,7 +558,7 @@
             display: block;
         }
         
-        /* Web Design Content - 6 imágenes (3 originales + 3 nuevas) - MODIFICADO PARA HORIZONTAL */
+        /* Web Design Content */
         .web-design-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -731,24 +698,12 @@
             gap: 10px;
         }
         
-        /* Redes Sociales - 6 imágenes completas (3 originales + 2 nuevas + 1 extra) */
+        /* Redes Sociales */
         .social-content {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
             margin-bottom: 50px;
-        }
-        
-        @media (max-width: 992px) {
-            .social-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .social-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
         
         .social-project {
@@ -787,7 +742,7 @@
             transform: scale(1.05);
         }
         
-        /* Equipo de Producción Audiovisual - MODIFICADO */
+        /* Equipo de Producción Audiovisual */
         .team-production {
             background: rgba(255, 140, 0, 0.08);
             border-radius: var(--border-radius);
@@ -845,7 +800,7 @@
             margin-bottom: 8px;
         }
         
-        /* Sección de Formaciones de Contenido Vertical - NUEVA */
+        /* Sección de Formaciones */
         .vertical-formations {
             background: rgba(255, 215, 0, 0.05);
             border-radius: var(--border-radius);
@@ -876,12 +831,6 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
-        }
-        
-        @media (max-width: 992px) {
-            .formation-content {
-                grid-template-columns: 1fr;
-            }
         }
         
         .formation-text h4 {
@@ -916,18 +865,6 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-        }
-        
-        @media (max-width: 768px) {
-            .formation-images {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .formation-images {
-                grid-template-columns: 1fr;
-            }
         }
         
         .formation-img {
@@ -989,7 +926,7 @@
             font-size: 1.8rem;
             margin-bottom: 20px;
             display: flex;
-                align-items: center;
+            align-items: center;
             gap: 12px;
         }
         
@@ -1016,7 +953,7 @@
             gap: 10px;
         }
         
-        /* Videos en bucle - Ventanas tamaño Reel (6 videos) */
+        /* Videos en bucle */
         .instagram-videos {
             margin-top: 60px;
             padding-top: 50px;
@@ -1030,21 +967,9 @@
             margin-top: 30px;
         }
         
-        @media (max-width: 992px) {
-            .videos-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .videos-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
         .reel-window {
             background: rgba(255, 255, 255, 0.03);
-            border-radius: 20px; /* Bordes redondeados tipo Instagram */
+            border-radius: 20px;
             overflow: hidden;
             border: 1px solid rgba(255, 215, 0, 0.1);
             transition: var(--transition);
@@ -1061,7 +986,7 @@
         .reel-container {
             position: relative;
             width: 100%;
-            height: 600px; /* Altura fija para formato Reel */
+            height: 600px;
             overflow: hidden;
             background: #000;
         }
@@ -1072,7 +997,6 @@
             border: none;
         }
         
-        /* Estilos específicos para iframes de Streamable */
         .streamable-iframe {
             width: 100%;
             height: 100%;
@@ -1116,12 +1040,6 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 35px;
-        }
-        
-        @media (max-width: 768px) {
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
         }
         
         .value-item {
@@ -1261,18 +1179,6 @@
             margin-bottom: 20px;
         }
         
-        @media (max-width: 992px) {
-            .service-options {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .service-options {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
         .service-option {
             background: rgba(26, 26, 26, 0.8);
             border: 2px solid rgba(255, 215, 0, 0.1);
@@ -1304,12 +1210,6 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
             margin-top: 15px;
-        }
-        
-        @media (max-width: 768px) {
-            .web-options {
-                grid-template-columns: 1fr;
-            }
         }
         
         .web-option {
@@ -1366,12 +1266,6 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-        }
-        
-        @media (max-width: 768px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
         }
         
         .submit-btn {
@@ -1473,7 +1367,7 @@
         }
         
         .footer-logo-img {
-            height: 80px; /* Aumentado de 60px a 80px */
+            height: 80px;
             width: auto;
             margin-bottom: 15px;
             filter: drop-shadow(0 4px 10px rgba(255, 215, 0, 0.3));
@@ -1485,7 +1379,7 @@
         }
         
         .footer-logo-main {
-            font-size: 2.2rem; /* Aumentado de 1.8rem a 2.2rem */
+            font-size: 2.2rem;
             font-weight: 800;
             background: var(--gradient-gold);
             -webkit-background-clip: text;
@@ -1496,7 +1390,7 @@
         }
         
         .footer-logo-subtitle {
-            font-size: 1rem; /* Aumentado de 0.9rem a 1rem */
+            font-size: 1rem;
             color: var(--gold-light);
             font-weight: 600;
             letter-spacing: 1px;
@@ -1596,61 +1490,10 @@
             font-size: 0.85rem;
         }
         
-        /* =========== DISEÑO HORIZONTAL PARA MÓVILES (TABLET/MÓVIL APAISADO) =========== */
+        /* =========== DISEÑO OPTIMIZADO HORIZONTAL PARA MÓVILES =========== */
         
-        @media (max-width: 1024px) {
-            /* Hero section horizontal */
-            .hero {
-                min-height: 90vh;
-                padding-top: 120px;
-                display: flex;
-                align-items: center;
-            }
-            
-            .hero-content {
-                width: 100%;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-                line-height: 1.1;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-                max-width: 90%;
-            }
-            
-            .hero-btns {
-                flex-direction: row;
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-            
-            .hero-btns .btn {
-                flex: 1;
-                min-width: 200px;
-                margin-bottom: 10px;
-            }
-            
-            .business-note {
-                margin: 30px 0;
-                padding: 20px;
-            }
-            
-            /* Video showcase horizontal */
-            .hero-video-gallery {
-                width: 100%;
-                margin-top: 40px;
-            }
-            
-            .video-container {
-                height: 400px;
-            }
-        }
-        
+        /* Ajustes generales para móviles */
         @media (max-width: 768px) {
-            /* Layout general más horizontal */
             .container {
                 width: 95%;
                 padding: 0 15px;
@@ -1660,9 +1503,22 @@
                 padding: 70px 0;
             }
             
-            /* Header compacto horizontal */
+            .section-title {
+                margin-bottom: 40px;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title p {
+                font-size: 1rem;
+                max-width: 90%;
+            }
+            
+            /* Header optimizado */
             header {
-                padding: 12px 0;
+                padding: 15px 0;
                 top: 52px;
             }
             
@@ -1682,26 +1538,83 @@
                 font-size: 0.8rem;
             }
             
-            /* Hero más compacto y ancho */
+            .mobile-menu-btn {
+                display: block;
+                font-size: 1.4rem;
+            }
+            
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(26, 26, 26, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                border-top: 1px solid rgba(255, 215, 0, 0.1);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .btn-header {
+                margin-top: 10px;
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            /* Hero optimizado para horizontal */
             .hero {
-                padding-top: 110px;
+                padding-top: 120px;
                 min-height: 85vh;
+                display: flex;
+                align-items: center;
+            }
+            
+            .hero-content {
+                width: 100%;
+                max-width: 100%;
             }
             
             .hero h1 {
                 font-size: 2.2rem;
+                line-height: 1.2;
                 margin-bottom: 20px;
             }
             
             .hero p {
-                font-size: 1rem;
+                font-size: 1.05rem;
                 margin-bottom: 25px;
+                max-width: 100%;
+            }
+            
+            .business-note {
+                padding: 20px;
+                margin: 25px 0;
+            }
+            
+            .business-note h3 {
+                font-size: 1.2rem;
+            }
+            
+            .business-note p {
+                font-size: 1rem;
             }
             
             .hero-btns {
                 flex-direction: row;
                 flex-wrap: wrap;
-                gap: 12px;
+                gap: 15px;
                 margin-top: 30px;
             }
             
@@ -1709,26 +1622,48 @@
                 flex: 1;
                 min-width: 45%;
                 padding: 14px 20px;
-                font-size: 0.9rem;
+                font-size: 0.95rem;
+                margin-bottom: 0;
+            }
+            
+            .hero-video-gallery {
+                position: relative;
+                width: 100%;
+                max-width: 100%;
+                margin-top: 40px;
+                transform: none;
+                top: auto;
+                right: auto;
             }
             
             .video-container {
                 height: 350px;
             }
             
+            .video-showcase-header {
+                padding: 15px;
+            }
+            
+            .video-showcase-header h3 {
+                font-size: 1.2rem;
+            }
+            
             /* Service tabs en fila horizontal */
             .service-tabs {
+                display: flex;
                 flex-direction: row;
-                flex-wrap: nowrap;
                 overflow-x: auto;
-                justify-content: flex-start;
-                padding-bottom: 10px;
+                overflow-y: hidden;
+                white-space: nowrap;
+                padding-bottom: 15px;
                 margin-bottom: 30px;
-                gap: 10px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin;
+                scrollbar-color: var(--gold) rgba(255, 215, 0, 0.1);
             }
             
             .service-tabs::-webkit-scrollbar {
-                height: 5px;
+                height: 4px;
             }
             
             .service-tabs::-webkit-scrollbar-track {
@@ -1744,11 +1679,16 @@
             .tab-btn {
                 flex-shrink: 0;
                 padding: 12px 20px;
-                font-size: 0.9rem;
+                margin-right: 10px;
+                font-size: 0.95rem;
                 white-space: nowrap;
             }
             
-            /* Grids de 2 columnas para contenido horizontal */
+            .tab-btn:last-child {
+                margin-right: 0;
+            }
+            
+            /* Grids optimizados para horizontal */
             .web-design-content {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
@@ -1759,9 +1699,8 @@
                 gap: 20px;
             }
             
-            .project-img,
-            .social-img {
-                height: 180px;
+            .project-img, .social-img {
+                height: 200px;
             }
             
             .project-info {
@@ -1772,7 +1711,11 @@
                 font-size: 1.3rem;
             }
             
-            /* Secciones informativas */
+            .project-info p {
+                font-size: 0.9rem;
+            }
+            
+            /* Secciones informativas en grid horizontal */
             .seo-importance,
             .team-production,
             .experts-importance {
@@ -1787,7 +1730,19 @@
                 gap: 15px;
             }
             
-            /* Videos en grid horizontal */
+            .seo-benefit,
+            .expert-benefit,
+            .experience-item {
+                padding: 18px;
+            }
+            
+            .seo-benefit h4,
+            .expert-benefit h4,
+            .experience-item h4 {
+                font-size: 1.1rem;
+            }
+            
+            /* Videos grid horizontal */
             .videos-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
@@ -1797,7 +1752,11 @@
                 height: 400px;
             }
             
-            /* Formaciones horizontal */
+            .instagram-videos h3 {
+                font-size: 1.8rem;
+            }
+            
+            /* Formaciones optimizadas */
             .vertical-formations {
                 padding: 30px 25px;
                 margin: 40px 0;
@@ -1805,10 +1764,21 @@
             
             .vertical-formations h3 {
                 font-size: 1.8rem;
+                margin-bottom: 20px;
+            }
+            
+            .vertical-formations > p {
+                font-size: 1.1rem;
+                margin-bottom: 30px;
             }
             
             .formation-content {
+                grid-template-columns: 1fr;
                 gap: 30px;
+            }
+            
+            .formation-text h4 {
+                font-size: 1.4rem;
             }
             
             .formation-images {
@@ -1818,6 +1788,10 @@
             
             .formation-img {
                 height: 200px;
+            }
+            
+            .formation-cta .btn {
+                max-width: 100%;
             }
             
             /* Values en fila horizontal */
@@ -1834,6 +1808,19 @@
                 font-size: 1.4rem;
             }
             
+            .value-item p {
+                font-size: 0.9rem;
+            }
+            
+            /* CTA optimizado */
+            .cta h2 {
+                font-size: 2.2rem;
+            }
+            
+            .cta p {
+                font-size: 1.1rem;
+            }
+            
             /* Booking panel optimizado */
             .booking-panel {
                 padding: 30px 25px;
@@ -1844,13 +1831,21 @@
                 font-size: 2rem;
             }
             
+            .booking-title p {
+                font-size: 1rem;
+            }
+            
             .service-options {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
             }
             
             .service-option {
-                padding: 15px;
+                padding: 18px;
+            }
+            
+            .web-options {
+                grid-template-columns: repeat(3, 1fr);
             }
             
             .form-row {
@@ -1858,32 +1853,86 @@
                 gap: 15px;
             }
             
-            /* Footer en grid horizontal */
+            .form-group input,
+            .form-group select {
+                padding: 12px 15px;
+                font-size: 0.95rem;
+            }
+            
+            .submit-btn {
+                padding: 16px;
+                font-size: 1rem;
+            }
+            
+            /* Footer optimizado */
+            footer {
+                padding: 40px 0 20px;
+            }
+            
             .footer-content {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
                 gap: 30px;
+                margin-bottom: 30px;
+            }
+            
+            .footer-logo {
+                align-items: center;
+                text-align: center;
             }
             
             .footer-logo-img {
                 height: 60px;
+                margin: 0 auto 15px;
             }
             
             .footer-logo-main {
                 font-size: 1.8rem;
             }
             
-            /* Títulos más compactos */
-            .section-title h2 {
-                font-size: 2.2rem;
+            .footer-logo-subtitle {
+                font-size: 0.9rem;
             }
             
-            .cta h2 {
-                font-size: 2.2rem;
+            .footer-about p {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .footer-links h3,
+            .footer-contact h3 {
+                text-align: center;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+            }
+            
+            .footer-links h3::after,
+            .footer-contact h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-contact p {
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .copyright {
+                padding-top: 20px;
+                font-size: 0.8rem;
             }
         }
         
+        /* Ajustes específicos para móviles pequeños */
         @media (max-width: 576px) {
-            /* Ajustes para móviles pequeños en horizontal */
+            .hero {
+                padding-top: 110px;
+                min-height: 80vh;
+            }
+            
             .hero h1 {
                 font-size: 1.8rem;
             }
@@ -1910,9 +1959,7 @@
                 grid-template-columns: 1fr;
             }
             
-            .seo-benefits,
-            .expert-benefits,
-            .experience-grid {
+            .videos-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -1920,35 +1967,54 @@
                 grid-template-columns: 1fr;
             }
             
-            .videos-grid {
+            .service-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .web-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .seo-benefits,
+            .expert-benefits,
+            .experience-grid {
                 grid-template-columns: 1fr;
             }
             
             .formation-images {
                 grid-template-columns: 1fr;
             }
-            
-            .service-options {
-                grid-template-columns: 1fr;
+        }
+        
+        /* Ajustes para tablets grandes y pantallas medianas */
+        @media (max-width: 992px) and (min-width: 769px) {
+            .hero h1 {
+                font-size: 2.8rem;
             }
             
-            .footer-content {
-                grid-template-columns: 1fr;
+            .hero p {
+                font-size: 1.2rem;
             }
             
-            /* Tabs más compactos */
-            .service-tabs {
-                gap: 8px;
+            .web-design-content {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .tab-btn {
-                padding: 10px 15px;
-                font-size: 0.85rem;
+            .social-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .videos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .values-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
         
+        /* Ajustes específicos para orientación horizontal en móviles */
         @media (max-width: 768px) and (orientation: landscape) {
-            /* Especifico para móviles en posición horizontal */
             .hero {
                 min-height: 100vh;
                 padding-top: 100px;
@@ -1962,28 +2028,35 @@
             
             .hero h1 {
                 font-size: 2rem;
+                margin-bottom: 15px;
             }
             
             .hero p {
                 font-size: 0.95rem;
-                max-width: 100%;
+                margin-bottom: 20px;
             }
             
             .hero-btns {
                 flex-direction: row;
-                flex-wrap: wrap;
+                margin-top: 25px;
             }
             
             .hero-btns .btn {
                 flex: 1;
-                min-width: 45%;
+                min-width: 48%;
+                padding: 12px 18px;
+            }
+            
+            .business-note {
+                margin: 20px 0;
+                padding: 18px;
             }
             
             .video-container {
                 height: 300px;
             }
             
-            /* Grids más horizontales */
+            /* Grids optimizados para landscape */
             .web-design-content {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1996,13 +2069,17 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             
-            /* Elementos más compactos */
+            .values-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            /* Secciones más compactas */
             .section {
                 padding: 60px 0;
             }
             
             .section-title {
-                margin-bottom: 40px;
+                margin-bottom: 30px;
             }
             
             .section-title h2 {
@@ -2010,7 +2087,74 @@
             }
         }
         
-        /* Responsive originales para pantallas grandes */
+        /* Ajustes para pantallas muy pequeñas */
+        @media (max-width: 400px) {
+            .logo-container {
+                gap: 8px;
+            }
+            
+            .logo-img {
+                height: 40px;
+            }
+            
+            .logo-main {
+                font-size: 1.2rem;
+            }
+            
+            .logo-subtitle {
+                font-size: 0.7rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+            }
+            
+            .tab-btn {
+                padding: 10px 15px;
+                font-size: 0.85rem;
+            }
+        }
+        
+        /* Animación para entrada de elementos */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Clase para elementos que aparecen al scroll */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive para pantallas grandes */
         @media (max-width: 1200px) {
             .hero h1 {
                 font-size: 3.2rem;
@@ -2018,14 +2162,6 @@
             
             .section-title h2 {
                 font-size: 2.8rem;
-            }
-            
-            .reel-container {
-                height: 500px;
-            }
-            
-            .videos-grid {
-                grid-template-columns: repeat(2, 1fr);
             }
             
             .hero-video-gallery {
@@ -2038,273 +2174,12 @@
                 margin: 40px auto 0;
             }
             
-            .hero-content {
-                max-width: 100%;
-            }
-            
             .video-container {
                 height: 400px;
             }
             
-            .logo-img {
-                height: 60px; /* Ajustado para tablet */
-            }
-            
-            .logo-main {
-                font-size: 1.8rem; /* Ajustado para tablet */
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .nav-links {
-                display: none;
-                position: fixed;
-                top: 80px; /* Aumentado para logo más grande */
-                left: 0;
-                width: 100%;
-                background: rgba(26, 26, 26, 0.98);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                padding: 25px;
-                text-align: center;
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-                border-top: 1px solid rgba(255, 215, 0, 0.1);
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links li {
-                margin: 12px 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 280px;
-                margin-bottom: 12px;
-            }
-            
             .reel-container {
-                height: 450px;
-            }
-            
-            .videos-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .booking-panel {
-                padding: 30px;
-            }
-            
-            .btn-header {
-                margin-top: 15px;
-            }
-            
-            .nav-links li:last-child {
-                margin-top: 20px;
-            }
-            
-            .social-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .experience-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .vertical-formations {
-                padding: 40px 30px;
-            }
-            
-            .logo-img {
-                height: 55px;
-            }
-            
-            .logo-main {
-                font-size: 1.6rem;
-            }
-            
-            .logo-subtitle {
-                font-size: 0.9rem;
-            }
-            
-            .footer-logo-img {
-                height: 65px;
-            }
-            
-            .footer-logo-main {
-                font-size: 1.8rem;
-            }
-        }
-        
-        /* Responsive original manteniendo compatibilidad */
-        @media (max-width: 768px) {
-            .hero {
-                padding-top: 150px;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section {
-                padding: 80px 0;
-            }
-            
-            .section-title h2 {
-                font-size: 2.3rem;
-            }
-            
-            .cta h2 {
-                font-size: 2.5rem;
-            }
-            
-            .project-img, .social-img {
-                height: 200px;
-            }
-            
-            .reel-container {
-                height: 400px;
-            }
-            
-            .top-banner p {
-                font-size: 0.9rem;
-                flex-direction: column;
-                gap: 5px;
-            }
-            
-            .booking-title h2 {
-                font-size: 2.2rem;
-            }
-            
-            .service-options {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .video-container {
-                height: 350px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .web-design-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .reel-container {
-                height: 350px;
-            }
-            
-            .social-img {
-                height: 250px;
-            }
-            
-            header {
-                top: 60px; /* Ajuste para móvil */
-                padding: 15px 0;
-            }
-            
-            .hero {
-                padding-top: 140px; /* Ajuste para móvil */
-            }
-            
-            .booking-panel {
-                padding: 20px;
-                margin: 50px auto;
-            }
-            
-            .video-container {
-                height: 300px;
-            }
-            
-            .business-note {
-                padding: 20px;
-            }
-            
-            .seo-importance, .team-production, .experts-importance {
-                padding: 25px;
-            }
-            
-            .vertical-formations {
-                padding: 30px 20px;
-                margin: 40px 0;
-            }
-            
-            .vertical-formations h3 {
-                font-size: 1.6rem;
-            }
-            
-            .service-options {
-                grid-template-columns: 1fr;
-            }
-            
-            .logo-container {
-                gap: 10px;
-            }
-            
-            .logo-img {
-                height: 45px;
-            }
-            
-            .logo-main {
-                font-size: 1.3rem;
-            }
-            
-            .logo-subtitle {
-                font-size: 0.8rem;
-                display: block; /* Mantener visible en móviles */
-            }
-            
-            .footer-logo-img {
-                height: 50px;
-            }
-            
-            .footer-logo-main {
-                font-size: 1.4rem;
-            }
-            
-            .footer-logo-subtitle {
-                font-size: 0.9rem;
-            }
-        }
-        
-        @media (max-width: 400px) {
-            .logo-img {
-                height: 40px;
-            }
-            
-            .logo-main {
-                font-size: 1.1rem;
-            }
-            
-            .logo-subtitle {
-                font-size: 0.75rem;
+                height: 500px;
             }
         }
     </style>
@@ -2325,7 +2200,6 @@
             <nav class="navbar">
                 <a href="#" class="logo">
                     <div class="logo-container">
-                        <!-- Logo PNG dinámico - MÁS GRANDE -->
                         <img src="logo.png" alt="AI Solutions Creative Agency Logo" class="logo-img" id="dynamicLogo">
                         <div class="logo-text">
                             <div class="logo-main">AI Solutions</div>
@@ -2358,27 +2232,23 @@
                 <h1>Soluciones Digitales <span>con Flujo Natural</span></h1>
                 <p>En <span class="highlight">AI Solutions Creative Agency</span> desarrollamos con rapidez y confianza. Webs personalizadas, contenido visual auténtico y una fluidez que conecta directamente con tu audiencia.</p>
                 
-                <!-- Nota de negocio añadida -->
                 <div class="business-note">
                     <h3><i class="fas fa-lightbulb"></i> ¿Tienes un negocio?</h3>
                     <p>¿Quieres modernizar tu imagen, mejorar visibilidad y atraer más clientes? <strong>Nosotros te ayudamos.</strong> Creamos soluciones digitales que realmente funcionan, sin complicaciones y con resultados medibles.</p>
                 </div>
                 
-                <!-- Botones del Hero (solo uno para Agendar Cita) -->
                 <div class="hero-btns">
                     <a href="#servicios" class="btn">Ver Servicios</a>
                     <a href="#booking" class="btn">Agendar Cita</a>
                 </div>
             </div>
             
-            <!-- Ventana de video con Streamable -->
             <div class="hero-video-gallery">
                 <div class="video-showcase">
                     <div class="video-showcase-header">
                         <h3><i class="fas fa-play-circle"></i> Nuestro Trabajo</h3>
                     </div>
                     <div class="video-container">
-                        <!-- Video 1 de Streamable -->
                         <iframe 
                             class="hero-video streamable-iframe"
                             src="https://streamable.com/e/gak7bs?autoplay=1&loop=1&muted=1&controls=0"
@@ -2408,10 +2278,10 @@
                 <div class="tab-btn" data-tab="formations">Formaciones</div>
             </div>
             
-            <!-- Web Design Tab - 6 imágenes (3 originales + 3 nuevas) -->
+            <!-- Web Design Tab -->
             <div id="web-tab" class="tab-content active">
                 <div class="web-design-content">
-                    <!-- Proyecto 1 Original -->
+                    <!-- Proyecto 1 -->
                     <div class="web-project">
                         <div class="project-img">
                             <div class="project-badge">Ejemplo</div>
@@ -2426,7 +2296,7 @@
                         </div>
                     </div>
                     
-                    <!-- Proyecto 2 Original -->
+                    <!-- Proyecto 2 -->
                     <div class="web-project">
                         <div class="project-img">
                             <img src="images/web2.webp" alt="Proyecto Web Personalizado">
@@ -2437,7 +2307,7 @@
                         </div>
                     </div>
                     
-                    <!-- Proyecto 3 Original -->
+                    <!-- Proyecto 3 -->
                     <div class="web-project">
                         <div class="project-img">
                             <img src="images/web3.webp" alt="Proyecto Web Responsive">
@@ -2448,7 +2318,7 @@
                         </div>
                     </div>
                     
-                    <!-- Nueva imagen 4 -->
+                    <!-- Proyecto 4 -->
                     <div class="web-project">
                         <div class="project-img">
                             <img src="images/web4.webp" alt="Diseño E-commerce">
@@ -2459,7 +2329,7 @@
                         </div>
                     </div>
                     
-                    <!-- Nueva imagen 5 -->
+                    <!-- Proyecto 5 -->
                     <div class="web-project">
                         <div class="project-img">
                             <img src="images/web5.webp" alt="Diseño Corporativo">
@@ -2470,7 +2340,7 @@
                         </div>
                     </div>
                     
-                    <!-- Nueva imagen 6 -->
+                    <!-- Proyecto 6 -->
                     <div class="web-project">
                         <div class="project-img">
                             <img src="images/web6.webp" alt="Portafolio Digital">
@@ -2482,7 +2352,7 @@
                     </div>
                 </div>
                 
-                <!-- Importancia SEO y Web Optimizada -->
+                <!-- Importancia SEO -->
                 <div class="seo-importance">
                     <h3><i class="fas fa-chart-line"></i> Importancia de un buen SEO y Web Optimizada</h3>
                     <p>Una web no es solo un escaparate bonito. Es tu herramienta de negocio más potente. <strong>La optimización SEO y el rendimiento web</strong> son críticos para tu éxito online.</p>
@@ -2517,7 +2387,6 @@
             
             <!-- Social Content Tab -->
             <div id="social-tab" class="tab-content">
-                <!-- Sección Equipo de Producción Audiovisual - MODIFICADA -->
                 <div class="team-production">
                     <h3><i class="fas fa-video"></i> Equipo de Producción Audiovisual</h3>
                     <p><strong>Experiencia en sector:</strong> Hemos trabajado con todo tipo de empresas, desde marcas internacionales hasta particulares. Nuestro equipo de servicios de producción audiovisual cuenta con amplia experiencia en:</p>
@@ -2561,7 +2430,7 @@
                     </p>
                 </div>
                 
-                <!-- 6 Imágenes de Redes Completas (3 originales + 2 nuevas + 1 extra) -->
+                <!-- Imágenes de Redes -->
                 <div class="social-content">
                     <div class="social-project">
                         <div class="social-img">
@@ -2581,21 +2450,18 @@
                         </div>
                     </div>
                     
-                    <!-- Nueva imagen 4 -->
                     <div class="social-project">
                         <div class="social-img">
                             <img src="images/redes4.webp" alt="Contenido Redes 4">
                         </div>
                     </div>
                     
-                    <!-- Nueva imagen 5 -->
                     <div class="social-project">
                         <div class="social-img">
                             <img src="images/redes5.webp" alt="Contenido Redes 5">
                         </div>
                     </div>
                     
-                    <!-- Nueva imagen 6 (extra solicitada) -->
                     <div class="social-project">
                         <div class="social-img">
                             <img src="images/redes6.webp" alt="Contenido Redes 6">
@@ -2603,7 +2469,6 @@
                     </div>
                 </div>
                 
-                <!-- Importancia de trabajar con expertos -->
                 <div class="experts-importance">
                     <h3><i class="fas fa-users"></i> Importancia de trabajar con expertos del sector</h3>
                     <p>En contenido de redes sociales, <strong>la experiencia y el conocimiento específico</strong> marcan la diferencia entre contenido que pasa desapercibido y contenido que genera impacto real.</p>
@@ -2630,7 +2495,7 @@
                     </p>
                 </div>
                 
-                <!-- Videos en bucle - Ventanas tamaño Reel (6 videos) -->
+                <!-- Videos -->
                 <div class="instagram-videos">
                     <h3 style="text-align: center; font-size: 2.2rem; margin-bottom: 30px; color: var(--gold);">Contenido en Movimiento</h3>
                     <p style="text-align: center; max-width: 700px; margin: 0 auto 40px; color: #bbb; font-size: 1.1rem;">
@@ -2638,7 +2503,7 @@
                     </p>
                     
                     <div class="videos-grid">
-                        <!-- Reel 1 - Video 2 de Streamable -->
+                        <!-- Reel 1 -->
                         <div class="reel-window">
                             <div class="reel-container">
                                 <iframe 
@@ -2658,7 +2523,7 @@
                             </div>
                         </div>
                         
-                        <!-- Reel 2 - Video 3 de Streamable -->
+                        <!-- Reel 2 -->
                         <div class="reel-window">
                             <div class="reel-container">
                                 <iframe 
@@ -2678,7 +2543,7 @@
                             </div>
                         </div>
                         
-                        <!-- Reel 3 - Video 4 de Streamable -->
+                        <!-- Reel 3 -->
                         <div class="reel-window">
                             <div class="reel-container">
                                 <iframe 
@@ -2698,7 +2563,7 @@
                             </div>
                         </div>
                         
-                        <!-- Reel 4 - Video 5 de Streamable -->
+                        <!-- Reel 4 -->
                         <div class="reel-window">
                             <div class="reel-container">
                                 <iframe 
@@ -2718,7 +2583,7 @@
                             </div>
                         </div>
                         
-                        <!-- Reel 5 - Video 6 de Streamable -->
+                        <!-- Reel 5 -->
                         <div class="reel-window">
                             <div class="reel-container">
                                 <iframe 
@@ -2738,7 +2603,7 @@
                             </div>
                         </div>
                         
-                        <!-- Reel 6 - Video 7 de Streamable -->
+                        <!-- Reel 6 -->
                         <div class="reel-window">
                             <div class="reel-container">
                                 <iframe 
@@ -2768,7 +2633,7 @@
                 </div>
             </div>
             
-            <!-- Nueva sección de Formaciones de Contenido Vertical -->
+            <!-- Formaciones Tab -->
             <div id="formations-tab" class="tab-content">
                 <div class="vertical-formations">
                     <h3><i class="fas fa-graduation-cap"></i> Formaciones de Contenido Vertical</h3>
@@ -3052,16 +2917,10 @@
     </footer>
 
     <script>
-        // === EMAILJS CONFIGURACIÓN COMPLETA CON TUS CREDENCIALES ===
+        // === EMAILJS CONFIGURACIÓN ===
         (function() {
-            // Tus credenciales REALES de EmailJS
-            emailjs.init("0H9DFECmcQ3hFgBXQ"); // Public Key CORRECTO
-            
-            // Verificar inicialización
+            emailjs.init("0H9DFECmcQ3hFgBXQ");
             console.log("✅ EmailJS inicializado correctamente");
-            console.log("Public Key: 0H9DFECmcQ3hFgBXQ");
-            console.log("Service ID: service_oko11dg");
-            console.log("Template ID: template_st7hs89");
         })();
 
         // Mobile Menu Toggle
@@ -3089,6 +2948,14 @@
                 // Show corresponding tab
                 const tabId = button.getAttribute('data-tab');
                 document.getElementById(`${tabId}-tab`).classList.add('active');
+                
+                // Smooth scroll to active tab on mobile
+                if (window.innerWidth <= 768) {
+                    document.getElementById('servicios').scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
         
@@ -3100,6 +2967,16 @@
             } else {
                 header.classList.remove('scrolled');
             }
+            
+            // Animación de elementos al scroll
+            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('animated');
+                }
+            });
         });
         
         // Smooth scrolling for anchor links
@@ -3112,8 +2989,11 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+                    
                     window.scrollTo({
-                        top: targetElement.offsetTop - 100,
+                        top: targetPosition,
                         behavior: 'smooth'
                     });
                 }
@@ -3135,7 +3015,7 @@
             // Crear múltiples puntos pequeños
             for (let i = 0; i < 50; i++) {
                 const star = document.createElement('div');
-                const size = Math.random() * 3 + 1; // Entre 1px y 4px
+                const size = Math.random() * 3 + 1;
                 const x = Math.random() * 100;
                 const y = Math.random() * 100;
                 const opacity = Math.random() * 0.3 + 0.1;
@@ -3204,7 +3084,7 @@
             document.getElementById('selectedWebOption').value = option;
         }
         
-        // === BOOKING FORM SUBMISSION - CORREGIDO ===
+        // === BOOKING FORM SUBMISSION ===
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -3281,12 +3161,7 @@
             console.log("📧 Parámetros para EmailJS:", templateParams);
             console.log("🔄 Enviando email a través de EmailJS...");
             
-            // === CORRECCIÓN PRINCIPAL: Envío con parámetros correctos ===
-            emailjs.send(
-                'service_oko11dg',    // Tu Service ID
-                'template_8p714we',   // Tu Template ID
-                templateParams        // Datos para la plantilla
-            )
+            emailjs.send('service_oko11dg', 'template_8p714we', templateParams)
             .then(function(response) {
                 console.log('✅ ¡ÉXITO! Email enviado:', response.status, response.text);
                 
@@ -3313,13 +3188,11 @@
                     block: 'center'
                 });
                 
-                // Mostrar mensaje en consola para depuración
                 console.log("🎉 Formulario procesado correctamente");
                 
             }, function(error) {
                 console.error('❌ ERROR al enviar email:', error);
                 
-                // Mostrar mensaje de error detallado
                 let errorMsg = 'Hubo un error al enviar la cita. ';
                 
                 if (error.text) {
@@ -3430,60 +3303,45 @@
                 });
             }
             
-            // Optimización específica para orientación horizontal en móviles
-            function checkOrientation() {
-                const isLandscape = window.innerWidth > window.innerHeight;
-                
-                if (isLandscape && window.innerWidth <= 768) {
-                    // Aplicar estilos especiales para móviles en horizontal
-                    document.body.classList.add('landscape-mode');
-                    
-                    // Optimizar grids para orientación horizontal
-                    const grids = document.querySelectorAll('.web-design-content, .social-content, .videos-grid');
-                    grids.forEach(grid => {
-                        if (grid.classList.contains('web-design-content') || grid.classList.contains('social-content')) {
-                            grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
-                        }
-                        if (grid.classList.contains('videos-grid')) {
-                            grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
-                        }
-                    });
-                    
-                    // Ajustar altura del hero para landscape
-                    document.querySelector('.hero').style.minHeight = '100vh';
-                    
-                    // Ajustar botones para mejor distribución
-                    const heroBtns = document.querySelector('.hero-btns');
-                    if (heroBtns) {
-                        heroBtns.style.flexDirection = 'row';
-                        heroBtns.style.flexWrap = 'wrap';
+            // Añadir clase de animación a elementos
+            document.querySelectorAll('.web-project, .value-item, .service-option').forEach(element => {
+                element.classList.add('animate-on-scroll');
+            });
+            
+            // Forzar animación al cargar
+            setTimeout(() => {
+                document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                    element.classList.add('animated');
+                });
+            }, 500);
+            
+            // Optimizar videos para móvil
+            if (window.innerWidth <= 768) {
+                const videos = document.querySelectorAll('.streamable-iframe');
+                videos.forEach(video => {
+                    if (video.src.includes('streamable.com')) {
+                        // Forzar parámetros móviles
+                        const newSrc = video.src.replace(/autoplay=1/, 'autoplay=1&muted=1&controls=0&playsinline=1');
+                        video.src = newSrc;
+                        video.setAttribute('playsinline', '');
+                        video.setAttribute('webkit-playsinline', '');
                     }
-                } else {
-                    document.body.classList.remove('landscape-mode');
-                }
+                });
             }
             
-            // Verificar orientación al cargar y al cambiar tamaño
-            checkOrientation();
-            window.addEventListener('resize', checkOrientation);
-            window.addEventListener('orientationchange', checkOrientation);
-            
-            // Forzar actualización de videos para asegurar reproducción en bucle
+            // Forzar actualización de videos
             setTimeout(() => {
                 const videos = document.querySelectorAll('.streamable-iframe, .hero-video');
                 videos.forEach(video => {
-                    // Simplemente iniciar la reproducción si no está ya reproduciéndose
                     if (video.src) {
-                        // Intentar forzar la reproducción
                         const currentSrc = video.src;
-                        video.src = currentSrc; // Esto fuerza la actualización
+                        video.src = currentSrc;
                     }
                 });
             }, 1000);
         });
         
         // === FUNCIÓN DE PRUEBA PARA EMAILJS ===
-        // Puedes llamar a esta función desde la consola para probar
         window.testEmailJS = function() {
             console.log("🧪 Probando EmailJS...");
             
