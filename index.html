@@ -392,7 +392,7 @@
             cursor: pointer;
         }
         
-        /* Hero Section */
+        /* Hero Section - MODIFICADO PARA HORIZONTAL */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -477,7 +477,7 @@
             }
         }
         
-        /* Hero Video Gallery */
+        /* Hero Video Gallery - MODIFICADO PARA DISPOSICIÓN HORIZONTAL */
         .hero-video-gallery {
             position: absolute;
             right: 5%;
@@ -591,7 +591,7 @@
             display: block;
         }
         
-        /* Web Design Content - 6 imágenes (3 originales + 3 nuevas) */
+        /* Web Design Content - 6 imágenes (3 originales + 3 nuevas) - MODIFICADO PARA HORIZONTAL */
         .web-design-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -745,9 +745,9 @@
             }
         }
         
-        @media (max-width: 576px) {
+        @media (max-width: 768px) {
             .social-content {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
@@ -1038,7 +1038,7 @@
         
         @media (max-width: 768px) {
             .videos-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
@@ -1267,9 +1267,9 @@
             }
         }
         
-        @media (max-width: 576px) {
+        @media (max-width: 768px) {
             .service-options {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
@@ -1596,210 +1596,223 @@
             font-size: 0.85rem;
         }
         
-        /* =========== NUEVOS MEDIA QUERIES PARA MÓVIL =========== */
+        /* =========== DISEÑO HORIZONTAL PARA MÓVILES (TABLET/MÓVIL APAISADO) =========== */
         
-        /* Ajustes del Header para Móviles */
-        @media (max-width: 768px) {
-            header {
-                top: 60px;
-                padding: 12px 0;
-            }
-            
-            .navbar {
-                flex-wrap: wrap;
-            }
-            
-            .logo-container {
-                flex: 1;
-                min-width: 200px;
-            }
-            
-            .logo-img {
-                height: 45px;
-            }
-            
-            .logo-main {
-                font-size: 1.3rem;
-                line-height: 1.1;
-            }
-            
-            .logo-subtitle {
-                font-size: 0.75rem;
-                margin-top: 2px;
-            }
-            
-            .mobile-menu-btn {
-                font-size: 1.4rem;
-            }
-            
-            .nav-links {
-                top: 70px;
-                padding: 20px;
-                background: rgba(26, 26, 26, 0.98);
-                backdrop-filter: blur(15px);
-            }
-            
-            .nav-links li {
-                margin: 10px 0;
-            }
-            
-            .btn-header {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-                margin-top: 10px;
-            }
-        }
-        
-        /* Mejoras en el Hero para Móviles */
-        @media (max-width: 576px) {
+        @media (max-width: 1024px) {
+            /* Hero section horizontal */
             .hero {
+                min-height: 90vh;
                 padding-top: 120px;
-                min-height: auto;
-                padding-bottom: 60px;
+                display: flex;
+                align-items: center;
+            }
+            
+            .hero-content {
+                width: 100%;
             }
             
             .hero h1 {
-                font-size: 2rem;
-                line-height: 1.2;
+                font-size: 2.8rem;
+                line-height: 1.1;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+                max-width: 90%;
+            }
+            
+            .hero-btns {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .hero-btns .btn {
+                flex: 1;
+                min-width: 200px;
+                margin-bottom: 10px;
+            }
+            
+            .business-note {
+                margin: 30px 0;
+                padding: 20px;
+            }
+            
+            /* Video showcase horizontal */
+            .hero-video-gallery {
+                width: 100%;
+                margin-top: 40px;
+            }
+            
+            .video-container {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Layout general más horizontal */
+            .container {
+                width: 95%;
+                padding: 0 15px;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            /* Header compacto horizontal */
+            header {
+                padding: 12px 0;
+                top: 52px;
+            }
+            
+            .logo-container {
+                gap: 10px;
+            }
+            
+            .logo-img {
+                height: 50px;
+            }
+            
+            .logo-main {
+                font-size: 1.5rem;
+            }
+            
+            .logo-subtitle {
+                font-size: 0.8rem;
+            }
+            
+            /* Hero más compacto y ancho */
+            .hero {
+                padding-top: 110px;
+                min-height: 85vh;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
                 margin-bottom: 20px;
             }
             
             .hero p {
                 font-size: 1rem;
-                line-height: 1.5;
                 margin-bottom: 25px;
             }
             
-            .business-note {
-                padding: 20px;
-                margin: 25px 0;
-            }
-            
-            .business-note h3 {
-                font-size: 1.2rem;
-            }
-            
-            .business-note p {
-                font-size: 1rem;
-            }
-            
             .hero-btns {
-                flex-direction: column;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 12px;
                 margin-top: 30px;
-                gap: 15px;
             }
             
-            .btn {
-                width: 100%;
-                max-width: 280px;
-                padding: 14px 24px;
-                font-size: 0.95rem;
+            .hero-btns .btn {
+                flex: 1;
+                min-width: 45%;
+                padding: 14px 20px;
+                font-size: 0.9rem;
             }
             
             .video-container {
-                height: 250px;
-                margin-top: 30px;
+                height: 350px;
             }
             
-            .video-showcase-header {
-                padding: 15px;
-            }
-            
-            .video-showcase-header h3 {
-                font-size: 1.1rem;
-            }
-        }
-        
-        /* Ajustes de Servicios en Móviles */
-        @media (max-width: 768px) {
+            /* Service tabs en fila horizontal */
             .service-tabs {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 10px;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: 10px;
                 margin-bottom: 30px;
+                gap: 10px;
+            }
+            
+            .service-tabs::-webkit-scrollbar {
+                height: 5px;
+            }
+            
+            .service-tabs::-webkit-scrollbar-track {
+                background: rgba(255, 215, 0, 0.1);
+                border-radius: 10px;
+            }
+            
+            .service-tabs::-webkit-scrollbar-thumb {
+                background: var(--gradient-gold);
+                border-radius: 10px;
             }
             
             .tab-btn {
-                width: 100%;
-                text-align: center;
+                flex-shrink: 0;
                 padding: 12px 20px;
+                font-size: 0.9rem;
+                white-space: nowrap;
             }
             
+            /* Grids de 2 columnas para contenido horizontal */
             .web-design-content {
-                grid-template-columns: 1fr;
-                gap: 25px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .social-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
             
             .project-img,
             .social-img {
-                height: 200px;
+                height: 180px;
             }
             
             .project-info {
-                padding: 20px;
+                padding: 18px;
             }
             
             .project-info h3 {
                 font-size: 1.3rem;
             }
             
+            /* Secciones informativas */
             .seo-importance,
             .team-production,
             .experts-importance {
                 padding: 25px;
+                margin-top: 30px;
             }
             
             .seo-benefits,
-            .expert-benefits {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .seo-benefit,
-            .expert-benefit {
-                padding: 18px;
-            }
-            
+            .expert-benefits,
             .experience-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
             }
             
-            .experience-item {
-                padding: 18px;
-            }
-            
+            /* Videos en grid horizontal */
             .videos-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
             
             .reel-container {
-                height: 350px;
+                height: 400px;
             }
-        }
-        
-        @media (max-width: 576px) {
+            
+            /* Formaciones horizontal */
             .vertical-formations {
-                padding: 25px 20px;
-                margin: 30px 0;
+                padding: 30px 25px;
+                margin: 40px 0;
             }
             
             .vertical-formations h3 {
-                font-size: 1.4rem;
-                margin-bottom: 20px;
+                font-size: 1.8rem;
             }
             
             .formation-content {
-                gap: 25px;
-            }
-            
-            .formation-text h4 {
-                font-size: 1.2rem;
+                gap: 30px;
             }
             
             .formation-images {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
             }
             
@@ -1807,28 +1820,32 @@
                 height: 200px;
             }
             
-            .formation-cta .btn {
-                max-width: 100%;
+            /* Values en fila horizontal */
+            .values-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
             }
-        }
-        
-        /* Mejoras en el Panel de Reserva para Móviles */
-        @media (max-width: 768px) {
+            
+            .value-item {
+                padding: 25px 15px;
+            }
+            
+            .value-item h3 {
+                font-size: 1.4rem;
+            }
+            
+            /* Booking panel optimizado */
             .booking-panel {
-                padding: 25px 20px;
-                margin: 40px auto;
+                padding: 30px 25px;
+                margin: 50px auto;
             }
             
             .booking-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .booking-title p {
-                font-size: 0.95rem;
+                font-size: 2rem;
             }
             
             .service-options {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
             }
             
@@ -1836,162 +1853,164 @@
                 padding: 15px;
             }
             
-            .web-options {
+            .form-row {
                 grid-template-columns: 1fr;
-                gap: 10px;
-                margin-top: 10px;
+                gap: 15px;
             }
             
-            .web-option {
-                padding: 12px;
-            }
-            
-            .step-title {
-                font-size: 1.2rem;
-                margin-bottom: 15px;
-            }
-            
-            .step-title .step-number {
-                width: 30px;
-                height: 30px;
-                font-size: 1rem;
-            }
-            
-            .form-group input,
-            .form-group select {
-                padding: 12px 15px;
-                font-size: 0.95rem;
-            }
-            
-            .submit-btn {
-                padding: 16px;
-                font-size: 1rem;
-            }
-        }
-        
-        /* Ajustes de Footer para Móviles */
-        @media (max-width: 768px) {
-            footer {
-                padding: 40px 0 20px;
-            }
-            
+            /* Footer en grid horizontal */
             .footer-content {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 30px;
-                margin-bottom: 30px;
-            }
-            
-            .footer-logo {
-                align-items: center;
-                text-align: center;
             }
             
             .footer-logo-img {
                 height: 60px;
-                margin: 0 auto 15px;
             }
             
             .footer-logo-main {
                 font-size: 1.8rem;
             }
             
-            .footer-logo-subtitle {
-                font-size: 0.9rem;
+            /* Títulos más compactos */
+            .section-title h2 {
+                font-size: 2.2rem;
             }
             
-            .footer-about p {
-                text-align: center;
-                margin-bottom: 20px;
-            }
-            
-            .social-icons {
-                justify-content: center;
-            }
-            
-            .footer-links h3,
-            .footer-contact h3 {
-                text-align: center;
-                padding-bottom: 10px;
-            }
-            
-            .footer-links h3::after,
-            .footer-contact h3::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .footer-contact p {
-                justify-content: center;
-                text-align: center;
-            }
-            
-            .copyright {
-                padding-top: 20px;
-                font-size: 0.8rem;
+            .cta h2 {
+                font-size: 2.2rem;
             }
         }
         
-        /* Ajustes Finales para Pantallas Muy Pequeñas (<400px) */
-        @media (max-width: 400px) {
-            .container {
-                width: 95%;
-                padding: 0 10px;
-            }
-            
-            .logo-container {
-                gap: 8px;
-            }
-            
-            .logo-img {
-                height: 40px;
-            }
-            
-            .logo-main {
-                font-size: 1.1rem;
-            }
-            
-            .logo-subtitle {
-                font-size: 0.7rem;
-            }
-            
+        @media (max-width: 576px) {
+            /* Ajustes para móviles pequeños en horizontal */
             .hero h1 {
                 font-size: 1.8rem;
             }
             
+            .hero p {
+                font-size: 0.95rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                min-width: 100%;
+            }
+            
+            .video-container {
+                height: 280px;
+            }
+            
+            .web-design-content,
+            .social-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .seo-benefits,
+            .expert-benefits,
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .formation-images {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Tabs más compactos */
+            .service-tabs {
+                gap: 8px;
+            }
+            
+            .tab-btn {
+                padding: 10px 15px;
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 768px) and (orientation: landscape) {
+            /* Especifico para móviles en posición horizontal */
+            .hero {
+                min-height: 100vh;
+                padding-top: 100px;
+            }
+            
+            .hero-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 0.95rem;
+                max-width: 100%;
+            }
+            
+            .hero-btns {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            .hero-btns .btn {
+                flex: 1;
+                min-width: 45%;
+            }
+            
+            .video-container {
+                height: 300px;
+            }
+            
+            /* Grids más horizontales */
+            .web-design-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .social-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .videos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            /* Elementos más compactos */
             .section {
                 padding: 60px 0;
+            }
+            
+            .section-title {
+                margin-bottom: 40px;
             }
             
             .section-title h2 {
                 font-size: 1.8rem;
             }
-            
-            .section-title p {
-                font-size: 0.95rem;
-            }
-            
-            .values-grid {
-                gap: 20px;
-            }
-            
-            .value-item {
-                padding: 25px 20px;
-            }
-            
-            .value-item h3 {
-                font-size: 1.4rem;
-            }
-            
-            .cta h2 {
-                font-size: 1.8rem;
-            }
-            
-            .cta p {
-                font-size: 1rem;
-            }
         }
         
-        /* Responsive originales */
+        /* Responsive originales para pantallas grandes */
         @media (max-width: 1200px) {
             .hero h1 {
                 font-size: 3.2rem;
@@ -2132,6 +2151,7 @@
             }
         }
         
+        /* Responsive original manteniendo compatibilidad */
         @media (max-width: 768px) {
             .hero {
                 padding-top: 150px;
@@ -2177,50 +2197,6 @@
             
             .video-container {
                 height: 350px;
-            }
-            
-            .social-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .experience-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .seo-benefits, .expert-benefits {
-                grid-template-columns: 1fr;
-            }
-            
-            .vertical-formations h3 {
-                font-size: 1.8rem;
-            }
-            
-            .formation-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .logo-container {
-                gap: 12px;
-            }
-            
-            .logo-img {
-                height: 50px;
-            }
-            
-            .logo-main {
-                font-size: 1.4rem;
-            }
-            
-            .logo-subtitle {
-                font-size: 0.85rem;
-            }
-            
-            .footer-logo-img {
-                height: 55px;
-            }
-            
-            .footer-logo-main {
-                font-size: 1.6rem;
             }
         }
         
@@ -3454,56 +3430,43 @@
                 });
             }
             
-            // === OPTIMIZACIONES ESPECÍFICAS PARA MÓVIL ===
-            // Detectar si es móvil
-            const isMobile = window.innerWidth <= 768;
-            
-            if (isMobile) {
-                // Optimizar videos para móvil
-                const videos = document.querySelectorAll('.streamable-iframe');
-                videos.forEach(video => {
-                    // Asegurar que los videos se adapten mejor en móvil
-                    if (video.src.includes('streamable.com')) {
-                        // Forzar parámetros móviles
-                        const newSrc = video.src.replace(/autoplay=1/, 'autoplay=1&muted=1&controls=0&playsinline=1');
-                        video.src = newSrc;
-                        video.setAttribute('playsinline', '');
-                        video.setAttribute('webkit-playsinline', '');
-                    }
-                });
+            // Optimización específica para orientación horizontal en móviles
+            function checkOrientation() {
+                const isLandscape = window.innerWidth > window.innerHeight;
                 
-                // Mejorar scroll suave en móvil
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function(e) {
-                        const targetId = this.getAttribute('href');
-                        if (targetId === '#') return;
-                        
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                            e.preventDefault();
-                            window.scrollTo({
-                                top: targetElement.offsetTop - 80, // Menos espacio en móvil
-                                behavior: 'smooth'
-                            });
+                if (isLandscape && window.innerWidth <= 768) {
+                    // Aplicar estilos especiales para móviles en horizontal
+                    document.body.classList.add('landscape-mode');
+                    
+                    // Optimizar grids para orientación horizontal
+                    const grids = document.querySelectorAll('.web-design-content, .social-content, .videos-grid');
+                    grids.forEach(grid => {
+                        if (grid.classList.contains('web-design-content') || grid.classList.contains('social-content')) {
+                            grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                        }
+                        if (grid.classList.contains('videos-grid')) {
+                            grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
                         }
                     });
-                });
-                
-                // Optimizar imágenes para carga en móvil
-                const lazyImages = document.querySelectorAll('img');
-                lazyImages.forEach(img => {
-                    if (!img.loading) {
-                        img.loading = 'lazy';
+                    
+                    // Ajustar altura del hero para landscape
+                    document.querySelector('.hero').style.minHeight = '100vh';
+                    
+                    // Ajustar botones para mejor distribución
+                    const heroBtns = document.querySelector('.hero-btns');
+                    if (heroBtns) {
+                        heroBtns.style.flexDirection = 'row';
+                        heroBtns.style.flexWrap = 'wrap';
                     }
-                });
+                } else {
+                    document.body.classList.remove('landscape-mode');
+                }
             }
             
-            // Prevenir zoom en inputs en iOS
-            document.querySelectorAll('input, select, textarea').forEach(el => {
-                el.addEventListener('focus', function() {
-                    this.style.fontSize = '16px'; // Prevenir zoom automático
-                });
-            });
+            // Verificar orientación al cargar y al cambiar tamaño
+            checkOrientation();
+            window.addEventListener('resize', checkOrientation);
+            window.addEventListener('orientationchange', checkOrientation);
             
             // Forzar actualización de videos para asegurar reproducción en bucle
             setTimeout(() => {
