@@ -1596,7 +1596,402 @@
             font-size: 0.85rem;
         }
         
-        /* Responsive */
+        /* =========== NUEVOS MEDIA QUERIES PARA MÓVIL =========== */
+        
+        /* Ajustes del Header para Móviles */
+        @media (max-width: 768px) {
+            header {
+                top: 60px;
+                padding: 12px 0;
+            }
+            
+            .navbar {
+                flex-wrap: wrap;
+            }
+            
+            .logo-container {
+                flex: 1;
+                min-width: 200px;
+            }
+            
+            .logo-img {
+                height: 45px;
+            }
+            
+            .logo-main {
+                font-size: 1.3rem;
+                line-height: 1.1;
+            }
+            
+            .logo-subtitle {
+                font-size: 0.75rem;
+                margin-top: 2px;
+            }
+            
+            .mobile-menu-btn {
+                font-size: 1.4rem;
+            }
+            
+            .nav-links {
+                top: 70px;
+                padding: 20px;
+                background: rgba(26, 26, 26, 0.98);
+                backdrop-filter: blur(15px);
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .btn-header {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                margin-top: 10px;
+            }
+        }
+        
+        /* Mejoras en el Hero para Móviles */
+        @media (max-width: 576px) {
+            .hero {
+                padding-top: 120px;
+                min-height: auto;
+                padding-bottom: 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+                margin-bottom: 20px;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+                line-height: 1.5;
+                margin-bottom: 25px;
+            }
+            
+            .business-note {
+                padding: 20px;
+                margin: 25px 0;
+            }
+            
+            .business-note h3 {
+                font-size: 1.2rem;
+            }
+            
+            .business-note p {
+                font-size: 1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                margin-top: 30px;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                padding: 14px 24px;
+                font-size: 0.95rem;
+            }
+            
+            .video-container {
+                height: 250px;
+                margin-top: 30px;
+            }
+            
+            .video-showcase-header {
+                padding: 15px;
+            }
+            
+            .video-showcase-header h3 {
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Ajustes de Servicios en Móviles */
+        @media (max-width: 768px) {
+            .service-tabs {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+                margin-bottom: 30px;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                text-align: center;
+                padding: 12px 20px;
+            }
+            
+            .web-design-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .project-img,
+            .social-img {
+                height: 200px;
+            }
+            
+            .project-info {
+                padding: 20px;
+            }
+            
+            .project-info h3 {
+                font-size: 1.3rem;
+            }
+            
+            .seo-importance,
+            .team-production,
+            .experts-importance {
+                padding: 25px;
+            }
+            
+            .seo-benefits,
+            .expert-benefits {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .seo-benefit,
+            .expert-benefit {
+                padding: 18px;
+            }
+            
+            .experience-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .experience-item {
+                padding: 18px;
+            }
+            
+            .videos-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .reel-container {
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .vertical-formations {
+                padding: 25px 20px;
+                margin: 30px 0;
+            }
+            
+            .vertical-formations h3 {
+                font-size: 1.4rem;
+                margin-bottom: 20px;
+            }
+            
+            .formation-content {
+                gap: 25px;
+            }
+            
+            .formation-text h4 {
+                font-size: 1.2rem;
+            }
+            
+            .formation-images {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .formation-img {
+                height: 200px;
+            }
+            
+            .formation-cta .btn {
+                max-width: 100%;
+            }
+        }
+        
+        /* Mejoras en el Panel de Reserva para Móviles */
+        @media (max-width: 768px) {
+            .booking-panel {
+                padding: 25px 20px;
+                margin: 40px auto;
+            }
+            
+            .booking-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .booking-title p {
+                font-size: 0.95rem;
+            }
+            
+            .service-options {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .service-option {
+                padding: 15px;
+            }
+            
+            .web-options {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            
+            .web-option {
+                padding: 12px;
+            }
+            
+            .step-title {
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+            }
+            
+            .step-title .step-number {
+                width: 30px;
+                height: 30px;
+                font-size: 1rem;
+            }
+            
+            .form-group input,
+            .form-group select {
+                padding: 12px 15px;
+                font-size: 0.95rem;
+            }
+            
+            .submit-btn {
+                padding: 16px;
+                font-size: 1rem;
+            }
+        }
+        
+        /* Ajustes de Footer para Móviles */
+        @media (max-width: 768px) {
+            footer {
+                padding: 40px 0 20px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin-bottom: 30px;
+            }
+            
+            .footer-logo {
+                align-items: center;
+                text-align: center;
+            }
+            
+            .footer-logo-img {
+                height: 60px;
+                margin: 0 auto 15px;
+            }
+            
+            .footer-logo-main {
+                font-size: 1.8rem;
+            }
+            
+            .footer-logo-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .footer-about p {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .footer-links h3,
+            .footer-contact h3 {
+                text-align: center;
+                padding-bottom: 10px;
+            }
+            
+            .footer-links h3::after,
+            .footer-contact h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-contact p {
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .copyright {
+                padding-top: 20px;
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Ajustes Finales para Pantallas Muy Pequeñas (<400px) */
+        @media (max-width: 400px) {
+            .container {
+                width: 95%;
+                padding: 0 10px;
+            }
+            
+            .logo-container {
+                gap: 8px;
+            }
+            
+            .logo-img {
+                height: 40px;
+            }
+            
+            .logo-main {
+                font-size: 1.1rem;
+            }
+            
+            .logo-subtitle {
+                font-size: 0.7rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title p {
+                font-size: 0.95rem;
+            }
+            
+            .values-grid {
+                gap: 20px;
+            }
+            
+            .value-item {
+                padding: 25px 20px;
+            }
+            
+            .value-item h3 {
+                font-size: 1.4rem;
+            }
+            
+            .cta h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta p {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Responsive originales */
         @media (max-width: 1200px) {
             .hero h1 {
                 font-size: 3.2rem;
@@ -3058,6 +3453,57 @@
                     this.style.filter = 'drop-shadow(0 4px 10px rgba(255, 215, 0, 0.3))';
                 });
             }
+            
+            // === OPTIMIZACIONES ESPECÍFICAS PARA MÓVIL ===
+            // Detectar si es móvil
+            const isMobile = window.innerWidth <= 768;
+            
+            if (isMobile) {
+                // Optimizar videos para móvil
+                const videos = document.querySelectorAll('.streamable-iframe');
+                videos.forEach(video => {
+                    // Asegurar que los videos se adapten mejor en móvil
+                    if (video.src.includes('streamable.com')) {
+                        // Forzar parámetros móviles
+                        const newSrc = video.src.replace(/autoplay=1/, 'autoplay=1&muted=1&controls=0&playsinline=1');
+                        video.src = newSrc;
+                        video.setAttribute('playsinline', '');
+                        video.setAttribute('webkit-playsinline', '');
+                    }
+                });
+                
+                // Mejorar scroll suave en móvil
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            e.preventDefault();
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80, // Menos espacio en móvil
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+                
+                // Optimizar imágenes para carga en móvil
+                const lazyImages = document.querySelectorAll('img');
+                lazyImages.forEach(img => {
+                    if (!img.loading) {
+                        img.loading = 'lazy';
+                    }
+                });
+            }
+            
+            // Prevenir zoom en inputs en iOS
+            document.querySelectorAll('input, select, textarea').forEach(el => {
+                el.addEventListener('focus', function() {
+                    this.style.fontSize = '16px'; // Prevenir zoom automático
+                });
+            });
             
             // Forzar actualización de videos para asegurar reproducción en bucle
             setTimeout(() => {
