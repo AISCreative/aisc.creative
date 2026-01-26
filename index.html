@@ -1187,6 +1187,7 @@
             text-align: center;
             cursor: pointer;
             transition: var(--transition);
+            position: relative;
         }
         
         .service-option:hover {
@@ -1203,6 +1204,34 @@
             font-size: 2rem;
             color: var(--gold);
             margin-bottom: 15px;
+        }
+        
+        /* Checkbox personalizado */
+        .service-checkbox {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 2px solid var(--gold);
+            background: rgba(26, 26, 26, 0.8);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .service-checkbox.checked {
+            background: var(--gold);
+        }
+        
+        .service-checkbox.checked::after {
+            content: '✓';
+            color: var(--dark);
+            font-weight: bold;
+            font-size: 14px;
         }
         
         .web-options {
@@ -2189,7 +2218,7 @@
     <div class="top-banner">
         <p>
             <i class="fas fa-bolt"></i>
-            Proyectos con enfoque directo • Sin burocracias • Resultados naturales
+            Proyectos con enfoque directo • Sin burocracias • Resultados MEDIBLES
             <i class="fas fa-bolt"></i>
         </p>
     </div>
@@ -2229,7 +2258,8 @@
     <section class="hero" id="inicio">
         <div class="container">
             <div class="hero-content">
-                <h1>Soluciones Digitales <span>con Flujo Natural</span></h1>
+                <h1>Soluciones digitales</h1>
+                <p><span style="color: var(--gold); font-weight: 700;">Diseño web, SEO y contenido para potenciar tu presencia online</span></p>
                 <p>En <span class="highlight">AI Solutions Creative Agency</span> desarrollamos con rapidez y confianza. Webs personalizadas, contenido visual auténtico y una fluidez que conecta directamente con tu audiencia.</p>
                 
                 <div class="business-note">
@@ -2355,7 +2385,7 @@
                 <!-- Importancia SEO -->
                 <div class="seo-importance">
                     <h3><i class="fas fa-chart-line"></i> Importancia de un buen SEO y Web Optimizada</h3>
-                    <p>Una web no es solo un escaparate bonito. Es tu herramienta de negocio más potente. <strong>La optimización SEO y el rendimiento web</strong> son críticos para tu éxito online.</p>
+                    <p>Una web no es solo un escaparate bonito. Es tu herramienta de negocio más potente. <strong>La optimización SEO y el rendimiento web</strong> son NECESARIOS para tu éxito online.</p>
                     
                     <div class="seo-benefits">
                         <div class="seo-benefit">
@@ -2497,9 +2527,9 @@
                 
                 <!-- Videos -->
                 <div class="instagram-videos">
-                    <h3 style="text-align: center; font-size: 2.2rem; margin-bottom: 30px; color: var(--gold);">Contenido en Movimiento</h3>
+                    <h3 style="text-align: center; font-size: 2.2rem; margin-bottom: 30px; color: var(--gold);">Contenido audiovisual</h3>
                     <p style="text-align: center; max-width: 700px; margin: 0 auto 40px; color: #bbb; font-size: 1.1rem;">
-                        Videos creados con fluidez natural por nuestro equipo especializado. Reproducción en bucle automático.
+                        Videos creados para tu marca, con impacto y adaptados a tu estilo
                     </p>
                     
                     <div class="videos-grid">
@@ -2517,7 +2547,7 @@
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
-                                        <i class="fab fa-instagram"></i> Video en bucle
+                                        <i class="fab fa-instagram"></i>
                                     </span>
                                 </div>
                             </div>
@@ -2537,7 +2567,7 @@
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
-                                        <i class="fab fa-instagram"></i> Video en bucle
+                                        <i class="fab fa-instagram"></i>
                                     </span>
                                 </div>
                             </div>
@@ -2557,7 +2587,7 @@
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
-                                        <i class="fab fa-instagram"></i> Video en bucle
+                                        <i class="fab fa-instagram"></i>
                                     </span>
                                 </div>
                             </div>
@@ -2577,7 +2607,7 @@
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
-                                        <i class="fab fa-instagram"></i> Video en bucle
+                                        <i class="fab fa-instagram"></i>
                                     </span>
                                 </div>
                             </div>
@@ -2597,7 +2627,7 @@
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
-                                        <i class="fab fa-instagram"></i> Video en bucle
+                                        <i class="fab fa-instagram"></i>
                                     </span>
                                 </div>
                             </div>
@@ -2617,7 +2647,7 @@
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
-                                        <i class="fab fa-instagram"></i> Video en bucle
+                                        <i class="fab fa-instagram"></i>
                                     </span>
                                 </div>
                             </div>
@@ -2693,7 +2723,7 @@
             <div class="booking-panel">
                 <div class="booking-title">
                     <h2>Agendar Cita Directa</h2>
-                    <p>Sin explicaciones, solo selecciona lo que necesitas y envía tus datos. Nos contactaremos contigo en menos de 24 horas.</p>
+                    <p>Sin explicaciones, solo selecciona lo que necesitas y envía tus datos. Contactaremos contigo en menos de 24 horas.</p>
                 </div>
                 
                 <div class="booking-steps">
@@ -2701,11 +2731,12 @@
                     <div class="booking-step">
                         <div class="step-title">
                             <span class="step-number">1</span>
-                            <h3>¿Qué servicio necesitas?</h3>
+                            <h3>¿Qué servicio necesitas? (puedes seleccionar varios)</h3>
                         </div>
                         
                         <div class="service-options">
-                            <div class="service-option" data-service="web" onclick="selectService('web')">
+                            <div class="service-option" data-service="web" onclick="toggleServiceSelection('web')">
+                                <div class="service-checkbox" id="webCheckbox"></div>
                                 <div class="option-icon">
                                     <i class="fas fa-desktop"></i>
                                 </div>
@@ -2713,15 +2744,17 @@
                                 <p style="color: #bbb; font-size: 0.9rem; margin-top: 10px;">Landing pages, webs personalizadas</p>
                             </div>
                             
-                            <div class="service-option" data-service="content" onclick="selectService('content')">
+                            <div class="service-option" data-service="content" onclick="toggleServiceSelection('content')">
+                                <div class="service-checkbox" id="contentCheckbox"></div>
                                 <div class="option-icon">
                                     <i class="fas fa-video"></i>
                                 </div>
-                                <h4>Contenido Redes</h4>
-                                <p style="color: #bbb; font-size: 0.9rem; margin-top: 10px;">Fotos y videos para Instagram, TikTok</p>
+                                <h4>Contenido Digital</h4>
+                                <p style="color: #bbb; font-size: 0.9rem; margin-top: 10px;">Fotos y videos para web y redes sociales</p>
                             </div>
                             
-                            <div class="service-option" data-service="formations" onclick="selectService('formations')">
+                            <div class="service-option" data-service="formations" onclick="toggleServiceSelection('formations')">
+                                <div class="service-checkbox" id="formationsCheckbox"></div>
                                 <div class="option-icon">
                                     <i class="fas fa-graduation-cap"></i>
                                 </div>
@@ -2729,12 +2762,13 @@
                                 <p style="color: #bbb; font-size: 0.9rem; margin-top: 10px;">Formación en contenido vertical</p>
                             </div>
                             
-                            <div class="service-option" data-service="both" onclick="selectService('both')">
+                            <div class="service-option" data-service="consulting" onclick="toggleServiceSelection('consulting')">
+                                <div class="service-checkbox" id="consultingCheckbox"></div>
                                 <div class="option-icon">
-                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-comments"></i>
                                 </div>
-                                <h4>Combinado</h4>
-                                <p style="color: #bbb; font-size: 0.9rem; margin-top: 10px;">Varios servicios combinados</p>
+                                <h4>Consultoría</h4>
+                                <p style="color: #bbb; font-size: 0.9rem; margin-top: 10px;">Análisis y estrategia personalizada</p>
                             </div>
                         </div>
                         
@@ -2794,7 +2828,8 @@
                                 <input type="text" id="message" name="message" placeholder="Ej: Necesito formación para mi equipo de marketing">
                             </div>
                             
-                            <input type="hidden" id="selectedService" name="service">
+                            <!-- Campos ocultos para servicios seleccionados -->
+                            <input type="hidden" id="selectedServices" name="services">
                             <input type="hidden" id="selectedWebOption" name="webOption">
                             
                             <!-- Mensajes de éxito/error -->
@@ -2824,7 +2859,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Nuestra Forma de Trabajar</h2>
-                <p>Enfocados en la ejecución natural</p>
+                <p>Tu presencia digital, fácil y efectiva</p>
             </div>
             
             <div class="values-grid">
@@ -3036,37 +3071,42 @@
             }
         }
         
-        // === BOOKING PANEL FUNCTIONS ===
-        let selectedService = '';
+        // === BOOKING PANEL FUNCTIONS - MÚLTIPLES SELECCIONES ===
+        let selectedServices = [];
         let selectedWebOption = '';
         
-        function selectService(service) {
-            selectedService = service;
+        function toggleServiceSelection(service) {
+            const checkbox = document.getElementById(`${service}Checkbox`);
+            const serviceOption = document.querySelector(`.service-option[data-service="${service}"]`);
             
-            // Remove selected class from all service options
-            document.querySelectorAll('.service-option').forEach(option => {
-                option.classList.remove('selected');
-            });
+            if (selectedServices.includes(service)) {
+                // Quitar de la selección
+                selectedServices = selectedServices.filter(s => s !== service);
+                checkbox.classList.remove('checked');
+                serviceOption.classList.remove('selected');
+            } else {
+                // Añadir a la selección
+                selectedServices.push(service);
+                checkbox.classList.add('checked');
+                serviceOption.classList.add('selected');
+            }
             
-            // Add selected class to clicked option
-            document.querySelector(`.service-option[data-service="${service}"]`).classList.add('selected');
-            
-            // Show/hide web options
+            // Mostrar/ocultar opciones de web si se selecciona diseño web
             const webOptions = document.getElementById('webOptions');
-            if (service === 'web' || service === 'both') {
+            if (selectedServices.includes('web')) {
                 webOptions.style.display = 'grid';
-                // Clear previous web option selection
+            } else {
+                webOptions.style.display = 'none';
                 selectedWebOption = '';
                 document.querySelectorAll('.web-option').forEach(option => {
                     option.classList.remove('selected');
                 });
-            } else {
-                webOptions.style.display = 'none';
-                selectedWebOption = '';
             }
             
-            // Update hidden input
-            document.getElementById('selectedService').value = service;
+            // Actualizar campo oculto
+            document.getElementById('selectedServices').value = selectedServices.join(', ');
+            
+            console.log("Servicios seleccionados:", selectedServices);
         }
         
         function selectWebOption(option) {
@@ -3091,13 +3131,13 @@
             console.log("📤 Iniciando envío del formulario...");
             
             // Validate service selection
-            if (!selectedService) {
-                alert('Por favor, selecciona un servicio.');
+            if (selectedServices.length === 0) {
+                alert('Por favor, selecciona al menos un servicio.');
                 return;
             }
             
             // Validate web option if needed
-            if ((selectedService === 'web' || selectedService === 'both') && !selectedWebOption) {
+            if (selectedServices.includes('web') && !selectedWebOption) {
                 alert('Por favor, selecciona un tipo de diseño web.');
                 return;
             }
@@ -3118,7 +3158,7 @@
                 email: document.getElementById('email').value.trim(),
                 phone: document.getElementById('phone').value.trim(),
                 message: document.getElementById('message').value.trim() || 'No hay mensaje adicional',
-                service: selectedService,
+                services: selectedServices.join(', '),
                 webOption: selectedWebOption || 'No aplica'
             };
             
@@ -3127,9 +3167,9 @@
             // Map service names for display
             const serviceNames = {
                 'web': 'Diseño Web',
-                'content': 'Contenido de Redes',
+                'content': 'Contenido Digital',
                 'formations': 'Formaciones de Contenido Vertical',
-                'both': 'Varios servicios combinados'
+                'consulting': 'Consultoría'
             };
             
             const webOptionNames = {
@@ -3139,13 +3179,18 @@
                 'No aplica': 'No aplica'
             };
             
+            // Create list of selected services for email
+            const servicesList = selectedServices.map(service => 
+                serviceNames[service] || service
+            ).join(', ');
+            
             // Create email template parameters
             const templateParams = {
                 from_name: formData.name,
                 from_email: formData.email,
                 from_phone: formData.phone,
                 company: formData.company,
-                service: serviceNames[formData.service] || formData.service,
+                services: servicesList,
                 web_option: webOptionNames[formData.webOption] || formData.webOption,
                 message: formData.message,
                 date_time: new Date().toLocaleString('es-ES', {
@@ -3170,8 +3215,13 @@
                 
                 // Reset form
                 document.getElementById('bookingForm').reset();
-                selectedService = '';
+                selectedServices = [];
                 selectedWebOption = '';
+                
+                // Reset all checkboxes and selections
+                document.querySelectorAll('.service-checkbox').forEach(checkbox => {
+                    checkbox.classList.remove('checked');
+                });
                 document.querySelectorAll('.service-option').forEach(option => {
                     option.classList.remove('selected');
                 });
@@ -3179,7 +3229,7 @@
                     option.classList.remove('selected');
                 });
                 document.getElementById('webOptions').style.display = 'none';
-                document.getElementById('selectedService').value = '';
+                document.getElementById('selectedServices').value = '';
                 document.getElementById('selectedWebOption').value = '';
                 
                 // Scroll to success message
@@ -3350,7 +3400,7 @@
                 from_email: "test@ejemplo.com",
                 from_phone: "+34 600 000 000",
                 company: "Empresa de Prueba",
-                service: "Diseño Web",
+                services: "Diseño Web, Contenido Digital",
                 web_option: "Landing Page",
                 message: "Este es un mensaje de prueba",
                 date_time: new Date().toLocaleString('es-ES')
