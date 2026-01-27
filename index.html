@@ -252,7 +252,7 @@
             }
         }
         
-        /* Header - MANTENIENDO ORIGINAL PARA PC */
+        /* Header */
         header {
             position: fixed;
             top: 52px;
@@ -522,7 +522,6 @@
             width: 100%;
             height: 100%;
             border: none;
-            pointer-events: none;
         }
         
         /* Services Section */
@@ -2151,7 +2150,7 @@
                 </div>
             </div>
             
-            <!-- Video gallery (oculto en móvil) -->
+            <!-- Video gallery (con autoplay DESACTIVADO en móvil) -->
             <div class="hero-video-gallery">
                 <div class="video-showcase">
                     <div class="video-showcase-header">
@@ -2164,8 +2163,7 @@
                             title="AI Solutions Creative Agency"
                             frameborder="0"
                             allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                            style="pointer-events: none;">
+                            allowfullscreen>
                         </iframe>
                     </div>
                 </div>
@@ -2404,7 +2402,7 @@
                     </p>
                 </div>
                 
-                <!-- Videos -->
+                <!-- Videos con autoplay DESACTIVADO en móvil -->
                 <div class="instagram-videos">
                     <h3 style="text-align: center; font-size: 2.2rem; margin-bottom: 30px; color: var(--gold);">Contenido audiovisual</h3>
                     <p style="text-align: center; max-width: 700px; margin: 0 auto 40px; color: #bbb; font-size: 1.1rem;">
@@ -2421,8 +2419,7 @@
                                     title="Reel 1 - AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen
-                                    style="pointer-events: none;">
+                                    allowfullscreen>
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
@@ -2441,8 +2438,7 @@
                                     title="Reel 2 - AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen
-                                    style="pointer-events: none;">
+                                    allowfullscreen>
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
@@ -2461,8 +2457,7 @@
                                     title="Reel 3 - AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen
-                                    style="pointer-events: none;">
+                                    allowfullscreen>
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
@@ -2481,8 +2476,7 @@
                                     title="Reel 4 - AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen
-                                    style="pointer-events: none;">
+                                    allowfullscreen>
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
@@ -2501,8 +2495,7 @@
                                     title="Reel 5 - AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen
-                                    style="pointer-events: none;">
+                                    allowfullscreen>
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
@@ -2521,8 +2514,7 @@
                                     title="Reel 6 - AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen
-                                    style="pointer-events: none;">
+                                    allowfullscreen>
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
@@ -2536,7 +2528,7 @@
                     <div style="text-align: center; margin-top: 40px;">
                         <p style="color: #bbb; font-size: 1rem; max-width: 600px; margin: 0 auto;">
                             <i class="fas fa-info-circle" style="color: var(--gold); margin-right: 10px;"></i>
-                            Los videos se reproducen automáticamente en bucle, sin controles y sin sonido.
+                            Los videos se reproducen automáticamente en PC. En móvil, haz clic para reproducir.
                         </p>
                     </div>
                 </div>
@@ -2771,7 +2763,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - SIN TELÉFONO -->
     <footer id="contacto">
         <div class="container">
             <div class="footer-content">
@@ -2810,7 +2802,7 @@
                 <div class="footer-contact">
                     <h3>Contacto Directo</h3>
                     <p><i class="fas fa-envelope"></i> contacto@aisolutionsagency.com</p>
-                    <p><i class="fas fa-phone"></i> +34 123 456 789</p>
+                    <!-- TELÉFONO ELIMINADO -->
                     <p><i class="fas fa-map-marker-alt"></i> Barcelona, España</p>
                 </div>
             </div>
@@ -3120,28 +3112,47 @@
             }
         });
         
-        // === OPTIMIZACIÓN PARA MÓVIL ===
+        // === CONTROL DE VIDEOS EN MÓVIL ===
         document.addEventListener('DOMContentLoaded', function() {
-            // Si estamos en móvil, optimizar contenido
+            // Obtener todos los videos de Streamable
+            const videos = document.querySelectorAll('iframe[src*="streamable.com"]');
+            
+            // Si estamos en móvil, desactivar autoplay
             if (window.innerWidth <= 768) {
-                // Lazy loading para imágenes
-                const lazyImages = document.querySelectorAll('img');
-                lazyImages.forEach(img => {
-                    img.loading = 'lazy';
-                });
+                console.log("📱 Móvil detectado - Desactivando autoplay de videos...");
                 
-                // Optimizar videos para móvil - SIN AUTOPLAY
-                const videos = document.querySelectorAll('iframe');
                 videos.forEach(video => {
-                    if (video.src.includes('streamable.com')) {
-                        // Desactivar autoplay en móvil para evitar problemas
-                        video.src = video.src.replace('autoplay=1', 'autoplay=0');
-                        video.setAttribute('playsinline', '');
-                        video.setAttribute('webkit-playsinline', '');
-                        video.setAttribute('muted', '');
+                    // Reemplazar autoplay=1 por autoplay=0
+                    const currentSrc = video.src;
+                    const newSrc = currentSrc.replace('autoplay=1', 'autoplay=0');
+                    video.src = newSrc;
+                    
+                    // Añadir atributos para móvil
+                    video.setAttribute('playsinline', '');
+                    video.setAttribute('webkit-playsinline', '');
+                    video.removeAttribute('muted');
+                    
+                    // Quitar pointer-events: none para que funcionen los controles
+                    video.style.pointerEvents = 'auto';
+                });
+            } else {
+                // En PC, mantener autoplay pero añadir controles
+                console.log("💻 PC detectado - Manteniendo autoplay...");
+                videos.forEach(video => {
+                    // Asegurar que tenga controles en PC
+                    const currentSrc = video.src;
+                    if (!currentSrc.includes('controls=1')) {
+                        const newSrc = currentSrc.replace('controls=0', 'controls=1');
+                        video.src = newSrc;
                     }
                 });
             }
+            
+            // Lazy loading para imágenes
+            const lazyImages = document.querySelectorAll('img');
+            lazyImages.forEach(img => {
+                img.loading = 'lazy';
+            });
             
             // Añadir clase de animación a elementos
             document.querySelectorAll('.web-project, .value-item, .service-option').forEach(element => {
@@ -3154,6 +3165,15 @@
                     element.classList.add('animated');
                 });
             }, 500);
+        });
+        
+        // Función para recargar videos si cambian de tamaño
+        window.addEventListener('resize', function() {
+            const videos = document.querySelectorAll('iframe[src*="streamable.com"]');
+            videos.forEach(video => {
+                const currentSrc = video.src;
+                video.src = currentSrc; // Forzar recarga
+            });
         });
     </script>
 </body>
