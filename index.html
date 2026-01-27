@@ -252,7 +252,7 @@
             }
         }
         
-        /* Header */
+        /* Header - MANTENIENDO ORIGINAL PARA PC */
         header {
             position: fixed;
             top: 52px;
@@ -365,7 +365,6 @@
             width: 100%;
         }
         
-        /* Mobile Menu */
         .mobile-menu-btn {
             display: none;
             font-size: 1.6rem;
@@ -517,6 +516,13 @@
             width: 100%;
             height: 100%;
             border: none;
+        }
+        
+        .streamable-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: none;
         }
         
         /* Services Section */
@@ -996,13 +1002,6 @@
             width: 100%;
             height: 100%;
             border: none;
-        }
-        
-        .streamable-iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            pointer-events: none;
         }
         
         .reel-overlay {
@@ -1522,8 +1521,8 @@
         
         /* =========== DISEÑO SUPER COMPACTO PARA MÓVIL =========== */
         
-        /* Asegurar que no haya scroll horizontal */
         @media (max-width: 768px) {
+            /* Asegurar que no haya scroll horizontal */
             html, body {
                 overflow-x: hidden !important;
                 max-width: 100% !important;
@@ -1553,42 +1552,13 @@
                 margin-bottom: 0 !important;
             }
             
-            /* HEADER COMPACTO CON BOTÓN VISIBLE */
-            header {
-                padding: 8px 0 !important;
-                top: 40px !important;
-            }
-            
-            /* Reorganizar navbar para móvil */
-            .navbar {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-            }
-            
-            .logo-container {
-                gap: 8px !important;
-            }
-            
-            .logo-img {
-                height: 40px !important;
-            }
-            
-            .logo-main {
-                font-size: 1.4rem !important;
-            }
-            
-            .logo-subtitle {
-                font-size: 0.7rem !important;
-            }
-            
-            /* Ocultar el menú de navegación estándar en móvil */
+            /* HEADER ORIGINAL PARA PC - MODIFICADO SOLO PARA MÓVIL */
+            /* Ocultar nav-links en móvil */
             .nav-links {
                 display: none !important;
             }
             
-            /* Contenedor para botón y menú hamburguesa */
+            /* Mostrar controles móviles */
             .mobile-nav-controls {
                 display: flex;
                 align-items: center;
@@ -1617,7 +1587,7 @@
                 font-size: 0.8rem !important;
             }
             
-            /* Botón menú hamburguesa */
+            /* Botón menú hamburguesa - MOSTRAR EN MÓVIL */
             .mobile-menu-btn {
                 display: flex !important;
                 align-items: center;
@@ -1677,6 +1647,23 @@
             .mobile-menu a:hover {
                 color: var(--gold);
                 padding-left: 15px;
+            }
+            
+            /* Logo más pequeño en móvil */
+            .logo-container {
+                gap: 8px !important;
+            }
+            
+            .logo-img {
+                height: 40px !important;
+            }
+            
+            .logo-main {
+                font-size: 1.4rem !important;
+            }
+            
+            .logo-subtitle {
+                font-size: 0.7rem !important;
             }
             
             /* TOP BANNER MÁS PEQUEÑO */
@@ -2001,6 +1988,21 @@
             }
         }
         
+        /* Mostrar nav-links en PC, ocultar controles móviles */
+        @media (min-width: 769px) {
+            .nav-links {
+                display: flex !important;
+            }
+            
+            .mobile-nav-controls {
+                display: none !important;
+            }
+            
+            .mobile-menu {
+                display: none !important;
+            }
+        }
+        
         /* Animación para entrada de elementos */
         @keyframes slideInLeft {
             from {
@@ -2076,7 +2078,7 @@
         </p>
     </div>
 
-    <!-- Header -->
+    <!-- Header - ORIGINAL PARA PC, MEJORADO PARA MÓVIL -->
     <header id="header">
         <div class="container">
             <nav class="navbar">
@@ -2090,7 +2092,7 @@
                     </div>
                 </a>
                 
-                <!-- MENÚ PARA PC (oculto en móvil) -->
+                <!-- MENÚ PARA PC (visible solo en desktop) -->
                 <ul class="nav-links">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
@@ -2103,7 +2105,7 @@
                     </li>
                 </ul>
                 
-                <!-- CONTROLES PARA MÓVIL (visible solo en móvil) -->
+                <!-- CONTROLES PARA MÓVIL (oculto en PC, visible en móvil) -->
                 <div class="mobile-nav-controls">
                     <!-- BOTÓN AGENDAR VISIBLE EN MÓVIL -->
                     <a href="#booking" class="btn-header-mobile">
@@ -2118,7 +2120,7 @@
             </nav>
         </div>
         
-        <!-- MENÚ MÓVIL DESPLEGABLE -->
+        <!-- MENÚ MÓVIL DESPLEGABLE (solo para móvil) -->
         <div class="mobile-menu">
             <ul>
                 <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
@@ -2826,10 +2828,13 @@
             console.log("✅ EmailJS inicializado correctamente");
         })();
 
-        // === CONTROL MENÚ MÓVIL MODIFICADO ===
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.mobile-menu').classList.toggle('active');
-        });
+        // === CONTROL MENÚ MÓVIL ===
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                document.querySelector('.mobile-menu').classList.toggle('active');
+            });
+        }
 
         // Cerrar menú al hacer clic en un enlace
         document.querySelectorAll('.mobile-menu a').forEach(link => {
@@ -2838,28 +2843,6 @@
             });
         });
 
-        // Cerrar menú al hacer clic fuera
-        document.addEventListener('click', function(event) {
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const mobileBtn = document.querySelector('.mobile-menu-btn');
-            const btnAgendar = document.querySelector('.btn-header-mobile');
-            
-            if (mobileMenu.classList.contains('active') && 
-                !mobileMenu.contains(event.target) && 
-                !mobileBtn.contains(event.target) &&
-                !(btnAgendar && btnAgendar.contains(event.target))) {
-                mobileMenu.classList.remove('active');
-            }
-        });
-
-        // Cerrar menú al hacer scroll
-        window.addEventListener('scroll', function() {
-            const mobileMenu = document.querySelector('.mobile-menu');
-            if (mobileMenu && mobileMenu.classList.contains('active')) {
-                mobileMenu.classList.remove('active');
-            }
-        });
-        
         // Tab functionality
         document.querySelectorAll('.tab-btn').forEach(button => {
             button.addEventListener('click', () => {
@@ -2925,42 +2908,6 @@
             });
         });
         
-        // Crear puntos de luz adicionales con JavaScript
-        function createTwinklingStars() {
-            const starContainer = document.createElement('div');
-            starContainer.style.position = 'fixed';
-            starContainer.style.top = '0';
-            starContainer.style.left = '0';
-            starContainer.style.width = '100%';
-            starContainer.style.height = '100%';
-            starContainer.style.pointerEvents = 'none';
-            starContainer.style.zIndex = '-1';
-            document.body.appendChild(starContainer);
-            
-            // Crear múltiples puntos pequeños
-            for (let i = 0; i < 30; i++) { // Reducido para móvil
-                const star = document.createElement('div');
-                const size = Math.random() * 2 + 1; // Más pequeños
-                const x = Math.random() * 100;
-                const y = Math.random() * 100;
-                const opacity = Math.random() * 0.2 + 0.1; // Más transparente
-                const animationDelay = Math.random() * 5;
-                const animationDuration = Math.random() * 2 + 1; // Más rápido
-                
-                star.style.position = 'absolute';
-                star.style.width = `${size}px`;
-                star.style.height = `${size}px`;
-                star.style.borderRadius = '50%';
-                star.style.backgroundColor = `rgba(255, 165, 0, ${opacity})`;
-                star.style.boxShadow = `0 0 ${size * 1.5}px rgba(255, 165, 0, ${opacity * 0.6})`;
-                star.style.left = `${x}%`;
-                star.style.top = `${y}%`;
-                star.style.animation = `twinkle ${animationDuration}s infinite ${animationDelay}s`;
-                
-                starContainer.appendChild(star);
-            }
-        }
-        
         // === BOOKING PANEL FUNCTIONS - MÚLTIPLES SELECCIONES ===
         let selectedServices = [];
         let selectedWebOption = '';
@@ -2995,8 +2942,6 @@
             
             // Actualizar campo oculto
             document.getElementById('selectedServices').value = selectedServices.join(', ');
-            
-            console.log("Servicios seleccionados:", selectedServices);
         }
         
         function selectWebOption(option) {
@@ -3017,8 +2962,6 @@
         // === BOOKING FORM SUBMISSION ===
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            console.log("📤 Iniciando envío del formulario...");
             
             // Validate service selection
             if (selectedServices.length === 0) {
@@ -3051,8 +2994,6 @@
                 services: selectedServices.join(', '),
                 webOption: selectedWebOption || 'No aplica'
             };
-            
-            console.log("📝 Datos del formulario:", formData);
             
             // Map service names for display
             const serviceNames = {
@@ -3092,12 +3033,8 @@
                 })
             };
             
-            console.log("📧 Parámetros para EmailJS:", templateParams);
-            
             emailjs.send('service_oko11dg', 'template_8p714we', templateParams)
             .then(function(response) {
-                console.log('✅ ¡ÉXITO! Email enviado:', response.status, response.text);
-                
                 // Show success message
                 document.getElementById('successMessage').style.display = 'block';
                 
@@ -3127,8 +3064,6 @@
                 });
                 
             }, function(error) {
-                console.error('❌ ERROR al enviar email:', error);
-                
                 let errorMsg = 'Hubo un error al enviar la cita. ';
                 
                 if (error.text) {
@@ -3160,7 +3095,7 @@
         const banner = document.querySelector('.top-banner');
         let bannerVisible = true;
         
-        // Opcional: Ocultar banner después de 8 segundos (menos tiempo)
+        // Opcional: Ocultar banner después de 8 segundos
         setTimeout(() => {
             if(bannerVisible) {
                 banner.style.transform = 'translateY(-100%)';
@@ -3169,7 +3104,7 @@
                 
                 // Ajustar header y hero cuando banner se oculta
                 document.querySelector('header').style.top = '0';
-                document.querySelector('.hero').style.paddingTop = '60px'; // Más compacto
+                document.querySelector('.hero').style.paddingTop = '60px';
             }
         }, 8000);
         
@@ -3180,17 +3115,15 @@
                 bannerVisible = true;
                 
                 // Reajustar header y hero cuando banner vuelve
-                document.querySelector('header').style.top = '40px';
-                document.querySelector('.hero').style.paddingTop = '90px';
+                document.querySelector('header').style.top = '52px';
+                document.querySelector('.hero').style.paddingTop = '150px';
             }
         });
         
         // === OPTIMIZACIÓN PARA MÓVIL ===
         document.addEventListener('DOMContentLoaded', function() {
-            // Si estamos en móvil, cargar contenido más liviano
+            // Si estamos en móvil, optimizar contenido
             if (window.innerWidth <= 768) {
-                console.log("📱 Modo móvil detectado - Optimizando...");
-                
                 // Lazy loading para imágenes
                 const lazyImages = document.querySelectorAll('img');
                 lazyImages.forEach(img => {
@@ -3207,29 +3140,6 @@
                         video.setAttribute('webkit-playsinline', '');
                         video.setAttribute('muted', '');
                     }
-                });
-                
-                // Mostrar el botón de agendar claramente
-                const agendarBtn = document.querySelector('.btn-header-mobile');
-                if (agendarBtn) {
-                    agendarBtn.style.display = 'flex';
-                    agendarBtn.style.alignItems = 'center';
-                    agendarBtn.style.gap = '5px';
-                }
-            }
-            
-            // Crear puntos de luz adicionales con JavaScript
-            createTwinklingStars();
-            
-            // Efecto de brillo dinámico para el logo
-            const logo = document.getElementById('dynamicLogo');
-            if (logo) {
-                logo.addEventListener('mouseenter', function() {
-                    this.style.filter = 'drop-shadow(0 8px 20px rgba(255, 215, 0, 0.5))';
-                });
-                
-                logo.addEventListener('mouseleave', function() {
-                    this.style.filter = 'drop-shadow(0 4px 10px rgba(255, 215, 0, 0.3))';
                 });
             }
             
