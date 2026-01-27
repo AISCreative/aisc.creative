@@ -365,6 +365,7 @@
             width: 100%;
         }
         
+        /* Mobile Menu */
         .mobile-menu-btn {
             display: none;
             font-size: 1.6rem;
@@ -372,7 +373,7 @@
             cursor: pointer;
         }
         
-        /* Hero Section - MEJORADO */
+        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -1519,63 +1520,123 @@
             font-size: 0.85rem;
         }
         
-        /* =========== DISEÑO OPTIMIZADO HORIZONTAL PARA MÓVILES =========== */
+        /* =========== DISEÑO SUPER COMPACTO PARA MÓVIL =========== */
         
-        /* Ajustes generales para móviles */
+        /* Asegurar que no haya scroll horizontal */
         @media (max-width: 768px) {
+            html, body {
+                overflow-x: hidden !important;
+                max-width: 100% !important;
+                position: relative;
+            }
+            
             .container {
                 width: 95%;
-                padding: 0 15px;
+                padding: 0 10px;
             }
             
             .section {
-                padding: 70px 0;
+                padding: 40px 0 !important;
             }
             
             .section-title {
-                margin-bottom: 40px;
+                margin-bottom: 25px !important;
             }
             
             .section-title h2 {
-                font-size: 2.2rem;
+                font-size: 1.8rem !important;
             }
             
             .section-title p {
-                font-size: 1rem;
-                max-width: 90%;
+                font-size: 0.9rem !important;
+                max-width: 95% !important;
+                margin-bottom: 0 !important;
             }
             
-            /* Header optimizado */
+            /* HEADER COMPACTO CON BOTÓN VISIBLE */
             header {
-                padding: 15px 0;
-                top: 52px;
+                padding: 8px 0 !important;
+                top: 40px !important;
+            }
+            
+            /* Reorganizar navbar para móvil */
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
             }
             
             .logo-container {
-                gap: 10px;
+                gap: 8px !important;
             }
             
             .logo-img {
-                height: 50px;
+                height: 40px !important;
             }
             
             .logo-main {
-                font-size: 1.5rem;
+                font-size: 1.4rem !important;
             }
             
             .logo-subtitle {
-                font-size: 0.8rem;
+                font-size: 0.7rem !important;
             }
             
-            .mobile-menu-btn {
-                display: block;
-                font-size: 1.4rem;
-            }
-            
+            /* Ocultar el menú de navegación estándar en móvil */
             .nav-links {
+                display: none !important;
+            }
+            
+            /* Contenedor para botón y menú hamburguesa */
+            .mobile-nav-controls {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            /* Botón agendar visible en móvil */
+            .btn-header-mobile {
+                display: inline-flex !important;
+                align-items: center;
+                justify-content: center;
+                padding: 8px 15px !important;
+                background: var(--gradient-gold) !important;
+                color: var(--dark) !important;
+                border-radius: 50px !important;
+                font-weight: 700 !important;
+                font-size: 0.8rem !important;
+                text-decoration: none !important;
+                white-space: nowrap !important;
+                animation: pulseGold 2s infinite !important;
+                border: none !important;
+            }
+            
+            .btn-header-mobile i {
+                margin-right: 5px !important;
+                font-size: 0.8rem !important;
+            }
+            
+            /* Botón menú hamburguesa */
+            .mobile-menu-btn {
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 215, 0, 0.1);
+                border-radius: 6px;
+                border: 1px solid rgba(255, 215, 0, 0.2);
+                font-size: 1.2rem;
+                color: var(--gold);
+                cursor: pointer;
+            }
+            
+            /* Menú desplegable móvil */
+            .mobile-menu {
                 display: none;
                 position: fixed;
-                top: 70px;
+                top: 60px;
                 left: 0;
                 width: 100%;
                 background: rgba(26, 26, 26, 0.98);
@@ -1586,565 +1647,357 @@
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
                 border-top: 1px solid rgba(255, 215, 0, 0.1);
                 z-index: 1000;
+                border-bottom: 1px solid rgba(255, 215, 0, 0.1);
             }
             
-            .nav-links.active {
+            .mobile-menu.active {
                 display: flex;
             }
             
-            .nav-links li {
-                margin: 10px 0;
-            }
-            
-            .btn-header {
-                margin-top: 10px;
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-            
-            /* Hero optimizado para horizontal */
-            .hero {
-                padding-top: 120px;
-                min-height: 85vh;
-                display: flex;
-                align-items: center;
-            }
-            
-            .hero-content {
+            .mobile-menu ul {
+                list-style: none;
                 width: 100%;
-                max-width: 100%;
+            }
+            
+            .mobile-menu li {
+                margin: 12px 0;
+                width: 100%;
+            }
+            
+            .mobile-menu a {
+                display: block;
+                padding: 10px 0;
+                font-weight: 600;
+                font-size: 1rem;
+                color: #eee;
+                border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+                transition: var(--transition-fast);
+            }
+            
+            .mobile-menu a:hover {
+                color: var(--gold);
+                padding-left: 15px;
+            }
+            
+            /* TOP BANNER MÁS PEQUEÑO */
+            .top-banner {
+                padding: 8px 0 !important;
+                font-size: 0.85rem !important;
+            }
+            
+            /* HERO SECTION - EXTREMADAMENTE COMPACTO */
+            .hero {
+                padding-top: 90px !important;
+                min-height: auto !important;
+                padding-bottom: 30px !important;
             }
             
             .hero h1 {
-                font-size: 2.2rem;
-                line-height: 1.2;
-                margin-bottom: 20px;
+                font-size: 1.6rem !important;
+                margin-bottom: 15px !important;
+                line-height: 1.1 !important;
             }
             
-            .hero p {
-                font-size: 1.05rem;
-                margin-bottom: 25px;
-                max-width: 100%;
+            .hero > p {
+                font-size: 0.9rem !important;
+                margin-bottom: 15px !important;
+                line-height: 1.4 !important;
             }
             
             .business-note {
-                padding: 20px;
-                margin: 25px 0;
+                padding: 15px !important;
+                margin: 15px 0 !important;
             }
             
             .business-note h3 {
-                font-size: 1.2rem;
+                font-size: 1rem !important;
+                margin-bottom: 8px !important;
             }
             
             .business-note p {
-                font-size: 1rem;
+                font-size: 0.85rem !important;
+                line-height: 1.4 !important;
             }
             
             .hero-btns {
-                flex-direction: row;
-                flex-wrap: wrap;
-                gap: 15px;
-                margin-top: 30px;
+                flex-direction: column !important;
+                gap: 10px !important;
+                margin-top: 20px !important;
             }
             
             .hero-btns .btn {
-                flex: 1;
-                min-width: 45%;
-                padding: 14px 20px;
-                font-size: 0.95rem;
-                margin-bottom: 0;
+                width: 100% !important;
+                padding: 12px 20px !important;
+                font-size: 0.9rem !important;
             }
             
+            /* VIDEO GALLERY COMPACTA - OCULTAR EN MÓVIL PARA MENOS SCROLL */
             .hero-video-gallery {
-                position: relative;
-                width: 100%;
-                max-width: 100%;
-                margin-top: 40px;
-                transform: none;
-                top: auto;
-                right: auto;
+                display: none !important;
             }
             
-            .video-container {
-                height: 350px;
-            }
-            
-            .video-showcase-header {
-                padding: 15px;
-            }
-            
-            .video-showcase-header h3 {
-                font-size: 1.2rem;
-            }
-            
-            /* Service tabs en fila horizontal */
+            /* Service tabs - Scroll horizontal compacto */
             .service-tabs {
                 display: flex;
                 flex-direction: row;
                 overflow-x: auto;
                 overflow-y: hidden;
                 white-space: nowrap;
-                padding-bottom: 15px;
-                margin-bottom: 30px;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+                justify-content: flex-start;
                 -webkit-overflow-scrolling: touch;
                 scrollbar-width: thin;
-                scrollbar-color: var(--gold) rgba(255, 215, 0, 0.1);
-            }
-            
-            .service-tabs::-webkit-scrollbar {
-                height: 4px;
-            }
-            
-            .service-tabs::-webkit-scrollbar-track {
-                background: rgba(255, 215, 0, 0.1);
-                border-radius: 10px;
-            }
-            
-            .service-tabs::-webkit-scrollbar-thumb {
-                background: var(--gradient-gold);
-                border-radius: 10px;
             }
             
             .tab-btn {
                 flex-shrink: 0;
-                padding: 12px 20px;
-                margin-right: 10px;
-                font-size: 0.95rem;
+                padding: 10px 18px;
+                margin-right: 8px;
+                font-size: 0.85rem;
                 white-space: nowrap;
             }
             
-            .tab-btn:last-child {
-                margin-right: 0;
-            }
-            
-            /* Grids optimizados para horizontal */
-            .web-design-content {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-            
+            /* Grids más compactos - 1 COLUMNA */
+            .web-design-content,
             .social-content {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
             }
             
             .project-img, .social-img {
-                height: 200px;
+                height: 150px !important;
             }
             
             .project-info {
-                padding: 18px;
+                padding: 15px !important;
             }
             
             .project-info h3 {
-                font-size: 1.3rem;
+                font-size: 1.2rem !important;
             }
             
             .project-info p {
-                font-size: 0.9rem;
+                font-size: 0.85rem !important;
             }
             
-            /* Secciones informativas en grid horizontal */
+            /* Secciones informativas más compactas */
             .seo-importance,
             .team-production,
-            .experts-importance {
-                padding: 25px;
-                margin-top: 30px;
+            .experts-importance,
+            .vertical-formations {
+                padding: 20px !important;
+                margin: 25px 0 !important;
+            }
+            
+            .seo-importance h3,
+            .team-production h3,
+            .experts-importance h3,
+            .vertical-formations h3 {
+                font-size: 1.3rem !important;
             }
             
             .seo-benefits,
             .expert-benefits,
             .experience-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
+                margin-top: 20px !important;
             }
             
             .seo-benefit,
             .expert-benefit,
             .experience-item {
-                padding: 18px;
+                padding: 15px !important;
             }
             
-            .seo-benefit h4,
-            .expert-benefit h4,
-            .experience-item h4 {
-                font-size: 1.1rem;
-            }
-            
-            /* Videos grid horizontal */
+            /* Videos grid - 1 COLUMNA */
             .videos-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
             }
             
             .reel-container {
-                height: 400px;
+                height: 250px !important;
             }
             
-            .instagram-videos h3 {
-                font-size: 1.8rem;
-            }
-            
-            /* Formaciones optimizadas */
-            .vertical-formations {
-                padding: 30px 25px;
-                margin: 40px 0;
-            }
-            
-            .vertical-formations h3 {
-                font-size: 1.8rem;
-                margin-bottom: 20px;
-            }
-            
-            .vertical-formations > p {
-                font-size: 1.1rem;
-                margin-bottom: 30px;
-            }
-            
-            .formation-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .formation-text h4 {
-                font-size: 1.4rem;
-            }
-            
-            .formation-images {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            
-            .formation-img {
-                height: 200px;
-            }
-            
-            .formation-cta .btn {
-                max-width: 100%;
-            }
-            
-            /* Values en fila horizontal */
+            /* Values grid - 1 COLUMNA */
             .values-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 15px;
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
             }
             
             .value-item {
-                padding: 25px 15px;
+                padding: 20px 15px !important;
             }
             
             .value-item h3 {
-                font-size: 1.4rem;
+                font-size: 1.3rem !important;
             }
             
             .value-item p {
-                font-size: 0.9rem;
+                font-size: 0.9rem !important;
             }
             
-            /* CTA optimizado */
+            /* CTA más compacto */
             .cta h2 {
-                font-size: 2.2rem;
+                font-size: 1.8rem !important;
             }
             
             .cta p {
-                font-size: 1.1rem;
+                font-size: 0.95rem !important;
+                margin-bottom: 25px !important;
             }
             
-            /* Booking panel optimizado */
+            /* Booking panel más compacto */
             .booking-panel {
-                padding: 30px 25px;
-                margin: 50px auto;
+                padding: 25px 20px !important;
+                margin: 30px auto !important;
             }
             
             .booking-title h2 {
-                font-size: 2rem;
+                font-size: 1.6rem !important;
             }
             
             .booking-title p {
-                font-size: 1rem;
+                font-size: 0.9rem !important;
             }
             
             .service-options {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 15px;
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
             }
             
             .service-option {
-                padding: 18px;
+                padding: 15px !important;
             }
             
             .web-options {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: 1fr !important;
+                gap: 10px !important;
             }
             
             .form-row {
-                grid-template-columns: 1fr;
-                gap: 15px;
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
             }
             
             .form-group input,
             .form-group select {
-                padding: 12px 15px;
-                font-size: 0.95rem;
+                padding: 12px 15px !important;
+                font-size: 0.9rem !important;
             }
             
             .submit-btn {
-                padding: 16px;
-                font-size: 1rem;
+                padding: 16px !important;
+                font-size: 1rem !important;
             }
             
-            /* Footer optimizado */
+            /* Footer más compacto */
             footer {
-                padding: 40px 0 20px;
+                padding: 30px 0 15px !important;
             }
             
             .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                margin-bottom: 30px;
+                grid-template-columns: 1fr !important;
+                gap: 25px !important;
+                margin-bottom: 25px !important;
             }
             
             .footer-logo {
-                align-items: center;
-                text-align: center;
+                align-items: center !important;
+                text-align: center !important;
             }
             
             .footer-logo-img {
-                height: 60px;
-                margin: 0 auto 15px;
+                height: 50px !important;
+                margin: 0 auto 10px !important;
             }
             
             .footer-logo-main {
-                font-size: 1.8rem;
+                font-size: 1.6rem !important;
             }
             
             .footer-logo-subtitle {
-                font-size: 0.9rem;
+                font-size: 0.8rem !important;
             }
             
             .footer-about p {
-                text-align: center;
-                margin-bottom: 20px;
+                text-align: center !important;
+                margin-bottom: 15px !important;
+                font-size: 0.9rem !important;
             }
             
             .social-icons {
-                justify-content: center;
+                justify-content: center !important;
             }
             
             .footer-links h3,
             .footer-contact h3 {
-                text-align: center;
-                padding-bottom: 10px;
-                margin-bottom: 20px;
+                text-align: center !important;
+                padding-bottom: 8px !important;
+                margin-bottom: 15px !important;
+                font-size: 1.3rem !important;
             }
             
             .footer-links h3::after,
             .footer-contact h3::after {
-                left: 50%;
-                transform: translateX(-50%);
+                left: 50% !important;
+                transform: translateX(-50%) !important;
             }
             
             .footer-contact p {
-                justify-content: center;
-                text-align: center;
+                justify-content: center !important;
+                text-align: center !important;
+                font-size: 0.85rem !important;
             }
             
             .copyright {
-                padding-top: 20px;
-                font-size: 0.8rem;
-            }
-        }
-        
-        /* Ajustes específicos para móviles pequeños */
-        @media (max-width: 576px) {
-            .hero {
-                padding-top: 110px;
-                min-height: 80vh;
+                padding-top: 15px !important;
+                font-size: 0.75rem !important;
             }
             
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 0.95rem;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-            }
-            
-            .hero-btns .btn {
-                width: 100%;
-                min-width: 100%;
-            }
-            
-            .video-container {
-                height: 280px;
-            }
-            
-            .web-design-content,
-            .social-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .videos-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .service-options {
-                grid-template-columns: 1fr;
-            }
-            
-            .web-options {
-                grid-template-columns: 1fr;
-            }
-            
-            .seo-benefits,
-            .expert-benefits,
-            .experience-grid {
-                grid-template-columns: 1fr;
+            /* Formaciones optimizadas */
+            .formation-content {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
             }
             
             .formation-images {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
+            }
+            
+            .formation-img {
+                height: 180px !important;
             }
         }
         
-        /* Ajustes para tablets grandes y pantallas medianas */
-        @media (max-width: 992px) and (min-width: 769px) {
-            .hero h1 {
-                font-size: 2.8rem;
+        /* Ajustes específicos para pantallas muy pequeñas */
+        @media (max-width: 480px) {
+            .btn-header-mobile {
+                padding: 7px 12px !important;
+                font-size: 0.75rem !important;
             }
             
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .web-design-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .social-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .videos-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .values-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        /* Ajustes específicos para orientación horizontal en móviles */
-        @media (max-width: 768px) and (orientation: landscape) {
-            .hero {
-                min-height: 100vh;
-                padding-top: 100px;
-            }
-            
-            .hero-content {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+            .mobile-menu-btn {
+                width: 34px !important;
+                height: 34px !important;
             }
             
             .hero h1 {
-                font-size: 2rem;
-                margin-bottom: 15px;
-            }
-            
-            .hero p {
-                font-size: 0.95rem;
-                margin-bottom: 20px;
-            }
-            
-            .hero-btns {
-                flex-direction: row;
-                margin-top: 25px;
-            }
-            
-            .hero-btns .btn {
-                flex: 1;
-                min-width: 48%;
-                padding: 12px 18px;
-            }
-            
-            .business-note {
-                margin: 20px 0;
-                padding: 18px;
-            }
-            
-            .video-container {
-                height: 300px;
-            }
-            
-            /* Grids optimizados para landscape */
-            .web-design-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .social-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .videos-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .values-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            /* Secciones más compactas */
-            .section {
-                padding: 60px 0;
-            }
-            
-            .section-title {
-                margin-bottom: 30px;
+                font-size: 1.5rem !important;
             }
             
             .section-title h2 {
-                font-size: 1.8rem;
+                font-size: 1.5rem !important;
             }
         }
         
-        /* Ajustes para pantallas muy pequeñas */
-        @media (max-width: 400px) {
-            .logo-container {
-                gap: 8px;
-            }
-            
-            .logo-img {
-                height: 40px;
-            }
-            
-            .logo-main {
-                font-size: 1.2rem;
-            }
-            
-            .logo-subtitle {
-                font-size: 0.7rem;
-            }
-            
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-            
-            .hero p {
-                font-size: 0.9rem;
-            }
-            
-            .tab-btn {
-                padding: 10px 15px;
-                font-size: 0.85rem;
+        /* Ocultar video en móvil para menos carga */
+        @media (max-width: 768px) {
+            .hero-video-gallery {
+                display: none !important;
             }
         }
         
@@ -2236,6 +2089,8 @@
                         </div>
                     </div>
                 </a>
+                
+                <!-- MENÚ PARA PC (oculto en móvil) -->
                 <ul class="nav-links">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
@@ -2247,10 +2102,31 @@
                         </a>
                     </li>
                 </ul>
-                <div class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
+                
+                <!-- CONTROLES PARA MÓVIL (visible solo en móvil) -->
+                <div class="mobile-nav-controls">
+                    <!-- BOTÓN AGENDAR VISIBLE EN MÓVIL -->
+                    <a href="#booking" class="btn-header-mobile">
+                        <i class="fas fa-calendar-alt"></i> Agendar
+                    </a>
+                    
+                    <!-- BOTÓN MENÚ HAMBURGUESA -->
+                    <div class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
                 </div>
             </nav>
+        </div>
+        
+        <!-- MENÚ MÓVIL DESPLEGABLE -->
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="#servicios"><i class="fas fa-cogs"></i> Servicios</a></li>
+                <li><a href="#valores"><i class="fas fa-star"></i> Valores</a></li>
+                <li><a href="#formations-tab"><i class="fas fa-graduation-cap"></i> Formaciones</a></li>
+                <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
         </div>
     </header>
 
@@ -2273,6 +2149,7 @@
                 </div>
             </div>
             
+            <!-- Video gallery (oculto en móvil) -->
             <div class="hero-video-gallery">
                 <div class="video-showcase">
                     <div class="video-showcase-header">
@@ -2949,16 +2826,38 @@
             console.log("✅ EmailJS inicializado correctamente");
         })();
 
-        // Mobile Menu Toggle
+        // === CONTROL MENÚ MÓVIL MODIFICADO ===
         document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
+            document.querySelector('.mobile-menu').classList.toggle('active');
         });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
-                document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.mobile-menu').classList.remove('active');
             });
+        });
+
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            const btnAgendar = document.querySelector('.btn-header-mobile');
+            
+            if (mobileMenu.classList.contains('active') && 
+                !mobileMenu.contains(event.target) && 
+                !mobileBtn.contains(event.target) &&
+                !(btnAgendar && btnAgendar.contains(event.target))) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Cerrar menú al hacer scroll
+        window.addEventListener('scroll', function() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenu && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+            }
         });
         
         // Tab functionality
@@ -3039,21 +2938,21 @@
             document.body.appendChild(starContainer);
             
             // Crear múltiples puntos pequeños
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 30; i++) { // Reducido para móvil
                 const star = document.createElement('div');
-                const size = Math.random() * 3 + 1;
+                const size = Math.random() * 2 + 1; // Más pequeños
                 const x = Math.random() * 100;
                 const y = Math.random() * 100;
-                const opacity = Math.random() * 0.3 + 0.1;
+                const opacity = Math.random() * 0.2 + 0.1; // Más transparente
                 const animationDelay = Math.random() * 5;
-                const animationDuration = Math.random() * 3 + 2;
+                const animationDuration = Math.random() * 2 + 1; // Más rápido
                 
                 star.style.position = 'absolute';
                 star.style.width = `${size}px`;
                 star.style.height = `${size}px`;
                 star.style.borderRadius = '50%';
                 star.style.backgroundColor = `rgba(255, 165, 0, ${opacity})`;
-                star.style.boxShadow = `0 0 ${size * 2}px rgba(255, 165, 0, ${opacity * 0.8})`;
+                star.style.boxShadow = `0 0 ${size * 1.5}px rgba(255, 165, 0, ${opacity * 0.6})`;
                 star.style.left = `${x}%`;
                 star.style.top = `${y}%`;
                 star.style.animation = `twinkle ${animationDuration}s infinite ${animationDelay}s`;
@@ -3194,7 +3093,6 @@
             };
             
             console.log("📧 Parámetros para EmailJS:", templateParams);
-            console.log("🔄 Enviando email a través de EmailJS...");
             
             emailjs.send('service_oko11dg', 'template_8p714we', templateParams)
             .then(function(response) {
@@ -3228,8 +3126,6 @@
                     block: 'center'
                 });
                 
-                console.log("🎉 Formulario procesado correctamente");
-                
             }, function(error) {
                 console.error('❌ ERROR al enviar email:', error);
                 
@@ -3237,7 +3133,6 @@
                 
                 if (error.text) {
                     errorMsg += 'Detalles: ' + error.text;
-                    console.error('Detalles del error:', error.text);
                 }
                 
                 if (error.status === 0) {
@@ -3258,7 +3153,6 @@
                 // Reset button state
                 submitBtn.disabled = false;
                 submitBtn.classList.remove('loading');
-                console.log("🔄 Botón de envío restablecido");
             });
         });
         
@@ -3266,7 +3160,7 @@
         const banner = document.querySelector('.top-banner');
         let bannerVisible = true;
         
-        // Opcional: Ocultar banner después de 10 segundos
+        // Opcional: Ocultar banner después de 8 segundos (menos tiempo)
         setTimeout(() => {
             if(bannerVisible) {
                 banner.style.transform = 'translateY(-100%)';
@@ -3275,9 +3169,9 @@
                 
                 // Ajustar header y hero cuando banner se oculta
                 document.querySelector('header').style.top = '0';
-                document.querySelector('.hero').style.paddingTop = '80px';
+                document.querySelector('.hero').style.paddingTop = '60px'; // Más compacto
             }
-        }, 10000);
+        }, 8000);
         
         // Mostrar banner al hacer scroll arriba
         window.addEventListener('scroll', function() {
@@ -3286,47 +3180,43 @@
                 bannerVisible = true;
                 
                 // Reajustar header y hero cuando banner vuelve
-                document.querySelector('header').style.top = '52px';
-                document.querySelector('.hero').style.paddingTop = '132px';
+                document.querySelector('header').style.top = '40px';
+                document.querySelector('.hero').style.paddingTop = '90px';
             }
         });
         
-        // Preload images for better performance
+        // === OPTIMIZACIÓN PARA MÓVIL ===
         document.addEventListener('DOMContentLoaded', function() {
-            const assets = [
-                'logo.png',
-                'images/form1.webp',
-                'images/form2.webp',
-                'images/form3.webp',
-                'images/web1.webp',
-                'images/web2.webp',
-                'images/web3.webp',
-                'images/web4.webp',
-                'images/web5.webp',
-                'images/web6.webp',
-                'images/redes1.webp',
-                'images/redes2.webp',
-                'images/redes3.webp',
-                'images/redes4.webp',
-                'images/redes5.webp',
-                'images/redes6.webp'
-            ];
-            
-            assets.forEach(url => {
-                const link = document.createElement('link');
-                if (url.endsWith('.webp')) {
-                    link.rel = 'preload';
-                    link.as = 'image';
-                    link.href = url;
-                    link.type = 'image/webp';
-                } else if (url.endsWith('.png')) {
-                    link.rel = 'preload';
-                    link.as = 'image';
-                    link.href = url;
-                    link.type = 'image/png';
+            // Si estamos en móvil, cargar contenido más liviano
+            if (window.innerWidth <= 768) {
+                console.log("📱 Modo móvil detectado - Optimizando...");
+                
+                // Lazy loading para imágenes
+                const lazyImages = document.querySelectorAll('img');
+                lazyImages.forEach(img => {
+                    img.loading = 'lazy';
+                });
+                
+                // Optimizar videos para móvil - SIN AUTOPLAY
+                const videos = document.querySelectorAll('iframe');
+                videos.forEach(video => {
+                    if (video.src.includes('streamable.com')) {
+                        // Desactivar autoplay en móvil para evitar problemas
+                        video.src = video.src.replace('autoplay=1', 'autoplay=0');
+                        video.setAttribute('playsinline', '');
+                        video.setAttribute('webkit-playsinline', '');
+                        video.setAttribute('muted', '');
+                    }
+                });
+                
+                // Mostrar el botón de agendar claramente
+                const agendarBtn = document.querySelector('.btn-header-mobile');
+                if (agendarBtn) {
+                    agendarBtn.style.display = 'flex';
+                    agendarBtn.style.alignItems = 'center';
+                    agendarBtn.style.gap = '5px';
                 }
-                document.head.appendChild(link);
-            });
+            }
             
             // Crear puntos de luz adicionales con JavaScript
             createTwinklingStars();
@@ -3354,54 +3244,7 @@
                     element.classList.add('animated');
                 });
             }, 500);
-            
-            // Optimizar videos para móvil
-            if (window.innerWidth <= 768) {
-                const videos = document.querySelectorAll('.streamable-iframe');
-                videos.forEach(video => {
-                    if (video.src.includes('streamable.com')) {
-                        // Forzar parámetros móviles
-                        const newSrc = video.src.replace(/autoplay=1/, 'autoplay=1&muted=1&controls=0&playsinline=1');
-                        video.src = newSrc;
-                        video.setAttribute('playsinline', '');
-                        video.setAttribute('webkit-playsinline', '');
-                    }
-                });
-            }
-            
-            // Forzar actualización de videos
-            setTimeout(() => {
-                const videos = document.querySelectorAll('.streamable-iframe, .hero-video');
-                videos.forEach(video => {
-                    if (video.src) {
-                        const currentSrc = video.src;
-                        video.src = currentSrc;
-                    }
-                });
-            }, 1000);
         });
-        
-        // === FUNCIÓN DE PRUEBA PARA EMAILJS ===
-        window.testEmailJS = function() {
-            console.log("🧪 Probando EmailJS...");
-            
-            const testParams = {
-                from_name: "Cliente de Prueba",
-                from_email: "test@ejemplo.com",
-                from_phone: "+34 600 000 000",
-                company: "Empresa de Prueba",
-                services: "Diseño Web, Contenido Digital",
-                web_option: "Landing Page",
-                message: "Este es un mensaje de prueba",
-                date_time: new Date().toLocaleString('es-ES')
-            };
-            
-            console.log("Enviando datos de prueba:", testParams);
-            
-            emailjs.send('service_oko11dg', 'template_st7hs89', testParams)
-                .then(response => console.log("✅ Prueba exitosa:", response))
-                .catch(error => console.error("❌ Error en prueba:", error));
-        };
     </script>
 </body>
 </html>
