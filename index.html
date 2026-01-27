@@ -372,7 +372,7 @@
             cursor: pointer;
         }
         
-        /* Hero Section */
+        /* Hero Section - MEJORADO */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -513,12 +513,6 @@
         }
         
         .hero-video {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .streamable-iframe {
             width: 100%;
             height: 100%;
             border: none;
@@ -1001,6 +995,13 @@
             width: 100%;
             height: 100%;
             border: none;
+        }
+        
+        .streamable-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: none;
         }
         
         .reel-overlay {
@@ -1518,94 +1519,63 @@
             font-size: 0.85rem;
         }
         
-        /* =========== DISEÑO SUPER COMPACTO PARA MÓVIL =========== */
+        /* =========== DISEÑO OPTIMIZADO HORIZONTAL PARA MÓVILES =========== */
         
+        /* Ajustes generales para móviles */
         @media (max-width: 768px) {
-            /* Asegurar que no haya scroll horizontal */
-            html, body {
-                overflow-x: hidden !important;
-                max-width: 100% !important;
-                position: relative;
-            }
-            
             .container {
                 width: 95%;
-                padding: 0 10px;
+                padding: 0 15px;
             }
             
             .section {
-                padding: 40px 0 !important;
+                padding: 70px 0;
             }
             
             .section-title {
-                margin-bottom: 25px !important;
+                margin-bottom: 40px;
             }
             
             .section-title h2 {
-                font-size: 1.8rem !important;
+                font-size: 2.2rem;
             }
             
             .section-title p {
-                font-size: 0.9rem !important;
-                max-width: 95% !important;
-                margin-bottom: 0 !important;
+                font-size: 1rem;
+                max-width: 90%;
             }
             
-            /* HEADER ORIGINAL PARA PC - MODIFICADO SOLO PARA MÓVIL */
-            /* Ocultar nav-links en móvil */
-            .nav-links {
-                display: none !important;
+            /* Header optimizado */
+            header {
+                padding: 15px 0;
+                top: 52px;
             }
             
-            /* Mostrar controles móviles */
-            .mobile-nav-controls {
-                display: flex;
-                align-items: center;
+            .logo-container {
                 gap: 10px;
             }
             
-            /* Botón agendar visible en móvil */
-            .btn-header-mobile {
-                display: inline-flex !important;
-                align-items: center;
-                justify-content: center;
-                padding: 8px 15px !important;
-                background: var(--gradient-gold) !important;
-                color: var(--dark) !important;
-                border-radius: 50px !important;
-                font-weight: 700 !important;
-                font-size: 0.8rem !important;
-                text-decoration: none !important;
-                white-space: nowrap !important;
-                animation: pulseGold 2s infinite !important;
-                border: none !important;
+            .logo-img {
+                height: 50px;
             }
             
-            .btn-header-mobile i {
-                margin-right: 5px !important;
-                font-size: 0.8rem !important;
+            .logo-main {
+                font-size: 1.5rem;
             }
             
-            /* Botón menú hamburguesa - MOSTRAR EN MÓVIL */
+            .logo-subtitle {
+                font-size: 0.8rem;
+            }
+            
             .mobile-menu-btn {
-                display: flex !important;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 215, 0, 0.1);
-                border-radius: 6px;
-                border: 1px solid rgba(255, 215, 0, 0.2);
-                font-size: 1.2rem;
-                color: var(--gold);
-                cursor: pointer;
+                display: block;
+                font-size: 1.4rem;
             }
             
-            /* Menú desplegable móvil */
-            .mobile-menu {
+            .nav-links {
                 display: none;
                 position: fixed;
-                top: 60px;
+                top: 70px;
                 left: 0;
                 width: 100%;
                 background: rgba(26, 26, 26, 0.98);
@@ -1616,389 +1586,565 @@
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
                 border-top: 1px solid rgba(255, 215, 0, 0.1);
                 z-index: 1000;
-                border-bottom: 1px solid rgba(255, 215, 0, 0.1);
             }
             
-            .mobile-menu.active {
+            .nav-links.active {
                 display: flex;
             }
             
-            .mobile-menu ul {
-                list-style: none;
-                width: 100%;
+            .nav-links li {
+                margin: 10px 0;
             }
             
-            .mobile-menu li {
-                margin: 12px 0;
-                width: 100%;
+            .btn-header {
+                margin-top: 10px;
+                padding: 10px 20px;
+                font-size: 0.9rem;
             }
             
-            .mobile-menu a {
-                display: block;
-                padding: 10px 0;
-                font-weight: 600;
-                font-size: 1rem;
-                color: #eee;
-                border-bottom: 1px solid rgba(255, 215, 0, 0.1);
-                transition: var(--transition-fast);
-            }
-            
-            .mobile-menu a:hover {
-                color: var(--gold);
-                padding-left: 15px;
-            }
-            
-            /* Logo más pequeño en móvil */
-            .logo-container {
-                gap: 8px !important;
-            }
-            
-            .logo-img {
-                height: 40px !important;
-            }
-            
-            .logo-main {
-                font-size: 1.4rem !important;
-            }
-            
-            .logo-subtitle {
-                font-size: 0.7rem !important;
-            }
-            
-            /* TOP BANNER MÁS PEQUEÑO */
-            .top-banner {
-                padding: 8px 0 !important;
-                font-size: 0.85rem !important;
-            }
-            
-            /* HERO SECTION - EXTREMADAMENTE COMPACTO */
+            /* Hero optimizado para horizontal */
             .hero {
-                padding-top: 90px !important;
-                min-height: auto !important;
-                padding-bottom: 30px !important;
+                padding-top: 120px;
+                min-height: 85vh;
+                display: flex;
+                align-items: center;
+            }
+            
+            .hero-content {
+                width: 100%;
+                max-width: 100%;
             }
             
             .hero h1 {
-                font-size: 1.6rem !important;
-                margin-bottom: 15px !important;
-                line-height: 1.1 !important;
+                font-size: 2.2rem;
+                line-height: 1.2;
+                margin-bottom: 20px;
             }
             
-            .hero > p {
-                font-size: 0.9rem !important;
-                margin-bottom: 15px !important;
-                line-height: 1.4 !important;
+            .hero p {
+                font-size: 1.05rem;
+                margin-bottom: 25px;
+                max-width: 100%;
             }
             
             .business-note {
-                padding: 15px !important;
-                margin: 15px 0 !important;
+                padding: 20px;
+                margin: 25px 0;
             }
             
             .business-note h3 {
-                font-size: 1rem !important;
-                margin-bottom: 8px !important;
+                font-size: 1.2rem;
             }
             
             .business-note p {
-                font-size: 0.85rem !important;
-                line-height: 1.4 !important;
+                font-size: 1rem;
             }
             
             .hero-btns {
-                flex-direction: column !important;
-                gap: 10px !important;
-                margin-top: 20px !important;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 15px;
+                margin-top: 30px;
             }
             
             .hero-btns .btn {
-                width: 100% !important;
-                padding: 12px 20px !important;
-                font-size: 0.9rem !important;
+                flex: 1;
+                min-width: 45%;
+                padding: 14px 20px;
+                font-size: 0.95rem;
+                margin-bottom: 0;
             }
             
-            /* VIDEO GALLERY COMPACTA - OCULTAR EN MÓVIL PARA MENOS SCROLL */
             .hero-video-gallery {
-                display: none !important;
+                position: relative;
+                width: 100%;
+                max-width: 100%;
+                margin-top: 40px;
+                transform: none;
+                top: auto;
+                right: auto;
             }
             
-            /* Service tabs - Scroll horizontal compacto */
+            .video-container {
+                height: 350px;
+            }
+            
+            .video-showcase-header {
+                padding: 15px;
+            }
+            
+            .video-showcase-header h3 {
+                font-size: 1.2rem;
+            }
+            
+            /* Service tabs en fila horizontal */
             .service-tabs {
                 display: flex;
                 flex-direction: row;
                 overflow-x: auto;
                 overflow-y: hidden;
                 white-space: nowrap;
-                padding-bottom: 10px;
-                margin-bottom: 20px;
-                justify-content: flex-start;
+                padding-bottom: 15px;
+                margin-bottom: 30px;
                 -webkit-overflow-scrolling: touch;
                 scrollbar-width: thin;
+                scrollbar-color: var(--gold) rgba(255, 215, 0, 0.1);
+            }
+            
+            .service-tabs::-webkit-scrollbar {
+                height: 4px;
+            }
+            
+            .service-tabs::-webkit-scrollbar-track {
+                background: rgba(255, 215, 0, 0.1);
+                border-radius: 10px;
+            }
+            
+            .service-tabs::-webkit-scrollbar-thumb {
+                background: var(--gradient-gold);
+                border-radius: 10px;
             }
             
             .tab-btn {
                 flex-shrink: 0;
-                padding: 10px 18px;
-                margin-right: 8px;
-                font-size: 0.85rem;
+                padding: 12px 20px;
+                margin-right: 10px;
+                font-size: 0.95rem;
                 white-space: nowrap;
             }
             
-            /* Grids más compactos - 1 COLUMNA */
-            .web-design-content,
+            .tab-btn:last-child {
+                margin-right: 0;
+            }
+            
+            /* Grids optimizados para horizontal */
+            .web-design-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
             .social-content {
-                grid-template-columns: 1fr !important;
-                gap: 15px !important;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
             
             .project-img, .social-img {
-                height: 150px !important;
+                height: 200px;
             }
             
             .project-info {
-                padding: 15px !important;
+                padding: 18px;
             }
             
             .project-info h3 {
-                font-size: 1.2rem !important;
+                font-size: 1.3rem;
             }
             
             .project-info p {
-                font-size: 0.85rem !important;
+                font-size: 0.9rem;
             }
             
-            /* Secciones informativas más compactas */
+            /* Secciones informativas en grid horizontal */
             .seo-importance,
             .team-production,
-            .experts-importance,
-            .vertical-formations {
-                padding: 20px !important;
-                margin: 25px 0 !important;
-            }
-            
-            .seo-importance h3,
-            .team-production h3,
-            .experts-importance h3,
-            .vertical-formations h3 {
-                font-size: 1.3rem !important;
+            .experts-importance {
+                padding: 25px;
+                margin-top: 30px;
             }
             
             .seo-benefits,
             .expert-benefits,
             .experience-grid {
-                grid-template-columns: 1fr !important;
-                gap: 12px !important;
-                margin-top: 20px !important;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
             }
             
             .seo-benefit,
             .expert-benefit,
             .experience-item {
-                padding: 15px !important;
+                padding: 18px;
             }
             
-            /* Videos grid - 1 COLUMNA */
+            .seo-benefit h4,
+            .expert-benefit h4,
+            .experience-item h4 {
+                font-size: 1.1rem;
+            }
+            
+            /* Videos grid horizontal */
             .videos-grid {
-                grid-template-columns: 1fr !important;
-                gap: 15px !important;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
             
             .reel-container {
-                height: 250px !important;
+                height: 400px;
             }
             
-            /* Values grid - 1 COLUMNA */
+            .instagram-videos h3 {
+                font-size: 1.8rem;
+            }
+            
+            /* Formaciones optimizadas */
+            .vertical-formations {
+                padding: 30px 25px;
+                margin: 40px 0;
+            }
+            
+            .vertical-formations h3 {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+            }
+            
+            .vertical-formations > p {
+                font-size: 1.1rem;
+                margin-bottom: 30px;
+            }
+            
+            .formation-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .formation-text h4 {
+                font-size: 1.4rem;
+            }
+            
+            .formation-images {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .formation-img {
+                height: 200px;
+            }
+            
+            .formation-cta .btn {
+                max-width: 100%;
+            }
+            
+            /* Values en fila horizontal */
             .values-grid {
-                grid-template-columns: 1fr !important;
-                gap: 15px !important;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
             }
             
             .value-item {
-                padding: 20px 15px !important;
+                padding: 25px 15px;
             }
             
             .value-item h3 {
-                font-size: 1.3rem !important;
+                font-size: 1.4rem;
             }
             
             .value-item p {
-                font-size: 0.9rem !important;
+                font-size: 0.9rem;
             }
             
-            /* CTA más compacto */
+            /* CTA optimizado */
             .cta h2 {
-                font-size: 1.8rem !important;
+                font-size: 2.2rem;
             }
             
             .cta p {
-                font-size: 0.95rem !important;
-                margin-bottom: 25px !important;
+                font-size: 1.1rem;
             }
             
-            /* Booking panel más compacto */
+            /* Booking panel optimizado */
             .booking-panel {
-                padding: 25px 20px !important;
-                margin: 30px auto !important;
+                padding: 30px 25px;
+                margin: 50px auto;
             }
             
             .booking-title h2 {
-                font-size: 1.6rem !important;
+                font-size: 2rem;
             }
             
             .booking-title p {
-                font-size: 0.9rem !important;
+                font-size: 1rem;
             }
             
             .service-options {
-                grid-template-columns: 1fr !important;
-                gap: 12px !important;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
             }
             
             .service-option {
-                padding: 15px !important;
+                padding: 18px;
             }
             
             .web-options {
-                grid-template-columns: 1fr !important;
-                gap: 10px !important;
+                grid-template-columns: repeat(3, 1fr);
             }
             
             .form-row {
-                grid-template-columns: 1fr !important;
-                gap: 15px !important;
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
             
             .form-group input,
             .form-group select {
-                padding: 12px 15px !important;
-                font-size: 0.9rem !important;
+                padding: 12px 15px;
+                font-size: 0.95rem;
             }
             
             .submit-btn {
-                padding: 16px !important;
-                font-size: 1rem !important;
+                padding: 16px;
+                font-size: 1rem;
             }
             
-            /* Footer más compacto */
+            /* Footer optimizado */
             footer {
-                padding: 30px 0 15px !important;
+                padding: 40px 0 20px;
             }
             
             .footer-content {
-                grid-template-columns: 1fr !important;
-                gap: 25px !important;
-                margin-bottom: 25px !important;
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin-bottom: 30px;
             }
             
             .footer-logo {
-                align-items: center !important;
-                text-align: center !important;
+                align-items: center;
+                text-align: center;
             }
             
             .footer-logo-img {
-                height: 50px !important;
-                margin: 0 auto 10px !important;
+                height: 60px;
+                margin: 0 auto 15px;
             }
             
             .footer-logo-main {
-                font-size: 1.6rem !important;
+                font-size: 1.8rem;
             }
             
             .footer-logo-subtitle {
-                font-size: 0.8rem !important;
+                font-size: 0.9rem;
             }
             
             .footer-about p {
-                text-align: center !important;
-                margin-bottom: 15px !important;
-                font-size: 0.9rem !important;
+                text-align: center;
+                margin-bottom: 20px;
             }
             
             .social-icons {
-                justify-content: center !important;
+                justify-content: center;
             }
             
             .footer-links h3,
             .footer-contact h3 {
-                text-align: center !important;
-                padding-bottom: 8px !important;
-                margin-bottom: 15px !important;
-                font-size: 1.3rem !important;
+                text-align: center;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
             }
             
             .footer-links h3::after,
             .footer-contact h3::after {
-                left: 50% !important;
-                transform: translateX(-50%) !important;
+                left: 50%;
+                transform: translateX(-50%);
             }
             
             .footer-contact p {
-                justify-content: center !important;
-                text-align: center !important;
-                font-size: 0.85rem !important;
+                justify-content: center;
+                text-align: center;
             }
             
             .copyright {
-                padding-top: 15px !important;
-                font-size: 0.75rem !important;
-            }
-            
-            /* Formaciones optimizadas */
-            .formation-content {
-                grid-template-columns: 1fr !important;
-                gap: 20px !important;
-            }
-            
-            .formation-images {
-                grid-template-columns: 1fr !important;
-                gap: 12px !important;
-            }
-            
-            .formation-img {
-                height: 180px !important;
+                padding-top: 20px;
+                font-size: 0.8rem;
             }
         }
         
-        /* Ajustes específicos para pantallas muy pequeñas */
-        @media (max-width: 480px) {
-            .btn-header-mobile {
-                padding: 7px 12px !important;
-                font-size: 0.75rem !important;
-            }
-            
-            .mobile-menu-btn {
-                width: 34px !important;
-                height: 34px !important;
+        /* Ajustes específicos para móviles pequeños */
+        @media (max-width: 576px) {
+            .hero {
+                padding-top: 110px;
+                min-height: 80vh;
             }
             
             .hero h1 {
-                font-size: 1.5rem !important;
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 0.95rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                min-width: 100%;
+            }
+            
+            .video-container {
+                height: 280px;
+            }
+            
+            .web-design-content,
+            .social-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .web-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .seo-benefits,
+            .expert-benefits,
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .formation-images {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Ajustes para tablets grandes y pantallas medianas */
+        @media (max-width: 992px) and (min-width: 769px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .web-design-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .social-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .videos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .values-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        /* Ajustes específicos para orientación horizontal en móviles */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .hero {
+                min-height: 100vh;
+                padding-top: 100px;
+            }
+            
+            .hero-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+            
+            .hero p {
+                font-size: 0.95rem;
+                margin-bottom: 20px;
+            }
+            
+            .hero-btns {
+                flex-direction: row;
+                margin-top: 25px;
+            }
+            
+            .hero-btns .btn {
+                flex: 1;
+                min-width: 48%;
+                padding: 12px 18px;
+            }
+            
+            .business-note {
+                margin: 20px 0;
+                padding: 18px;
+            }
+            
+            .video-container {
+                height: 300px;
+            }
+            
+            /* Grids optimizados para landscape */
+            .web-design-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .social-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .videos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .values-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            /* Secciones más compactas */
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                margin-bottom: 30px;
             }
             
             .section-title h2 {
-                font-size: 1.5rem !important;
+                font-size: 1.8rem;
             }
         }
         
-        /* Ocultar video en móvil para menos carga */
-        @media (max-width: 768px) {
-            .hero-video-gallery {
-                display: none !important;
-            }
-        }
-        
-        /* Mostrar nav-links en PC, ocultar controles móviles */
-        @media (min-width: 769px) {
-            .nav-links {
-                display: flex !important;
+        /* Ajustes para pantallas muy pequeñas */
+        @media (max-width: 400px) {
+            .logo-container {
+                gap: 8px;
             }
             
-            .mobile-nav-controls {
-                display: none !important;
+            .logo-img {
+                height: 40px;
             }
             
-            .mobile-menu {
-                display: none !important;
+            .logo-main {
+                font-size: 1.2rem;
+            }
+            
+            .logo-subtitle {
+                font-size: 0.7rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+            }
+            
+            .tab-btn {
+                padding: 10px 15px;
+                font-size: 0.85rem;
             }
         }
         
@@ -2077,7 +2223,7 @@
         </p>
     </div>
 
-    <!-- Header - ORIGINAL PARA PC, MEJORADO PARA MÓVIL -->
+    <!-- Header -->
     <header id="header">
         <div class="container">
             <nav class="navbar">
@@ -2090,8 +2236,6 @@
                         </div>
                     </div>
                 </a>
-                
-                <!-- MENÚ PARA PC (visible solo en desktop) -->
                 <ul class="nav-links">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
@@ -2103,31 +2247,10 @@
                         </a>
                     </li>
                 </ul>
-                
-                <!-- CONTROLES PARA MÓVIL (oculto en PC, visible en móvil) -->
-                <div class="mobile-nav-controls">
-                    <!-- BOTÓN AGENDAR VISIBLE EN MÓVIL -->
-                    <a href="#booking" class="btn-header-mobile">
-                        <i class="fas fa-calendar-alt"></i> Agendar
-                    </a>
-                    
-                    <!-- BOTÓN MENÚ HAMBURGUESA -->
-                    <div class="mobile-menu-btn">
-                        <i class="fas fa-bars"></i>
-                    </div>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
                 </div>
             </nav>
-        </div>
-        
-        <!-- MENÚ MÓVIL DESPLEGABLE (solo para móvil) -->
-        <div class="mobile-menu">
-            <ul>
-                <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
-                <li><a href="#servicios"><i class="fas fa-cogs"></i> Servicios</a></li>
-                <li><a href="#valores"><i class="fas fa-star"></i> Valores</a></li>
-                <li><a href="#formations-tab"><i class="fas fa-graduation-cap"></i> Formaciones</a></li>
-                <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
-            </ul>
         </div>
     </header>
 
@@ -2150,7 +2273,6 @@
                 </div>
             </div>
             
-            <!-- Video gallery (con autoplay DESACTIVADO en móvil) -->
             <div class="hero-video-gallery">
                 <div class="video-showcase">
                     <div class="video-showcase-header">
@@ -2163,7 +2285,8 @@
                             title="AI Solutions Creative Agency"
                             frameborder="0"
                             allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
+                            allowfullscreen
+                            style="pointer-events: none;">
                         </iframe>
                     </div>
                 </div>
@@ -2402,7 +2525,7 @@
                     </p>
                 </div>
                 
-                <!-- Videos con autoplay DESACTIVADO en móvil -->
+                <!-- Videos -->
                 <div class="instagram-videos">
                     <h3 style="text-align: center; font-size: 2.2rem; margin-bottom: 30px; color: var(--gold);">Contenido audiovisual</h3>
                     <p style="text-align: center; max-width: 700px; margin: 0 auto 40px; color: #bbb; font-size: 1.1rem;">
@@ -2419,7 +2542,8 @@
                                     title="Reel 1 - AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen>
+                                    allowfullscreen
+                                    style="pointer-events: none;">
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
@@ -2438,7 +2562,8 @@
                                     title="Reel 2 - AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen>
+                                    allowfullscreen
+                                    style="pointer-events: none;">
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
@@ -2457,7 +2582,8 @@
                                     title="Reel 3 - AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen>
+                                    allowfullscreen
+                                    style="pointer-events: none;">
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
@@ -2476,7 +2602,8 @@
                                     title="Reel 4 - AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen>
+                                    allowfullscreen
+                                    style="pointer-events: none;">
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
@@ -2495,7 +2622,8 @@
                                     title="Reel 5 - AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen>
+                                    allowfullscreen
+                                    style="pointer-events: none;">
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
@@ -2514,7 +2642,8 @@
                                     title="Reel 6 - AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen>
+                                    allowfullscreen
+                                    style="pointer-events: none;">
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
@@ -2528,7 +2657,7 @@
                     <div style="text-align: center; margin-top: 40px;">
                         <p style="color: #bbb; font-size: 1rem; max-width: 600px; margin: 0 auto;">
                             <i class="fas fa-info-circle" style="color: var(--gold); margin-right: 10px;"></i>
-                            Los videos se reproducen automáticamente en PC. En móvil, haz clic para reproducir.
+                            Los videos se reproducen automáticamente en bucle, sin controles y sin sonido.
                         </p>
                     </div>
                 </div>
@@ -2763,7 +2892,7 @@
         </div>
     </section>
 
-    <!-- Footer - SIN TELÉFONO -->
+    <!-- Footer -->
     <footer id="contacto">
         <div class="container">
             <div class="footer-content">
@@ -2802,7 +2931,7 @@
                 <div class="footer-contact">
                     <h3>Contacto Directo</h3>
                     <p><i class="fas fa-envelope"></i> contacto@aisolutionsagency.com</p>
-                    <!-- TELÉFONO ELIMINADO -->
+                    <p><i class="fas fa-phone"></i> +34 123 456 789</p>
                     <p><i class="fas fa-map-marker-alt"></i> Barcelona, España</p>
                 </div>
             </div>
@@ -2820,21 +2949,18 @@
             console.log("✅ EmailJS inicializado correctamente");
         })();
 
-        // === CONTROL MENÚ MÓVIL ===
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', function() {
-                document.querySelector('.mobile-menu').classList.toggle('active');
-            });
-        }
-
-        // Cerrar menú al hacer clic en un enlace
-        document.querySelectorAll('.mobile-menu a').forEach(link => {
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                document.querySelector('.mobile-menu').classList.remove('active');
+                document.querySelector('.nav-links').classList.remove('active');
             });
         });
-
+        
         // Tab functionality
         document.querySelectorAll('.tab-btn').forEach(button => {
             button.addEventListener('click', () => {
@@ -2900,6 +3026,42 @@
             });
         });
         
+        // Crear puntos de luz adicionales con JavaScript
+        function createTwinklingStars() {
+            const starContainer = document.createElement('div');
+            starContainer.style.position = 'fixed';
+            starContainer.style.top = '0';
+            starContainer.style.left = '0';
+            starContainer.style.width = '100%';
+            starContainer.style.height = '100%';
+            starContainer.style.pointerEvents = 'none';
+            starContainer.style.zIndex = '-1';
+            document.body.appendChild(starContainer);
+            
+            // Crear múltiples puntos pequeños
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                const size = Math.random() * 3 + 1;
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                const opacity = Math.random() * 0.3 + 0.1;
+                const animationDelay = Math.random() * 5;
+                const animationDuration = Math.random() * 3 + 2;
+                
+                star.style.position = 'absolute';
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.borderRadius = '50%';
+                star.style.backgroundColor = `rgba(255, 165, 0, ${opacity})`;
+                star.style.boxShadow = `0 0 ${size * 2}px rgba(255, 165, 0, ${opacity * 0.8})`;
+                star.style.left = `${x}%`;
+                star.style.top = `${y}%`;
+                star.style.animation = `twinkle ${animationDuration}s infinite ${animationDelay}s`;
+                
+                starContainer.appendChild(star);
+            }
+        }
+        
         // === BOOKING PANEL FUNCTIONS - MÚLTIPLES SELECCIONES ===
         let selectedServices = [];
         let selectedWebOption = '';
@@ -2934,6 +3096,8 @@
             
             // Actualizar campo oculto
             document.getElementById('selectedServices').value = selectedServices.join(', ');
+            
+            console.log("Servicios seleccionados:", selectedServices);
         }
         
         function selectWebOption(option) {
@@ -2954,6 +3118,8 @@
         // === BOOKING FORM SUBMISSION ===
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            console.log("📤 Iniciando envío del formulario...");
             
             // Validate service selection
             if (selectedServices.length === 0) {
@@ -2986,6 +3152,8 @@
                 services: selectedServices.join(', '),
                 webOption: selectedWebOption || 'No aplica'
             };
+            
+            console.log("📝 Datos del formulario:", formData);
             
             // Map service names for display
             const serviceNames = {
@@ -3025,8 +3193,13 @@
                 })
             };
             
+            console.log("📧 Parámetros para EmailJS:", templateParams);
+            console.log("🔄 Enviando email a través de EmailJS...");
+            
             emailjs.send('service_oko11dg', 'template_8p714we', templateParams)
             .then(function(response) {
+                console.log('✅ ¡ÉXITO! Email enviado:', response.status, response.text);
+                
                 // Show success message
                 document.getElementById('successMessage').style.display = 'block';
                 
@@ -3055,11 +3228,16 @@
                     block: 'center'
                 });
                 
+                console.log("🎉 Formulario procesado correctamente");
+                
             }, function(error) {
+                console.error('❌ ERROR al enviar email:', error);
+                
                 let errorMsg = 'Hubo un error al enviar la cita. ';
                 
                 if (error.text) {
                     errorMsg += 'Detalles: ' + error.text;
+                    console.error('Detalles del error:', error.text);
                 }
                 
                 if (error.status === 0) {
@@ -3080,6 +3258,7 @@
                 // Reset button state
                 submitBtn.disabled = false;
                 submitBtn.classList.remove('loading');
+                console.log("🔄 Botón de envío restablecido");
             });
         });
         
@@ -3087,7 +3266,7 @@
         const banner = document.querySelector('.top-banner');
         let bannerVisible = true;
         
-        // Opcional: Ocultar banner después de 8 segundos
+        // Opcional: Ocultar banner después de 10 segundos
         setTimeout(() => {
             if(bannerVisible) {
                 banner.style.transform = 'translateY(-100%)';
@@ -3096,9 +3275,9 @@
                 
                 // Ajustar header y hero cuando banner se oculta
                 document.querySelector('header').style.top = '0';
-                document.querySelector('.hero').style.paddingTop = '60px';
+                document.querySelector('.hero').style.paddingTop = '80px';
             }
-        }, 8000);
+        }, 10000);
         
         // Mostrar banner al hacer scroll arriba
         window.addEventListener('scroll', function() {
@@ -3108,51 +3287,61 @@
                 
                 // Reajustar header y hero cuando banner vuelve
                 document.querySelector('header').style.top = '52px';
-                document.querySelector('.hero').style.paddingTop = '150px';
+                document.querySelector('.hero').style.paddingTop = '132px';
             }
         });
         
-        // === CONTROL DE VIDEOS EN MÓVIL ===
+        // Preload images for better performance
         document.addEventListener('DOMContentLoaded', function() {
-            // Obtener todos los videos de Streamable
-            const videos = document.querySelectorAll('iframe[src*="streamable.com"]');
+            const assets = [
+                'logo.png',
+                'images/form1.webp',
+                'images/form2.webp',
+                'images/form3.webp',
+                'images/web1.webp',
+                'images/web2.webp',
+                'images/web3.webp',
+                'images/web4.webp',
+                'images/web5.webp',
+                'images/web6.webp',
+                'images/redes1.webp',
+                'images/redes2.webp',
+                'images/redes3.webp',
+                'images/redes4.webp',
+                'images/redes5.webp',
+                'images/redes6.webp'
+            ];
             
-            // Si estamos en móvil, desactivar autoplay
-            if (window.innerWidth <= 768) {
-                console.log("📱 Móvil detectado - Desactivando autoplay de videos...");
-                
-                videos.forEach(video => {
-                    // Reemplazar autoplay=1 por autoplay=0
-                    const currentSrc = video.src;
-                    const newSrc = currentSrc.replace('autoplay=1', 'autoplay=0');
-                    video.src = newSrc;
-                    
-                    // Añadir atributos para móvil
-                    video.setAttribute('playsinline', '');
-                    video.setAttribute('webkit-playsinline', '');
-                    video.removeAttribute('muted');
-                    
-                    // Quitar pointer-events: none para que funcionen los controles
-                    video.style.pointerEvents = 'auto';
+            assets.forEach(url => {
+                const link = document.createElement('link');
+                if (url.endsWith('.webp')) {
+                    link.rel = 'preload';
+                    link.as = 'image';
+                    link.href = url;
+                    link.type = 'image/webp';
+                } else if (url.endsWith('.png')) {
+                    link.rel = 'preload';
+                    link.as = 'image';
+                    link.href = url;
+                    link.type = 'image/png';
+                }
+                document.head.appendChild(link);
+            });
+            
+            // Crear puntos de luz adicionales con JavaScript
+            createTwinklingStars();
+            
+            // Efecto de brillo dinámico para el logo
+            const logo = document.getElementById('dynamicLogo');
+            if (logo) {
+                logo.addEventListener('mouseenter', function() {
+                    this.style.filter = 'drop-shadow(0 8px 20px rgba(255, 215, 0, 0.5))';
                 });
-            } else {
-                // En PC, mantener autoplay pero añadir controles
-                console.log("💻 PC detectado - Manteniendo autoplay...");
-                videos.forEach(video => {
-                    // Asegurar que tenga controles en PC
-                    const currentSrc = video.src;
-                    if (!currentSrc.includes('controls=1')) {
-                        const newSrc = currentSrc.replace('controls=0', 'controls=1');
-                        video.src = newSrc;
-                    }
+                
+                logo.addEventListener('mouseleave', function() {
+                    this.style.filter = 'drop-shadow(0 4px 10px rgba(255, 215, 0, 0.3))';
                 });
             }
-            
-            // Lazy loading para imágenes
-            const lazyImages = document.querySelectorAll('img');
-            lazyImages.forEach(img => {
-                img.loading = 'lazy';
-            });
             
             // Añadir clase de animación a elementos
             document.querySelectorAll('.web-project, .value-item, .service-option').forEach(element => {
@@ -3165,16 +3354,54 @@
                     element.classList.add('animated');
                 });
             }, 500);
+            
+            // Optimizar videos para móvil
+            if (window.innerWidth <= 768) {
+                const videos = document.querySelectorAll('.streamable-iframe');
+                videos.forEach(video => {
+                    if (video.src.includes('streamable.com')) {
+                        // Forzar parámetros móviles
+                        const newSrc = video.src.replace(/autoplay=1/, 'autoplay=1&muted=1&controls=0&playsinline=1');
+                        video.src = newSrc;
+                        video.setAttribute('playsinline', '');
+                        video.setAttribute('webkit-playsinline', '');
+                    }
+                });
+            }
+            
+            // Forzar actualización de videos
+            setTimeout(() => {
+                const videos = document.querySelectorAll('.streamable-iframe, .hero-video');
+                videos.forEach(video => {
+                    if (video.src) {
+                        const currentSrc = video.src;
+                        video.src = currentSrc;
+                    }
+                });
+            }, 1000);
         });
         
-        // Función para recargar videos si cambian de tamaño
-        window.addEventListener('resize', function() {
-            const videos = document.querySelectorAll('iframe[src*="streamable.com"]');
-            videos.forEach(video => {
-                const currentSrc = video.src;
-                video.src = currentSrc; // Forzar recarga
-            });
-        });
+        // === FUNCIÓN DE PRUEBA PARA EMAILJS ===
+        window.testEmailJS = function() {
+            console.log("🧪 Probando EmailJS...");
+            
+            const testParams = {
+                from_name: "Cliente de Prueba",
+                from_email: "test@ejemplo.com",
+                from_phone: "+34 600 000 000",
+                company: "Empresa de Prueba",
+                services: "Diseño Web, Contenido Digital",
+                web_option: "Landing Page",
+                message: "Este es un mensaje de prueba",
+                date_time: new Date().toLocaleString('es-ES')
+            };
+            
+            console.log("Enviando datos de prueba:", testParams);
+            
+            emailjs.send('service_oko11dg', 'template_st7hs89', testParams)
+                .then(response => console.log("✅ Prueba exitosa:", response))
+                .catch(error => console.error("❌ Error en prueba:", error));
+        };
     </script>
 </body>
 </html>
