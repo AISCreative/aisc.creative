@@ -2376,11 +2376,12 @@
                     <div class="video-container">
                         <iframe 
                             class="hero-video streamable-iframe"
-                            src="https://streamable.com/e/gak7bs?autoplay=1&loop=1&muted=1&controls=0"
+                            src="https://streamable.com/e/gak7bs?loop=1&muted=1&controls=0"
                             title="AI Solutions Creative Agency"
                             frameborder="0"
-                            allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allow="encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen
+                            loading="lazy"
                             style="pointer-events: none;">
                         </iframe>
                     </div>
@@ -2643,11 +2644,12 @@
                             <div class="reel-container">
                                 <iframe 
                                     class="reel-video streamable-iframe"
-                                    src="https://streamable.com/e/3rojmi?autoplay=1&loop=1&muted=1&controls=0"
+                                    src="https://streamable.com/e/3rojmi?loop=1&muted=1&controls=0"
                                     title="Reel 1 - AI Solutions"
                                     frameborder="0"
-                                    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allow="encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
+                                    loading="lazy"
                                     style="pointer-events: none;">
                                 </iframe>
                                 <div class="reel-overlay">
@@ -2663,11 +2665,12 @@
                             <div class="reel-container">
                                 <iframe 
                                     class="reel-video streamable-iframe"
-                                    src="https://streamable.com/e/o5g10y?autoplay=1&loop=1&muted=1&controls=0"
+                                    src="https://streamable.com/e/o5g10y?loop=1&muted=1&controls=0"
                                     title="Reel 2 - AI Solutions"
                                     frameborder="0"
-                                    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allow="encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
+                                    loading="lazy"
                                     style="pointer-events: none;">
                                 </iframe>
                                 <div class="reel-overlay">
@@ -2683,11 +2686,12 @@
                             <div class="reel-container">
                                 <iframe 
                                     class="reel-video streamable-iframe"
-                                    src="https://streamable.com/e/qps79q?autoplay=1&loop=1&muted=1&controls=0"
+                                    src="https://streamable.com/e/qps79q?loop=1&muted=1&controls=0"
                                     title="Reel 3 - AI Solutions"
                                     frameborder="0"
-                                    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allow="encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
+                                    loading="lazy"
                                     style="pointer-events: none;">
                                 </iframe>
                                 <div class="reel-overlay">
@@ -2703,11 +2707,12 @@
                             <div class="reel-container">
                                 <iframe 
                                     class="reel-video streamable-iframe"
-                                    src="https://streamable.com/e/tnktqu?autoplay=1&loop=1&muted=1&controls=0"
+                                    src="https://streamable.com/e/tnktqu?loop=1&muted=1&controls=0"
                                     title="Reel 4 - AI Solutions"
                                     frameborder="0"
-                                    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allow="encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
+                                    loading="lazy"
                                     style="pointer-events: none;">
                                 </iframe>
                                 <div class="reel-overlay">
@@ -2723,11 +2728,12 @@
                             <div class="reel-container">
                                 <iframe 
                                     class="reel-video streamable-iframe"
-                                    src="https://streamable.com/e/7wj49f?autoplay=1&loop=1&muted=1&controls=0"
+                                    src="https://streamable.com/e/7wj49f?loop=1&muted=1&controls=0"
                                     title="Reel 5 - AI Solutions"
                                     frameborder="0"
-                                    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allow="encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
+                                    loading="lazy"
                                     style="pointer-events: none;">
                                 </iframe>
                                 <div class="reel-overlay">
@@ -2743,11 +2749,12 @@
                             <div class="reel-container">
                                 <iframe 
                                     class="reel-video streamable-iframe"
-                                    src="https://streamable.com/e/30718x?autoplay=1&loop=1&muted=1&controls=0"
+                                    src="https://streamable.com/e/30718x?loop=1&muted=1&controls=0"
                                     title="Reel 6 - AI Solutions"
                                     frameborder="0"
-                                    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allow="encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
+                                    loading="lazy"
                                     style="pointer-events: none;">
                                 </iframe>
                                 <div class="reel-overlay">
@@ -3464,25 +3471,27 @@
                 const videos = document.querySelectorAll('.streamable-iframe');
                 videos.forEach(video => {
                     if (video.src.includes('streamable.com')) {
-                        // Forzar parámetros móviles
-                        const newSrc = video.src.replace(/autoplay=1/, 'autoplay=1&muted=1&controls=0&playsinline=1');
-                        video.src = newSrc;
                         video.setAttribute('playsinline', '');
                         video.setAttribute('webkit-playsinline', '');
                     }
                 });
             }
             
-            // Forzar actualización de videos
-            setTimeout(() => {
-                const videos = document.querySelectorAll('.streamable-iframe, .hero-video');
-                videos.forEach(video => {
-                    if (video.src) {
-                        const currentSrc = video.src;
-                        video.src = currentSrc;
-                    }
+            // Limpiar videos al salir de la página para evitar problemas de caché
+            window.addEventListener('beforeunload', function() {
+                document.querySelectorAll('.streamable-iframe').forEach(video => {
+                    video.src = '';
                 });
-            }, 1000);
+            });
+            
+            // Asegurar que los videos no se cargan automáticamente al regresar
+            window.addEventListener('pageshow', function(event) {
+                if (event.persisted) {
+                    document.querySelectorAll('.streamable-iframe').forEach(video => {
+                        video.src = video.src;
+                    });
+                }
+            });
         });
         
         // === FUNCIÓN DE PRUEBA PARA EMAILJS ===
