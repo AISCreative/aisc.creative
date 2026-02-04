@@ -702,6 +702,44 @@
             gap: 10px;
         }
         
+        /* Caso de Estudio Borda Vella */
+        .case-study-cta {
+            text-align: center;
+            margin: 30px 0 40px;
+            padding: 25px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .case-btn {
+            background: var(--gradient-gold);
+            color: var(--dark);
+            padding: 16px 32px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-gold);
+        }
+        
+        .case-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+        }
+        
+        .case-description {
+            color: #bbb;
+            font-size: 0.95rem;
+            max-width: 500px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+        
         /* Redes Sociales */
         .social-content {
             display: grid;
@@ -1758,6 +1796,21 @@
                 font-size: 0.85rem;
             }
             
+            /* Caso Borda Vella responsive */
+            .case-study-cta {
+                padding: 20px;
+                margin: 25px 0 35px;
+            }
+            
+            .case-btn {
+                padding: 14px 24px;
+                font-size: 1rem;
+            }
+            
+            .case-description {
+                font-size: 0.9rem;
+            }
+            
             /* Secciones informativas en grid */
             .seo-importance,
             .team-production,
@@ -2453,6 +2506,16 @@
                     
                     <p style="margin-top: 25px; color: var(--gold); font-weight: 600;">
                         <i class="fas fa-star"></i> No construimos páginas web, construimos <strong>máquinas de conversión</strong> optimizadas para resultados.
+                    </p>
+                </div>
+                
+                <!-- Botón Caso Borda Vella -->
+                <div class="case-study-cta">
+                    <a href="https://aiscreative.github.io/CasoBorda/" target="_blank" class="btn case-btn">
+                        <i class="fas fa-external-link-alt"></i> Caso Borda Vella: Lo que el cliente pidió
+                    </a>
+                    <p class="case-description">
+                        Descubre cómo transformamos los requerimientos específicos de un cliente en una web optimizada y efectiva.
                     </p>
                 </div>
             </div>
