@@ -146,108 +146,6 @@
             justify-content: center;
         }
         
-        /* ===== NUEVO SISTEMA DE VIDEOS MEJORADO ===== */
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background: #000;
-        }
-        
-        .streamable-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            background: #000;
-        }
-        
-        .video-controls-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 10;
-        }
-        
-        .video-wrapper:hover .video-controls-overlay {
-            opacity: 1;
-        }
-        
-        .video-control-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--gradient-gold);
-            color: var(--dark);
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .video-control-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
-        }
-        
-        .mute-btn {
-            width: 40px;
-            height: 40px;
-            font-size: 1rem;
-        }
-        
-        .video-loading {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: var(--gold);
-            font-size: 2rem;
-            z-index: 5;
-        }
-        
-        .video-error {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            z-index: 5;
-        }
-        
-        .video-retry-btn {
-            background: var(--gradient-gold);
-            color: var(--dark);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            margin-top: 15px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .video-retry-btn:hover {
-            transform: translateY(-3px);
-        }
-        
         /* Fondo con puntos de luz naranjas */
         body::before {
             content: '';
@@ -711,6 +609,12 @@
             background: #000;
         }
         
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
         /* Services Section */
         .services {
             position: relative;
@@ -1139,11 +1043,6 @@
             backdrop-filter: blur(5px);
         }
         
-        .formation-cta {
-            margin-top: 30px;
-            text-align: center;
-        }
-        
         /* Importancia de trabajar con expertos */
         .experts-importance {
             background: rgba(255, 215, 0, 0.05);
@@ -1223,6 +1122,19 @@
             background: #000;
         }
         
+        .reel-video {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .streamable-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: none;
+        }
+        
         .reel-overlay {
             position: absolute;
             bottom: 0;
@@ -1246,6 +1158,140 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
+        }
+        
+        /* ===== CONTROLES PERSONALIZADOS PARA STREAMABLE ===== */
+        .streamable-overlay-controls {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            pointer-events: none;
+        }
+        
+        .streamable-controls-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: all;
+        }
+        
+        .reel-container:hover .streamable-controls-container {
+            opacity: 1;
+        }
+        
+        .streamable-controls-top {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .streamable-controls-bottom {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .streamable-control-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            backdrop-filter: blur(5px);
+            pointer-events: all;
+        }
+        
+        .streamable-control-btn:hover {
+            background: var(--gold);
+            color: var(--dark);
+            transform: scale(1.1);
+        }
+        
+        .streamable-volume-control {
+            flex: 1;
+            max-width: 120px;
+        }
+        
+        .streamable-volume-slider {
+            width: 100%;
+            height: 4px;
+            -webkit-appearance: none;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+            pointer-events: all;
+        }
+        
+        .streamable-volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--gold);
+            cursor: pointer;
+        }
+        
+        .streamable-progress-container {
+            flex: 1;
+            position: relative;
+            height: 20px;
+        }
+        
+        .streamable-progress-bar {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            height: 4px;
+            background: var(--gold);
+            border-radius: 2px;
+            width: 0%;
+            pointer-events: none;
+        }
+        
+        .streamable-progress-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 2;
+            pointer-events: all;
+        }
+        
+        .streamable-progress-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--gold);
+            cursor: pointer;
+        }
+        
+        /* Asegurar que el iframe esté detrás de los controles */
+        .reel-container iframe {
+            position: relative;
+            z-index: 1;
         }
         
         /* Valores */
@@ -2600,31 +2646,15 @@
                         <h3><i class="fas fa-play-circle"></i> Nuestro Trabajo</h3>
                     </div>
                     <div class="video-container">
-                        <!-- Video Hero con controles mejorados -->
-                        <div class="video-wrapper" id="heroVideoWrapper">
-                            <div class="video-loading" id="heroVideoLoading">
-                                <i class="fas fa-spinner fa-spin"></i>
-                            </div>
-                            <video 
-                                class="streamable-video" 
-                                id="heroVideo"
-                                preload="metadata"
-                                playsinline
-                                webkit-playsinline
-                                muted
-                                loop>
-                                <source src="https://cdn.streamable.com/video/mp4/gak7bs.mp4" type="video/mp4">
-                                Tu navegador no soporta el elemento de video.
-                            </video>
-                            <div class="video-controls-overlay">
-                                <button class="video-control-btn" id="heroPlayPauseBtn">
-                                    <i class="fas fa-play"></i>
-                                </button>
-                                <button class="video-control-btn mute-btn" id="heroMuteBtn">
-                                    <i class="fas fa-volume-mute"></i>
-                                </button>
-                            </div>
-                        </div>
+                        <iframe 
+                            class="hero-video streamable-iframe"
+                            src="https://streamable.com/e/gak7bs?autoplay=1&loop=1&muted=1&controls=0"
+                            title="AI Solutions Creative Agency"
+                            frameborder="0"
+                            allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            style="pointer-events: none;">
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -2652,14 +2682,11 @@
                     <div class="web-project">
                         <div class="project-img">
                             <div class="project-badge">Ejemplo</div>
-                            <img src="images/web1.webp" alt="Proyecto Web">
+                            <img src="images/web1.webp" alt="Proyecto Web Bordavella">
                         </div>
                         <div class="project-info">
                             <h3>Landing Pages</h3>
-                            <p>Desarrollo directo y efectivo, enfocado en conversiones naturales. Diseño optimizado para resultados.</p>
-                            <a href="#" class="project-link">
-                                Ver detalles <i class="fas fa-arrow-right"></i>
-                            </a>
+                            <p>Desarrollo directo y efectivo, enfocado en conversiones naturales<p>
                         </div>
                     </div>
                     
@@ -2754,7 +2781,7 @@
                 <!-- Botón Caso Borda Vella -->
                 <div class="case-study-cta">
                     <a href="https://aiscreative.github.io/CasoBorda/" target="_blank" class="btn case-btn">
-                        <i class="fas fa-external-link-alt"></i> Ver Caso de Estudio
+                        <i class="fas fa-external-link-alt"></i> Caso Borda Vella: Lo que el cliente pidió
                     </a>
                     <p class="case-description">
                         Descubre cómo transformamos los requerimientos específicos de un cliente en una web optimizada y efectiva.
@@ -2880,32 +2907,52 @@
                     </p>
                     
                     <div class="videos-grid">
-                        <!-- Reel 1 -->
+                        <!-- Reel 1 - CON CONTROLES -->
                         <div class="reel-window">
-                            <div class="reel-container">
-                                <div class="video-wrapper" id="videoWrapper1">
-                                    <div class="video-loading">
-                                        <i class="fas fa-spinner fa-spin"></i>
-                                    </div>
-                                    <video 
-                                        class="streamable-video" 
-                                        preload="metadata"
-                                        playsinline
-                                        webkit-playsinline
-                                        muted
-                                        loop>
-                                        <source src="https://cdn.streamable.com/video/mp4/3rojmi.mp4" type="video/mp4">
-                                        Tu navegador no soporta el elemento de video.
-                                    </video>
-                                    <div class="video-controls-overlay">
-                                        <button class="video-control-btn">
-                                            <i class="fas fa-play"></i>
-                                        </button>
-                                        <button class="video-control-btn mute-btn">
-                                            <i class="fas fa-volume-mute"></i>
-                                        </button>
+                            <div class="reel-container" style="position: relative;">
+                                <iframe 
+                                    class="reel-video streamable-iframe"
+                                    src="https://streamable.com/e/3rojmi?autoplay=1&loop=1&muted=1&controls=0"
+                                    title="Reel 1 - AI Solutions"
+                                    frameborder="0"
+                                    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                    style="pointer-events: none; width: 100%; height: 100%;"
+                                    id="streamableVideo1">
+                                </iframe>
+                                
+                                <!-- Controles overlay -->
+                                <div class="streamable-overlay-controls">
+                                    <div class="streamable-controls-container">
+                                        <div class="streamable-controls-top">
+                                            <button class="streamable-control-btn mute-btn" title="Silenciar/Activar sonido" onclick="toggleStreamableMute('streamableVideo1')">
+                                                <i class="fas fa-volume-mute"></i>
+                                                <i class="fas fa-volume-up" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-volume-control">
+                                                <input type="range" class="streamable-volume-slider" min="0" max="1" step="0.1" value="1" 
+                                                       oninput="setStreamableVolume('streamableVideo1', this.value)">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="streamable-controls-bottom">
+                                            <button class="streamable-control-btn play-pause-btn" title="Reproducir/Pausar" onclick="toggleStreamablePlayPause('streamableVideo1')">
+                                                <i class="fas fa-play"></i>
+                                                <i class="fas fa-pause" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-progress-container">
+                                                <div class="streamable-progress-bar"></div>
+                                                <input type="range" class="streamable-progress-slider" min="0" max="100" value="0" 
+                                                       oninput="seekStreamableVideo('streamableVideo1', this.value)">
+                                            </div>
+                                            <button class="streamable-control-btn fullscreen-btn" title="Pantalla completa" onclick="toggleFullscreen(this.closest('.reel-container'))">
+                                                <i class="fas fa-expand"></i>
+                                                <i class="fas fa-compress" style="display: none;"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
+                                
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
                                         <i class="fab fa-instagram"></i>
@@ -2914,32 +2961,52 @@
                             </div>
                         </div>
                         
-                        <!-- Reel 2 -->
+                        <!-- Reel 2 - CON CONTROLES -->
                         <div class="reel-window">
-                            <div class="reel-container">
-                                <div class="video-wrapper" id="videoWrapper2">
-                                    <div class="video-loading">
-                                        <i class="fas fa-spinner fa-spin"></i>
-                                    </div>
-                                    <video 
-                                        class="streamable-video" 
-                                        preload="metadata"
-                                        playsinline
-                                        webkit-playsinline
-                                        muted
-                                        loop>
-                                        <source src="https://cdn.streamable.com/video/mp4/o5g10y.mp4" type="video/mp4">
-                                        Tu navegador no soporta el elemento de video.
-                                    </video>
-                                    <div class="video-controls-overlay">
-                                        <button class="video-control-btn">
-                                            <i class="fas fa-play"></i>
-                                        </button>
-                                        <button class="video-control-btn mute-btn">
-                                            <i class="fas fa-volume-mute"></i>
-                                        </button>
+                            <div class="reel-container" style="position: relative;">
+                                <iframe 
+                                    class="reel-video streamable-iframe"
+                                    src="https://streamable.com/e/o5g10y?autoplay=1&loop=1&muted=1&controls=0"
+                                    title="Reel 2 - AI Solutions"
+                                    frameborder="0"
+                                    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                    style="pointer-events: none; width: 100%; height: 100%;"
+                                    id="streamableVideo2">
+                                </iframe>
+                                
+                                <!-- Controles overlay -->
+                                <div class="streamable-overlay-controls">
+                                    <div class="streamable-controls-container">
+                                        <div class="streamable-controls-top">
+                                            <button class="streamable-control-btn mute-btn" title="Silenciar/Activar sonido" onclick="toggleStreamableMute('streamableVideo2')">
+                                                <i class="fas fa-volume-mute"></i>
+                                                <i class="fas fa-volume-up" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-volume-control">
+                                                <input type="range" class="streamable-volume-slider" min="0" max="1" step="0.1" value="1" 
+                                                       oninput="setStreamableVolume('streamableVideo2', this.value)">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="streamable-controls-bottom">
+                                            <button class="streamable-control-btn play-pause-btn" title="Reproducir/Pausar" onclick="toggleStreamablePlayPause('streamableVideo2')">
+                                                <i class="fas fa-play"></i>
+                                                <i class="fas fa-pause" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-progress-container">
+                                                <div class="streamable-progress-bar"></div>
+                                                <input type="range" class="streamable-progress-slider" min="0" max="100" value="0" 
+                                                       oninput="seekStreamableVideo('streamableVideo2', this.value)">
+                                            </div>
+                                            <button class="streamable-control-btn fullscreen-btn" title="Pantalla completa" onclick="toggleFullscreen(this.closest('.reel-container'))">
+                                                <i class="fas fa-expand"></i>
+                                                <i class="fas fa-compress" style="display: none;"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
+                                
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
                                         <i class="fab fa-instagram"></i>
@@ -2948,32 +3015,52 @@
                             </div>
                         </div>
                         
-                        <!-- Reel 3 -->
+                        <!-- Reel 3 - CON CONTROLES -->
                         <div class="reel-window">
-                            <div class="reel-container">
-                                <div class="video-wrapper" id="videoWrapper3">
-                                    <div class="video-loading">
-                                        <i class="fas fa-spinner fa-spin"></i>
-                                    </div>
-                                    <video 
-                                        class="streamable-video" 
-                                        preload="metadata"
-                                        playsinline
-                                        webkit-playsinline
-                                        muted
-                                        loop>
-                                        <source src="https://cdn.streamable.com/video/mp4/qps79q.mp4" type="video/mp4">
-                                        Tu navegador no soporta el elemento de video.
-                                    </video>
-                                    <div class="video-controls-overlay">
-                                        <button class="video-control-btn">
-                                            <i class="fas fa-play"></i>
-                                        </button>
-                                        <button class="video-control-btn mute-btn">
-                                            <i class="fas fa-volume-mute"></i>
-                                        </button>
+                            <div class="reel-container" style="position: relative;">
+                                <iframe 
+                                    class="reel-video streamable-iframe"
+                                    src="https://streamable.com/e/qps79q?autoplay=1&loop=1&muted=1&controls=0"
+                                    title="Reel 3 - AI Solutions"
+                                    frameborder="0"
+                                    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                    style="pointer-events: none; width: 100%; height: 100%;"
+                                    id="streamableVideo3">
+                                </iframe>
+                                
+                                <!-- Controles overlay -->
+                                <div class="streamable-overlay-controls">
+                                    <div class="streamable-controls-container">
+                                        <div class="streamable-controls-top">
+                                            <button class="streamable-control-btn mute-btn" title="Silenciar/Activar sonido" onclick="toggleStreamableMute('streamableVideo3')">
+                                                <i class="fas fa-volume-mute"></i>
+                                                <i class="fas fa-volume-up" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-volume-control">
+                                                <input type="range" class="streamable-volume-slider" min="0" max="1" step="0.1" value="1" 
+                                                       oninput="setStreamableVolume('streamableVideo3', this.value)">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="streamable-controls-bottom">
+                                            <button class="streamable-control-btn play-pause-btn" title="Reproducir/Pausar" onclick="toggleStreamablePlayPause('streamableVideo3')">
+                                                <i class="fas fa-play"></i>
+                                                <i class="fas fa-pause" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-progress-container">
+                                                <div class="streamable-progress-bar"></div>
+                                                <input type="range" class="streamable-progress-slider" min="0" max="100" value="0" 
+                                                       oninput="seekStreamableVideo('streamableVideo3', this.value)">
+                                            </div>
+                                            <button class="streamable-control-btn fullscreen-btn" title="Pantalla completa" onclick="toggleFullscreen(this.closest('.reel-container'))">
+                                                <i class="fas fa-expand"></i>
+                                                <i class="fas fa-compress" style="display: none;"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
+                                
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
                                         <i class="fab fa-instagram"></i>
@@ -2982,32 +3069,52 @@
                             </div>
                         </div>
                         
-                        <!-- Reel 4 -->
+                        <!-- Reel 4 - CON CONTROLES -->
                         <div class="reel-window">
-                            <div class="reel-container">
-                                <div class="video-wrapper" id="videoWrapper4">
-                                    <div class="video-loading">
-                                        <i class="fas fa-spinner fa-spin"></i>
-                                    </div>
-                                    <video 
-                                        class="streamable-video" 
-                                        preload="metadata"
-                                        playsinline
-                                        webkit-playsinline
-                                        muted
-                                        loop>
-                                        <source src="https://cdn.streamable.com/video/mp4/tnktqu.mp4" type="video/mp4">
-                                        Tu navegador no soporta el elemento de video.
-                                    </video>
-                                    <div class="video-controls-overlay">
-                                        <button class="video-control-btn">
-                                            <i class="fas fa-play"></i>
-                                        </button>
-                                        <button class="video-control-btn mute-btn">
-                                            <i class="fas fa-volume-mute"></i>
-                                        </button>
+                            <div class="reel-container" style="position: relative;">
+                                <iframe 
+                                    class="reel-video streamable-iframe"
+                                    src="https://streamable.com/e/tnktqu?autoplay=1&loop=1&muted=1&controls=0"
+                                    title="Reel 4 - AI Solutions"
+                                    frameborder="0"
+                                    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                    style="pointer-events: none; width: 100%; height: 100%;"
+                                    id="streamableVideo4">
+                                </iframe>
+                                
+                                <!-- Controles overlay -->
+                                <div class="streamable-overlay-controls">
+                                    <div class="streamable-controls-container">
+                                        <div class="streamable-controls-top">
+                                            <button class="streamable-control-btn mute-btn" title="Silenciar/Activar sonido" onclick="toggleStreamableMute('streamableVideo4')">
+                                                <i class="fas fa-volume-mute"></i>
+                                                <i class="fas fa-volume-up" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-volume-control">
+                                                <input type="range" class="streamable-volume-slider" min="0" max="1" step="0.1" value="1" 
+                                                       oninput="setStreamableVolume('streamableVideo4', this.value)">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="streamable-controls-bottom">
+                                            <button class="streamable-control-btn play-pause-btn" title="Reproducir/Pausar" onclick="toggleStreamablePlayPause('streamableVideo4')">
+                                                <i class="fas fa-play"></i>
+                                                <i class="fas fa-pause" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-progress-container">
+                                                <div class="streamable-progress-bar"></div>
+                                                <input type="range" class="streamable-progress-slider" min="0" max="100" value="0" 
+                                                       oninput="seekStreamableVideo('streamableVideo4', this.value)">
+                                            </div>
+                                            <button class="streamable-control-btn fullscreen-btn" title="Pantalla completa" onclick="toggleFullscreen(this.closest('.reel-container'))">
+                                                <i class="fas fa-expand"></i>
+                                                <i class="fas fa-compress" style="display: none;"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
+                                
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
                                         <i class="fab fa-instagram"></i>
@@ -3016,32 +3123,52 @@
                             </div>
                         </div>
                         
-                        <!-- Reel 5 -->
+                        <!-- Reel 5 - CON CONTROLES -->
                         <div class="reel-window">
-                            <div class="reel-container">
-                                <div class="video-wrapper" id="videoWrapper5">
-                                    <div class="video-loading">
-                                        <i class="fas fa-spinner fa-spin"></i>
-                                    </div>
-                                    <video 
-                                        class="streamable-video" 
-                                        preload="metadata"
-                                        playsinline
-                                        webkit-playsinline
-                                        muted
-                                        loop>
-                                        <source src="https://cdn.streamable.com/video/mp4/7wj49f.mp4" type="video/mp4">
-                                        Tu navegador no soporta el elemento de video.
-                                    </video>
-                                    <div class="video-controls-overlay">
-                                        <button class="video-control-btn">
-                                            <i class="fas fa-play"></i>
-                                        </button>
-                                        <button class="video-control-btn mute-btn">
-                                            <i class="fas fa-volume-mute"></i>
-                                        </button>
+                            <div class="reel-container" style="position: relative;">
+                                <iframe 
+                                    class="reel-video streamable-iframe"
+                                    src="https://streamable.com/e/7wj49f?autoplay=1&loop=1&muted=1&controls=0"
+                                    title="Reel 5 - AI Solutions"
+                                    frameborder="0"
+                                    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                    style="pointer-events: none; width: 100%; height: 100%;"
+                                    id="streamableVideo5">
+                                </iframe>
+                                
+                                <!-- Controles overlay -->
+                                <div class="streamable-overlay-controls">
+                                    <div class="streamable-controls-container">
+                                        <div class="streamable-controls-top">
+                                            <button class="streamable-control-btn mute-btn" title="Silenciar/Activar sonido" onclick="toggleStreamableMute('streamableVideo5')">
+                                                <i class="fas fa-volume-mute"></i>
+                                                <i class="fas fa-volume-up" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-volume-control">
+                                                <input type="range" class="streamable-volume-slider" min="0" max="1" step="0.1" value="1" 
+                                                       oninput="setStreamableVolume('streamableVideo5', this.value)">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="streamable-controls-bottom">
+                                            <button class="streamable-control-btn play-pause-btn" title="Reproducir/Pausar" onclick="toggleStreamablePlayPause('streamableVideo5')">
+                                                <i class="fas fa-play"></i>
+                                                <i class="fas fa-pause" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-progress-container">
+                                                <div class="streamable-progress-bar"></div>
+                                                <input type="range" class="streamable-progress-slider" min="0" max="100" value="0" 
+                                                       oninput="seekStreamableVideo('streamableVideo5', this.value)">
+                                            </div>
+                                            <button class="streamable-control-btn fullscreen-btn" title="Pantalla completa" onclick="toggleFullscreen(this.closest('.reel-container'))">
+                                                <i class="fas fa-expand"></i>
+                                                <i class="fas fa-compress" style="display: none;"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
+                                
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
                                         <i class="fab fa-instagram"></i>
@@ -3050,32 +3177,52 @@
                             </div>
                         </div>
                         
-                        <!-- Reel 6 -->
+                        <!-- Reel 6 - CON CONTROLES -->
                         <div class="reel-window">
-                            <div class="reel-container">
-                                <div class="video-wrapper" id="videoWrapper6">
-                                    <div class="video-loading">
-                                        <i class="fas fa-spinner fa-spin"></i>
-                                    </div>
-                                    <video 
-                                        class="streamable-video" 
-                                        preload="metadata"
-                                        playsinline
-                                        webkit-playsinline
-                                        muted
-                                        loop>
-                                        <source src="https://cdn.streamable.com/video/mp4/30718x.mp4" type="video/mp4">
-                                        Tu navegador no soporta el elemento de video.
-                                    </video>
-                                    <div class="video-controls-overlay">
-                                        <button class="video-control-btn">
-                                            <i class="fas fa-play"></i>
-                                        </button>
-                                        <button class="video-control-btn mute-btn">
-                                            <i class="fas fa-volume-mute"></i>
-                                        </button>
+                            <div class="reel-container" style="position: relative;">
+                                <iframe 
+                                    class="reel-video streamable-iframe"
+                                    src="https://streamable.com/e/30718x?autoplay=1&loop=1&muted=1&controls=0"
+                                    title="Reel 6 - AI Solutions"
+                                    frameborder="0"
+                                    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                    style="pointer-events: none; width: 100%; height: 100%;"
+                                    id="streamableVideo6">
+                                </iframe>
+                                
+                                <!-- Controles overlay -->
+                                <div class="streamable-overlay-controls">
+                                    <div class="streamable-controls-container">
+                                        <div class="streamable-controls-top">
+                                            <button class="streamable-control-btn mute-btn" title="Silenciar/Activar sonido" onclick="toggleStreamableMute('streamableVideo6')">
+                                                <i class="fas fa-volume-mute"></i>
+                                                <i class="fas fa-volume-up" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-volume-control">
+                                                <input type="range" class="streamable-volume-slider" min="0" max="1" step="0.1" value="1" 
+                                                       oninput="setStreamableVolume('streamableVideo6', this.value)">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="streamable-controls-bottom">
+                                            <button class="streamable-control-btn play-pause-btn" title="Reproducir/Pausar" onclick="toggleStreamablePlayPause('streamableVideo6')">
+                                                <i class="fas fa-play"></i>
+                                                <i class="fas fa-pause" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-progress-container">
+                                                <div class="streamable-progress-bar"></div>
+                                                <input type="range" class="streamable-progress-slider" min="0" max="100" value="0" 
+                                                       oninput="seekStreamableVideo('streamableVideo6', this.value)">
+                                            </div>
+                                            <button class="streamable-control-btn fullscreen-btn" title="Pantalla completa" onclick="toggleFullscreen(this.closest('.reel-container'))">
+                                                <i class="fas fa-expand"></i>
+                                                <i class="fas fa-compress" style="display: none;"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
+                                
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
                                         <i class="fab fa-instagram"></i>
@@ -3088,7 +3235,7 @@
                     <div style="text-align: center; margin-top: 30px;">
                         <p style="color: #bbb; font-size: 0.95rem; max-width: 600px; margin: 0 auto;">
                             <i class="fas fa-info-circle" style="color: var(--gold); margin-right: 10px;"></i>
-                            Los videos se reproducen automáticamente en bucle. Usa los controles para play/pause y mute.
+                            Pasa el cursor sobre los videos para ver los controles personalizados.
                         </p>
                     </div>
                 </div>
@@ -3461,252 +3608,212 @@
             });
         });
         
-        // === SISTEMA DE VIDEOS MEJORADO ===
-        class VideoManager {
-            constructor() {
-                this.videos = [];
-                this.initializeVideos();
-                this.setupEventListeners();
-            }
+        // Crear puntos de luz adicionales con JavaScript
+        function createTwinklingStars() {
+            const starContainer = document.createElement('div');
+            starContainer.style.position = 'fixed';
+            starContainer.style.top = '0';
+            starContainer.style.left = '0';
+            starContainer.style.width = '100%';
+            starContainer.style.height = '100%';
+            starContainer.style.pointerEvents = 'none';
+            starContainer.style.zIndex = '-1';
+            document.body.appendChild(starContainer);
             
-            initializeVideos() {
-                // Seleccionar todos los videos
-                const videoElements = document.querySelectorAll('.streamable-video');
+            // Crear múltiples puntos pequeños
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                const size = Math.random() * 3 + 1;
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                const opacity = Math.random() * 0.3 + 0.1;
+                const animationDelay = Math.random() * 5;
+                const animationDuration = Math.random() * 3 + 2;
                 
-                videoElements.forEach((video, index) => {
-                    const wrapper = video.closest('.video-wrapper');
-                    const loading = wrapper.querySelector('.video-loading');
-                    const controlsOverlay = wrapper.querySelector('.video-controls-overlay');
-                    const playPauseBtn = controlsOverlay ? controlsOverlay.querySelector('.video-control-btn:not(.mute-btn)') : null;
-                    const muteBtn = controlsOverlay ? controlsOverlay.querySelector('.mute-btn') : null;
-                    
-                    // Configurar video
-                    video.playsInline = true;
-                    video.webkitPlaysInline = true;
-                    video.muted = true;
-                    video.loop = true;
-                    
-                    // Crear objeto de control de video
-                    const videoObj = {
-                        element: video,
-                        wrapper: wrapper,
-                        loading: loading,
-                        controlsOverlay: controlsOverlay,
-                        playPauseBtn: playPauseBtn,
-                        muteBtn: muteBtn,
-                        isPlaying: false,
-                        isMuted: true
-                    };
-                    
-                    this.videos.push(videoObj);
-                    
-                    // Configurar eventos para este video
-                    this.setupVideoEvents(videoObj, index);
-                });
-            }
-            
-            setupVideoEvents(videoObj, index) {
-                const { element, loading, playPauseBtn, muteBtn } = videoObj;
+                star.style.position = 'absolute';
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.borderRadius = '50%';
+                star.style.backgroundColor = `rgba(255, 165, 0, ${opacity})`;
+                star.style.boxShadow = `0 0 ${size * 2}px rgba(255, 165, 0, ${opacity * 0.8})`;
+                star.style.left = `${x}%`;
+                star.style.top = `${y}%`;
+                star.style.animation = `twinkle ${animationDuration}s infinite ${animationDelay}s`;
                 
-                // Evento de carga
-                element.addEventListener('loadeddata', () => {
-                    if (loading) {
-                        loading.style.display = 'none';
-                    }
-                    // Auto-play cuando está listo
-                    this.playVideo(videoObj);
-                });
-                
-                // Evento de error
-                element.addEventListener('error', (e) => {
-                    console.error(`Error cargando video ${index}:`, e);
-                    if (loading) {
-                        loading.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error cargando video';
-                    }
-                });
-                
-                // Evento de play/pause
-                if (playPauseBtn) {
-                    playPauseBtn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        this.togglePlayPause(videoObj);
-                    });
-                }
-                
-                // Evento de mute/unmute
-                if (muteBtn) {
-                    muteBtn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        this.toggleMute(videoObj);
-                    });
-                }
-                
-                // Click en el wrapper para play/pause
-                if (videoObj.wrapper) {
-                    videoObj.wrapper.addEventListener('click', (e) => {
-                        if (e.target === videoObj.wrapper || e.target.classList.contains('video-wrapper')) {
-                            this.togglePlayPause(videoObj);
-                        }
-                    });
-                }
-            }
-            
-            setupEventListeners() {
-                // Pausar videos cuando no están visibles
-                document.addEventListener('visibilitychange', () => {
-                    if (document.hidden) {
-                        this.pauseAllVideos();
-                    } else {
-                        this.resumeVisibleVideos();
-                    }
-                });
-                
-                // Reanudar videos cuando vuelve a la pestaña
-                window.addEventListener('focus', () => {
-                    this.resumeVisibleVideos();
-                });
-                
-                // Manejar scroll para pausar videos no visibles
-                let scrollTimer;
-                window.addEventListener('scroll', () => {
-                    clearTimeout(scrollTimer);
-                    scrollTimer = setTimeout(() => {
-                        this.handleScrollVisibility();
-                    }, 100);
-                });
-            }
-            
-            playVideo(videoObj) {
-                const { element } = videoObj;
-                
-                if (element.paused) {
-                    const playPromise = element.play();
-                    
-                    if (playPromise !== undefined) {
-                        playPromise.then(() => {
-                            videoObj.isPlaying = true;
-                            this.updatePlayPauseButton(videoObj);
-                        }).catch(error => {
-                            console.log("Auto-play prevenido:", error);
-                            // Mostrar botón de play manual
-                            videoObj.isPlaying = false;
-                            this.updatePlayPauseButton(videoObj);
-                        });
-                    }
-                }
-            }
-            
-            pauseVideo(videoObj) {
-                const { element } = videoObj;
-                
-                if (!element.paused) {
-                    element.pause();
-                    videoObj.isPlaying = false;
-                    this.updatePlayPauseButton(videoObj);
-                }
-            }
-            
-            togglePlayPause(videoObj) {
-                if (videoObj.isPlaying) {
-                    this.pauseVideo(videoObj);
-                } else {
-                    this.playVideo(videoObj);
-                }
-            }
-            
-            toggleMute(videoObj) {
-                const { element } = videoObj;
-                
-                videoObj.isMuted = !videoObj.isMuted;
-                element.muted = videoObj.isMuted;
-                this.updateMuteButton(videoObj);
-            }
-            
-            updatePlayPauseButton(videoObj) {
-                const { playPauseBtn } = videoObj;
-                
-                if (playPauseBtn) {
-                    const icon = playPauseBtn.querySelector('i');
-                    if (icon) {
-                        icon.className = videoObj.isPlaying ? 'fas fa-pause' : 'fas fa-play';
-                    }
-                }
-            }
-            
-            updateMuteButton(videoObj) {
-                const { muteBtn } = videoObj;
-                
-                if (muteBtn) {
-                    const icon = muteBtn.querySelector('i');
-                    if (icon) {
-                        icon.className = videoObj.isMuted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
-                    }
-                }
-            }
-            
-            pauseAllVideos() {
-                this.videos.forEach(videoObj => {
-                    this.pauseVideo(videoObj);
-                });
-            }
-            
-            resumeVisibleVideos() {
-                this.videos.forEach(videoObj => {
-                    if (this.isElementInViewport(videoObj.wrapper)) {
-                        this.playVideo(videoObj);
-                    }
-                });
-            }
-            
-            handleScrollVisibility() {
-                this.videos.forEach(videoObj => {
-                    if (this.isElementInViewport(videoObj.wrapper)) {
-                        if (!videoObj.isPlaying) {
-                            this.playVideo(videoObj);
-                        }
-                    } else {
-                        if (videoObj.isPlaying) {
-                            this.pauseVideo(videoObj);
-                        }
-                    }
-                });
-            }
-            
-            isElementInViewport(el) {
-                if (!el) return false;
-                
-                const rect = el.getBoundingClientRect();
-                return (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
-            }
-            
-            // Método para recargar videos si es necesario
-            reloadVideos() {
-                this.videos.forEach(videoObj => {
-                    const { element } = videoObj;
-                    
-                    if (element.src) {
-                        const currentTime = element.currentTime;
-                        element.load();
-                        
-                        // Restaurar tiempo si estaba reproduciendo
-                        setTimeout(() => {
-                            if (videoObj.isPlaying) {
-                                element.currentTime = currentTime;
-                                this.playVideo(videoObj);
-                            }
-                        }, 100);
-                    }
-                });
+                starContainer.appendChild(star);
             }
         }
         
-        // Inicializar el gestor de videos
-        let videoManager;
+        // === SOLUCIÓN PARA PROBLEMA DE STREAMABLE ===
+        // Reiniciar videos cuando la página vuelve a estar visible
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden) {
+                // Página visible nuevamente
+                reloadStreamableVideos();
+            }
+        });
+        
+        // También manejar eventos de página visible
+        document.addEventListener('focus', function() {
+            reloadStreamableVideos();
+        });
+        
+        // Función para recargar videos de Streamable
+        function reloadStreamableVideos() {
+            console.log("🔄 Recargando videos de Streamable...");
+            const videos = document.querySelectorAll('.streamable-iframe, .hero-video, .reel-video');
+            
+            videos.forEach(video => {
+                if (video.src && video.src.includes('streamable.com')) {
+                    try {
+                        // Guardar la fuente original
+                        const originalSrc = video.src;
+                        // Forzar recarga del iframe
+                        video.src = '';
+                        setTimeout(() => {
+                            video.src = originalSrc;
+                            console.log("✅ Video recargado:", originalSrc);
+                        }, 100);
+                    } catch (error) {
+                        console.error("❌ Error recargando video:", error);
+                    }
+                }
+            });
+        }
+        
+        // También recargar videos después de un tiempo de inactividad
+        let lastActivity = Date.now();
+        
+        document.addEventListener('mousemove', function() {
+            lastActivity = Date.now();
+        });
+        
+        document.addEventListener('click', function() {
+            lastActivity = Date.now();
+        });
+        
+        setInterval(function() {
+            const now = Date.now();
+            const inactiveTime = now - lastActivity;
+            
+            // Si ha pasado más de 30 segundos sin actividad, recargar videos
+            if (inactiveTime > 30000) {
+                reloadStreamableVideos();
+                lastActivity = now; // Resetear contador
+            }
+        }, 10000); // Verificar cada 10 segundos
+        
+        // === CONTROLES PERSONALIZADOS PARA STREAMABLE ===
+        function toggleStreamableMute(videoId) {
+            const video = document.getElementById(videoId);
+            const btn = event.currentTarget;
+            const muteIcon = btn.querySelector('.fa-volume-mute');
+            const volumeIcon = btn.querySelector('.fa-volume-up');
+            const volumeSlider = btn.closest('.streamable-controls-top').querySelector('.streamable-volume-slider');
+            
+            if (video.src.includes('muted=1')) {
+                // Cambiar a sin mute
+                video.src = video.src.replace('muted=1', 'muted=0');
+                muteIcon.style.display = 'none';
+                volumeIcon.style.display = 'block';
+                volumeSlider.value = 1;
+            } else {
+                // Cambiar a mute
+                video.src = video.src.replace('muted=0', 'muted=1');
+                muteIcon.style.display = 'block';
+                volumeIcon.style.display = 'none';
+                volumeSlider.value = 0;
+            }
+            
+            // Forzar recarga
+            const originalSrc = video.src;
+            video.src = '';
+            setTimeout(() => {
+                video.src = originalSrc;
+            }, 100);
+        }
+        
+        function setStreamableVolume(videoId, volume) {
+            const video = document.getElementById(videoId);
+            const btn = video.closest('.reel-container').querySelector('.mute-btn');
+            const muteIcon = btn.querySelector('.fa-volume-mute');
+            const volumeIcon = btn.querySelector('.fa-volume-up');
+            
+            // Streamable no permite control de volumen vía URL
+            // Simplemente actualizamos la UI
+            if (volume == 0) {
+                video.src = video.src.replace('muted=0', 'muted=1');
+                muteIcon.style.display = 'block';
+                volumeIcon.style.display = 'none';
+            } else {
+                video.src = video.src.replace('muted=1', 'muted=0');
+                muteIcon.style.display = 'none';
+                volumeIcon.style.display = 'block';
+            }
+        }
+        
+        function toggleStreamablePlayPause(videoId) {
+            const video = document.getElementById(videoId);
+            const btn = event.currentTarget;
+            const playIcon = btn.querySelector('.fa-play');
+            const pauseIcon = btn.querySelector('.fa-pause');
+            
+            if (video.src.includes('autoplay=1')) {
+                // Cambiar a pausa
+                video.src = video.src.replace('autoplay=1', 'autoplay=0');
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
+            } else {
+                // Cambiar a reproducción
+                video.src = video.src.replace('autoplay=0', 'autoplay=1');
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+            }
+            
+            // Forzar recarga
+            const originalSrc = video.src;
+            video.src = '';
+            setTimeout(() => {
+                video.src = originalSrc;
+            }, 100);
+        }
+        
+        function seekStreamableVideo(videoId, progress) {
+            // Streamable no permite búsqueda vía URL
+            // Simplemente actualizamos la barra de progreso
+            const progressBar = document.getElementById(videoId).closest('.reel-container').querySelector('.streamable-progress-bar');
+            progressBar.style.width = `${progress}%`;
+        }
+        
+        function toggleFullscreen(container) {
+            const btn = event.currentTarget;
+            const expandIcon = btn.querySelector('.fa-expand');
+            const compressIcon = btn.querySelector('.fa-compress');
+            
+            if (!document.fullscreenElement) {
+                container.requestFullscreen().catch(err => {
+                    console.log(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+                expandIcon.style.display = 'none';
+                compressIcon.style.display = 'block';
+            } else {
+                document.exitFullscreen();
+                expandIcon.style.display = 'block';
+                compressIcon.style.display = 'none';
+            }
+        }
+        
+        // Actualizar iconos al salir de pantalla completa
+        document.addEventListener('fullscreenchange', function() {
+            if (!document.fullscreenElement) {
+                document.querySelectorAll('.fa-compress').forEach(icon => {
+                    icon.style.display = 'none';
+                });
+                document.querySelectorAll('.fa-expand').forEach(icon => {
+                    icon.style.display = 'block';
+                });
+            }
+        });
         
         // === BOOKING PANEL FUNCTIONS - MÚLTIPLES SELECCIONES ===
         let selectedServices = [];
@@ -3974,6 +4081,9 @@
                 document.head.appendChild(link);
             });
             
+            // Crear puntos de luz adicionales con JavaScript
+            createTwinklingStars();
+            
             // Efecto de brillo dinámico para el logo
             const logo = document.getElementById('dynamicLogo');
             if (logo) {
@@ -3986,9 +4096,6 @@
                 });
             }
             
-            // Inicializar el gestor de videos
-            videoManager = new VideoManager();
-            
             // Añadir clase de animación a elementos
             document.querySelectorAll('.web-project, .value-item, .service-option').forEach(element => {
                 element.classList.add('animate-on-scroll');
@@ -4000,6 +4107,25 @@
                     element.classList.add('animated');
                 });
             }, 500);
+            
+            // Optimizar videos para móvil
+            if (window.innerWidth <= 768) {
+                const videos = document.querySelectorAll('.streamable-iframe');
+                videos.forEach(video => {
+                    if (video.src.includes('streamable.com')) {
+                        // Forzar parámetros móviles
+                        const newSrc = video.src.replace(/autoplay=1/, 'autoplay=1&muted=1&controls=0&playsinline=1');
+                        video.src = newSrc;
+                        video.setAttribute('playsinline', '');
+                        video.setAttribute('webkit-playsinline', '');
+                    }
+                });
+            }
+            
+            // Forzar actualización de videos al cargar
+            setTimeout(() => {
+                reloadStreamableVideos();
+            }, 2000);
         });
         
         // === FUNCIÓN DE PRUEBA PARA EMAILJS ===
@@ -4022,13 +4148,6 @@
             emailjs.send('service_oko11dg', 'template_st7hs89', testParams)
                 .then(response => console.log("✅ Prueba exitosa:", response))
                 .catch(error => console.error("❌ Error en prueba:", error));
-        };
-        
-        // Función para recargar videos manualmente si es necesario
-        window.reloadAllVideos = function() {
-            if (videoManager) {
-                videoManager.reloadVideos();
-            }
         };
     </script>
 </body>
