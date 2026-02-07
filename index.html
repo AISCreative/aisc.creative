@@ -122,7 +122,7 @@
             right: 75px;
         }
         
-        /* Botón específico para libreta y boli */
+        /* Botón específico para libreta y boli - ARREGLADO */
         .notebook-btn {
             position: relative;
         }
@@ -136,14 +136,15 @@
             font-size: 0.8rem;
             bottom: 10px;
             right: 10px;
-            color: var(--dark);
-            background: white;
+            color: var(--gold-dark);  /* ← ARREGLADO: Color dorado oscuro */
+            background: var(--gold-light);  /* ← ARREGLADO: Fondo dorado claro */
             width: 18px;
             height: 18px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            border: 1px solid var(--gold-dark);  /* ← ARREGLADO: Borde dorado */
         }
         
         /* Fondo con puntos de luz naranjas */
@@ -3644,148 +3645,103 @@
             }
         }
         
-        // === SOLUCIÓN DEFINITIVA PARA STREAMABLE ===
-        let streamableReloadAttempts = {};
-        let lastVideoReload = 0;
-
-        // Función mejorada para recargar videos de Streamable
-        function reloadStreamableVideos() {
-            const now = Date.now();
-            // Prevenir recargas demasiado frecuentes (mínimo 2 segundos entre recargas)
-            if (now - lastVideoReload < 2000) {
-                return;
-            }
+        // === SOLUCIÓN DEFINITIVA PARA VIDEOS EN MÓVIL ===
+        function initializeMobileVideoFix() {
+            const isMobile = window.innerWidth <= 768;
             
-            console.log("🔄 Recargando videos de Streamable...");
-            lastVideoReload = now;
-            
-            const videos = document.querySelectorAll('.streamable-iframe, .hero-video, .reel-video');
-            
-            videos.forEach((video, index) => {
-                if (video.src && video.src.includes('streamable.com')) {
-                    try {
-                        const videoId = video.id || `video_${index}`;
-                        
-                        // Llevar registro de intentos por video
-                        if (!streamableReloadAttempts[videoId]) {
-                            streamableReloadAttempts[videoId] = 0;
-                        }
-                        
-                        // Limitar a 5 intentos para evitar bucle infinito
-                        if (streamableReloadAttempts[videoId] < 5) {
-                            const originalSrc = video.src;
-                            
-                            // Asegurar que la URL tenga los parámetros correctos
-                            let newSrc = originalSrc;
-                            
-                            // Asegurar autoplay y mute
-                            if (!newSrc.includes('autoplay=1')) {
-                                if (newSrc.includes('?')) {
-                                    newSrc += '&autoplay=1';
-                                } else {
-                                    newSrc += '?autoplay=1';
-                                }
-                            }
-                            
-                            if (!newSrc.includes('muted=1')) {
-                                newSrc += '&muted=1';
-                            }
-                            
-                            if (!newSrc.includes('controls=0')) {
-                                newSrc += '&controls=0';
-                            }
-                            
-                            if (!newSrc.includes('loop=1')) {
-                                newSrc += '&loop=1';
-                            }
-                            
-                            // Forzar recarga completa del iframe
-                            const tempSrc = video.src;
-                            video.src = '';
-                            video.removeAttribute('src');
-                            
-                            setTimeout(() => {
-                                video.src = newSrc;
-                                
-                                // Forzar recarga del iframe
-                                if (video.contentWindow && video.contentWindow.location) {
-                                    try {
-                                        video.contentWindow.location.reload();
-                                    } catch (e) {
-                                        // Ignorar error de política de mismo origen
-                                    }
-                                }
-                                
-                                streamableReloadAttempts[videoId]++;
-                                console.log(`✅ Video ${videoId} recargado (intento ${streamableReloadAttempts[videoId]})`);
-                                
-                                // Verificar después de 1 segundo si el video se está reproduciendo
-                                setTimeout(() => {
-                                    if (video.contentWindow) {
-                                        try {
-                                            // Intentar enviar comando de play al iframe
-                                            video.contentWindow.postMessage(JSON.stringify({
-                                                method: 'play'
-                                            }), '*');
-                                        } catch (e) {
-                                            // Ignorar errores
-                                        }
-                                    }
-                                }, 1000);
-                                
-                            }, 300);
-                        } else {
-                            console.log(`⚠️ Máximo de intentos alcanzado para ${videoId}`);
-                        }
-                    } catch (error) {
-                        console.error("❌ Error recargando video:", error);
-                    }
-                }
-            });
-        }
-
-        // Detectar cuando la página vuelve a estar visible
-        document.addEventListener('visibilitychange', function() {
-            console.log("📱 Estado de visibilidad:", document.visibilityState);
-            
-            if (document.visibilityState === 'visible') {
-                // Esperar un momento para asegurar que la página está completamente visible
-                setTimeout(() => {
-                    console.log("🎯 Página visible - recargando videos");
-                    reloadStreamableVideos();
-                }, 500);
+            if (isMobile) {
+                console.log("📱 Inicializando fix para videos en móvil");
                 
-                // Recargar nuevamente después de un breve retraso
-                setTimeout(() => {
-                    reloadStreamableVideos();
-                }, 1500);
+                // 1. Quitar autoplay inicial en móvil
+                document.querySelectorAll('iframe[src*="streamable.com"]').forEach(iframe => {
+                    const originalSrc = iframe.src;
+                    // Quitar autoplay=1 inicial y asegurar playsinline para iOS
+                    const newSrc = originalSrc
+                        .replace('autoplay=1', 'autoplay=0')
+                        .replace('&controls=0', '&controls=0&playsinline=1');
+                    
+                    if (newSrc !== originalSrc) {
+                        iframe.src = newSrc;
+                        iframe.setAttribute('playsinline', '');
+                        iframe.setAttribute('webkit-playsinline', '');
+                        console.log("📱 Video modificado para móvil:", iframe.id || iframe.title);
+                    }
+                });
+                
+                // 2. Activar autoplay solo después de interacción del usuario
+                let userInteracted = false;
+                
+                const activateVideos = () => {
+                    if (!userInteracted) {
+                        userInteracted = true;
+                        console.log("👆 Usuario interactuó - Activando videos");
+                        
+                        document.querySelectorAll('iframe[src*="streamable.com"]').forEach(iframe => {
+                            const currentSrc = iframe.src;
+                            // Solo activar autoplay si está desactivado
+                            if (currentSrc.includes('autoplay=0')) {
+                                const newSrc = currentSrc.replace('autoplay=0', 'autoplay=1');
+                                iframe.src = newSrc;
+                                console.log("▶️ Video activado:", iframe.id || iframe.title);
+                            }
+                        });
+                    }
+                };
+                
+                // Activar videos con cualquier interacción
+                document.addEventListener('touchstart', activateVideos, { once: true });
+                document.addEventListener('scroll', activateVideos, { once: true });
+                document.addEventListener('click', activateVideos, { once: true });
+                
+                // 3. Pausar videos cuando la página no es visible
+                document.addEventListener('visibilitychange', () => {
+                    if (document.hidden) {
+                        console.log("👁️ Página oculta - Pausando videos");
+                        // Pausar todos los videos
+                        document.querySelectorAll('iframe[src*="streamable.com"]').forEach(iframe => {
+                            const currentSrc = iframe.src;
+                            if (currentSrc.includes('autoplay=1')) {
+                                const pausedSrc = currentSrc.replace('autoplay=1', 'autoplay=0');
+                                iframe.src = pausedSrc;
+                            }
+                        });
+                    } else {
+                        // Solo reactivar si el usuario ya interactuó
+                        if (userInteracted) {
+                            setTimeout(() => {
+                                document.querySelectorAll('iframe[src*="streamable.com"]').forEach(iframe => {
+                                    const currentSrc = iframe.src;
+                                    if (currentSrc.includes('autoplay=0')) {
+                                        const playSrc = currentSrc.replace('autoplay=0', 'autoplay=1');
+                                        iframe.src = playSrc;
+                                    }
+                                });
+                            }, 500);
+                        }
+                    }
+                });
+                
+                // 4. Prevenir autoplay al recargar la página
+                window.addEventListener('beforeunload', () => {
+                    document.querySelectorAll('iframe[src*="streamable.com"]').forEach(iframe => {
+                        iframe.src = iframe.src.replace('autoplay=1', 'autoplay=0');
+                    });
+                });
             }
-        });
-
-        // También manejar cuando la ventana recibe foco
-        window.addEventListener('focus', function() {
-            console.log("🎯 Ventana recibió foco");
-            setTimeout(() => {
-                reloadStreamableVideos();
-            }, 300);
-        });
-
-        // Manejar eventos de carga de página
-        window.addEventListener('pageshow', function(event) {
-            console.log("📄 Página mostrada (pageshow), persisted:", event.persisted);
-            // Siempre recargar videos cuando se muestra la página
-            setTimeout(() => {
-                reloadStreamableVideos();
-            }, 700);
-        });
-
-        // Recargar videos cuando el mouse entra en la ventana
-        document.addEventListener('mouseenter', function() {
-            setTimeout(() => {
-                reloadStreamableVideos();
-            }, 200);
-        });
-
+        }
+        
+        // === ARREGLAR LÁPIZ DEL BOTÓN LIBRETA ===
+        function fixNotebookPenColor() {
+            // Cambiar el color del lápiz a dorado para que combine con la libreta
+            const notebookBtn = document.querySelector('.notebook-btn .fa-pen');
+            if (notebookBtn) {
+                notebookBtn.style.color = 'var(--gold-dark)'; // Color dorado oscuro
+                notebookBtn.style.background = 'var(--gold-light)'; // Fondo dorado claro
+                notebookBtn.style.border = '1px solid var(--gold-dark)';
+                console.log("✏️ Color del lápiz arreglado");
+            }
+        }
+        
         // === CONTROLES PERSONALIZADOS PARA STREAMABLE ===
         function toggleStreamableMute(videoId) {
             const video = document.getElementById(videoId);
@@ -3808,11 +3764,7 @@
                 volumeSlider.value = 0;
             }
             
-            // Recargar el video
-            reloadSingleVideo(video);
-        }
-        
-        function reloadSingleVideo(video) {
+            // Forzar recarga
             const originalSrc = video.src;
             video.src = '';
             setTimeout(() => {
@@ -3857,8 +3809,12 @@
                 pauseIcon.style.display = 'block';
             }
             
-            // Recargar el video
-            reloadSingleVideo(video);
+            // Forzar recarga
+            const originalSrc = video.src;
+            video.src = '';
+            setTimeout(() => {
+                video.src = originalSrc;
+            }, 100);
         }
         
         function seekStreamableVideo(videoId, progress) {
@@ -4127,8 +4083,9 @@
             }
         });
         
-        // Preload images for better performance
+        // === INICIALIZACIÓN CUANDO LA PÁGINA CARGA ===
         document.addEventListener('DOMContentLoaded', function() {
+            // Preload images for better performance
             const assets = [
                 'logo.png',
                 'images/form1.webp',
@@ -4167,6 +4124,12 @@
             // Crear puntos de luz adicionales con JavaScript
             createTwinklingStars();
             
+            // Arreglar el color del lápiz del botón de la libreta
+            fixNotebookPenColor();
+            
+            // Inicializar el fix para videos en móvil
+            initializeMobileVideoFix();
+            
             // Efecto de brillo dinámico para el logo
             const logo = document.getElementById('dynamicLogo');
             if (logo) {
@@ -4196,26 +4159,13 @@
                 const videos = document.querySelectorAll('.streamable-iframe');
                 videos.forEach(video => {
                     if (video.src.includes('streamable.com')) {
-                        // Forzar parámetros móviles
-                        const newSrc = video.src.replace(/autoplay=1/, 'autoplay=1&muted=1&controls=0&playsinline=1');
-                        video.src = newSrc;
                         video.setAttribute('playsinline', '');
                         video.setAttribute('webkit-playsinline', '');
                     }
                 });
             }
             
-            // Forzar actualización de videos al cargar
-            setTimeout(() => {
-                reloadStreamableVideos();
-            }, 2000);
-            
-            // Recargar videos periódicamente para mantenerlos activos
-            setInterval(() => {
-                if (document.visibilityState === 'visible') {
-                    reloadStreamableVideos();
-                }
-            }, 30000); // Cada 30 segundos
+            console.log("✅ Página cargada correctamente con todas las correcciones");
         });
         
         // === FUNCIÓN DE PRUEBA PARA EMAILJS ===
