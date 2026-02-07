@@ -1043,11 +1043,6 @@
             backdrop-filter: blur(5px);
         }
         
-        .formation-cta {
-            margin-top: 30px;
-            text-align: center;
-        }
-        
         /* Importancia de trabajar con expertos */
         .experts-importance {
             background: rgba(255, 215, 0, 0.05);
@@ -1163,6 +1158,140 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
+        }
+        
+        /* ===== CONTROLES PERSONALIZADOS PARA STREAMABLE ===== */
+        .streamable-overlay-controls {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            pointer-events: none;
+        }
+        
+        .streamable-controls-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: all;
+        }
+        
+        .reel-container:hover .streamable-controls-container {
+            opacity: 1;
+        }
+        
+        .streamable-controls-top {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .streamable-controls-bottom {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .streamable-control-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            backdrop-filter: blur(5px);
+            pointer-events: all;
+        }
+        
+        .streamable-control-btn:hover {
+            background: var(--gold);
+            color: var(--dark);
+            transform: scale(1.1);
+        }
+        
+        .streamable-volume-control {
+            flex: 1;
+            max-width: 120px;
+        }
+        
+        .streamable-volume-slider {
+            width: 100%;
+            height: 4px;
+            -webkit-appearance: none;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+            pointer-events: all;
+        }
+        
+        .streamable-volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--gold);
+            cursor: pointer;
+        }
+        
+        .streamable-progress-container {
+            flex: 1;
+            position: relative;
+            height: 20px;
+        }
+        
+        .streamable-progress-bar {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            height: 4px;
+            background: var(--gold);
+            border-radius: 2px;
+            width: 0%;
+            pointer-events: none;
+        }
+        
+        .streamable-progress-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 2;
+            pointer-events: all;
+        }
+        
+        .streamable-progress-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--gold);
+            cursor: pointer;
+        }
+        
+        /* Asegurar que el iframe esté detrás de los controles */
+        .reel-container iframe {
+            position: relative;
+            z-index: 1;
         }
         
         /* Valores */
@@ -2778,9 +2907,9 @@
                     </p>
                     
                     <div class="videos-grid">
-                        <!-- Reel 1 -->
+                        <!-- Reel 1 - CON CONTROLES -->
                         <div class="reel-window">
-                            <div class="reel-container">
+                            <div class="reel-container" style="position: relative;">
                                 <iframe 
                                     class="reel-video streamable-iframe"
                                     src="https://streamable.com/e/3rojmi?autoplay=1&loop=1&muted=1&controls=0"
@@ -2788,8 +2917,42 @@
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
-                                    style="pointer-events: none;">
+                                    style="pointer-events: none; width: 100%; height: 100%;"
+                                    id="streamableVideo1">
                                 </iframe>
+                                
+                                <!-- Controles overlay -->
+                                <div class="streamable-overlay-controls">
+                                    <div class="streamable-controls-container">
+                                        <div class="streamable-controls-top">
+                                            <button class="streamable-control-btn mute-btn" title="Silenciar/Activar sonido" onclick="toggleStreamableMute('streamableVideo1')">
+                                                <i class="fas fa-volume-mute"></i>
+                                                <i class="fas fa-volume-up" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-volume-control">
+                                                <input type="range" class="streamable-volume-slider" min="0" max="1" step="0.1" value="1" 
+                                                       oninput="setStreamableVolume('streamableVideo1', this.value)">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="streamable-controls-bottom">
+                                            <button class="streamable-control-btn play-pause-btn" title="Reproducir/Pausar" onclick="toggleStreamablePlayPause('streamableVideo1')">
+                                                <i class="fas fa-play"></i>
+                                                <i class="fas fa-pause" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-progress-container">
+                                                <div class="streamable-progress-bar"></div>
+                                                <input type="range" class="streamable-progress-slider" min="0" max="100" value="0" 
+                                                       oninput="seekStreamableVideo('streamableVideo1', this.value)">
+                                            </div>
+                                            <button class="streamable-control-btn fullscreen-btn" title="Pantalla completa" onclick="toggleFullscreen(this.closest('.reel-container'))">
+                                                <i class="fas fa-expand"></i>
+                                                <i class="fas fa-compress" style="display: none;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
                                         <i class="fab fa-instagram"></i>
@@ -2798,9 +2961,9 @@
                             </div>
                         </div>
                         
-                        <!-- Reel 2 -->
+                        <!-- Reel 2 - CON CONTROLES -->
                         <div class="reel-window">
-                            <div class="reel-container">
+                            <div class="reel-container" style="position: relative;">
                                 <iframe 
                                     class="reel-video streamable-iframe"
                                     src="https://streamable.com/e/o5g10y?autoplay=1&loop=1&muted=1&controls=0"
@@ -2808,8 +2971,42 @@
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
-                                    style="pointer-events: none;">
+                                    style="pointer-events: none; width: 100%; height: 100%;"
+                                    id="streamableVideo2">
                                 </iframe>
+                                
+                                <!-- Controles overlay -->
+                                <div class="streamable-overlay-controls">
+                                    <div class="streamable-controls-container">
+                                        <div class="streamable-controls-top">
+                                            <button class="streamable-control-btn mute-btn" title="Silenciar/Activar sonido" onclick="toggleStreamableMute('streamableVideo2')">
+                                                <i class="fas fa-volume-mute"></i>
+                                                <i class="fas fa-volume-up" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-volume-control">
+                                                <input type="range" class="streamable-volume-slider" min="0" max="1" step="0.1" value="1" 
+                                                       oninput="setStreamableVolume('streamableVideo2', this.value)">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="streamable-controls-bottom">
+                                            <button class="streamable-control-btn play-pause-btn" title="Reproducir/Pausar" onclick="toggleStreamablePlayPause('streamableVideo2')">
+                                                <i class="fas fa-play"></i>
+                                                <i class="fas fa-pause" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-progress-container">
+                                                <div class="streamable-progress-bar"></div>
+                                                <input type="range" class="streamable-progress-slider" min="0" max="100" value="0" 
+                                                       oninput="seekStreamableVideo('streamableVideo2', this.value)">
+                                            </div>
+                                            <button class="streamable-control-btn fullscreen-btn" title="Pantalla completa" onclick="toggleFullscreen(this.closest('.reel-container'))">
+                                                <i class="fas fa-expand"></i>
+                                                <i class="fas fa-compress" style="display: none;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
                                         <i class="fab fa-instagram"></i>
@@ -2818,9 +3015,9 @@
                             </div>
                         </div>
                         
-                        <!-- Reel 3 -->
+                        <!-- Reel 3 - CON CONTROLES -->
                         <div class="reel-window">
-                            <div class="reel-container">
+                            <div class="reel-container" style="position: relative;">
                                 <iframe 
                                     class="reel-video streamable-iframe"
                                     src="https://streamable.com/e/qps79q?autoplay=1&loop=1&muted=1&controls=0"
@@ -2828,8 +3025,42 @@
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
-                                    style="pointer-events: none;">
+                                    style="pointer-events: none; width: 100%; height: 100%;"
+                                    id="streamableVideo3">
                                 </iframe>
+                                
+                                <!-- Controles overlay -->
+                                <div class="streamable-overlay-controls">
+                                    <div class="streamable-controls-container">
+                                        <div class="streamable-controls-top">
+                                            <button class="streamable-control-btn mute-btn" title="Silenciar/Activar sonido" onclick="toggleStreamableMute('streamableVideo3')">
+                                                <i class="fas fa-volume-mute"></i>
+                                                <i class="fas fa-volume-up" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-volume-control">
+                                                <input type="range" class="streamable-volume-slider" min="0" max="1" step="0.1" value="1" 
+                                                       oninput="setStreamableVolume('streamableVideo3', this.value)">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="streamable-controls-bottom">
+                                            <button class="streamable-control-btn play-pause-btn" title="Reproducir/Pausar" onclick="toggleStreamablePlayPause('streamableVideo3')">
+                                                <i class="fas fa-play"></i>
+                                                <i class="fas fa-pause" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-progress-container">
+                                                <div class="streamable-progress-bar"></div>
+                                                <input type="range" class="streamable-progress-slider" min="0" max="100" value="0" 
+                                                       oninput="seekStreamableVideo('streamableVideo3', this.value)">
+                                            </div>
+                                            <button class="streamable-control-btn fullscreen-btn" title="Pantalla completa" onclick="toggleFullscreen(this.closest('.reel-container'))">
+                                                <i class="fas fa-expand"></i>
+                                                <i class="fas fa-compress" style="display: none;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
                                         <i class="fab fa-instagram"></i>
@@ -2838,9 +3069,9 @@
                             </div>
                         </div>
                         
-                        <!-- Reel 4 -->
+                        <!-- Reel 4 - CON CONTROLES -->
                         <div class="reel-window">
-                            <div class="reel-container">
+                            <div class="reel-container" style="position: relative;">
                                 <iframe 
                                     class="reel-video streamable-iframe"
                                     src="https://streamable.com/e/tnktqu?autoplay=1&loop=1&muted=1&controls=0"
@@ -2848,8 +3079,42 @@
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
-                                    style="pointer-events: none;">
+                                    style="pointer-events: none; width: 100%; height: 100%;"
+                                    id="streamableVideo4">
                                 </iframe>
+                                
+                                <!-- Controles overlay -->
+                                <div class="streamable-overlay-controls">
+                                    <div class="streamable-controls-container">
+                                        <div class="streamable-controls-top">
+                                            <button class="streamable-control-btn mute-btn" title="Silenciar/Activar sonido" onclick="toggleStreamableMute('streamableVideo4')">
+                                                <i class="fas fa-volume-mute"></i>
+                                                <i class="fas fa-volume-up" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-volume-control">
+                                                <input type="range" class="streamable-volume-slider" min="0" max="1" step="0.1" value="1" 
+                                                       oninput="setStreamableVolume('streamableVideo4', this.value)">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="streamable-controls-bottom">
+                                            <button class="streamable-control-btn play-pause-btn" title="Reproducir/Pausar" onclick="toggleStreamablePlayPause('streamableVideo4')">
+                                                <i class="fas fa-play"></i>
+                                                <i class="fas fa-pause" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-progress-container">
+                                                <div class="streamable-progress-bar"></div>
+                                                <input type="range" class="streamable-progress-slider" min="0" max="100" value="0" 
+                                                       oninput="seekStreamableVideo('streamableVideo4', this.value)">
+                                            </div>
+                                            <button class="streamable-control-btn fullscreen-btn" title="Pantalla completa" onclick="toggleFullscreen(this.closest('.reel-container'))">
+                                                <i class="fas fa-expand"></i>
+                                                <i class="fas fa-compress" style="display: none;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
                                         <i class="fab fa-instagram"></i>
@@ -2858,9 +3123,9 @@
                             </div>
                         </div>
                         
-                        <!-- Reel 5 -->
+                        <!-- Reel 5 - CON CONTROLES -->
                         <div class="reel-window">
-                            <div class="reel-container">
+                            <div class="reel-container" style="position: relative;">
                                 <iframe 
                                     class="reel-video streamable-iframe"
                                     src="https://streamable.com/e/7wj49f?autoplay=1&loop=1&muted=1&controls=0"
@@ -2868,8 +3133,42 @@
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
-                                    style="pointer-events: none;">
+                                    style="pointer-events: none; width: 100%; height: 100%;"
+                                    id="streamableVideo5">
                                 </iframe>
+                                
+                                <!-- Controles overlay -->
+                                <div class="streamable-overlay-controls">
+                                    <div class="streamable-controls-container">
+                                        <div class="streamable-controls-top">
+                                            <button class="streamable-control-btn mute-btn" title="Silenciar/Activar sonido" onclick="toggleStreamableMute('streamableVideo5')">
+                                                <i class="fas fa-volume-mute"></i>
+                                                <i class="fas fa-volume-up" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-volume-control">
+                                                <input type="range" class="streamable-volume-slider" min="0" max="1" step="0.1" value="1" 
+                                                       oninput="setStreamableVolume('streamableVideo5', this.value)">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="streamable-controls-bottom">
+                                            <button class="streamable-control-btn play-pause-btn" title="Reproducir/Pausar" onclick="toggleStreamablePlayPause('streamableVideo5')">
+                                                <i class="fas fa-play"></i>
+                                                <i class="fas fa-pause" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-progress-container">
+                                                <div class="streamable-progress-bar"></div>
+                                                <input type="range" class="streamable-progress-slider" min="0" max="100" value="0" 
+                                                       oninput="seekStreamableVideo('streamableVideo5', this.value)">
+                                            </div>
+                                            <button class="streamable-control-btn fullscreen-btn" title="Pantalla completa" onclick="toggleFullscreen(this.closest('.reel-container'))">
+                                                <i class="fas fa-expand"></i>
+                                                <i class="fas fa-compress" style="display: none;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
                                         <i class="fab fa-instagram"></i>
@@ -2878,9 +3177,9 @@
                             </div>
                         </div>
                         
-                        <!-- Reel 6 -->
+                        <!-- Reel 6 - CON CONTROLES -->
                         <div class="reel-window">
-                            <div class="reel-container">
+                            <div class="reel-container" style="position: relative;">
                                 <iframe 
                                     class="reel-video streamable-iframe"
                                     src="https://streamable.com/e/30718x?autoplay=1&loop=1&muted=1&controls=0"
@@ -2888,8 +3187,42 @@
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
-                                    style="pointer-events: none;">
+                                    style="pointer-events: none; width: 100%; height: 100%;"
+                                    id="streamableVideo6">
                                 </iframe>
+                                
+                                <!-- Controles overlay -->
+                                <div class="streamable-overlay-controls">
+                                    <div class="streamable-controls-container">
+                                        <div class="streamable-controls-top">
+                                            <button class="streamable-control-btn mute-btn" title="Silenciar/Activar sonido" onclick="toggleStreamableMute('streamableVideo6')">
+                                                <i class="fas fa-volume-mute"></i>
+                                                <i class="fas fa-volume-up" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-volume-control">
+                                                <input type="range" class="streamable-volume-slider" min="0" max="1" step="0.1" value="1" 
+                                                       oninput="setStreamableVolume('streamableVideo6', this.value)">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="streamable-controls-bottom">
+                                            <button class="streamable-control-btn play-pause-btn" title="Reproducir/Pausar" onclick="toggleStreamablePlayPause('streamableVideo6')">
+                                                <i class="fas fa-play"></i>
+                                                <i class="fas fa-pause" style="display: none;"></i>
+                                            </button>
+                                            <div class="streamable-progress-container">
+                                                <div class="streamable-progress-bar"></div>
+                                                <input type="range" class="streamable-progress-slider" min="0" max="100" value="0" 
+                                                       oninput="seekStreamableVideo('streamableVideo6', this.value)">
+                                            </div>
+                                            <button class="streamable-control-btn fullscreen-btn" title="Pantalla completa" onclick="toggleFullscreen(this.closest('.reel-container'))">
+                                                <i class="fas fa-expand"></i>
+                                                <i class="fas fa-compress" style="display: none;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
                                         <i class="fab fa-instagram"></i>
@@ -2902,7 +3235,7 @@
                     <div style="text-align: center; margin-top: 30px;">
                         <p style="color: #bbb; font-size: 0.95rem; max-width: 600px; margin: 0 auto;">
                             <i class="fas fa-info-circle" style="color: var(--gold); margin-right: 10px;"></i>
-                            Los videos se reproducen automáticamente en bucle, sin controles y sin sonido.
+                            Pasa el cursor sobre los videos para ver los controles personalizados.
                         </p>
                     </div>
                 </div>
@@ -3370,6 +3703,118 @@
             }
         }, 10000); // Verificar cada 10 segundos
         
+        // === CONTROLES PERSONALIZADOS PARA STREAMABLE ===
+        function toggleStreamableMute(videoId) {
+            const video = document.getElementById(videoId);
+            const btn = event.currentTarget;
+            const muteIcon = btn.querySelector('.fa-volume-mute');
+            const volumeIcon = btn.querySelector('.fa-volume-up');
+            const volumeSlider = btn.closest('.streamable-controls-top').querySelector('.streamable-volume-slider');
+            
+            if (video.src.includes('muted=1')) {
+                // Cambiar a sin mute
+                video.src = video.src.replace('muted=1', 'muted=0');
+                muteIcon.style.display = 'none';
+                volumeIcon.style.display = 'block';
+                volumeSlider.value = 1;
+            } else {
+                // Cambiar a mute
+                video.src = video.src.replace('muted=0', 'muted=1');
+                muteIcon.style.display = 'block';
+                volumeIcon.style.display = 'none';
+                volumeSlider.value = 0;
+            }
+            
+            // Forzar recarga
+            const originalSrc = video.src;
+            video.src = '';
+            setTimeout(() => {
+                video.src = originalSrc;
+            }, 100);
+        }
+        
+        function setStreamableVolume(videoId, volume) {
+            const video = document.getElementById(videoId);
+            const btn = video.closest('.reel-container').querySelector('.mute-btn');
+            const muteIcon = btn.querySelector('.fa-volume-mute');
+            const volumeIcon = btn.querySelector('.fa-volume-up');
+            
+            // Streamable no permite control de volumen vía URL
+            // Simplemente actualizamos la UI
+            if (volume == 0) {
+                video.src = video.src.replace('muted=0', 'muted=1');
+                muteIcon.style.display = 'block';
+                volumeIcon.style.display = 'none';
+            } else {
+                video.src = video.src.replace('muted=1', 'muted=0');
+                muteIcon.style.display = 'none';
+                volumeIcon.style.display = 'block';
+            }
+        }
+        
+        function toggleStreamablePlayPause(videoId) {
+            const video = document.getElementById(videoId);
+            const btn = event.currentTarget;
+            const playIcon = btn.querySelector('.fa-play');
+            const pauseIcon = btn.querySelector('.fa-pause');
+            
+            if (video.src.includes('autoplay=1')) {
+                // Cambiar a pausa
+                video.src = video.src.replace('autoplay=1', 'autoplay=0');
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
+            } else {
+                // Cambiar a reproducción
+                video.src = video.src.replace('autoplay=0', 'autoplay=1');
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+            }
+            
+            // Forzar recarga
+            const originalSrc = video.src;
+            video.src = '';
+            setTimeout(() => {
+                video.src = originalSrc;
+            }, 100);
+        }
+        
+        function seekStreamableVideo(videoId, progress) {
+            // Streamable no permite búsqueda vía URL
+            // Simplemente actualizamos la barra de progreso
+            const progressBar = document.getElementById(videoId).closest('.reel-container').querySelector('.streamable-progress-bar');
+            progressBar.style.width = `${progress}%`;
+        }
+        
+        function toggleFullscreen(container) {
+            const btn = event.currentTarget;
+            const expandIcon = btn.querySelector('.fa-expand');
+            const compressIcon = btn.querySelector('.fa-compress');
+            
+            if (!document.fullscreenElement) {
+                container.requestFullscreen().catch(err => {
+                    console.log(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+                expandIcon.style.display = 'none';
+                compressIcon.style.display = 'block';
+            } else {
+                document.exitFullscreen();
+                expandIcon.style.display = 'block';
+                compressIcon.style.display = 'none';
+            }
+        }
+        
+        // Actualizar iconos al salir de pantalla completa
+        document.addEventListener('fullscreenchange', function() {
+            if (!document.fullscreenElement) {
+                document.querySelectorAll('.fa-compress').forEach(icon => {
+                    icon.style.display = 'none';
+                });
+                document.querySelectorAll('.fa-expand').forEach(icon => {
+                    icon.style.display = 'block';
+                });
+            }
+        });
+        
         // === BOOKING PANEL FUNCTIONS - MÚLTIPLES SELECCIONES ===
         let selectedServices = [];
         let selectedWebOption = '';
@@ -3707,4 +4152,3 @@
     </script>
 </body>
 </html>
-
