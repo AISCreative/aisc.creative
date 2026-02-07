@@ -3644,65 +3644,148 @@
             }
         }
         
-        // === SOLUCIÓN PARA PROBLEMA DE STREAMABLE ===
-        // Reiniciar videos cuando la página vuelve a estar visible
-        document.addEventListener('visibilitychange', function() {
-            if (!document.hidden) {
-                // Página visible nuevamente
-                reloadStreamableVideos();
-            }
-        });
-        
-        // También manejar eventos de página visible
-        document.addEventListener('focus', function() {
-            reloadStreamableVideos();
-        });
-        
-        // Función para recargar videos de Streamable
+        // === SOLUCIÓN DEFINITIVA PARA STREAMABLE ===
+        let streamableReloadAttempts = {};
+        let lastVideoReload = 0;
+
+        // Función mejorada para recargar videos de Streamable
         function reloadStreamableVideos() {
+            const now = Date.now();
+            // Prevenir recargas demasiado frecuentes (mínimo 2 segundos entre recargas)
+            if (now - lastVideoReload < 2000) {
+                return;
+            }
+            
             console.log("🔄 Recargando videos de Streamable...");
+            lastVideoReload = now;
+            
             const videos = document.querySelectorAll('.streamable-iframe, .hero-video, .reel-video');
             
-            videos.forEach(video => {
+            videos.forEach((video, index) => {
                 if (video.src && video.src.includes('streamable.com')) {
                     try {
-                        // Guardar la fuente original
-                        const originalSrc = video.src;
-                        // Forzar recarga del iframe
-                        video.src = '';
-                        setTimeout(() => {
-                            video.src = originalSrc;
-                            console.log("✅ Video recargado:", originalSrc);
-                        }, 100);
+                        const videoId = video.id || `video_${index}`;
+                        
+                        // Llevar registro de intentos por video
+                        if (!streamableReloadAttempts[videoId]) {
+                            streamableReloadAttempts[videoId] = 0;
+                        }
+                        
+                        // Limitar a 5 intentos para evitar bucle infinito
+                        if (streamableReloadAttempts[videoId] < 5) {
+                            const originalSrc = video.src;
+                            
+                            // Asegurar que la URL tenga los parámetros correctos
+                            let newSrc = originalSrc;
+                            
+                            // Asegurar autoplay y mute
+                            if (!newSrc.includes('autoplay=1')) {
+                                if (newSrc.includes('?')) {
+                                    newSrc += '&autoplay=1';
+                                } else {
+                                    newSrc += '?autoplay=1';
+                                }
+                            }
+                            
+                            if (!newSrc.includes('muted=1')) {
+                                newSrc += '&muted=1';
+                            }
+                            
+                            if (!newSrc.includes('controls=0')) {
+                                newSrc += '&controls=0';
+                            }
+                            
+                            if (!newSrc.includes('loop=1')) {
+                                newSrc += '&loop=1';
+                            }
+                            
+                            // Forzar recarga completa del iframe
+                            const tempSrc = video.src;
+                            video.src = '';
+                            video.removeAttribute('src');
+                            
+                            setTimeout(() => {
+                                video.src = newSrc;
+                                
+                                // Forzar recarga del iframe
+                                if (video.contentWindow && video.contentWindow.location) {
+                                    try {
+                                        video.contentWindow.location.reload();
+                                    } catch (e) {
+                                        // Ignorar error de política de mismo origen
+                                    }
+                                }
+                                
+                                streamableReloadAttempts[videoId]++;
+                                console.log(`✅ Video ${videoId} recargado (intento ${streamableReloadAttempts[videoId]})`);
+                                
+                                // Verificar después de 1 segundo si el video se está reproduciendo
+                                setTimeout(() => {
+                                    if (video.contentWindow) {
+                                        try {
+                                            // Intentar enviar comando de play al iframe
+                                            video.contentWindow.postMessage(JSON.stringify({
+                                                method: 'play'
+                                            }), '*');
+                                        } catch (e) {
+                                            // Ignorar errores
+                                        }
+                                    }
+                                }, 1000);
+                                
+                            }, 300);
+                        } else {
+                            console.log(`⚠️ Máximo de intentos alcanzado para ${videoId}`);
+                        }
                     } catch (error) {
                         console.error("❌ Error recargando video:", error);
                     }
                 }
             });
         }
-        
-        // También recargar videos después de un tiempo de inactividad
-        let lastActivity = Date.now();
-        
-        document.addEventListener('mousemove', function() {
-            lastActivity = Date.now();
-        });
-        
-        document.addEventListener('click', function() {
-            lastActivity = Date.now();
-        });
-        
-        setInterval(function() {
-            const now = Date.now();
-            const inactiveTime = now - lastActivity;
+
+        // Detectar cuando la página vuelve a estar visible
+        document.addEventListener('visibilitychange', function() {
+            console.log("📱 Estado de visibilidad:", document.visibilityState);
             
-            // Si ha pasado más de 30 segundos sin actividad, recargar videos
-            if (inactiveTime > 30000) {
-                reloadStreamableVideos();
-                lastActivity = now; // Resetear contador
+            if (document.visibilityState === 'visible') {
+                // Esperar un momento para asegurar que la página está completamente visible
+                setTimeout(() => {
+                    console.log("🎯 Página visible - recargando videos");
+                    reloadStreamableVideos();
+                }, 500);
+                
+                // Recargar nuevamente después de un breve retraso
+                setTimeout(() => {
+                    reloadStreamableVideos();
+                }, 1500);
             }
-        }, 10000); // Verificar cada 10 segundos
-        
+        });
+
+        // También manejar cuando la ventana recibe foco
+        window.addEventListener('focus', function() {
+            console.log("🎯 Ventana recibió foco");
+            setTimeout(() => {
+                reloadStreamableVideos();
+            }, 300);
+        });
+
+        // Manejar eventos de carga de página
+        window.addEventListener('pageshow', function(event) {
+            console.log("📄 Página mostrada (pageshow), persisted:", event.persisted);
+            // Siempre recargar videos cuando se muestra la página
+            setTimeout(() => {
+                reloadStreamableVideos();
+            }, 700);
+        });
+
+        // Recargar videos cuando el mouse entra en la ventana
+        document.addEventListener('mouseenter', function() {
+            setTimeout(() => {
+                reloadStreamableVideos();
+            }, 200);
+        });
+
         // === CONTROLES PERSONALIZADOS PARA STREAMABLE ===
         function toggleStreamableMute(videoId) {
             const video = document.getElementById(videoId);
@@ -3725,7 +3808,11 @@
                 volumeSlider.value = 0;
             }
             
-            // Forzar recarga
+            // Recargar el video
+            reloadSingleVideo(video);
+        }
+        
+        function reloadSingleVideo(video) {
             const originalSrc = video.src;
             video.src = '';
             setTimeout(() => {
@@ -3770,12 +3857,8 @@
                 pauseIcon.style.display = 'block';
             }
             
-            // Forzar recarga
-            const originalSrc = video.src;
-            video.src = '';
-            setTimeout(() => {
-                video.src = originalSrc;
-            }, 100);
+            // Recargar el video
+            reloadSingleVideo(video);
         }
         
         function seekStreamableVideo(videoId, progress) {
@@ -4126,6 +4209,13 @@
             setTimeout(() => {
                 reloadStreamableVideos();
             }, 2000);
+            
+            // Recargar videos periódicamente para mantenerlos activos
+            setInterval(() => {
+                if (document.visibilityState === 'visible') {
+                    reloadStreamableVideos();
+                }
+            }, 30000); // Cada 30 segundos
         });
         
         // === FUNCIÓN DE PRUEBA PARA EMAILJS ===
