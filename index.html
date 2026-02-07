@@ -1597,7 +1597,7 @@
                 max-width: 90%;
             }
             
-            /* Header optimizado - OCULTAR BOTONES ANTIGUOS EN MÓVIL */
+            /* Header optimizado - OCULTAR SOLO BOTONES DE SECCIONES */
             header {
                 padding: 10px 0;
                 top: 42px;
@@ -1620,15 +1620,49 @@
             }
             
             .mobile-menu-btn {
-                display: none !important; /* Ocultar hamburguesa también */
+                display: block;
+                font-size: 1.3rem;
             }
             
             .nav-links {
-                display: none !important; /* Ocultar navegación antigua */
+                display: none;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: rgba(26, 26, 26, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 15px;
+                text-align: center;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                border-top: 1px solid rgba(255, 215, 0, 0.1);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 8px 0;
+            }
+            
+            /* OCULTAR SOLO LOS PRIMEROS 4 BOTONES (Inicio, Servicios, Valores, Contacto) */
+            .nav-links li:not(:last-child) {
+                display: none !important;
+            }
+            
+            /* MOSTRAR SOLO EL ÚLTIMO BOTÓN (Agendar Cita) */
+            .nav-links li:last-child {
+                display: block !important;
+                margin-top: 8px;
             }
             
             .btn-header {
-                display: none !important; /* Ocultar botón "Agendar Cita" del header */
+                margin-top: 8px;
+                padding: 8px 16px;
+                font-size: 0.85rem;
             }
             
             /* =========== 3 BOTONES NARANJAS FIJOS EN MÓVIL =========== */
@@ -2300,11 +2334,11 @@
             }
             
             .logo-main {
-                font-size: 1.2rem;
+                display: none; /* Ocultar texto en móviles muy pequeños */
             }
             
             .logo-subtitle {
-                font-size: 0.7rem;
+                display: none; /* Ocultar subtítulo en móviles muy pequeños */
             }
             
             .hero h1 {
@@ -3169,6 +3203,18 @@
             console.log("✅ EmailJS inicializado correctamente");
         })();
 
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+        
         // Función para abrir pestañas desde botones móviles
         function openMobileTab(tabId) {
             // Remover clase active de todos los botones y tabs
