@@ -1597,7 +1597,7 @@
                 max-width: 90%;
             }
             
-            /* Header optimizado */
+            /* Header optimizado - OCULTAR BOTONES ANTIGUOS EN MÓVIL */
             header {
                 padding: 10px 0;
                 top: 42px;
@@ -1620,38 +1620,15 @@
             }
             
             .mobile-menu-btn {
-                display: block;
-                font-size: 1.3rem;
+                display: none !important; /* Ocultar hamburguesa también */
             }
             
             .nav-links {
-                display: none;
-                position: fixed;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background: rgba(26, 26, 26, 0.98);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                padding: 15px;
-                text-align: center;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-                border-top: 1px solid rgba(255, 215, 0, 0.1);
-                z-index: 1000;
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links li {
-                margin: 8px 0;
+                display: none !important; /* Ocultar navegación antigua */
             }
             
             .btn-header {
-                margin-top: 8px;
-                padding: 8px 16px;
-                font-size: 0.85rem;
+                display: none !important; /* Ocultar botón "Agendar Cita" del header */
             }
             
             /* =========== 3 BOTONES NARANJAS FIJOS EN MÓVIL =========== */
@@ -1667,13 +1644,13 @@
             }
             
             .mobile-btn {
-                width: 55px;
-                height: 55px;
+                width: 60px;
+                height: 60px;
                 border-radius: 50%;
                 background: var(--orange);
                 border: 2px solid rgba(255, 255, 255, 0.3);
                 color: white;
-                font-size: 1.5rem;
+                font-size: 1.8rem;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -1697,14 +1674,14 @@
             
             .btn-tooltip {
                 position: absolute;
-                right: 65px;
+                right: 70px;
                 top: 50%;
                 transform: translateY(-50%);
                 background: rgba(26, 26, 26, 0.95);
                 color: white;
-                padding: 8px 12px;
-                border-radius: 6px;
-                font-size: 0.8rem;
+                padding: 10px 15px;
+                border-radius: 8px;
+                font-size: 0.9rem;
                 white-space: nowrap;
                 opacity: 0;
                 visibility: hidden;
@@ -1712,17 +1689,13 @@
                 pointer-events: none;
                 z-index: 10001;
                 border: 1px solid rgba(255, 215, 0, 0.2);
+                font-weight: 600;
             }
             
             .mobile-btn:hover .btn-tooltip {
                 opacity: 1;
                 visibility: visible;
-                right: 70px;
-            }
-            
-            /* Ocultar los botones de navegación antiguos */
-            .nav-links {
-                display: none !important;
+                right: 75px;
             }
             
             /* Hero optimizado para móvil */
@@ -2186,19 +2159,19 @@
             }
             
             .mobile-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 1.3rem;
+                width: 55px;
+                height: 55px;
+                font-size: 1.6rem;
             }
             
             .btn-tooltip {
-                font-size: 0.75rem;
-                padding: 6px 10px;
-                right: 60px;
+                font-size: 0.85rem;
+                padding: 8px 12px;
+                right: 65px;
             }
             
             .mobile-btn:hover .btn-tooltip {
-                right: 65px;
+                right: 70px;
             }
         }
         
@@ -2297,9 +2270,9 @@
             }
             
             .mobile-btn {
-                width: 48px;
-                height: 48px;
-                font-size: 1.2rem;
+                width: 55px;
+                height: 55px;
+                font-size: 1.6rem;
             }
             
             /* Secciones más compactas */
@@ -2345,6 +2318,28 @@
             .tab-btn {
                 padding: 8px 14px;
                 font-size: 0.8rem;
+            }
+            
+            /* Botones móviles muy pequeños */
+            .mobile-fixed-buttons {
+                right: 8px;
+                gap: 10px;
+            }
+            
+            .mobile-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+            
+            .btn-tooltip {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+                right: 60px;
+            }
+            
+            .mobile-btn:hover .btn-tooltip {
+                right: 65px;
             }
         }
         
@@ -3153,17 +3148,17 @@
 
     <!-- =========== 3 BOTONES NARANJAS FIJOS EN MÓVIL =========== -->
     <div class="mobile-fixed-buttons">
-        <button class="mobile-btn orange-btn" onclick="scrollToSection('servicios')" aria-label="Diseño Web">
+        <button class="mobile-btn orange-btn" onclick="openMobileTab('web')" aria-label="Diseño Digital">
             <span class="btn-icon">💻</span>
-            <span class="btn-tooltip">Web</span>
+            <span class="btn-tooltip">Diseño Digital</span>
         </button>
-        <button class="mobile-btn orange-btn" onclick="scrollToSection('servicios')" aria-label="Contenido">
+        <button class="mobile-btn orange-btn" onclick="openMobileTab('social')" aria-label="Contenido de Redes">
             <span class="btn-icon">📷</span>
-            <span class="btn-tooltip">Contenido</span>
+            <span class="btn-tooltip">Contenido de Redes</span>
         </button>
-        <button class="mobile-btn orange-btn" onclick="scrollToSection('booking')" aria-label="Contacto">
+        <button class="mobile-btn orange-btn" onclick="openMobileTab('formations')" aria-label="Formaciones">
             <span class="btn-icon">📓</span>
-            <span class="btn-tooltip">Contacto</span>
+            <span class="btn-tooltip">Formaciones</span>
         </button>
     </div>
 
@@ -3174,19 +3169,33 @@
             console.log("✅ EmailJS inicializado correctamente");
         })();
 
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.nav-links').classList.remove('active');
+        // Función para abrir pestañas desde botones móviles
+        function openMobileTab(tabId) {
+            // Remover clase active de todos los botones y tabs
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            
+            // Agregar clase active al botón correspondiente
+            document.querySelector(`.tab-btn[data-tab="${tabId}"]`).classList.add('active');
+            
+            // Mostrar el tab correspondiente
+            document.getElementById(`${tabId}-tab`).classList.add('active');
+            
+            // Scroll a la sección de servicios
+            document.getElementById('servicios').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
             });
-        });
-        
-        // Tab functionality
+            
+            // Feedback visual del botón presionado
+            const button = event.currentTarget;
+            button.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                button.style.transform = 'scale(1)';
+            }, 150);
+        }
+
+        // Tab functionality (para las pestañas normales)
         document.querySelectorAll('.tab-btn').forEach(button => {
             button.addEventListener('click', () => {
                 // Remove active class from all buttons and tabs
@@ -3199,14 +3208,6 @@
                 // Show corresponding tab
                 const tabId = button.getAttribute('data-tab');
                 document.getElementById(`${tabId}-tab`).classList.add('active');
-                
-                // Smooth scroll to active tab on mobile
-                if (window.innerWidth <= 768) {
-                    document.getElementById('servicios').scrollIntoView({ 
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
             });
         });
         
@@ -3450,20 +3451,6 @@
                 console.log("🔄 Botón de envío restablecido");
             });
         });
-        
-        // Función para los botones móviles
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                const headerHeight = document.querySelector('header').offsetHeight;
-                const targetPosition = element.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }
         
         // Banner superior animación
         const banner = document.querySelector('.top-banner');
