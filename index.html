@@ -52,6 +52,100 @@
             position: relative;
         }
         
+        /* ===== NUEVOS BOTONES LATERALES PARA MÓVIL ===== */
+        .mobile-side-buttons {
+            display: none;
+            position: fixed;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 999;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .side-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--orange);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid var(--orange-dark);
+            position: relative;
+        }
+        
+        .side-button:hover {
+            transform: scale(1.1);
+            background: var(--orange-dark);
+            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.6);
+        }
+        
+        .side-button-tooltip {
+            position: absolute;
+            right: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            pointer-events: none;
+            border-left: 3px solid var(--orange);
+        }
+        
+        .side-button-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -6px;
+            transform: translateY(-50%);
+            border-left: 6px solid rgba(0, 0, 0, 0.8);
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+        }
+        
+        .side-button:hover .side-button-tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 75px;
+        }
+        
+        /* Botón específico para libreta y boli */
+        .notebook-btn {
+            position: relative;
+        }
+        
+        .notebook-btn i.fa-book {
+            font-size: 1.3rem;
+        }
+        
+        .notebook-btn i.fa-pen {
+            position: absolute;
+            font-size: 0.8rem;
+            bottom: 10px;
+            right: 10px;
+            color: var(--dark);
+            background: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
         /* Fondo con puntos de luz naranjas */
         body::before {
             content: '';
@@ -1568,6 +1662,11 @@
         
         /* Ajustes generales para móviles */
         @media (max-width: 768px) {
+            /* Mostrar botones laterales solo en móvil */
+            .mobile-side-buttons {
+                display: flex;
+            }
+            
             .container {
                 width: 95%;
                 padding: 0 15px;
@@ -1597,7 +1696,7 @@
                 max-width: 90%;
             }
             
-            /* Header optimizado - OCULTAR SOLO BOTONES DE SECCIONES */
+            /* Header optimizado */
             header {
                 padding: 10px 0;
                 top: 42px;
@@ -1648,88 +1747,10 @@
                 margin: 8px 0;
             }
             
-            /* OCULTAR SOLO LOS PRIMEROS 4 BOTONES (Inicio, Servicios, Valores, Contacto) */
-            .nav-links li:not(:last-child) {
-                display: none !important;
-            }
-            
-            /* MOSTRAR SOLO EL ÚLTIMO BOTÓN (Agendar Cita) */
-            .nav-links li:last-child {
-                display: block !important;
-                margin-top: 8px;
-            }
-            
             .btn-header {
                 margin-top: 8px;
                 padding: 8px 16px;
                 font-size: 0.85rem;
-            }
-            
-            /* =========== 3 BOTONES NARANJAS FIJOS EN MÓVIL =========== */
-            .mobile-fixed-buttons {
-                display: flex;
-                position: fixed;
-                right: 15px;
-                top: 50%;
-                transform: translateY(-50%);
-                flex-direction: column;
-                gap: 15px;
-                z-index: 9999;
-            }
-            
-            .mobile-btn {
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                background: var(--orange);
-                border: 2px solid rgba(255, 255, 255, 0.3);
-                color: white;
-                font-size: 1.8rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
-                position: relative;
-                padding: 0;
-                margin: 0;
-            }
-            
-            .mobile-btn:hover {
-                background: var(--orange-dark);
-                transform: scale(1.1);
-                box-shadow: 0 8px 20px rgba(255, 140, 0, 0.6);
-            }
-            
-            .mobile-btn:active {
-                transform: scale(0.95);
-            }
-            
-            .btn-tooltip {
-                position: absolute;
-                right: 70px;
-                top: 50%;
-                transform: translateY(-50%);
-                background: rgba(26, 26, 26, 0.95);
-                color: white;
-                padding: 10px 15px;
-                border-radius: 8px;
-                font-size: 0.9rem;
-                white-space: nowrap;
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
-                pointer-events: none;
-                z-index: 10001;
-                border: 1px solid rgba(255, 215, 0, 0.2);
-                font-weight: 600;
-            }
-            
-            .mobile-btn:hover .btn-tooltip {
-                opacity: 1;
-                visibility: visible;
-                right: 75px;
             }
             
             /* Hero optimizado para móvil */
@@ -2127,6 +2148,21 @@
         
         /* Ajustes específicos para móviles pequeños */
         @media (max-width: 576px) {
+            .mobile-side-buttons {
+                right: 10px;
+            }
+            
+            .side-button {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            
+            .side-button-tooltip {
+                font-size: 0.75rem;
+                padding: 6px 10px;
+            }
+            
             .hero {
                 padding-top: 90px;
                 padding-bottom: 30px;
@@ -2185,32 +2221,15 @@
             .formation-images {
                 grid-template-columns: 1fr;
             }
-            
-            /* Botones móviles más pequeños */
-            .mobile-fixed-buttons {
-                right: 10px;
-                gap: 12px;
-            }
-            
-            .mobile-btn {
-                width: 55px;
-                height: 55px;
-                font-size: 1.6rem;
-            }
-            
-            .btn-tooltip {
-                font-size: 0.85rem;
-                padding: 8px 12px;
-                right: 65px;
-            }
-            
-            .mobile-btn:hover .btn-tooltip {
-                right: 70px;
-            }
         }
         
         /* Ajustes para tablets grandes y pantallas medianas */
         @media (max-width: 992px) and (min-width: 769px) {
+            /* Ocultar botones laterales en tablet/desktop */
+            .mobile-side-buttons {
+                display: none;
+            }
+            
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -2233,6 +2252,13 @@
             
             .values-grid {
                 grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        /* Ocultar botones laterales en desktop (ancho > 768px) */
+        @media (min-width: 769px) {
+            .mobile-side-buttons {
+                display: none;
             }
         }
         
@@ -2297,18 +2323,6 @@
                 grid-template-columns: repeat(3, 1fr);
             }
             
-            /* Botones móviles landscape */
-            .mobile-fixed-buttons {
-                top: 60%;
-                gap: 12px;
-            }
-            
-            .mobile-btn {
-                width: 55px;
-                height: 55px;
-                font-size: 1.6rem;
-            }
-            
             /* Secciones más compactas */
             .section {
                 padding: 40px 0;
@@ -2334,11 +2348,11 @@
             }
             
             .logo-main {
-                display: none; /* Ocultar texto en móviles muy pequeños */
+                font-size: 1.2rem;
             }
             
             .logo-subtitle {
-                display: none; /* Ocultar subtítulo en móviles muy pequeños */
+                font-size: 0.7rem;
             }
             
             .hero h1 {
@@ -2352,28 +2366,6 @@
             .tab-btn {
                 padding: 8px 14px;
                 font-size: 0.8rem;
-            }
-            
-            /* Botones móviles muy pequeños */
-            .mobile-fixed-buttons {
-                right: 8px;
-                gap: 10px;
-            }
-            
-            .mobile-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 1.4rem;
-            }
-            
-            .btn-tooltip {
-                font-size: 0.8rem;
-                padding: 6px 10px;
-                right: 60px;
-            }
-            
-            .mobile-btn:hover .btn-tooltip {
-                right: 65px;
             }
         }
         
@@ -2482,6 +2474,23 @@
             </nav>
         </div>
     </header>
+
+    <!-- Botones laterales para móvil -->
+    <div class="mobile-side-buttons">
+        <div class="side-button" onclick="switchTab('web')">
+            <i class="fas fa-desktop"></i>
+            <span class="side-button-tooltip">Diseño Digital</span>
+        </div>
+        <div class="side-button" onclick="switchTab('social')">
+            <i class="fas fa-video"></i>
+            <span class="side-button-tooltip">Contenido de Redes</span>
+        </div>
+        <div class="side-button notebook-btn" onclick="switchTab('formations')">
+            <i class="fas fa-book"></i>
+            <i class="fas fa-pen"></i>
+            <span class="side-button-tooltip">Formaciones</span>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
@@ -3180,22 +3189,6 @@
         </div>
     </footer>
 
-    <!-- =========== 3 BOTONES NARANJAS FIJOS EN MÓVIL =========== -->
-    <div class="mobile-fixed-buttons">
-        <button class="mobile-btn orange-btn" onclick="openMobileTab('web')" aria-label="Diseño Digital">
-            <span class="btn-icon">💻</span>
-            <span class="btn-tooltip">Diseño Digital</span>
-        </button>
-        <button class="mobile-btn orange-btn" onclick="openMobileTab('social')" aria-label="Contenido de Redes">
-            <span class="btn-icon">📷</span>
-            <span class="btn-tooltip">Contenido de Redes</span>
-        </button>
-        <button class="mobile-btn orange-btn" onclick="openMobileTab('formations')" aria-label="Formaciones">
-            <span class="btn-icon">📓</span>
-            <span class="btn-tooltip">Formaciones</span>
-        </button>
-    </div>
-
     <script>
         // === EMAILJS CONFIGURACIÓN ===
         (function() {
@@ -3215,47 +3208,34 @@
             });
         });
         
-        // Función para abrir pestañas desde botones móviles
-        function openMobileTab(tabId) {
-            // Remover clase active de todos los botones y tabs
+        // Tab functionality
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                switchTab(button.getAttribute('data-tab'));
+            });
+        });
+        
+        // Función para cambiar pestañas desde botones laterales
+        function switchTab(tabId) {
+            // Remove active class from all buttons and tabs
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             
-            // Agregar clase active al botón correspondiente
-            document.querySelector(`.tab-btn[data-tab="${tabId}"]`).classList.add('active');
+            // Add active class to clicked button
+            const button = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+            if (button) button.classList.add('active');
             
-            // Mostrar el tab correspondiente
+            // Show corresponding tab
             document.getElementById(`${tabId}-tab`).classList.add('active');
             
-            // Scroll a la sección de servicios
-            document.getElementById('servicios').scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
-            });
-            
-            // Feedback visual del botón presionado
-            const button = event.currentTarget;
-            button.style.transform = 'scale(0.9)';
-            setTimeout(() => {
-                button.style.transform = 'scale(1)';
-            }, 150);
+            // Smooth scroll to active tab on mobile
+            if (window.innerWidth <= 768) {
+                document.getElementById('servicios').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         }
-
-        // Tab functionality (para las pestañas normales)
-        document.querySelectorAll('.tab-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons and tabs
-                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-                
-                // Add active class to clicked button
-                button.classList.add('active');
-                
-                // Show corresponding tab
-                const tabId = button.getAttribute('data-tab');
-                document.getElementById(`${tabId}-tab`).classList.add('active');
-            });
-        });
         
         // Header scroll effect
         window.addEventListener('scroll', function() {
@@ -3297,6 +3277,101 @@
                 }
             });
         });
+        
+        // Crear puntos de luz adicionales con JavaScript
+        function createTwinklingStars() {
+            const starContainer = document.createElement('div');
+            starContainer.style.position = 'fixed';
+            starContainer.style.top = '0';
+            starContainer.style.left = '0';
+            starContainer.style.width = '100%';
+            starContainer.style.height = '100%';
+            starContainer.style.pointerEvents = 'none';
+            starContainer.style.zIndex = '-1';
+            document.body.appendChild(starContainer);
+            
+            // Crear múltiples puntos pequeños
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                const size = Math.random() * 3 + 1;
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                const opacity = Math.random() * 0.3 + 0.1;
+                const animationDelay = Math.random() * 5;
+                const animationDuration = Math.random() * 3 + 2;
+                
+                star.style.position = 'absolute';
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.borderRadius = '50%';
+                star.style.backgroundColor = `rgba(255, 165, 0, ${opacity})`;
+                star.style.boxShadow = `0 0 ${size * 2}px rgba(255, 165, 0, ${opacity * 0.8})`;
+                star.style.left = `${x}%`;
+                star.style.top = `${y}%`;
+                star.style.animation = `twinkle ${animationDuration}s infinite ${animationDelay}s`;
+                
+                starContainer.appendChild(star);
+            }
+        }
+        
+        // === SOLUCIÓN PARA PROBLEMA DE STREAMABLE ===
+        // Reiniciar videos cuando la página vuelve a estar visible
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden) {
+                // Página visible nuevamente
+                reloadStreamableVideos();
+            }
+        });
+        
+        // También manejar eventos de página visible
+        document.addEventListener('focus', function() {
+            reloadStreamableVideos();
+        });
+        
+        // Función para recargar videos de Streamable
+        function reloadStreamableVideos() {
+            console.log("🔄 Recargando videos de Streamable...");
+            const videos = document.querySelectorAll('.streamable-iframe, .hero-video, .reel-video');
+            
+            videos.forEach(video => {
+                if (video.src && video.src.includes('streamable.com')) {
+                    try {
+                        // Guardar la fuente original
+                        const originalSrc = video.src;
+                        // Forzar recarga del iframe
+                        video.src = '';
+                        setTimeout(() => {
+                            video.src = originalSrc;
+                            console.log("✅ Video recargado:", originalSrc);
+                        }, 100);
+                    } catch (error) {
+                        console.error("❌ Error recargando video:", error);
+                    }
+                }
+            });
+        }
+        
+        // También recargar videos después de un tiempo de inactividad
+        let lastActivity = Date.now();
+        
+        document.addEventListener('mousemove', function() {
+            lastActivity = Date.now();
+        });
+        
+        document.addEventListener('click', function() {
+            lastActivity = Date.now();
+        });
+        
+        setInterval(function() {
+            const now = Date.now();
+            const inactiveTime = now - lastActivity;
+            
+            // Si ha pasado más de 30 segundos sin actividad, recargar videos
+            if (inactiveTime > 30000) {
+                reloadStreamableVideos();
+                lastActivity = now; // Resetear contador
+            }
+        }, 10000); // Verificar cada 10 segundos
         
         // === BOOKING PANEL FUNCTIONS - MÚLTIPLES SELECCIONES ===
         let selectedServices = [];
@@ -3564,6 +3639,9 @@
                 document.head.appendChild(link);
             });
             
+            // Crear puntos de luz adicionales con JavaScript
+            createTwinklingStars();
+            
             // Efecto de brillo dinámico para el logo
             const logo = document.getElementById('dynamicLogo');
             if (logo) {
@@ -3602,17 +3680,33 @@
                 });
             }
             
-            // Forzar actualización de videos
+            // Forzar actualización de videos al cargar
             setTimeout(() => {
-                const videos = document.querySelectorAll('.streamable-iframe, .hero-video');
-                videos.forEach(video => {
-                    if (video.src) {
-                        const currentSrc = video.src;
-                        video.src = currentSrc;
-                    }
-                });
-            }, 1000);
+                reloadStreamableVideos();
+            }, 2000);
         });
+        
+        // === FUNCIÓN DE PRUEBA PARA EMAILJS ===
+        window.testEmailJS = function() {
+            console.log("🧪 Probando EmailJS...");
+            
+            const testParams = {
+                from_name: "Cliente de Prueba",
+                from_email: "test@ejemplo.com",
+                from_phone: "+34 600 000 000",
+                company: "Empresa de Prueba",
+                services: "Diseño Web, Contenido Digital",
+                web_option: "Landing Page",
+                message: "Este es un mensaje de prueba",
+                date_time: new Date().toLocaleString('es-ES')
+            };
+            
+            console.log("Enviando datos de prueba:", testParams);
+            
+            emailjs.send('service_oko11dg', 'template_st7hs89', testParams)
+                .then(response => console.log("✅ Prueba exitosa:", response))
+                .catch(error => console.error("❌ Error en prueba:", error));
+        };
     </script>
 </body>
 </html>
