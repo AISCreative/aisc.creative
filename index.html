@@ -68,7 +68,7 @@
                 radial-gradient(circle at 90% 85%, rgba(255, 140, 0, 0.14) 0%, transparent 9%),
                 radial-gradient(circle at 10% 95%, rgba(255, 215, 0, 0.06) 0%, transparent 6%);
             z-index: -2;
-            pointer-events: none;
+            
             animation: pulseBackground 20s infinite alternate;
         }
         
@@ -101,7 +101,7 @@
             height: 100%;
             background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(26, 26, 26, 0.85) 80%);
             z-index: -1;
-            pointer-events: none;
+            
         }
         
         h1, h2, h3, h4, h5 {
@@ -459,7 +459,7 @@
             }
         }
         
-        /* Hero Video Gallery - OPTIMIZADO */
+        /* Hero Video Gallery */
         .hero-video-gallery {
             position: absolute;
             right: 5%;
@@ -509,21 +509,16 @@
         }
         
         .video-container {
+            height: 400px;
             position: relative;
-            width: 100%;
-            aspect-ratio: 16/9;
             overflow: hidden;
             background: #000;
         }
         
         .hero-video {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             border: none;
-            display: block;
         }
         
         /* Services Section */
@@ -1000,7 +995,7 @@
             gap: 10px;
         }
         
-        /* Videos en bucle - SECCIÓN COMPLETAMENTE OPTIMIZADA */
+        /* Videos en bucle */
         .instagram-videos {
             margin-top: 50px;
             padding-top: 40px;
@@ -1033,20 +1028,22 @@
         .reel-container {
             position: relative;
             width: 100%;
-            aspect-ratio: 9/16;
-            max-height: 600px;
+            height: 500px;
             overflow: hidden;
             background: #000;
         }
         
         .reel-video {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             border: none;
-            display: block;
+        }
+        
+        .streamable-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            
         }
         
         .reel-overlay {
@@ -1709,7 +1706,6 @@
                 margin-bottom: 0;
             }
             
-            /* Hero Video optimizado para móvil */
             .hero-video-gallery {
                 position: relative;
                 width: 100%;
@@ -1718,12 +1714,10 @@
                 transform: none;
                 top: auto;
                 right: auto;
-                left: 0;
             }
             
             .video-container {
-                aspect-ratio: 16/9;
-                height: auto;
+                height: 300px;
             }
             
             .video-showcase-header {
@@ -1732,17 +1726,6 @@
             
             .video-showcase-header h3 {
                 font-size: 1.1rem;
-            }
-            
-            /* Videos grid optimizado para móvil */
-            .videos-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            
-            .reel-container {
-                aspect-ratio: 9/16;
-                max-height: 450px;
             }
             
             /* Service tabs en fila horizontal */
@@ -1856,6 +1839,15 @@
             }
             
             /* Videos grid móvil */
+            .videos-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .reel-container {
+                height: 350px;
+            }
+            
             .instagram-videos {
                 margin-top: 30px;
                 padding-top: 30px;
@@ -2079,16 +2071,16 @@
                 min-width: 100%;
             }
             
-            .videos-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .reel-container {
-                max-height: 400px;
+            .video-container {
+                height: 250px;
             }
             
             .web-design-content,
             .social-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .videos-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -2125,20 +2117,6 @@
             
             .hero p {
                 font-size: 1.1rem;
-            }
-            
-            .hero-video-gallery {
-                position: relative;
-                right: auto;
-                top: auto;
-                transform: none;
-                width: 100%;
-                max-width: 600px;
-                margin: 30px auto 0;
-            }
-            
-            .video-container {
-                aspect-ratio: 16/9;
             }
             
             .web-design-content {
@@ -2198,12 +2176,25 @@
                 padding: 15px;
             }
             
+            .video-container {
+                height: 250px;
+            }
+            
+            /* Grids optimizados para landscape */
+            .web-design-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .social-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
             .videos-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             
-            .reel-container {
-                max-height: 300px;
+            .values-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
             
             /* Secciones más compactas */
@@ -2287,35 +2278,32 @@
             transform: translateY(0);
         }
         
-        /* Fallback para aspect-ratio en navegadores antiguos */
-        @supports not (aspect-ratio: 16/9) {
-            .video-container {
-                position: relative;
-                padding-bottom: 56.25%; /* 16:9 */
-                height: 0;
+        /* Responsive para pantallas grandes */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 2.8rem;
             }
             
-            .video-container .hero-video {
-                position: absolute;
-                top: 0;
-                left: 0;
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-video-gallery {
+                position: relative;
+                right: auto;
+                top: auto;
+                transform: none;
                 width: 100%;
-                height: 100%;
+                max-width: 600px;
+                margin: 30px auto 0;
+            }
+            
+            .video-container {
+                height: 350px;
             }
             
             .reel-container {
-                position: relative;
-                padding-bottom: 177.78%; /* 9:16 */
-                height: 0;
-                max-height: none;
-            }
-            
-            .reel-container .reel-video {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
+                height: 450px;
             }
         }
     </style>
@@ -2387,13 +2375,13 @@
                     </div>
                     <div class="video-container">
                         <iframe 
-                            class="hero-video"
-                            src="https://streamable.com/e/gak7bs"
+                            class="hero-video streamable-iframe"
+                            data-src="https://streamable.com/e/gak7bs"
                             title="AI Solutions Creative Agency"
                             frameborder="0"
                             allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen
-                            loading="lazy">
+                            style="">
                         </iframe>
                     </div>
                 </div>
@@ -2642,7 +2630,7 @@
                     </p>
                 </div>
                 
-                <!-- Videos OPTIMIZADOS -->
+                <!-- Videos -->
                 <div class="instagram-videos">
                     <h3 style="text-align: center; font-size: 2rem; margin-bottom: 25px; color: var(--gold);">Contenido audiovisual</h3>
                     <p style="text-align: center; max-width: 700px; margin: 0 auto 35px; color: #bbb; font-size: 1rem;">
@@ -2654,13 +2642,13 @@
                         <div class="reel-window">
                             <div class="reel-container">
                                 <iframe 
-                                    class="reel-video"
-                                    src="https://streamable.com/e/3rojmi"
+                                    class="reel-video streamable-iframe"
+                                    data-src="https://streamable.com/e/3rojmi"
                                     title="Reel 1 - AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
-                                    loading="lazy">
+                                    style="">
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
@@ -2674,13 +2662,13 @@
                         <div class="reel-window">
                             <div class="reel-container">
                                 <iframe 
-                                    class="reel-video"
-                                    src="https://streamable.com/e/o5g10y"
+                                    class="reel-video streamable-iframe"
+                                    data-src="https://streamable.com/e/o5g10y"
                                     title="Reel 2 - AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
-                                    loading="lazy">
+                                    style="">
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
@@ -2694,13 +2682,13 @@
                         <div class="reel-window">
                             <div class="reel-container">
                                 <iframe 
-                                    class="reel-video"
-                                    src="https://streamable.com/e/qps79q"
+                                    class="reel-video streamable-iframe"
+                                    data-src="https://streamable.com/e/qps79q"
                                     title="Reel 3 - AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
-                                    loading="lazy">
+                                    style="">
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
@@ -2714,13 +2702,13 @@
                         <div class="reel-window">
                             <div class="reel-container">
                                 <iframe 
-                                    class="reel-video"
-                                    src="https://streamable.com/e/tnktqu"
+                                    class="reel-video streamable-iframe"
+                                    data-src="https://streamable.com/e/tnktqu"
                                     title="Reel 4 - AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
-                                    loading="lazy">
+                                    style="">
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
@@ -2734,13 +2722,13 @@
                         <div class="reel-window">
                             <div class="reel-container">
                                 <iframe 
-                                    class="reel-video"
-                                    src="https://streamable.com/e/7wj49f"
+                                    class="reel-video streamable-iframe"
+                                    data-src="https://streamable.com/e/7wj49f"
                                     title="Reel 5 - AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
-                                    loading="lazy">
+                                    style="">
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
@@ -2754,13 +2742,13 @@
                         <div class="reel-window">
                             <div class="reel-container">
                                 <iframe 
-                                    class="reel-video"
-                                    src="https://streamable.com/e/30718x"
+                                    class="reel-video streamable-iframe"
+                                    data-src="https://streamable.com/e/30718x"
                                     title="Reel 6 - AI Solutions"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen
-                                    loading="lazy">
+                                    style="">
                                 </iframe>
                                 <div class="reel-overlay">
                                     <span class="reel-badge">
@@ -2774,7 +2762,7 @@
                     <div style="text-align: center; margin-top: 30px;">
                         <p style="color: #bbb; font-size: 0.95rem; max-width: 600px; margin: 0 auto;">
                             <i class="fas fa-info-circle" style="color: var(--gold); margin-right: 10px;"></i>
-                            Los videos se adaptan automáticamente a tu dispositivo.
+                            Los videos se reproducen automáticamente en bucle, sin controles y sin sonido.
                         </p>
                     </div>
                 </div>
@@ -3065,86 +3053,6 @@
             console.log("✅ EmailJS inicializado correctamente");
         })();
 
-        // === OPTIMIZACIÓN DE VÍDEOS STREAMABLE ===
-        function optimizeStreamableVideos() {
-            const videos = document.querySelectorAll('.hero-video, .reel-video');
-            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            
-            console.log(`📱 Dispositivo: ${isMobile ? 'Móvil' : 'Escritorio'}`);
-            console.log(`🍎 iOS: ${isIOS ? 'Sí' : 'No'}`);
-            
-            videos.forEach((video, index) => {
-                const originalSrc = video.src;
-                
-                if (originalSrc.includes('streamable.com')) {
-                    let optimizedSrc = originalSrc.split('?')[0]; // Eliminar parámetros existentes
-                    
-                    // Añadir parámetros según dispositivo
-                    if (isMobile) {
-                        // Para móviles: autoplay muted loop con controles
-                        optimizedSrc += '?autoplay=1&muted=1&loop=1&controls=1&playsinline=1';
-                        video.setAttribute('playsinline', '');
-                        video.setAttribute('webkit-playsinline', '');
-                        video.setAttribute('x-webkit-airplay', 'deny');
-                        
-                        // En iOS, asegurar que funcione correctamente
-                        if (isIOS) {
-                            video.setAttribute('preload', 'none');
-                            video.setAttribute('autoplay', 'true');
-                        }
-                    } else {
-                        // Para escritorio: autoplay muted loop sin controles
-                        optimizedSrc += '?autoplay=1&muted=1&loop=1&controls=0';
-                    }
-                    
-                    // Aplicar URL optimizada
-                    video.src = optimizedSrc;
-                    
-                    // Añadir atributos para mejor UX
-                    video.setAttribute('allowfullscreen', '');
-                    video.setAttribute('loading', 'lazy');
-                    
-                    // Manejar errores
-                    video.addEventListener('error', function() {
-                        console.warn(`⚠️ Error cargando vídeo ${index + 1}, recargando...`);
-                        setTimeout(() => {
-                            this.src = this.src;
-                        }, 1000);
-                    });
-                    
-                    // Forzar recarga para asegurar parámetros
-                    setTimeout(() => {
-                        video.src = video.src;
-                    }, 500);
-                    
-                    console.log(`🎬 Vídeo ${index + 1} optimizado: ${isMobile ? 'Móvil' : 'Escritorio'}`);
-                }
-            });
-            
-            // Verificar soporte para autoplay
-            checkAutoplaySupport();
-        }
-        
-        function checkAutoplaySupport() {
-            const video = document.createElement('video');
-            video.muted = true;
-            video.autoplay = true;
-            video.src = 'data:video/mp4;base64,AAAA';
-            
-            video.play().then(() => {
-                console.log('✅ Autoplay soportado');
-            }).catch(() => {
-                console.log('⚠️ Autoplay no soportado, mostrando controles');
-                // Mostrar controles en todos los vídeos
-                document.querySelectorAll('iframe').forEach(video => {
-                    if (video.src.includes('controls=0')) {
-                        video.src = video.src.replace('controls=0', 'controls=1');
-                    }
-                });
-            });
-        }
-        
         // Mobile Menu Toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
@@ -3551,36 +3459,30 @@
                 });
             }, 500);
             
-            // Optimizar vídeos Streamable
+            // Optimizar videos para móvil
+            if (window.innerWidth <= 768) {
+                const videos = document.querySelectorAll('.streamable-iframe');
+                videos.forEach(video => {
+                    if (video.src.includes('streamable.com')) {
+                        // Forzar parámetros móviles
+                        const newSrc = video.src.replace(/autoplay=1/, 'autoplay=1&muted=1&controls=0&playsinline=1');
+                        video.src = newSrc;
+                        video.setAttribute('playsinline', '');
+                        video.setAttribute('webkit-playsinline', '');
+                    }
+                });
+            }
+            
+            // Forzar actualización de videos
             setTimeout(() => {
-                optimizeStreamableVideos();
+                const videos = document.querySelectorAll('.streamable-iframe, .hero-video');
+                videos.forEach(video => {
+                    if (video.src) {
+                        const currentSrc = video.src;
+                        video.src = currentSrc;
+                    }
+                });
             }, 1000);
-            
-            // Recargar vídeos cuando cambia la visibilidad de la página
-            document.addEventListener('visibilitychange', function() {
-                if (!document.hidden) {
-                    setTimeout(() => {
-                        document.querySelectorAll('.hero-video, .reel-video').forEach(video => {
-                            const currentSrc = video.src;
-                            video.src = currentSrc; // Forzar recarga
-                        });
-                    }, 500);
-                }
-            });
-            
-            // Permitir interacción con vídeos en móvil
-            document.addEventListener('click', function() {
-                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-                if (isMobile) {
-                    document.querySelectorAll('iframe').forEach(video => {
-                        if (video.src.includes('streamable.com') && video.paused) {
-                            video.play().catch(e => {
-                                console.log('Reproducción manual requerida en móvil');
-                            });
-                        }
-                    });
-                }
-            });
         });
         
         // === FUNCIÓN DE PRUEBA PARA EMAILJS ===
@@ -3604,12 +3506,19 @@
                 .then(response => console.log("✅ Prueba exitosa:", response))
                 .catch(error => console.error("❌ Error en prueba:", error));
         };
-        
-        // === FUNCIÓN PARA REINICIAR VÍDEOS ===
-        window.restartVideos = function() {
-            console.log("🔄 Reiniciando vídeos...");
-            optimizeStreamableVideos();
-        };
     </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const videos = document.querySelectorAll(".streamable-iframe");
+    videos.forEach(video => {
+        let baseSrc = video.getAttribute("data-src");
+        if (!baseSrc) return;
+        let params = "?muted=1&loop=1&playsinline=1&autoplay=1";
+        video.src = baseSrc + params;
+    });
+});
+</script>
+
 </body>
 </html>
