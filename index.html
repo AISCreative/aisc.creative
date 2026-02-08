@@ -2355,15 +2355,15 @@
 
     <!-- Botones de servicio móviles -->
     <div class="mobile-service-buttons">
-        <a href="#web-tab" class="mobile-service-btn">
+        <a href="#servicios" class="mobile-service-btn" data-tab="web">
             <i class="fas fa-desktop"></i>
             <span>Diseño Web</span>
         </a>
-        <a href="#social-tab" class="mobile-service-btn">
+        <a href="#servicios" class="mobile-service-btn" data-tab="social">
             <i class="fas fa-video"></i>
             <span>Contenido</span>
         </a>
-        <a href="#formations-tab" class="mobile-service-btn">
+        <a href="#servicios" class="mobile-service-btn" data-tab="formations">
             <i class="fas fa-graduation-cap"></i>
             <span>Formación</span>
         </a>
@@ -3088,6 +3088,43 @@
                     document.getElementById('servicios').scrollIntoView({ 
                         behavior: 'smooth',
                         block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Mobile service buttons functionality
+        document.querySelectorAll('.mobile-service-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const tabToActivate = this.getAttribute('data-tab');
+                
+                // Remove active class from all tab buttons
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+                
+                // Add active class to the corresponding tab button
+                const tabButton = document.querySelector(`.tab-btn[data-tab="${tabToActivate}"]`);
+                if (tabButton) {
+                    tabButton.classList.add('active');
+                }
+                
+                // Show corresponding tab content
+                const tabContent = document.getElementById(`${tabToActivate}-tab`);
+                if (tabContent) {
+                    tabContent.classList.add('active');
+                }
+                
+                // Smooth scroll to services section
+                const serviciosSection = document.getElementById('servicios');
+                if (serviciosSection) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const serviciosPosition = serviciosSection.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: serviciosPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
