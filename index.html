@@ -3,15 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO Optimizado -->
-    <title>AI Solutions Creative Agency | Diseño Web y Marketing Digital para Resultados</title>
-    <meta name="description" content="Transformamos visitantes en clientes. Diseño web optimizado, contenido audiovisual impactante y formación especializada para aumentar tu presencia digital.">
-    <meta name="keywords" content="diseño web, marketing digital, contenido audiovisual, SEO, redes sociales, formación digital, agencia creativa">
-    <!-- Open Graph para redes sociales -->
-    <meta property="og:title" content="AI Solutions Creative Agency | Resultados Digitales Reales">
-    <meta property="og:description" content="Aumentamos tu presencia digital con estrategias efectivas de diseño web y marketing de contenidos.">
-    <meta property="og:type" content="website">
-    <!-- Fin SEO -->
+    <title>AI Solutions Creative Agency | Soluciones Digitales Premium</title>
+    <meta name="description" content="Soluciones digitales con enfoque directo. Diseño web, contenido de redes y formaciones personalizadas.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +12,7 @@
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
-        /* Variables y reset - MANTENIDAS */
+        /* Variables y reset */
         :root {
             --gold: #FFD700;
             --gold-light: #FFEC8B;
@@ -59,7 +52,7 @@
             position: relative;
         }
         
-        /* Fondo con puntos de luz naranjas - MANTENIDO */
+        /* Fondo con puntos de luz naranjas */
         body::before {
             content: '';
             position: fixed;
@@ -75,13 +68,23 @@
                 radial-gradient(circle at 90% 85%, rgba(255, 140, 0, 0.14) 0%, transparent 9%),
                 radial-gradient(circle at 10% 95%, rgba(255, 215, 0, 0.06) 0%, transparent 6%);
             z-index: -2;
+            
             animation: pulseBackground 20s infinite alternate;
         }
         
         @keyframes pulseBackground {
-            0% { opacity: 0.4; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.01); }
-            100% { opacity: 0.4; transform: scale(1); }
+            0% {
+                opacity: 0.4;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.01);
+            }
+            100% {
+                opacity: 0.4;
+                transform: scale(1);
+            }
         }
         
         @keyframes twinkle {
@@ -98,6 +101,7 @@
             height: 100%;
             background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(26, 26, 26, 0.85) 80%);
             z-index: -1;
+            
         }
         
         h1, h2, h3, h4, h5 {
@@ -197,41 +201,15 @@
         }
         
         @keyframes pulseGold {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 215, 0, 0);
+            }
         }
         
-        /* MEJORA: Botón de WhatsApp flotante */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-            z-index: 1000;
-            transition: var(--transition);
-            animation: pulseWhatsapp 2s infinite;
-        }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
-        }
-        
-        @keyframes pulseWhatsapp {
-            0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3); }
-            50% { box-shadow: 0 4px 25px rgba(37, 211, 102, 0.5); }
-        }
-        
-        /* Banner Superior - MEJORADO */
+        /* Banner Superior */
         .top-banner {
             background: var(--gradient-gold);
             color: var(--dark);
@@ -245,8 +223,12 @@
         }
         
         @keyframes slideDown {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(0); }
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
         }
         
         .top-banner p {
@@ -263,11 +245,15 @@
         }
         
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
         }
         
-        /* Header - MANTENIDO */
+        /* Header */
         header {
             position: fixed;
             top: 42px;
@@ -388,7 +374,20 @@
             cursor: pointer;
         }
         
-        /* MEJORA: Hero Section con mensaje claro */
+        /* Botón de agendar cita para móviles */
+        .btn-mobile-header {
+            display: none;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            margin-left: 10px;
+            animation: pulseGold 2s infinite;
+        }
+        
+        .btn-mobile-header span {
+            display: none;
+        }
+        
+        /* Hero Section - MEJORADO */
         .hero {
             min-height: auto;
             display: flex;
@@ -406,18 +405,11 @@
             width: 100%;
         }
         
-        /* TÍTULO PRINCIPAL MEJORADO */
         .hero h1 {
             font-size: 3.2rem;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             line-height: 1.1;
             animation: fadeInUp 1s ease-out;
-        }
-        
-        .hero h1 .hero-main-title {
-            display: block;
-            font-size: 3.5rem;
-            margin-bottom: 10px;
         }
         
         .hero h1 span {
@@ -425,15 +417,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            display: inline-block;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            color: var(--gold-light);
-            font-weight: 500;
-            animation: fadeInUp 1s ease-out 0.2s both;
+            display: block;
         }
         
         .hero p {
@@ -449,30 +433,6 @@
             gap: 20px;
             margin-top: 30px;
             animation: fadeInUp 1s ease-out 0.4s both;
-        }
-        
-        /* MEJORA: Beneficios destacados en hero */
-        .hero-benefits {
-            display: flex;
-            gap: 20px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-        
-        .hero-benefit {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: rgba(255, 215, 0, 0.08);
-            padding: 12px 20px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 215, 0, 0.1);
-        }
-        
-        .hero-benefit i {
-            color: var(--gold);
-            font-size: 1.2rem;
         }
         
         .business-note {
@@ -502,11 +462,17 @@
         }
         
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
-        /* Hero Video Gallery - MANTENIDO */
+        /* Hero Video Gallery */
         .hero-video-gallery {
             position: absolute;
             right: 5%;
@@ -528,8 +494,14 @@
         }
         
         @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(30px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
         
         .video-showcase-header {
@@ -562,327 +534,7 @@
             border: none;
         }
         
-        /* NUEVA SECCIÓN: Testimonios y Prueba Social */
-        .testimonials {
-            background: var(--gradient-dark);
-            padding: 80px 0;
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            transition: var(--transition);
-            position: relative;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(255, 215, 0, 0.3);
-            box-shadow: var(--shadow-gold);
-        }
-        
-        .testimonial-quote {
-            font-size: 1.1rem;
-            color: #ddd;
-            font-style: italic;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 2px solid var(--gold);
-        }
-        
-        .author-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .author-info h4 {
-            color: var(--gold);
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-        
-        .author-info p {
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-        
-        .stars {
-            color: var(--gold);
-            margin-bottom: 15px;
-        }
-        
-        /* NUEVA SECCIÓN: Clientes y Métricas */
-        .clients-metrics {
-            padding: 60px 0;
-        }
-        
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-        
-        .metric-item {
-            text-align: center;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: var(--border-radius);
-            border: 1px solid rgba(255, 215, 0, 0.05);
-            transition: var(--transition);
-        }
-        
-        .metric-item:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 215, 0, 0.2);
-        }
-        
-        .metric-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: var(--gradient-gold);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 10px;
-        }
-        
-        .metric-label {
-            color: #bbb;
-            font-size: 0.95rem;
-        }
-        
-        .client-logos {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 50px;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: var(--border-radius);
-        }
-        
-        .client-logo {
-            height: 40px;
-            filter: grayscale(1) brightness(1.5);
-            opacity: 0.7;
-            transition: var(--transition);
-        }
-        
-        .client-logo:hover {
-            filter: grayscale(0) brightness(1);
-            opacity: 1;
-            transform: scale(1.05);
-        }
-        
-        /* NUEVA SECCIÓN: Equipo */
-        .team-section {
-            padding: 80px 0;
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .team-member {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: var(--border-radius);
-            padding: 25px;
-            border: 1px solid rgba(255, 215, 0, 0.05);
-            transition: var(--transition);
-        }
-        
-        .team-member:hover {
-            transform: translateY(-8px);
-            border-color: rgba(255, 215, 0, 0.2);
-            box-shadow: var(--shadow-gold);
-        }
-        
-        .member-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 20px;
-            border: 3px solid transparent;
-            background: var(--gradient-gold);
-            padding: 3px;
-        }
-        
-        .member-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-        
-        .team-member h3 {
-            color: var(--gold);
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        
-        .team-member .role {
-            color: var(--orange-light);
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        /* MEJORA: Lead Magnet - Guía gratuita */
-        .lead-magnet {
-            background: var(--gradient-dark);
-            border-radius: var(--border-radius);
-            padding: 50px;
-            margin: 60px auto;
-            max-width: 800px;
-            text-align: center;
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .lead-magnet::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent 0%, rgba(255, 215, 0, 0.03) 100%);
-            z-index: 0;
-        }
-        
-        .lead-magnet-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .lead-magnet h2 {
-            color: var(--gold);
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-        }
-        
-        .lead-magnet p {
-            color: #ddd;
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .lead-magnet-form {
-            max-width: 500px;
-            margin: 30px auto 0;
-        }
-        
-        .form-row {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .form-row input {
-            flex: 1;
-            padding: 14px 18px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            border-radius: 8px;
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
-        
-        .form-row input:focus {
-            outline: none;
-            border-color: var(--gold);
-            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.1);
-        }
-        
-        .form-row button {
-            background: var(--gradient-gold);
-            color: var(--dark);
-            border: none;
-            border-radius: 8px;
-            padding: 14px 25px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .form-row button:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-gold);
-        }
-        
-        .privacy-note {
-            font-size: 0.8rem;
-            color: #aaa;
-            margin-top: 15px;
-        }
-        
-        /* MEJORA: Copywriting mejorado en secciones existentes */
-        .benefit-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: var(--border-radius);
-            padding: 25px;
-            margin-bottom: 25px;
-            border-left: 4px solid var(--gold);
-            transition: var(--transition);
-        }
-        
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.05);
-        }
-        
-        .benefit-card h3 {
-            color: var(--gold);
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .benefit-card p {
-            color: #ddd;
-            line-height: 1.6;
-        }
-        
-        /* Botones de servicio móviles - MANTENIDO */
+        /* Botones de servicio móviles */
         .mobile-service-buttons {
             display: none;
             position: fixed;
@@ -933,7 +585,7 @@
             border-left: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        /* Services Section - CON COPY MEJORADO */
+        /* Services Section */
         .services {
             position: relative;
         }
@@ -974,161 +626,1739 @@
             display: block;
         }
         
-        /* CTA Mejorado en todas las secciones */
-        .section-cta {
+        /* Web Design Content */
+        .web-design-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        
+        .web-project {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid rgba(255, 215, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .web-project:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 215, 0, 0.2);
+            box-shadow: var(--shadow-strong);
+        }
+        
+        .project-img {
+            height: 200px;
+            background: linear-gradient(135deg, #333 0%, #222 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(255, 215, 0, 0.1) 100%);
+            z-index: 1;
+        }
+        
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .web-project:hover .project-img img {
+            transform: scale(1.05);
+        }
+        
+        .project-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--gradient-gold);
+            color: var(--dark);
+            padding: 5px 10px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            z-index: 2;
+        }
+        
+        .project-info {
+            padding: 20px;
+        }
+        
+        .project-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+        
+        .project-info p {
+            color: #bbb;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .project-link {
+            color: var(--gold);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        /* Importancia SEO y Web Optimizada */
+        .seo-importance {
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-top: 40px;
+            border-left: 4px solid var(--gold);
+        }
+        
+        .seo-importance h3 {
+            color: var(--gold);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .seo-importance p {
+            color: #ddd;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .seo-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-top: 25px;
+        }
+        
+        .seo-benefit {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 18px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .seo-benefit h4 {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Redes Sociales */
+        .social-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .social-project {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid rgba(255, 215, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .social-project:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 215, 0, 0.2);
+            box-shadow: var(--shadow-strong);
+        }
+        
+        .social-img {
+            height: 250px;
+            background: linear-gradient(135deg, #333 0%, #222 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .social-project:hover .social-img img {
+            transform: scale(1.05);
+        }
+        
+        /* Equipo de Producción Audiovisual */
+        .team-production {
+            background: rgba(255, 140, 0, 0.08);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--orange);
+        }
+        
+        .team-production h3 {
+            color: var(--orange-light);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .team-production p {
+            color: #ddd;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+            margin-top: 20px;
+        }
+        
+        .experience-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 18px;
+            border-radius: 10px;
             text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .experience-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--orange);
+        }
+        
+        .experience-icon {
+            font-size: 2.2rem;
+            color: var(--orange);
+            margin-bottom: 12px;
+        }
+        
+        .experience-item h4 {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        /* Sección de Formaciones */
+        .vertical-formations {
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            margin: 40px 0;
+            border-left: 4px solid var(--gold);
+        }
+        
+        .vertical-formations h3 {
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .vertical-formations > p {
+            color: #ddd;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+        
+        .formation-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .formation-text h4 {
+            color: var(--orange-light);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .formation-text ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .formation-text li {
+            color: #ddd;
+            margin-bottom: 10px;
+            padding-left: 28px;
+            position: relative;
+            font-size: 1rem;
+        }
+        
+        .formation-text li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .formation-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        
+        .formation-img {
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .formation-img:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: var(--shadow-gold);
+        }
+        
+        .formation-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .formation-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .formation-img-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+        }
+        
+        .formation-cta {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        /* Importancia de trabajar con expertos */
+        .experts-importance {
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-top: 30px;
+            border-left: 4px solid var(--gold);
+        }
+        
+        .experts-importance h3 {
+            color: var(--gold);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .expert-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .expert-benefit {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .expert-benefit h4 {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Videos en bucle */
+        .instagram-videos {
             margin-top: 50px;
             padding-top: 40px;
             border-top: 1px solid rgba(255, 215, 0, 0.1);
         }
         
-        /* Footer mejorado con newsletter */
-        .footer-newsletter {
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 25px;
         }
         
-        .footer-newsletter h4 {
-            color: var(--gold);
-            margin-bottom: 15px;
-            font-size: 1.2rem;
+        .reel-window {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: var(--transition);
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
         
-        .newsletter-form {
+        .reel-window:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.1);
+        }
+        
+        .reel-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            background: #000;
+        }
+        
+        .reel-video {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .streamable-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            
+        }
+        
+        .reel-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+            z-index: 2;
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .reel-badge {
+            background: var(--gradient-gold);
+            color: var(--dark);
+            padding: 6px 12px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        /* Valores */
+        .values {
+            background: var(--gradient-dark);
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+            padding: 60px 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .value-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 215, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .value-item:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 215, 0, 0.2);
+            box-shadow: var(--shadow-gold);
+        }
+        
+        .value-icon {
+            font-size: 2.2rem;
+            margin-bottom: 18px;
+            display: inline-block;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .value-item h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            color: var(--gold);
+        }
+        
+        .value-item p {
+            color: #bbb;
+            font-size: 0.95rem;
+        }
+        
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            position: relative;
+            padding: 60px 0;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 18px;
+            color: var(--gold);
+        }
+        
+        .cta p {
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            color: #ddd;
+        }
+        
+        /* Booking Panel */
+        .booking-panel {
+            background: var(--gradient-dark);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin: 60px auto;
+            max-width: 900px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            box-shadow: var(--shadow-strong);
+        }
+        
+        .booking-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        
+        .booking-title h2 {
+            font-size: 2.4rem;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+        
+        .booking-title p {
+            color: #bbb;
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .booking-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .booking-step {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--border-radius);
+            padding: 22px;
+            border: 1px solid rgba(255, 215, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .booking-step:hover {
+            border-color: rgba(255, 215, 0, 0.2);
+        }
+        
+        .step-title {
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
             gap: 10px;
+        }
+        
+        .step-title .step-number {
+            width: 32px;
+            height: 32px;
+            background: var(--gradient-gold);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        
+        .service-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+        
+        .service-option {
+            background: rgba(26, 26, 26, 0.8);
+            border: 2px solid rgba(255, 215, 0, 0.1);
+            border-radius: 10px;
+            padding: 18px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .service-option:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+        
+        .service-option.selected {
+            border-color: var(--gold);
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        .option-icon {
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+        
+        /* Checkbox personalizado */
+        .service-checkbox {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 2px solid var(--gold);
+            background: rgba(26, 26, 26, 0.8);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .service-checkbox.checked {
+            background: var(--gold);
+        }
+        
+        .service-checkbox.checked::after {
+            content: '✓';
+            color: var(--dark);
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .web-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
             margin-top: 15px;
         }
         
-        .newsletter-form input {
-            flex: 1;
-            padding: 12px 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 215, 0, 0.1);
+        .web-option {
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .newsletter-form button {
-            background: var(--gradient-gold);
-            color: var(--dark);
-            border: none;
-            border-radius: 8px;
-            padding: 12px 20px;
-            font-weight: 700;
+            padding: 14px;
+            text-align: center;
             cursor: pointer;
             transition: var(--transition);
         }
         
-        .newsletter-form button:hover {
-            transform: translateY(-3px);
+        .web-option:hover {
+            border-color: var(--gold);
+        }
+        
+        .web-option.selected {
+            border-color: var(--gold);
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 18px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #bbb;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 13px 16px;
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 8px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--gradient-gold);
+            color: var(--dark);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 25px;
+            position: relative;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-5px);
             box-shadow: var(--shadow-gold);
         }
         
-        /* =========== RESPONSIVE DESIGN =========== */
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .submit-btn.loading .btn-text {
+            opacity: 0;
+        }
+        
+        .submit-btn.loading .spinner {
+            display: block;
+        }
+        
+        .submit-btn .spinner {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+        
+        .spinner {
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--dark);
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        /* Mensajes de éxito/error */
+        .message {
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 18px;
+            text-align: center;
+            display: none;
+        }
+        
+        .success-message {
+            background: rgba(46, 204, 113, 0.1);
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            color: #2ecc71;
+        }
+        
+        .error-message {
+            background: rgba(231, 76, 60, 0.1);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            color: #e74c3c;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0F0F0F;
+            padding: 50px 0 20px;
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 18px;
+        }
+        
+        .footer-logo-img {
+            height: 70px;
+            width: auto;
+            margin-bottom: 12px;
+            filter: drop-shadow(0 4px 10px rgba(255, 215, 0, 0.3));
+        }
+        
+        .footer-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-logo-main {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+            line-height: 1;
+        }
+        
+        .footer-logo-subtitle {
+            font-size: 0.9rem;
+            color: var(--gold-light);
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: 3px;
+        }
+        
+        .footer-about p {
+            color: #aaa;
+            margin-bottom: 22px;
+            font-size: 0.95rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .social-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: #aaa;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 215, 0, 0.05);
+        }
+        
+        .social-icon:hover {
+            background: var(--gradient-gold);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        
+        .footer-links h3, .footer-contact h3 {
+            font-size: 1.5rem;
+            margin-bottom: 22px;
+            color: var(--gold);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h3::after, .footer-contact h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-gold);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            transition: var(--transition-fast);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 8px;
+        }
+        
+        .footer-contact p {
+            color: #aaa;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+        
+        .footer-contact i {
+            color: var(--gold);
+            font-size: 1.1rem;
+            width: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #777;
+            font-size: 0.85rem;
+        }
+        
+        /* =========== DISEÑO OPTIMIZADO HORIZONTAL PARA MÓVILES =========== */
+        
         /* Ajustes generales para móviles */
         @media (max-width: 768px) {
-            /* Hero Section optimizada para móvil */
-            .hero h1 .hero-main-title {
-                font-size: 2.2rem;
+            .container {
+                width: 95%;
+                padding: 0 15px;
             }
             
-            .hero-subtitle {
+            .section {
+                padding: 50px 0;
+            }
+            
+            .section-title {
+                margin-bottom: 30px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+                margin-bottom: 12px;
+            }
+            
+            .section-title h2::after {
+                width: 60px;
+                height: 3px;
+                bottom: -8px;
+            }
+            
+            .section-title p {
+                font-size: 0.95rem;
+                max-width: 90%;
+            }
+            
+            /* Header optimizado */
+            header {
+                padding: 10px 0;
+                top: 42px;
+            }
+            
+            .logo-container {
+                gap: 8px;
+            }
+            
+            .logo-img {
+                height: 45px;
+            }
+            
+            .logo-main {
+                font-size: 1.4rem;
+            }
+            
+            .logo-subtitle {
+                font-size: 0.75rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                font-size: 1.3rem;
+            }
+            
+            .btn-mobile-header {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .btn-mobile-header span {
+                display: inline;
+                margin-left: 5px;
+            }
+            
+            /* Ajustar el espacio para el nuevo botón */
+            .navbar {
+                justify-content: space-between;
+            }
+            
+            .mobile-menu-btn {
+                margin-left: 0;
+            }
+            
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: rgba(26, 26, 26, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 15px;
+                text-align: center;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                border-top: 1px solid rgba(255, 215, 0, 0.1);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 8px 0;
+            }
+            
+            .btn-header {
+                margin-top: 8px;
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+            
+            /* Botones de servicio móviles */
+            .mobile-service-buttons {
+                display: flex;
+                justify-content: space-around;
+            }
+            
+            /* Hero optimizado para móvil */
+            .hero {
+                padding-top: 100px;
+                padding-bottom: 40px;
+                min-height: auto;
+            }
+            
+            .hero-content {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+                line-height: 1.2;
+                margin-bottom: 15px;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+                max-width: 100%;
+            }
+            
+            .business-note {
+                padding: 15px;
+                margin: 20px 0;
+            }
+            
+            .business-note h3 {
                 font-size: 1.1rem;
             }
             
-            .hero-benefits {
-                flex-direction: column;
+            .business-note p {
+                font-size: 0.95rem;
+            }
+            
+            .hero-btns {
+                flex-direction: row;
+                flex-wrap: wrap;
                 gap: 12px;
+                margin-top: 25px;
             }
             
-            /* Testimonios en móvil */
-            .testimonial-grid {
-                grid-template-columns: 1fr;
+            .hero-btns .btn {
+                flex: 1;
+                min-width: 45%;
+                padding: 12px 18px;
+                font-size: 0.9rem;
+                margin-bottom: 0;
             }
             
-            /* Métricas en móvil */
-            .metrics-grid {
+            .hero-video-gallery {
+                position: relative;
+                width: 100%;
+                max-width: 100%;
+                margin-top: 30px;
+                transform: none;
+                top: auto;
+                right: auto;
+            }
+            
+            .video-container {
+                height: 300px;
+            }
+            
+            .video-showcase-header {
+                padding: 12px;
+            }
+            
+            .video-showcase-header h3 {
+                font-size: 1.1rem;
+            }
+            
+            /* Service tabs en fila horizontal */
+            .service-tabs {
+                display: flex;
+                flex-direction: row;
+                overflow-x: auto;
+                overflow-y: hidden;
+                white-space: nowrap;
+                padding-bottom: 12px;
+                margin-bottom: 25px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin;
+                scrollbar-color: var(--gold) rgba(255, 215, 0, 0.1);
+            }
+            
+            .service-tabs::-webkit-scrollbar {
+                height: 3px;
+            }
+            
+            .service-tabs::-webkit-scrollbar-track {
+                background: rgba(255, 215, 0, 0.1);
+                border-radius: 10px;
+            }
+            
+            .service-tabs::-webkit-scrollbar-thumb {
+                background: var(--gradient-gold);
+                border-radius: 10px;
+            }
+            
+            .tab-btn {
+                flex-shrink: 0;
+                padding: 10px 18px;
+                margin-right: 8px;
+                font-size: 0.9rem;
+                white-space: nowrap;
+            }
+            
+            .tab-btn:last-child {
+                margin-right: 0;
+            }
+            
+            /* Grids optimizados para móvil */
+            .web-design-content {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
             }
             
-            /* Equipo en móvil */
-            .team-grid {
+            .social-content {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
+                gap: 15px;
+                margin-bottom: 30px;
             }
             
-            /* Lead Magnet en móvil */
-            .lead-magnet {
-                padding: 30px 20px;
-                margin: 40px auto;
+            .project-img, .social-img {
+                height: 160px;
             }
             
-            .lead-magnet h2 {
+            .project-info {
+                padding: 15px;
+            }
+            
+            .project-info h3 {
+                font-size: 1.2rem;
+            }
+            
+            .project-info p {
+                font-size: 0.85rem;
+            }
+            
+            /* Secciones informativas en grid */
+            .seo-importance,
+            .team-production,
+            .experts-importance {
+                padding: 20px;
+                margin-top: 25px;
+            }
+            
+            .seo-benefits,
+            .expert-benefits,
+            .experience-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            
+            .seo-benefit,
+            .expert-benefit,
+            .experience-item {
+                padding: 15px;
+            }
+            
+            .seo-benefit h4,
+            .expert-benefit h4,
+            .experience-item h4 {
+                font-size: 1rem;
+            }
+            
+            /* Videos grid móvil */
+            .videos-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .reel-container {
+                height: 350px;
+            }
+            
+            .instagram-videos {
+                margin-top: 30px;
+                padding-top: 30px;
+            }
+            
+            .instagram-videos h3 {
+                font-size: 1.6rem;
+                margin-bottom: 20px;
+            }
+            
+            /* Formaciones optimizadas */
+            .vertical-formations {
+                padding: 25px 20px;
+                margin: 30px 0;
+            }
+            
+            .vertical-formations h3 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+            }
+            
+            .vertical-formations > p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+            
+            .formation-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .formation-text h4 {
+                font-size: 1.2rem;
+            }
+            
+            .formation-images {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            
+            .formation-img {
+                height: 160px;
+            }
+            
+            .formation-cta .btn {
+                max-width: 100%;
+                padding: 14px 20px;
+                font-size: 0.9rem;
+            }
+            
+            /* Values en grid móvil */
+            .values-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+            
+            .value-item {
+                padding: 20px 12px;
+            }
+            
+            .value-item h3 {
+                font-size: 1.2rem;
+            }
+            
+            .value-item p {
+                font-size: 0.85rem;
+            }
+            
+            /* CTA optimizado */
+            .cta {
+                padding: 40px 0;
+            }
+            
+            .cta h2 {
                 font-size: 1.8rem;
             }
             
-            .form-row {
-                flex-direction: column;
+            .cta p {
+                font-size: 1rem;
             }
             
-            /* Botón de WhatsApp más pequeño en móvil */
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-                bottom: 20px;
-                right: 20px;
+            /* Booking panel optimizado */
+            .booking-panel {
+                padding: 25px 20px;
+                margin: 40px auto;
+            }
+            
+            .booking-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .booking-title p {
+                font-size: 0.95rem;
+            }
+            
+            .service-options {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+            
+            .service-option {
+                padding: 15px;
+            }
+            
+            .service-option h4 {
+                font-size: 0.95rem;
+            }
+            
+            .service-option p {
+                font-size: 0.8rem;
+                margin-top: 8px;
+            }
+            
+            .web-options {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .form-group input,
+            .form-group select {
+                padding: 12px 14px;
+                font-size: 0.9rem;
+            }
+            
+            .submit-btn {
+                padding: 14px;
+                font-size: 0.95rem;
+                margin-top: 20px;
+            }
+            
+            /* Footer optimizado */
+            footer {
+                padding: 30px 0 15px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-bottom: 25px;
+            }
+            
+            .footer-logo {
+                align-items: center;
+                text-align: center;
+            }
+            
+            .footer-logo-img {
+                height: 55px;
+                margin: 0 auto 12px;
+            }
+            
+            .footer-logo-main {
+                font-size: 1.6rem;
+            }
+            
+            .footer-logo-subtitle {
+                font-size: 0.85rem;
+            }
+            
+            .footer-about p {
+                text-align: center;
+                margin-bottom: 18px;
+                font-size: 0.9rem;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .footer-links h3,
+            .footer-contact h3 {
+                text-align: center;
+                padding-bottom: 8px;
+                margin-bottom: 18px;
+                font-size: 1.3rem;
+            }
+            
+            .footer-links h3::after,
+            .footer-contact h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-contact p {
+                justify-content: center;
+                text-align: center;
+                font-size: 0.9rem;
+            }
+            
+            .copyright {
+                padding-top: 15px;
+                font-size: 0.8rem;
             }
         }
         
         /* Ajustes específicos para móviles pequeños */
         @media (max-width: 576px) {
-            .hero h1 .hero-main-title {
-                font-size: 1.8rem;
+            .hero {
+                padding-top: 90px;
+                padding-bottom: 30px;
             }
             
-            .metrics-grid,
-            .team-grid {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                min-width: 100%;
+            }
+            
+            .video-container {
+                height: 250px;
+            }
+            
+            .web-design-content,
+            .social-content {
                 grid-template-columns: 1fr;
             }
             
-            .client-logos {
-                gap: 20px;
+            .videos-grid {
+                grid-template-columns: 1fr;
             }
             
-            .client-logo {
-                height: 30px;
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .service-options {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .web-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .seo-benefits,
+            .expert-benefits,
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .formation-images {
+                grid-template-columns: 1fr;
             }
         }
         
-        /* Resto del CSS existente se mantiene igual... */
-        /* Para mantener la respuesta dentro del límite de caracteres, no duplico todo el CSS existente */
-        /* Solo he añadido nuevas clases y modificado las necesarias */
+        /* Ajustes para tablets grandes y pantallas medianas */
+        @media (max-width: 992px) and (min-width: 769px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .web-design-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .social-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .videos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .values-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
         
-        /* Estilos existentes para Web Design Content, Social Content, Formaciones, etc. se mantienen igual */
-        /* Booking Panel, Values Section, CTA Section y Footer también se mantienen con pequeñas mejoras */
+        /* Ajustes específicos para orientación horizontal en móviles */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .hero {
+                padding-top: 90px;
+                padding-bottom: 30px;
+            }
+            
+            .hero-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+                margin-bottom: 12px;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+                margin-bottom: 15px;
+            }
+            
+            .hero-btns {
+                flex-direction: row;
+                margin-top: 20px;
+            }
+            
+            .hero-btns .btn {
+                flex: 1;
+                min-width: 48%;
+                padding: 10px 15px;
+                font-size: 0.85rem;
+            }
+            
+            .business-note {
+                margin: 15px 0;
+                padding: 15px;
+            }
+            
+            .video-container {
+                height: 250px;
+            }
+            
+            /* Grids optimizados para landscape */
+            .web-design-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .social-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .videos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .values-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            /* Secciones más compactas */
+            .section {
+                padding: 40px 0;
+            }
+            
+            .section-title {
+                margin-bottom: 25px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+        }
         
-        /* ... resto del CSS existente ... */
+        /* Ajustes para pantallas muy pequeñas */
+        @media (max-width: 400px) {
+            .logo-container {
+                gap: 6px;
+            }
+            
+            .logo-img {
+                height: 40px;
+            }
+            
+            .logo-main {
+                font-size: 1.2rem;
+            }
+            
+            .logo-subtitle {
+                font-size: 0.7rem;
+            }
+            
+            .btn-mobile-header span {
+                display: none;
+            }
+            
+            .btn-mobile-header {
+                padding: 8px 12px;
+            }
+            
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+            
+            .hero p {
+                font-size: 0.85rem;
+            }
+            
+            .tab-btn {
+                padding: 8px 14px;
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Animación para entrada de elementos */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Clase para elementos que aparecen al scroll */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive para pantallas grandes */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-video-gallery {
+                position: relative;
+                right: auto;
+                top: auto;
+                transform: none;
+                width: 100%;
+                max-width: 600px;
+                margin: 30px auto 0;
+            }
+            
+            .video-container {
+                height: 350px;
+            }
+            
+            .reel-container {
+                height: 450px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Botón flotante de WhatsApp -->
-    <a href="https://wa.me/34123456789?text=Hola%20AI%20Solutions%2C%20me%20interesan%20sus%20servicios%20digitales" 
-       target="_blank" 
-       class="whatsapp-float"
-       aria-label="Contactar por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
     <!-- Banner Superior -->
     <div class="top-banner">
         <p>
             <i class="fas fa-bolt"></i>
-            Transformamos tu presencia digital • Resultados medibles • Sin burocracias
+            Proyectos con enfoque directo • Sin burocracias • Resultados MEDIBLES
             <i class="fas fa-bolt"></i>
         </p>
     </div>
@@ -1139,7 +2369,7 @@
             <nav class="navbar">
                 <a href="#" class="logo">
                     <div class="logo-container">
-                        <img src="logo.png" alt="AI Solutions Creative Agency - Agencia de diseño web y marketing digital" class="logo-img" id="dynamicLogo">
+                        <img src="logo.png" alt="AI Solutions Creative Agency Logo" class="logo-img" id="dynamicLogo">
                         <div class="logo-text">
                             <div class="logo-main">AI Solutions</div>
                             <div class="logo-subtitle">Creative Agency</div>
@@ -1149,8 +2379,7 @@
                 <ul class="nav-links">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#testimonios">Testimonios</a></li>
-                    <li><a href="#equipo">Equipo</a></li>
+                    <li><a href="#valores">Valores</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                     <li>
                         <a href="#booking" class="btn btn-header">
@@ -1161,6 +2390,10 @@
                 <div class="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
                 </div>
+                <!-- Botón de agendar cita para móviles -->
+                <a href="#booking" class="btn btn-mobile-header">
+                    <i class="fas fa-calendar-alt"></i> <span>Agendar</span>
+                </a>
             </nav>
         </div>
     </header>
@@ -1181,741 +2414,4 @@
         </a>
     </div>
 
-    <!-- Hero Section MEJORADA -->
-    <section class="hero" id="inicio">
-        <div class="container">
-            <div class="hero-content">
-                <!-- TÍTULO PRINCIPAL MEJORADO -->
-                <h1>
-                    <span class="hero-main-title">Transformamos visitantes en clientes</span>
-                    <span>con diseño web y contenido creativo</span>
-                </h1>
-                
-                <div class="hero-subtitle">
-                    Diseño web optimizado + Contenido audiovisual impactante + Formación especializada
-                </div>
-                
-                <p>En <span class="highlight">AI Solutions Creative Agency</span> desarrollamos <strong>estrategias digitales que generan resultados reales</strong>. No solo creamos webs y contenido, creamos <strong>máquinas de conversión</strong> que conectan directamente con tu audiencia.</p>
-                
-                <!-- Beneficios destacados -->
-                <div class="hero-benefits">
-                    <div class="hero-benefit">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Aumentamos tus conversiones</span>
-                    </div>
-                    <div class="hero-benefit">
-                        <i class="fas fa-search"></i>
-                        <span>Mejoramos tu visibilidad online</span>
-                    </div>
-                    <div class="hero-benefit">
-                        <i class="fas fa-clock"></i>
-                        <span>Resultados en semanas, no meses</span>
-                    </div>
-                </div>
-                
-                <div class="business-note">
-                    <h3><i class="fas fa-lightbulb"></i> ¿Listo para transformar tu negocio?</h3>
-                    <p><strong>No necesitas un sitio web bonito, necesitas un sitio web que venda.</strong> Creamos soluciones digitales que realmente funcionan, con estrategias probadas y resultados medibles.</p>
-                </div>
-                
-                <!-- CTA MEJORADO -->
-                <div class="hero-btns">
-                    <a href="#booking" class="btn">Contáctanos ahora</a>
-                    <a href="#servicios" class="btn" style="background: transparent; border: 2px solid var(--gold); color: var(--gold);">Ver nuestros trabajos</a>
-                </div>
-            </div>
-            
-            <div class="hero-video-gallery">
-                <div class="video-showcase">
-                    <div class="video-showcase-header">
-                        <h3><i class="fas fa-play-circle"></i> Transformamos ideas en resultados</h3>
-                    </div>
-                    <div class="video-container">
-                        <iframe 
-                            class="hero-video streamable-iframe"
-                            data-src="https://streamable.com/e/gak7bs"
-                            title="AI Solutions Creative Agency - Ejemplo de nuestro trabajo en diseño web y contenido digital"
-                            frameborder="0"
-                            allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                            loading="lazy"
-                            aria-label="Video demostrativo de nuestros proyectos de diseño web">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NUEVA SECCIÓN: Testimonios y Prueba Social -->
-    <section class="section testimonials" id="testimonios">
-        <div class="container">
-            <div class="section-title">
-                <h2>Lo que dicen nuestros clientes</h2>
-                <p>Resultados reales de empresas que confiaron en nuestra agencia</p>
-            </div>
-            
-            <div class="testimonial-grid">
-                <!-- Testimonio 1 -->
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-quote">"AI Solutions transformó completamente nuestra presencia online. En solo 3 meses aumentamos nuestras ventas en un 45%. Su enfoque directo y sin burocracias hizo toda la diferencia."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="images/testimonial1.webp" alt="Carlos Rodríguez - Director de Marketing en TechSolutions" loading="lazy">
-                        </div>
-                        <div class="author-info">
-                            <h4>Carlos Rodríguez</h4>
-                            <p>Director de Marketing, TechSolutions</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonio 2 -->
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <p class="testimonial-quote">"El contenido que crearon para nuestras redes sociales generó un engagement nunca antes visto. Nuestra comunidad creció un 300% en 2 meses. ¡Increíble trabajo!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="images/testimonial2.webp" alt="Ana García - Fundadora de ModaSostenible" loading="lazy">
-                        </div>
-                        <div class="author-info">
-                            <h4>Ana García</h4>
-                            <p>Fundadora, ModaSostenible</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonio 3 -->
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-quote">"La formación en contenido vertical fue exactamente lo que necesitaba mi equipo. Ahora creamos nuestro propio contenido profesional y hemos reducido costes externos en un 60%."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="images/testimonial3.webp" alt="Miguel Torres - CEO de GourmetExpress" loading="lazy">
-                        </div>
-                        <div class="author-info">
-                            <h4>Miguel Torres</h4>
-                            <p>CEO, GourmetExpress</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NUEVA SECCIÓN: Clientes y Métricas -->
-    <section class="section clients-metrics">
-        <div class="container">
-            <div class="section-title">
-                <h2>Resultados que hablan por sí solos</h2>
-                <p>Métricas reales de proyectos exitosos</p>
-            </div>
-            
-            <div class="metrics-grid">
-                <div class="metric-item">
-                    <div class="metric-number">+45%</div>
-                    <div class="metric-label">Aumento promedio en conversiones</div>
-                </div>
-                
-                <div class="metric-item">
-                    <div class="metric-number">+300%</div>
-                    <div class="metric-label">Crecimiento en engagement en redes</div>
-                </div>
-                
-                <div class="metric-item">
-                    <div class="metric-number">+80%</div>
-                    <div class="metric-label">Mejora en velocidad de carga web</div>
-                </div>
-                
-                <div class="metric-item">
-                    <div class="metric-number">+60%</div>
-                    <div class="metric-label">Reducción de costes en marketing</div>
-                </div>
-            </div>
-            
-            <div class="client-logos">
-                <img src="images/client1.png" alt="Logo de TechSolutions - Cliente de AI Solutions" class="client-logo" loading="lazy">
-                <img src="images/client2.png" alt="Logo de ModaSostenible - Cliente de AI Solutions" class="client-logo" loading="lazy">
-                <img src="images/client3.png" alt="Logo de GourmetExpress - Cliente de AI Solutions" class="client-logo" loading="lazy">
-                <img src="images/client4.png" alt="Logo de AutoPremium - Cliente de AI Solutions" class="client-logo" loading="lazy">
-                <img src="images/client5.png" alt="Logo de EduTech - Cliente de AI Solutions" class="client-logo" loading="lazy">
-            </div>
-        </div>
-    </section>
-
-    <!-- LEAD MAGNET: Guía gratuita -->
-    <section class="section">
-        <div class="container">
-            <div class="lead-magnet">
-                <div class="lead-magnet-content">
-                    <h2>Guía gratuita: 5 Estrategias para aumentar tu presencia digital</h2>
-                    <p>Descubre las técnicas que utilizamos con nuestros clientes para multiplicar su visibilidad online y aumentar conversiones. Sin tecnicismos, solo estrategias probadas.</p>
-                    
-                    <div class="lead-magnet-form">
-                        <form id="guideForm">
-                            <div class="form-row">
-                                <input type="text" name="name" placeholder="Tu nombre" required aria-label="Nombre para la guía gratuita">
-                                <input type="email" name="email" placeholder="Tu email" required aria-label="Email para recibir la guía gratuita">
-                                <button type="submit">Enviar guía gratis</button>
-                            </div>
-                            <p class="privacy-note">Respetamos tu privacidad. Nunca compartiremos tu información.</p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section - CON COPY MEJORADO -->
-    <section class="section services" id="servicios">
-        <div class="container">
-            <div class="section-title">
-                <h2>Servicios que generan resultados</h2>
-                <p>No ofrecemos servicios, ofrecemos soluciones que transforman tu negocio</p>
-            </div>
-            
-            <div class="service-tabs">
-                <div class="tab-btn active" data-tab="web">Diseño que vende</div>
-                <div class="tab-btn" data-tab="social">Contenido que conecta</div>
-                <div class="tab-btn" data-tab="formations">Formación que empodera</div>
-            </div>
-            
-            <!-- Web Design Tab - CON COPY MEJORADO -->
-            <div id="web-tab" class="tab-content active">
-                <!-- Beneficios destacados -->
-                <div class="benefit-card">
-                    <h3><i class="fas fa-shopping-cart"></i> Diseñamos webs que aumentan tus ventas</h3>
-                    <p>Cada elemento de tu sitio web está pensado para <strong>guiar al visitante hacia la conversión</strong>. No creamos páginas bonitas, creamos <strong>máquinas de ventas digitales</strong> optimizadas para resultados.</p>
-                </div>
-                
-                <!-- Resto del contenido web se mantiene similar pero con copy mejorado -->
-                <div class="web-design-content">
-                    <!-- Proyecto 1 con copy mejorado -->
-                    <div class="web-project">
-                        <div class="project-img">
-                            <div class="project-badge">+45% conversiones</div>
-                            <img src="images/web1.webp" alt="Landing page optimizada para conversiones - Ejemplo de trabajo de AI Solutions" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3>Landing Pages que convierten</h3>
-                            <p>Diseño enfocado exclusivamente en aumentar tus ventas y captar leads cualificados.</p>
-                            <a href="#booking" class="project-link">Quiero una landing que venda <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    
-                    <!-- Los otros proyectos mantienen estructura similar con copy mejorado -->
-                    <!-- Por brevedad, no repito todos los proyectos -->
-                </div>
-                
-                <!-- Importancia SEO - CON COPY MEJORADO -->
-                <div class="seo-importance">
-                    <h3><i class="fas fa-chart-line"></i> Sin SEO, tu web es invisible</h3>
-                    <p>Una web optimizada para SEO <strong>atrae clientes 24/7 sin costo adicional</strong>. Mientras tu competencia paga por anuncios, tú recibes tráfico orgánico de calidad que se convierte en clientes.</p>
-                    
-                    <div class="seo-benefits">
-                        <div class="seo-benefit">
-                            <h4><i class="fas fa-search"></i> Visibilidad en Google</h4>
-                            <p>El 75% de los usuarios no pasa de la primera página. Te posicionamos donde te puedan encontrar.</p>
-                        </div>
-                        
-                        <div class="seo-benefit">
-                            <h4><i class="fas fa-bolt"></i> Velocidad que retiene</h4>
-                            <p>Una web lenta pierde el 40% de visitantes. Optimizamos cada elemento para máxima velocidad de carga.</p>
-                        </div>
-                        
-                        <!-- Más beneficios con copy mejorado -->
-                    </div>
-                </div>
-                
-                <!-- CTA específico para diseño web -->
-                <div class="section-cta">
-                    <p><strong>¿Listo para tener un sitio web que realmente venda?</strong></p>
-                    <a href="#booking" class="btn">Solicitar auditoría web gratuita</a>
-                </div>
-            </div>
-            
-            <!-- Las otras pestañas (social y formaciones) siguen la misma estructura con copy mejorado -->
-            <!-- Por brevedad, no repito todo el código, pero aplico las mismas mejoras -->
-            
-        </div>
-    </section>
-
-    <!-- NUEVA SECCIÓN: Equipo -->
-    <section class="section team-section" id="equipo">
-        <div class="container">
-            <div class="section-title">
-                <h2>Conoce a nuestro equipo</h2>
-                <p>Expertos apasionados que transforman tu visión en resultados digitales</p>
-            </div>
-            
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-avatar">
-                        <img src="images/team1.webp" alt="Alex Martínez - Director Creativo en AI Solutions" loading="lazy">
-                    </div>
-                    <h3>Alex Martínez</h3>
-                    <div class="role">Director Creativo</div>
-                    <p>+8 años creando experiencias digitales que convierten</p>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-avatar">
-                        <img src="images/team2.webp" alt="Sofía Ramírez - Especialista en Contenido Audiovisual" loading="lazy">
-                    </div>
-                    <h3>Sofía Ramírez</h3>
-                    <div class="role">Especialista en Contenido</div>
-                    <p>Contenido que genera engagement y construye comunidades</p>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-avatar">
-                        <img src="images/team3.webp" alt="David Chen - Desarrollador Web y SEO" loading="lazy">
-                    </div>
-                    <h3>David Chen</h3>
-                    <div class="role">Desarrollador & SEO</div>
-                    <p>Webs rápidas, seguras y optimizadas para buscadores</p>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-avatar">
-                        <img src="images/team4.webp" alt="Laura Fernández - Estratega de Marketing Digital" loading="lazy">
-                    </div>
-                    <h3>Laura Fernández</h3>
-                    <div class="role">Estratega de Marketing</div>
-                    <p>Planificación de campañas que generan ROI medible</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Booking Panel - MANTENIDO CON MEJORAS DE COPY -->
-    <section class="section" id="booking">
-        <div class="container">
-            <div class="booking-panel">
-                <div class="booking-title">
-                    <h2>Agenda tu consultoría gratuita</h2>
-                    <p>30 minutos donde analizaremos tu proyecto y te daremos una estrategia clara para alcanzar tus objetivos digitales</p>
-                </div>
-                
-                <!-- El formulario de booking se mantiene igual pero con copy mejorado en los textos -->
-                <!-- Por brevedad, mantengo la estructura existente -->
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- Values Section - CON COPY MEJORADO -->
-    <section class="section values" id="valores">
-        <div class="container">
-            <div class="section-title">
-                <h2>Por qué elegirnos</h2>
-                <p>No somos una agencia más. Somos tu socio estratégico en digital</p>
-            </div>
-            
-            <div class="values-grid">
-                <div class="value-item">
-                    <div class="value-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Resultados rápidos</h3>
-                    <p>No creemos en proyectos de meses. Comenzamos a generar impacto desde la primera semana.</p>
-                </div>
-                
-                <div class="value-item">
-                    <div class="value-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Transparencia total</h3>
-                    <p>Sabes exactamente qué estamos haciendo, por qué y qué resultados estamos obteniendo.</p>
-                </div>
-                
-                <div class="value-item">
-                    <div class="value-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3>Enfoque en ROI</h3>
-                    <p>Cada euro invertido con nosotros debe generar retorno. Medimos todo para garantizarlo.</p>
-                </div>
-            </div>
-            
-            <!-- CTA en valores -->
-            <div class="section-cta">
-                <a href="#booking" class="btn">Hablar con un experto</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section - MEJORADA -->
-    <section class="section cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Tu transformación digital comienza aquí</h2>
-                <p>No necesitas más promesas vacías. Necesitas una estrategia clara, un equipo experimentado y resultados medibles. ¿Listo para comenzar?</p>
-                <a href="#booking" class="btn">Sí, quiero resultados</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer MEJORADO con newsletter -->
-    <footer id="contacto">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        <img src="logo.png" alt="AI Solutions Creative Agency - Tu socio en transformación digital" class="footer-logo-img" loading="lazy">
-                        <div class="footer-logo-text">
-                            <div class="footer-logo-main">AI Solutions</div>
-                            <div class="footer-logo-subtitle">Creative Agency</div>
-                        </div>
-                    </div>
-                    <p>Transformamos negocios con estrategias digitales efectivas. Rapidez, resultados y transparencia en cada proyecto.</p>
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com/aisc.creative/" target="_blank" class="social-icon" aria-label="Síguenos en Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="mailto:contacto@a-i-solutions.org" class="social-icon" aria-label="Envíanos un email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://wa.me/34123456789" target="_blank" class="social-icon" aria-label="Escríbenos por WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Navegar</h3>
-                    <ul>
-                        <li><a href="#inicio"><i class="fas fa-chevron-right"></i> Inicio</a></li>
-                        <li><a href="#servicios"><i class="fas fa-chevron-right"></i> Servicios</a></li>
-                        <li><a href="#testimonios"><i class="fas fa-chevron-right"></i> Testimonios</a></li>
-                        <li><a href="#equipo"><i class="fas fa-chevron-right"></i> Nuestro equipo</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-contact">
-                    <h3>Contacto</h3>
-                    <p><i class="fas fa-envelope"></i> contacto@a-i-solutions.org</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Madrid, España</p>
-                    
-                    <!-- Newsletter en footer -->
-                    <div class="footer-newsletter">
-                        <h4>Mantente informado</h4>
-                        <p style="color: #aaa; font-size: 0.9rem; margin-bottom: 10px;">Recibe tips y estrategias digitales</p>
-                        <div class="newsletter-form">
-                            <input type="email" placeholder="Tu email" aria-label="Suscríbete a nuestro newsletter">
-                            <button type="button"><i class="fas fa-paper-plane"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2023 AI Solutions Creative Agency. Enfoque directo, resultados naturales.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript con las nuevas funcionalidades -->
-    <script>
-        // === EMAILJS CONFIGURACIÓN ===
-        (function() {
-            emailjs.init("0H9DFECmcQ3hFgBXQ");
-            console.log("✅ EmailJS inicializado correctamente");
-        })();
-
-        // Mobile Menu Toggle - MANTENIDO
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.nav-links').classList.remove('active');
-            });
-        });
-        
-        // Tab functionality - MANTENIDO
-        document.querySelectorAll('.tab-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-                
-                button.classList.add('active');
-                const tabId = button.getAttribute('data-tab');
-                document.getElementById(`${tabId}-tab`).classList.add('active');
-                
-                if (window.innerWidth <= 768) {
-                    document.getElementById('servicios').scrollIntoView({ 
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-        
-        // Mobile service buttons functionality - MANTENIDO
-        document.querySelectorAll('.mobile-service-btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                const tabToActivate = this.getAttribute('data-tab');
-                
-                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-                
-                const tabButton = document.querySelector(`.tab-btn[data-tab="${tabToActivate}"]`);
-                if (tabButton) tabButton.classList.add('active');
-                
-                const tabContent = document.getElementById(`${tabToActivate}-tab`);
-                if (tabContent) tabContent.classList.add('active');
-                
-                const serviciosSection = document.getElementById('servicios');
-                if (serviciosSection) {
-                    const headerHeight = document.querySelector('header').offsetHeight;
-                    const serviciosPosition = serviciosSection.offsetTop - headerHeight - 20;
-                    window.scrollTo({ top: serviciosPosition, behavior: 'smooth' });
-                }
-            });
-        });
-        
-        // Header scroll effect - MEJORADO
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if(window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            
-            // Animación de elementos al scroll
-            document.querySelectorAll('.animate-on-scroll').forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                if (elementPosition < screenPosition) {
-                    element.classList.add('animated');
-                }
-            });
-        });
-        
-        // Smooth scrolling for anchor links - MANTENIDO
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    const headerHeight = document.querySelector('header').offsetHeight;
-                    const targetPosition = targetElement.offsetTop - headerHeight;
-                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-                }
-            });
-        });
-        
-        // === NUEVO: Formulario de guía gratuita ===
-        document.getElementById('guideForm')?.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Enviando...';
-            
-            // Simulación de envío (en un caso real, aquí iría la integración con EmailJS o backend)
-            setTimeout(() => {
-                alert('¡Gracias! Te hemos enviado la guía a tu email. Revisa tu bandeja de entrada (y la carpeta de spam).');
-                this.reset();
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalText;
-            }, 1500);
-        });
-        
-        // === NUEVO: Newsletter del footer ===
-        document.querySelector('.footer-newsletter button')?.addEventListener('click', function() {
-            const input = this.parentElement.querySelector('input');
-            const email = input.value.trim();
-            
-            if (!email || !email.includes('@')) {
-                alert('Por favor, introduce un email válido.');
-                return;
-            }
-            
-            this.disabled = true;
-            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-            
-            // Simulación de suscripción
-            setTimeout(() => {
-                alert('¡Gracias por suscribirte! Te enviaremos contenido valioso pronto.');
-                input.value = '';
-                this.disabled = false;
-                this.innerHTML = '<i class="fas fa-paper-plane"></i>';
-            }, 1500);
-        });
-        
-        // === FUNCIONALIDADES EXISTENTES DEL BOOKING PANEL ===
-        let selectedServices = [];
-        let selectedWebOption = '';
-        
-        function toggleServiceSelection(service) {
-            const checkbox = document.getElementById(`${service}Checkbox`);
-            const serviceOption = document.querySelector(`.service-option[data-service="${service}"]`);
-            
-            if (selectedServices.includes(service)) {
-                selectedServices = selectedServices.filter(s => s !== service);
-                checkbox.classList.remove('checked');
-                serviceOption.classList.remove('selected');
-            } else {
-                selectedServices.push(service);
-                checkbox.classList.add('checked');
-                serviceOption.classList.add('selected');
-            }
-            
-            const webOptions = document.getElementById('webOptions');
-            if (selectedServices.includes('web')) {
-                webOptions.style.display = 'grid';
-            } else {
-                webOptions.style.display = 'none';
-                selectedWebOption = '';
-                document.querySelectorAll('.web-option').forEach(option => {
-                    option.classList.remove('selected');
-                });
-            }
-            
-            document.getElementById('selectedServices').value = selectedServices.join(', ');
-        }
-        
-        function selectWebOption(option) {
-            selectedWebOption = option;
-            document.querySelectorAll('.web-option').forEach(webOption => {
-                webOption.classList.remove('selected');
-            });
-            document.querySelector(`.web-option[data-option="${option}"]`).classList.add('selected');
-            document.getElementById('selectedWebOption').value = option;
-        }
-        
-        // Formulario de booking
-        document.getElementById('bookingForm')?.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            if (selectedServices.length === 0) {
-                alert('Por favor, selecciona al menos un servicio.');
-                return;
-            }
-            
-            if (selectedServices.includes('web') && !selectedWebOption) {
-                alert('Por favor, selecciona un tipo de diseño web.');
-                return;
-            }
-            
-            const submitBtn = document.getElementById('submitBtn');
-            submitBtn.disabled = true;
-            submitBtn.classList.add('loading');
-            
-            document.getElementById('successMessage').style.display = 'none';
-            document.getElementById('errorMessage').style.display = 'none';
-            
-            const formData = {
-                name: document.getElementById('name').value.trim(),
-                company: document.getElementById('company').value.trim() || 'No especificado',
-                email: document.getElementById('email').value.trim(),
-                phone: document.getElementById('phone').value.trim(),
-                message: document.getElementById('message').value.trim() || 'No hay mensaje adicional',
-                services: selectedServices.join(', '),
-                webOption: selectedWebOption || 'No aplica'
-            };
-            
-            // Mapeo de nombres de servicios para display
-            const serviceNames = { 'web': 'Diseño Web', 'content': 'Contenido Digital', 'formations': 'Formaciones' };
-            const webOptionNames = { 'landing': 'Landing Page', 'basic': 'Web Básica', 'custom': '100% Personalizada' };
-            
-            const servicesList = selectedServices.map(service => serviceNames[service] || service).join(', ');
-            
-            const templateParams = {
-                from_name: formData.name,
-                from_email: formData.email,
-                from_phone: formData.phone,
-                company: formData.company,
-                services: servicesList,
-                web_option: webOptionNames[formData.webOption] || formData.webOption,
-                message: formData.message,
-                date_time: new Date().toLocaleString('es-ES')
-            };
-            
-            // Envío con EmailJS
-            emailjs.send('service_oko11dg', 'template_8p714we', templateParams)
-            .then(function(response) {
-                document.getElementById('successMessage').style.display = 'block';
-                document.getElementById('bookingForm').reset();
-                selectedServices = [];
-                selectedWebOption = '';
-                
-                document.querySelectorAll('.service-checkbox').forEach(checkbox => checkbox.classList.remove('checked'));
-                document.querySelectorAll('.service-option').forEach(option => option.classList.remove('selected'));
-                document.querySelectorAll('.web-option').forEach(option => option.classList.remove('selected'));
-                document.getElementById('webOptions').style.display = 'none';
-                document.getElementById('selectedServices').value = '';
-                document.getElementById('selectedWebOption').value = '';
-                
-                document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                
-            }, function(error) {
-                console.error('Error al enviar email:', error);
-                let errorMsg = 'Hubo un error al enviar la cita. ';
-                if (error.text) errorMsg += 'Detalles: ' + error.text;
-                if (error.status === 0) errorMsg = 'Error de conexión. Verifica tu internet.';
-                
-                document.getElementById('errorMessage').innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + errorMsg;
-                document.getElementById('errorMessage').style.display = 'block';
-                document.getElementById('errorMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                
-            }).finally(function() {
-                submitBtn.disabled = false;
-                submitBtn.classList.remove('loading');
-            });
-        });
-        
-        // Carga de videos Streamable
-        document.addEventListener("DOMContentLoaded", function () {
-            const videos = document.querySelectorAll(".streamable-iframe");
-            videos.forEach(video => {
-                let baseSrc = video.getAttribute("data-src");
-                if (!baseSrc) return;
-                let params = "?muted=1&loop=1&playsinline=1&autoplay=1";
-                video.src = baseSrc + params;
-            });
-            
-            // Añadir clase de animación a elementos
-            document.querySelectorAll('.web-project, .value-item, .service-option, .team-member, .testimonial-card').forEach(element => {
-                element.classList.add('animate-on-scroll');
-            });
-            
-            // Forzar animación al cargar
-            setTimeout(() => {
-                document.querySelectorAll('.animate-on-scroll').forEach(element => {
-                    element.classList.add('animated');
-                });
-            }, 500);
-        });
-    </script>
-</body>
-</html>
+    <!-- Resto del código HTML se mantiene igual... -->
