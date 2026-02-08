@@ -521,6 +521,57 @@
             border: none;
         }
         
+        /* Botones de servicio móviles */
+        .mobile-service-buttons {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 400px;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 12px;
+            z-index: 999;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .mobile-service-btn {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 5px;
+            border-radius: 10px;
+            transition: var(--transition-fast);
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .mobile-service-btn i {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--gold);
+        }
+        
+        .mobile-service-btn span {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .mobile-service-btn:hover {
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--gold);
+        }
+        
+        .mobile-service-buttons .mobile-service-btn + .mobile-service-btn {
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
         /* Services Section */
         .services {
             position: relative;
@@ -700,44 +751,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-        }
-        
-        /* Caso de Estudio Borda Vella */
-        .case-study-cta {
-            text-align: center;
-            margin: 30px 0 40px;
-            padding: 25px;
-            background: rgba(255, 215, 0, 0.05);
-            border-radius: var(--border-radius);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-        }
-        
-        .case-btn {
-            background: var(--gradient-gold);
-            color: var(--dark);
-            padding: 16px 32px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            border-radius: 50px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-            transition: var(--transition);
-            box-shadow: var(--shadow-gold);
-        }
-        
-        .case-btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
-        }
-        
-        .case-description {
-            color: #bbb;
-            font-size: 0.95rem;
-            max-width: 500px;
-            margin: 0 auto;
-            font-style: italic;
         }
         
         /* Redes Sociales */
@@ -1654,6 +1667,12 @@
                 font-size: 0.85rem;
             }
             
+            /* Botones de servicio móviles */
+            .mobile-service-buttons {
+                display: flex;
+                justify-content: space-around;
+            }
+            
             /* Hero optimizado para móvil */
             .hero {
                 padding-top: 100px;
@@ -1794,21 +1813,6 @@
             
             .project-info p {
                 font-size: 0.85rem;
-            }
-            
-            /* Caso Borda Vella responsive */
-            .case-study-cta {
-                padding: 20px;
-                margin: 25px 0 35px;
-            }
-            
-            .case-btn {
-                padding: 14px 24px;
-                font-size: 1rem;
-            }
-            
-            .case-description {
-                font-size: 0.9rem;
             }
             
             /* Secciones informativas en grid */
@@ -2349,6 +2353,22 @@
         </div>
     </header>
 
+    <!-- Botones de servicio móviles -->
+    <div class="mobile-service-buttons">
+        <a href="#web-tab" class="mobile-service-btn">
+            <i class="fas fa-desktop"></i>
+            <span>Diseño Web</span>
+        </a>
+        <a href="#social-tab" class="mobile-service-btn">
+            <i class="fas fa-video"></i>
+            <span>Contenido</span>
+        </a>
+        <a href="#formations-tab" class="mobile-service-btn">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Formación</span>
+        </a>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="container">
@@ -2410,14 +2430,11 @@
                     <div class="web-project">
                         <div class="project-img">
                             <div class="project-badge">Ejemplo</div>
-                            <img src="images/web1.webp" alt="Proyecto Web Bordavella">
+                            <img src="images/web1.webp" alt="Proyecto Web Ejemplo">
                         </div>
                         <div class="project-info">
                             <h3>Landing Pages</h3>
-                            <p>Desarrollo directo y efectivo, enfocado en conversiones naturales. Ejemplo real: Bordavella.</p>
-                            <a href="https://www.bordavella.com/" target="_blank" class="project-link">
-                                Ver sitio <i class="fas fa-arrow-right"></i>
-                            </a>
+                            <p>Desarrollo directo y efectivo, enfocado en conversiones naturales.</p>
                         </div>
                     </div>
                     
@@ -2506,16 +2523,6 @@
                     
                     <p style="margin-top: 25px; color: var(--gold); font-weight: 600;">
                         <i class="fas fa-star"></i> No construimos páginas web, construimos <strong>máquinas de conversión</strong> optimizadas para resultados.
-                    </p>
-                </div>
-                
-                <!-- Botón Caso Borda Vella -->
-                <div class="case-study-cta">
-                    <a href="https://aiscreative.github.io/CasoBorda/" target="_blank" class="btn case-btn">
-                        <i class="fas fa-external-link-alt"></i> Caso Borda Vella: Lo que el cliente pidió
-                    </a>
-                    <p class="case-description">
-                        Descubre cómo transformamos los requerimientos específicos de un cliente en una web optimizada y efectiva.
                     </p>
                 </div>
             </div>
@@ -3011,13 +3018,10 @@
                     </div>
                     <p>Soluciones digitales con enfoque directo. Rapidez, confianza y fluidez en cada proyecto.</p>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/aisc.creative?igsh=bmo2em12cnpnYmN0" target="_blank" class="social-icon">
+                        <a href="https://www.instagram.com/aisc.creative/" target="_blank" class="social-icon">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="#" class="social-icon">
+                        <a href="mailto:contacto@a-i-solutions.org" class="social-icon">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
